@@ -272,7 +272,7 @@ export default function BrandedToWin() {
             <div className="bg-[#1a1a1a]/80 border border-white/10 rounded-2xl p-8 flex flex-col">
               <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-2">Digital Edition</p>
               <div className="flex items-end gap-1 mb-6">
-                <span className="font-display text-5xl font-bold text-white">$19</span>
+                <span className="font-display text-5xl font-bold text-white">$9.50</span>
                 <span className="text-white/40 mb-2">/one-time</span>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
@@ -299,7 +299,7 @@ export default function BrandedToWin() {
               <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: GOLD }}>The Complete Bundle</p>
               <p className="text-white/50 text-xs mb-3">Designed for the serious owner ready to dominate their local market</p>
               <div className="flex items-end gap-1 mb-6">
-                <span className="font-display text-5xl font-bold text-white">$49</span>
+                <span className="font-display text-5xl font-bold text-white">$24.50</span>
                 <span className="text-white/40 mb-2">/one-time</span>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
@@ -371,7 +371,7 @@ export default function BrandedToWin() {
             <a href="https://brandedtowin.com" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl text-black transition-all hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: GOLD }}>
-              <Download className="w-5 h-5" /> Get the Book — $49
+              <Download className="w-5 h-5" /> Get the Book — $24.50
             </a>
             <Link to="/contact"
               className="flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl border text-white transition-all hover:bg-white/5"
