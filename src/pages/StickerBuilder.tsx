@@ -8,24 +8,24 @@ import './StickerBuilder.css';
 const NAVY   = '#0A1628';
 const ORANGE = '#FF6B35';
 const BORDER = '#E5E2D9';
-const CHECKOUT_API = 'https://ikonic-stickers.YOUR-WORKER.workers.dev/checkout';
+const CHECKOUT_API  = 'https://ikonic-stickers.YOUR-WORKER.workers.dev/checkout';
+const NOTIFY_API    = '/api/sticker-notify';
 const BASE_RATE    = 0.207;
 
 const PRODUCT_TYPES = {
-  diecut:  { name:'Die-Cut',  unit:'sticker', qtyUnit:'stickers', shapes:[{id:'contour',label:'Contour'},{id:'circle',label:'Circle'},{id:'square',label:'Square'},{id:'rect',label:'Rectangle'}], sizes:[{id:'2',w:2,h:2,label:'2"'},{id:'3',w:3,h:3,label:'3"'},{id:'4',w:4,h:4,label:'4"'},{id:'5',w:5,h:5,label:'5"'}], customSize:true,  materials:['vinyl','transparent','holographic','glitter'], finishes:['gloss','matte','satin'], qtyTiers:[25,50,100,250,500,1000], minOrder:15,  priceMult:1.00 },
+  diecut:  { name:'Die-Cut',  unit:'sticker', qtyUnit:'stickers', shapes:[{id:'contour',label:'Contour'},{id:'circle',label:'Circle'},{id:'square',label:'Square'},{id:'rect',label:'Rectangle'}], sizes:[{id:'2',w:2,h:2,label:'2"'},{id:'3',w:3,h:3,label:'3"'},{id:'4',w:4,h:4,label:'4"'},{id:'5',w:5,h:5,label:'5"'}], customSize:true,  materials:['vinyl','holographic','glitter'], finishes:['gloss','matte','satin'], qtyTiers:[25,50,100,250,500,1000], minOrder:15,  priceMult:1.00 },
   kisscut: { name:'Kiss-Cut', unit:'sticker', qtyUnit:'stickers', shapes:[{id:'square',label:'Square'},{id:'rect',label:'Rectangle'}], sizes:[{id:'2',w:2,h:2,label:'2"'},{id:'3',w:3,h:3,label:'3"'},{id:'4',w:4,h:4,label:'4"'},{id:'5',w:5,h:5,label:'5"'}], customSize:true,  materials:['vinyl','holographic','glitter'], finishes:['gloss','matte','satin'], qtyTiers:[25,50,100,250,500,1000], minOrder:15,  priceMult:0.92 },
   sheet:   { name:'Sheets',   unit:'sheet',   qtyUnit:'sheets',   shapes:[], sizes:[{id:'4x6',w:4,h:6,label:'4×6"'},{id:'5.5x8.5',w:5.5,h:8.5,label:'5.5×8.5"'},{id:'8.5x11',w:8.5,h:11,label:'8.5×11"'}], customSize:false, materials:['vinyl','holographic'], finishes:['gloss','matte'], qtyTiers:[10,25,50,100,250,500], minOrder:25,  priceMult:1.00 },
   bumper:  { name:'Bumper',   unit:'sticker', qtyUnit:'stickers', shapes:[], sizes:[{id:'3x10',w:3,h:10,label:'3×10"'},{id:'3x11.5',w:3,h:11.5,label:'3×11.5"'},{id:'4x12',w:4,h:12,label:'4×12"'}], customSize:false, materials:['vinyl'], finishes:['gloss'], qtyTiers:[25,50,100,250,500,1000], minOrder:25,  priceMult:1.10 },
-  label:   { name:'Labels',   unit:'label',   qtyUnit:'labels',   shapes:[{id:'square',label:'Square'},{id:'rect',label:'Rectangle'},{id:'circle',label:'Circle'}], sizes:[{id:'1',w:1,h:1,label:'1"'},{id:'1.5',w:1.5,h:1.5,label:'1.5"'},{id:'2',w:2,h:2,label:'2"'},{id:'1x3',w:1,h:3,label:'1×3"'},{id:'2x3',w:2,h:3,label:'2×3"'}], customSize:true, materials:['vinyl','transparent'], finishes:['gloss','matte'], qtyTiers:[50,100,250,500,1000,2500], minOrder:20, priceMult:0.85 },
+  label:   { name:'Labels',   unit:'label',   qtyUnit:'labels',   shapes:[{id:'square',label:'Square'},{id:'rect',label:'Rectangle'},{id:'circle',label:'Circle'}], sizes:[{id:'1',w:1,h:1,label:'1"'},{id:'1.5',w:1.5,h:1.5,label:'1.5"'},{id:'2',w:2,h:2,label:'2"'},{id:'1x3',w:1,h:3,label:'1×3"'},{id:'2x3',w:2,h:3,label:'2×3"'}], customSize:true, materials:['vinyl'], finishes:['gloss','matte'], qtyTiers:[50,100,250,500,1000,2500], minOrder:20, priceMult:0.85 },
 } as const;
 
 type ProductType = keyof typeof PRODUCT_TYPES;
 
 const MATERIAL_DEFS = {
-  vinyl:       { label:'Premium Vinyl', desc:'5–7 yr outdoor',     mult:1.00 },
-  transparent: { label:'Transparent',   desc:'+15% · Clear vinyl', mult:1.15 },
-  holographic: { label:'Holographic',   desc:'+50% · Rainbow',     mult:1.50 },
-  glitter:     { label:'Glitter',       desc:'+40% · Sparkle',     mult:1.40 },
+  vinyl:       { label:'Premium Vinyl', desc:'5–7 yr outdoor', mult:1.00 },
+  holographic: { label:'Holographic',   desc:'+50% · Rainbow', mult:1.50 },
+  glitter:     { label:'Glitter',       desc:'+40% · Sparkle', mult:1.40 },
 };
 const FINISH_DEFS = {
   gloss: { label:'Gloss', mult:1.00 },
@@ -77,13 +77,13 @@ interface PreviewProps {
 }
 
 function StickerPreview({ type, shape, sizeObj, material, finish, dataURL, file, perSheet }: PreviewProps) {
-  const matCls = material === 'holographic' ? 'sb-holo-bg' : material === 'glitter' ? 'sb-glitter-bg' : material === 'transparent' ? 'sb-transparent-bg' : '';
+  const matCls = material === 'holographic' ? 'sb-holo-bg' : material === 'glitter' ? 'sb-glitter-bg' : '';
   const finCls = finish === 'gloss' ? 'sb-gloss' : finish === 'satin' ? 'sb-satin' : '';
 
   const matStyle: React.CSSProperties =
     material === 'holographic' ? { opacity: file ? 0.45 : 1, mixBlendMode: file ? 'overlay' : 'normal' } :
     material === 'glitter'     ? { opacity: file ? 0.40 : 1, mixBlendMode: file ? 'screen'  : 'normal' } :
-    material === 'transparent' ? { opacity: 1 } : { opacity: 0 };
+    { opacity: 0 };
 
   const artwork =
     dataURL ? <img src={dataURL} className="w-full h-full object-contain p-3" alt="artwork" /> :
@@ -225,19 +225,36 @@ export default function StickerBuilder() {
     bump();
   }, []);
 
+  const toBase64 = (f: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = () => resolve((reader.result as string).split(',')[1] ?? '');
+      reader.onerror = reject;
+      reader.readAsDataURL(f);
+    });
+
   const handleSubmit = async () => {
     if (!custEmail || !custFirst) { setFormError('Email and first name required.'); return; }
     if (!file) { setFormError('Please upload your artwork first.'); return; }
     setSubmitting(true); setFormError('');
     const w = customW || sizeObj.w, h = customH || sizeObj.h;
-    const formData = new FormData();
-    formData.append('artwork', file);
-    formData.append('order', JSON.stringify({
+    const order = {
       customer: { email: custEmail, firstName: custFirst, lastName: custLast, phone: custPhone },
       product: { type: cfg.name, typeId: type, shape, size: `${w}x${h}"`, material: MATERIAL_DEFS[material as keyof typeof MATERIAL_DEFS].label, finish: FINISH_DEFS[finish as keyof typeof FINISH_DEFS].label, quantity: qty, perSheet: type === 'sheet' ? perSheet : null },
       pricing: { subtotal, shipping, total },
-    }));
+    };
+    const formData = new FormData();
+    formData.append('artwork', file);
+    formData.append('order', JSON.stringify(order));
     try {
+      // Send artwork + order to shared email in parallel with checkout
+      const [fileBase64] = await Promise.all([toBase64(file)]);
+      fetch(NOTIFY_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ order, fileBase64, fileName: file.name, fileType: file.type }),
+      }).catch(() => { /* silent — don't block checkout */ });
+
       const res  = await fetch(CHECKOUT_API, { method:'POST', body: formData });
       if (!res.ok) throw new Error('Checkout failed');
       const data = await res.json();
