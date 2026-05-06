@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, User, Loader2 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,6 +76,11 @@ export default function Blogs() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Digital Marketing Blog | Tips for Denver Businesses | Ikonic Marketing"
+        description="Marketing tips, GoHighLevel guides, and growth strategies for Denver-area businesses. Learn how to automate leads, improve your reputation, and scale your business."
+        canonical="/blogs"
+      />
       <MatrixBackground />
       <Navigation />
 

@@ -3,6 +3,7 @@ import { PhoneCall, TrendingDown } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 function fmt(amount: number): string {
   if (amount >= 1_000_000) return '$' + (amount / 1_000_000).toFixed(1) + 'M';
@@ -30,6 +31,11 @@ export default function LostCallCalculator() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Missed Call Revenue Calculator | How Much Are Lost Calls Costing You? | Ikonic"
+        description="Find out how much revenue your business loses from missed calls. Use our free calculator and see how missed call text-back automation can recover that revenue instantly."
+        canonical="/lost-call-calculator"
+      />
       <MatrixBackground />
       <Navigation />
 

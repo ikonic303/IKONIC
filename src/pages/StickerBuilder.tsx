@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 import './StickerBuilder.css';
 
 // ── Constants ────────────────────────────────────────────────────────────────
@@ -287,6 +288,11 @@ export default function StickerBuilder() {
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="sb-wrap" style={{ position: 'relative', zIndex: 10 }}>
+      <PageSEO
+        title="Custom Sticker Builder — Design & Order Online | Ikonic Marketing"
+        description="Design and order custom stickers online. Choose your shape, size, material, and finish — die-cut, kiss-cut, bumper stickers, and more. Fast shipping across Colorado and the US."
+        canonical="/sticker-builder"
+      />
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-28 pb-6 grid grid-cols-1 lg:grid-cols-5 gap-6" style={{ minHeight: 'calc(100vh - 64px)' }}>

@@ -4,6 +4,7 @@ import { Calendar, Clock, Tag, ArrowLeft, Loader2 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 interface Post {
   title: string;
@@ -43,6 +44,13 @@ export default function BlogPost() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title={post ? `${post.title} | Ikonic Marketing Blog` : 'Blog | Ikonic Marketing'}
+        description={post ? post.description : 'Digital marketing tips and strategies for Denver businesses from the Ikonic Marketing team.'}
+        canonical={post ? `/post/${post.urlSlug}` : undefined}
+        ogType="article"
+        ogImage={post?.image || undefined}
+      />
       <MatrixBackground />
       <Navigation />
 

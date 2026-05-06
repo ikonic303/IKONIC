@@ -6,6 +6,7 @@ import { Check, Phone, ArrowRight, Car, Truck, Van, Upload, Sparkles, Send, Refr
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -389,6 +390,11 @@ We will prepare production-ready vector files and contact you at ${formData.emai
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="AI Commercial Vehicle Wrap Designer Denver | Ikonic Marketing"
+        description="Design your commercial vehicle wrap with AI. Upload your vehicle photo and logo — get a custom wrap design instantly. Serving Denver and Colorado businesses."
+        canonical="/commercial-wraps"
+      />
       <MatrixBackground />
       <Navigation />
       

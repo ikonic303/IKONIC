@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,9 +41,14 @@ export default function MarketingSystems() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Digital Marketing Systems & Automation Denver CO | Ikonic Marketing"
+        description="Full-service digital marketing for Colorado businesses — social media, paid ads (Google & Facebook), email automation, and analytics dashboards. Fill your pipeline on autopilot."
+        canonical="/services/marketing"
+      />
       <MatrixBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
         <Breadcrumb crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: 'Marketing Systems', href: '/services/marketing' }]} />

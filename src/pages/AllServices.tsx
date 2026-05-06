@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +63,11 @@ export default function AllServices() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Digital Marketing Services Denver CO | Ikonic Marketing"
+        description="Full-service digital marketing for Denver businesses — web design, GoHighLevel CRM automation, reputation management, speed-to-lead, and marketing systems. All under one roof."
+        canonical="/services"
+      />
       <MatrixBackground />
       <Navigation />
       

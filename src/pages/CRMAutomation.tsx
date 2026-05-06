@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,9 +53,14 @@ export default function CRMAutomation() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="GoHighLevel CRM Setup & Automation Denver CO | Ikonic Marketing"
+        description="Expert GoHighLevel CRM setup and automation for Colorado businesses. Automate follow-ups, nurture leads, and close more deals. Free CRM audit available."
+        canonical="/services/crm-automation"
+      />
       <MatrixBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
         <Breadcrumb crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: 'CRM Automation', href: '/services/crm-automation' }]} />

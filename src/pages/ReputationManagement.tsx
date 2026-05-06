@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,9 +40,14 @@ export default function ReputationManagement() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Reputation Management & Google Reviews Denver CO | Ikonic Marketing"
+        description="Build your 5-star reputation and dominate Google Maps. Automated review collection, Google Business Profile optimization, and local SEO for Denver businesses."
+        canonical="/services/reputation"
+      />
       <MatrixBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
         <Breadcrumb crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: 'Reputation Management', href: '/services/reputation' }]} />

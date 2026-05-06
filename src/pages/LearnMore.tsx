@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,11 @@ export default function LearnMore() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="How It Works | Marketing Automation for Denver Businesses | Ikonic"
+        description="Learn how Ikonic Marketing builds automated lead generation systems for Denver businesses. Our proven 4-step process captures leads 24/7 while you focus on your business."
+        canonical="/learn-more"
+      />
       <MatrixBackground />
       <Navigation />
       

@@ -5,6 +5,7 @@ import { Users, Clock, TrendingUp, Headphones, Target, Zap, Shield, Heart } from
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,11 @@ export default function About() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="About Ikonic Marketing | Denver Digital Marketing Agency"
+        description="Meet the Ikonic Marketing team. Denver-based digital marketing agency specializing in GoHighLevel automation, CRM setup, and lead generation for Colorado businesses."
+        canonical="/about"
+      />
       <MatrixBackground />
       <Navigation />
       

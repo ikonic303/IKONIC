@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 // ── Internal pricing constants (office use only) ──────────────────────────────
 const _R  = 15;   // $/sqft base rate
@@ -223,6 +224,11 @@ export default function WrapCalculator() {
 
   return (
     <div className="relative min-h-screen bg-charcoal">
+      <PageSEO
+        title="Commercial Vehicle Wrap Cost Calculator Denver | Ikonic Marketing"
+        description="Get an instant vehicle wrap price estimate for your business vehicle. Our free wrap calculator covers cars, trucks, vans, and trailers. Serving Denver and Colorado."
+        canonical="/wrap-calculator"
+      />
       <MatrixBackground />
       <Navigation />
 

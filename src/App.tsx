@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PageSEO from './components/PageSEO';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MatrixBackground from './components/MatrixBackground';
@@ -40,6 +41,11 @@ gsap.registerPlugin(ScrollTrigger);
 function HomePage() {
   return (
     <>
+      <PageSEO
+        title="Digital Marketing Agency Denver CO | Ikonic Marketing"
+        description="Denver's #1 GoHighLevel agency. We build 24/7 lead capture systems — custom websites, CRM automation, sales funnels, and reputation management. Get more leads on autopilot."
+        canonical="/"
+      />
       <Navigation />
       <main className="relative z-10">
         <HeroSection />

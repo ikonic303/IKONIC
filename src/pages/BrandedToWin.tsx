@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 import { ChevronDown, ChevronUp, Star, BookOpen, Download, Package } from 'lucide-react';
 
 const GOLD = '#F5A623';
@@ -83,6 +84,11 @@ export default function BrandedToWin() {
 
   return (
     <div className="min-h-screen" style={{ position: 'relative', zIndex: 10 }}>
+      <PageSEO
+        title="Branded to Win Book by Joshua Soderblom | Ikonic Marketing"
+        description="Get the Branded to Win book — the complete guide to building a business brand that attracts customers, generates leads, and dominates your local market. Digital & bundle editions available."
+        canonical="/branded-to-win"
+      />
       {/* Dark overlay — dims matrix without fully hiding it */}
       <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(8,10,8,0.88)', zIndex: -1 }} />
       <Navigation />

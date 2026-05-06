@@ -12,6 +12,7 @@ import {
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,6 +74,11 @@ export default function Careers() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Careers at Ikonic Marketing | Join Our Denver Marketing Team"
+        description="Join the Ikonic Marketing team in Denver, CO. We're hiring driven marketers, GoHighLevel specialists, and automation experts. Build your career in digital marketing."
+        canonical="/careers"
+      />
       <MatrixBackground />
       <Navigation />
       

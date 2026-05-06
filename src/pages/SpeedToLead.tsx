@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
+import PageSEO from '../components/PageSEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,9 +40,14 @@ export default function SpeedToLead() {
 
   return (
     <div className="relative bg-charcoal min-h-screen">
+      <PageSEO
+        title="Speed to Lead Automation Denver CO | Ikonic Marketing"
+        description="Respond to leads in under 60 seconds with automated SMS and email follow-up. Never lose a lead again. Speed-to-lead automation for Colorado businesses."
+        canonical="/services/speed-to-lead"
+      />
       <MatrixBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
         <Breadcrumb crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: 'Speed to Lead', href: '/services/speed-to-lead' }]} />

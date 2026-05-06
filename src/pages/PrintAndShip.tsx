@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import PageSEO from '../components/PageSEO';
 
 // ── Internal pricing (not shown to client) ────────────────────────────────────
 const _ROLL_W = 54;
@@ -216,6 +217,11 @@ export default function PrintAndShip() {
 
   return (
     <div className="relative min-h-screen bg-charcoal">
+      <PageSEO
+        title="Print & Ship Vinyl Wraps Denver | Ikonic Marketing"
+        description="Order custom-printed vinyl wraps and have them shipped directly to you. Professional print quality for vehicle wraps, banners, and signage. Serving Denver and Colorado."
+        canonical="/print-ship"
+      />
       <MatrixBackground />
       <Navigation />
 
