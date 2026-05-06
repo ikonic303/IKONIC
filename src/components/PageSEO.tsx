@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'Ikonic Marketing';
 const BASE_URL = 'https://ikonicmarketing303.com';
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_IMAGE = `${BASE_URL}/logo-ikonic.webp`;
 
 interface PageSEOProps {
   title: string;
