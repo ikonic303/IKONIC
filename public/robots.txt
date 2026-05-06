@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /proof-manager
+Disallow: /proof/
+
+Sitemap: https://ikonicmarketing303.com/sitemap.xml

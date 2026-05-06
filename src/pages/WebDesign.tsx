@@ -5,6 +5,7 @@ import { Globe, Check, Phone, Zap, TrendingUp, Users } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/Breadcrumb';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,7 @@ export default function WebDesign() {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
+        <Breadcrumb crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: 'Web Design', href: '/services/web-design' }]} />
         <div ref={heroRef} className="max-w-4xl mx-auto text-center">
           <p className="text-micro text-mint mb-4">WEB DESIGN & FUNNELS</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite mb-6 leading-tight">

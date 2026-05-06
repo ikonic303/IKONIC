@@ -14,42 +14,49 @@
     <meta property="og:url"         content="https://ikonicmarketing303.com/" />
     <meta property="og:title"       content="Ikonic Marketing | Digital Marketing Automation | Denver, CO" />
     <meta property="og:description" content="We build 24/7 lead capture systems for Denver-area businesses — websites, CRM, automation, and reputation management all in one platform." />
-    <meta property="og:image"       content="https://ikonicmarketing303.com/logo-ikonic.webp" />
+    <meta property="og:image"       content="https://ikonicmarketing303.com/og-image.jpg" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name"   content="Ikonic Marketing" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content="Ikonic Marketing | Digital Marketing Automation | Denver, CO" />
     <meta name="twitter:description" content="We build 24/7 lead capture systems for Denver-area businesses — websites, CRM, automation, and reputation management all in one platform." />
-    <meta name="twitter:image"       content="https://ikonicmarketing303.com/logo-ikonic.webp" />
+    <meta name="twitter:image"       content="https://ikonicmarketing303.com/og-image.jpg" />
 
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://ikonicmarketing303.com/#business",
       "name": "Ikonic Marketing",
       "url": "https://ikonicmarketing303.com",
       "logo": "https://ikonicmarketing303.com/logo-ikonic.webp",
       "image": "https://ikonicmarketing303.com/logo-ikonic.webp",
-      "description": "Digital marketing automation agency serving Denver and Colorado businesses. We build lead capture systems, CRM automation, sales funnels, and reputation management solutions.",
+      "description": "Digital marketing automation agency serving Denver and Colorado. CRM automation, websites, sales funnels, and reputation management.",
       "telephone": "+1-720-679-1230",
       "email": "info@ikonicmarketing303.com",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Denver",
         "addressRegion": "CO",
+        "postalCode": "[ADD ZIP]",
         "addressCountry": "US"
       },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }],
       "areaServed": {
         "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 39.7392,
-          "longitude": -104.9903
-        },
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 39.7392, "longitude": -104.9903 },
         "geoRadius": "80000"
       },
-      "serviceArea": { "@type": "State", "name": "Colorado" },
       "sameAs": [
         "https://www.facebook.com/ikonic303",
         "https://www.instagram.com/ikonic_303/",
@@ -59,30 +66,35 @@
         "@type": "OfferCatalog",
         "name": "Digital Marketing Services",
         "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GoHighLevel Setup" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM Automation" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reputation Management" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed to Lead" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing Systems" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Missed Call Text Back" } }
         ]
       }
     }
     </script>
 
-    <link rel="icon" type="image/png" href="/new logo.PNG" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- GHL Popup Form — Free GHL Checklist -->
+    <!-- GHL Popup Form — Free GHL Checklist (fires at 50% scroll) -->
     <iframe
       src="https://crm.ikonic303.com/widget/form/fz0LYqKFNeclNyuSnVZg"
       style="display:none;width:100%;height:100%;border:none;border-radius:8px"
       id="popup-fz0LYqKFNeclNyuSnVZg"
       data-layout="{'id':'POPUP'}"
-      data-trigger-type="alwaysShow"
-      data-trigger-value=""
+      data-trigger-type="onScroll"
+      data-trigger-value="50"
       data-activation-type="alwaysActivated"
       data-activation-value=""
       data-deactivation-type="neverDeactivate"
