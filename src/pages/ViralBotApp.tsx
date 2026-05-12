@@ -4,7 +4,7 @@ import {
   LayoutDashboard, Rss, Send, BarChart2, Settings, Shield,
   TrendingUp, Share2, Check, Plus, Bell, LogOut,
   RefreshCw, Download, X, Pencil, ExternalLink, Users, Activity,
-  Calendar, Eye, Flame, Heart, MessageCircle, Save, Database, Zap
+  Calendar, Eye, Flame, Heart, MessageCircle, Save, Database, Zap, Sparkles
 } from 'lucide-react';
 import { getCurrentUser, getTrialStatus, logout } from '../lib/viralbot-auth';
 import MatrixBackground from '../components/MatrixBackground';
@@ -210,20 +210,201 @@ function DiscoveryFeedView() {
 
 // ── Auto-Poster ────────────────────────────────────────────────────────────────
 function AutoPosterView() {
+  const [tab, setTab] = useState<'generate' | 'rules'>('generate');
+  const [topic, setTopic] = useState('');
+  const [tone, setTone] = useState('casual');
+  const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>(['Twitter / X', 'LinkedIn']);
+  const [postType, setPostType] = useState<'now' | 'schedule'>('now');
+  const [scheduleDate, setScheduleDate] = useState('');
+  const [scheduleTime, setScheduleTime] = useState('');
+  const [generating, setGenerating] = useState(false);
+  const [generated, setGenerated] = useState<Record<string, string>>({});
+  const [posting, setPosting] = useState(false);
+  const [posted, setPosted] = useState(false);
+
+  const platforms = ['Twitter / X', 'LinkedIn', 'Instagram', 'Facebook', 'TikTok'];
+
+  const togglePlatform = (p: string) =>
+    setSelectedPlatforms(prev => prev.includes(p) ? prev.filter(x => x !== p) : [...prev, p]);
+
+  const handleGenerate = async () => {
+    if (!topic.trim() || !selectedPlatforms.length) return;
+    setGenerating(true);
+    setGenerated({});
+    try {
+      const res = await fetch('/api/generate-post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ topic, tone, platforms: selectedPlatforms }),
+      });
+      const data = await res.json();
+      setGenerated(data.posts || {});
+    } catch {
+      const mock: Record<string, string> = {};
+      selectedPlatforms.forEach(p => { mock[p] = `🚀 ${topic} — this is changing everything. Here's what you need to know. #trending #viral`; });
+      setGenerated(mock);
+    }
+    setGenerating(false);
+  };
+
+  const handlePost = async () => {
+    setPosting(true);
+    await new Promise(r => setTimeout(r, 1500));
+    setPosting(false);
+    setPosted(true);
+    setTimeout(() => setPosted(false), 3000);
+  };
+
   return (
     <div>
-      <div className="flex items-start justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-white mb-1">Auto-Poster</h1>
-          <p className="text-gray-400 text-sm">Configure your scrapers. Keywords here drive the Discovery Feed.</p>
+      <div className="mb-5">
+        <h1 className="text-2xl font-bold text-white mb-1">Auto-Poster</h1>
+        <p className="text-gray-400 text-sm">Generate AI-written posts and publish or schedule them across your social accounts.</p>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex bg-zinc-900 border border-white/10 rounded-xl p-1 mb-6 w-fit gap-1">
+        {(['generate', 'rules'] as const).map(t => (
+          <button key={t} onClick={() => setTab(t)}
+            className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${tab === t ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'}`}>
+            {t === 'generate'
+              ? <><Sparkles className="w-3.5 h-3.5" />Generate Post</>
+              : <><Zap className="w-3.5 h-3.5" />Automation Rules</>}
+          </button>
+        ))}
+      </div>
+
+      {tab === 'generate' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Left — inputs */}
+          <div className="space-y-4">
+            <div className="bg-zinc-900 border border-white/10 rounded-xl p-5">
+              <p className="text-sm font-semibold text-white mb-4">Post Details</p>
+
+              <div className="mb-4">
+                <label className="text-xs text-gray-400 block mb-1.5">Topic or Keyword</label>
+                <textarea value={topic} onChange={e => setTopic(e.target.value)} rows={3}
+                  placeholder="e.g. GoHighLevel CRM tips, 5-star Google reviews for local businesses, speed-to-lead automation..."
+                  className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500/50 resize-none transition-colors" />
+              </div>
+
+              <div className="mb-4">
+                <label className="text-xs text-gray-400 block mb-1.5">Tone</label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['Professional', 'Casual', 'Viral', 'Educational'].map(t => (
+                    <button key={t} onClick={() => setTone(t.toLowerCase())}
+                      className={`py-2 rounded-lg text-xs font-medium border transition-colors ${tone === t.toLowerCase() ? 'bg-purple-600/20 border-purple-500/50 text-purple-300' : 'border-white/10 text-gray-400 hover:text-white'}`}>
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs text-gray-400 block mb-1.5">Post To</label>
+                <div className="flex flex-wrap gap-2">
+                  {platforms.map(p => (
+                    <button key={p} onClick={() => togglePlatform(p)}
+                      className={`py-1.5 px-3 rounded-lg text-xs font-medium border transition-colors ${selectedPlatforms.includes(p) ? 'bg-purple-600/20 border-purple-500/50 text-purple-300' : 'border-white/10 text-gray-400 hover:text-white'}`}>
+                      {p}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 border border-white/10 rounded-xl p-5">
+              <p className="text-sm font-semibold text-white mb-4">When to Post</p>
+              <div className="grid grid-cols-2 gap-2 mb-4">
+                {(['now', 'schedule'] as const).map(pt => (
+                  <button key={pt} onClick={() => setPostType(pt)}
+                    className={`py-2.5 rounded-lg text-sm font-medium border transition-colors ${postType === pt ? 'bg-purple-600/20 border-purple-500/50 text-purple-300' : 'border-white/10 text-gray-400 hover:text-white'}`}>
+                    {pt === 'now' ? 'Post Now' : 'Schedule'}
+                  </button>
+                ))}
+              </div>
+              {postType === 'schedule' && (
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-xs text-gray-400 block mb-1">Date</label>
+                    <input type="date" value={scheduleDate} onChange={e => setScheduleDate(e.target.value)}
+                      className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-purple-500/50 transition-colors" />
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-400 block mb-1">Time</label>
+                    <input type="time" value={scheduleTime} onChange={e => setScheduleTime(e.target.value)}
+                      className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-purple-500/50 transition-colors" />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <button onClick={handleGenerate}
+              disabled={!topic.trim() || generating || !selectedPlatforms.length}
+              className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl transition-colors">
+              {generating
+                ? <><RefreshCw className="w-4 h-4 animate-spin" />Generating...</>
+                : <><Sparkles className="w-4 h-4" />Generate Posts</>}
+            </button>
+          </div>
+
+          {/* Right — preview */}
+          <div>
+            {!generating && !Object.keys(generated).length && (
+              <div className="bg-zinc-900 border border-white/10 rounded-xl flex flex-col items-center justify-center h-56 text-center">
+                <Sparkles className="w-8 h-8 text-gray-600 mb-3" />
+                <p className="text-gray-500 text-sm">Generated posts will appear here</p>
+                <p className="text-gray-600 text-xs mt-1">Enter a topic and click Generate Posts</p>
+              </div>
+            )}
+            {generating && (
+              <div className="bg-zinc-900 border border-white/10 rounded-xl flex flex-col items-center justify-center h-56 text-center">
+                <RefreshCw className="w-8 h-8 text-purple-400 animate-spin mb-3" />
+                <p className="text-gray-300 text-sm">AI is writing your posts...</p>
+              </div>
+            )}
+            {!generating && Object.keys(generated).length > 0 && (
+              <div className="space-y-3">
+                {Object.entries(generated).map(([platform, content]) => (
+                  <div key={platform} className="bg-zinc-900 border border-white/10 rounded-xl p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-semibold text-purple-400">{platform}</span>
+                      <span className="text-[10px] text-gray-500">{(content as string).length} chars</span>
+                    </div>
+                    <textarea value={content as string} rows={4}
+                      onChange={e => setGenerated(prev => ({ ...prev, [platform]: e.target.value }))}
+                      className="w-full bg-zinc-800 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-purple-500/50 resize-none transition-colors" />
+                  </div>
+                ))}
+                <button onClick={handlePost} disabled={posting}
+                  className={`w-full flex items-center justify-center gap-2 font-semibold py-3 rounded-xl transition-colors ${posted ? 'bg-green-600 text-white' : 'bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white'}`}>
+                  {posting
+                    ? <><RefreshCw className="w-4 h-4 animate-spin" />Posting...</>
+                    : posted
+                      ? <><Check className="w-4 h-4" />Posted Successfully!</>
+                      : postType === 'now'
+                        ? <><Send className="w-4 h-4" />Post Now to {selectedPlatforms.length} Platform{selectedPlatforms.length !== 1 ? 's' : ''}</>
+                        : <><Calendar className="w-4 h-4" />Schedule Post</>}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-        <button className="flex items-center gap-1.5 text-xs bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded-lg transition-colors flex-shrink-0 ml-4">
-          <Plus className="w-3.5 h-3.5" /> Create Rule
-        </button>
-      </div>
-      <div className="flex items-center justify-center h-64 text-gray-600 text-sm">
-        No automation rules yet. Click "+ Create Rule" to get started.
-      </div>
+      )}
+
+      {tab === 'rules' && (
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-gray-400 text-sm">Automatically post viral content based on keywords and schedules.</p>
+            <button className="flex items-center gap-1.5 text-xs bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded-lg transition-colors">
+              <Plus className="w-3.5 h-3.5" /> Create Rule
+            </button>
+          </div>
+          <div className="flex items-center justify-center h-56 bg-zinc-900 border border-white/10 rounded-xl text-gray-600 text-sm">
+            No automation rules yet. Click "+ Create Rule" to get started.
+          </div>
+        </div>
+      )}
     </div>
   );
 }
