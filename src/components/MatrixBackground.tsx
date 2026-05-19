@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react';
 
-// Flipped and reversed Japanese Katakana characters
 const FLIPPED_KATAKANA = 'ᄀᄂᄃᄅᄆᄇᄉᄊᄋᄌᄍᄎᄏᄐᄑ하ᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᆨᆩᆪᆫᆬᆭᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂ';
-
-// Additional flipped symbols and characters
 const FLIPPED_SYMBOLS = 'ƆƎƧИႱႧႰႳႵႷႸႹႺႻႼႽႾႿჀჁჂჃჄჅაბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
-
-// Combine all flipped characters
 const MATRIX_CHARS = FLIPPED_KATAKANA + FLIPPED_SYMBOLS;
 
 export default function MatrixBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Skip entirely on mobile — canvas animation is too expensive for mobile CPUs
+  if (typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches) {
+    return null;
+  }
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -40,9 +40,6 @@ export default function MatrixBackground() {
     }
 
     let animationId: number;
-    // Mobile devices get ~15fps; desktop runs at full 60fps
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const frameInterval = isMobile ? 1000 / 15 : 0;
     let lastFrameTime = 0;
 
     const draw = (timestamp: number) => {
@@ -51,7 +48,8 @@ export default function MatrixBackground() {
         return;
       }
 
-      if (frameInterval > 0 && timestamp - lastFrameTime < frameInterval) {
+      // Cap at 30fps on desktop to reduce CPU usage
+      if (timestamp - lastFrameTime < 33) {
         animationId = requestAnimationFrame(draw);
         return;
       }
@@ -110,11 +108,7 @@ export default function MatrixBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{
-        opacity: 0.7,
-        zIndex: 0,
-        background: 'transparent'
-      }}
+      style={{ opacity: 0.7, zIndex: 0, background: 'transparent' }}
     />
   );
 }

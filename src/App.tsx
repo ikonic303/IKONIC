@@ -1,8 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageSEO from './components/PageSEO';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MatrixBackground from './components/MatrixBackground';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
@@ -39,8 +37,6 @@ const ViralBot = lazy(() => import('./pages/ViralBot'));
 const ViralBotAuth = lazy(() => import('./pages/ViralBotAuth'));
 const ViralBotApp = lazy(() => import('./pages/ViralBotApp'));
 
-gsap.registerPlugin(ScrollTrigger);
-
 function HomePage() {
   return (
     <>
@@ -64,11 +60,6 @@ function HomePage() {
 }
 
 function App() {
-  useEffect(() => {
-    ScrollTrigger.refresh();
-    return () => { ScrollTrigger.getAll().forEach(st => st.kill()); };
-  }, []);
-
   useEffect(() => {
     const scriptId = 'ghl-chat-widget-script';
     if (document.getElementById(scriptId)) return;

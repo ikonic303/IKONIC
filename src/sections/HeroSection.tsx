@@ -1,10 +1,8 @@
 import { useRef, useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
+const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -14,85 +12,82 @@ export default function HeroSection() {
   const robotRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    if (isMobile) return; // Skip all GSAP work on mobile
+
     const section = sectionRef.current;
     if (!section) return;
 
-    const ctx = gsap.context(() => {
-      // Load animation
-      const loadTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-      
-      loadTl
-        .fromTo(headlineRef.current?.querySelectorAll('.headline-line') || [], 
-          { y: 60, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 }, 
-          0.2
-        )
-        .fromTo(subheadRef.current, 
-          { y: 30, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 0.6 }, 
-          0.5
-        )
-        .fromTo(ctaRef.current, 
-          { y: 20, opacity: 0 }, 
-          { y: 0, opacity: 1, duration: 0.5 }, 
-          0.7
-        )
-        .fromTo(robotRef.current, 
-          { x: 100, opacity: 0, scale: 0.8 }, 
-          { x: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.2)' }, 
-          0.4
-        );
+    // Dynamically import GSAP only on desktop
+    Promise.all([import('gsap'), import('gsap/ScrollTrigger')]).then(([{ gsap }, { ScrollTrigger }]) => {
+      gsap.registerPlugin(ScrollTrigger);
 
-      // Scroll-driven exit animation
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
-          onLeaveBack: () => {
-            gsap.set([headlineRef.current, subheadRef.current, ctaRef.current, robotRef.current], { 
-              opacity: 1, x: 0, y: 0 
-            });
+      const ctx = gsap.context(() => {
+        const loadTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+        loadTl
+          .fromTo(headlineRef.current?.querySelectorAll('.headline-line') || [],
+            { y: 60, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 },
+            0.2
+          )
+          .fromTo(subheadRef.current,
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6 },
+            0.5
+          )
+          .fromTo(ctaRef.current,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5 },
+            0.7
+          )
+          .fromTo(robotRef.current,
+            { x: 100, opacity: 0, scale: 0.8 },
+            { x: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.2)' },
+            0.4
+          );
+
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: '+=130%',
+            pin: true,
+            scrub: 0.6,
+            onLeaveBack: () => {
+              gsap.set([headlineRef.current, subheadRef.current, ctaRef.current, robotRef.current], {
+                opacity: 1, x: 0, y: 0
+              });
+            }
           }
-        }
-      });
+        });
 
-      // EXIT phase (70% - 100%)
-      scrollTl
-        .fromTo(headlineRef.current, 
-          { y: 0, opacity: 1 }, 
-          { y: '-30vh', opacity: 0.2, ease: 'power2.in' }, 
-          0.70
-        )
-        .to(headlineRef.current, 
-          { opacity: 0, ease: 'power2.in' }, 
-          0.95
-        )
-        .fromTo(subheadRef.current, 
-          { y: 0, opacity: 1 }, 
-          { y: '-20vh', opacity: 0, ease: 'power2.in' }, 
-          0.72
-        )
-        .fromTo(ctaRef.current, 
-          { y: 0, opacity: 1 }, 
-          { y: '-15vh', opacity: 0, ease: 'power2.in' }, 
-          0.74
-        )
-        .fromTo(robotRef.current, 
-          { x: 0, opacity: 1 }, 
-          { x: '30vw', opacity: 0.2, ease: 'power2.in' }, 
-          0.70
-        )
-        .to(robotRef.current, 
-          { opacity: 0, ease: 'power2.in' }, 
-          0.95
-        );
+        scrollTl
+          .fromTo(headlineRef.current,
+            { y: 0, opacity: 1 },
+            { y: '-30vh', opacity: 0.2, ease: 'power2.in' },
+            0.70
+          )
+          .to(headlineRef.current, { opacity: 0, ease: 'power2.in' }, 0.95)
+          .fromTo(subheadRef.current,
+            { y: 0, opacity: 1 },
+            { y: '-20vh', opacity: 0, ease: 'power2.in' },
+            0.72
+          )
+          .fromTo(ctaRef.current,
+            { y: 0, opacity: 1 },
+            { y: '-15vh', opacity: 0, ease: 'power2.in' },
+            0.74
+          )
+          .fromTo(robotRef.current,
+            { x: 0, opacity: 1 },
+            { x: '30vw', opacity: 0.2, ease: 'power2.in' },
+            0.70
+          )
+          .to(robotRef.current, { opacity: 0, ease: 'power2.in' }, 0.95);
+      }, section);
 
-    }, section);
-
-    return () => ctx.revert();
+      return () => ctx.revert();
+    });
   }, []);
 
   return (
