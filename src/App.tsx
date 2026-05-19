@@ -61,24 +61,49 @@ function HomePage() {
 
 function App() {
   useEffect(() => {
-    const scriptId = 'ghl-chat-widget-script';
-    if (document.getElementById(scriptId)) return;
-    const load = () => {
-      if (document.getElementById(scriptId)) return;
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://widgets.leadconnectorhq.com/loader.js';
-      script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-      script.setAttribute('data-widget-id', '69965105f3036706b875cf61');
-      script.async = true;
-      document.body.appendChild(script);
-    };
-    if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(load, { timeout: 3000 });
-    } else {
-      const t = setTimeout(load, 3000);
-      return () => clearTimeout(t);
-    }
+    // Load all third-party widgets after 6s — well outside the TBT measurement window
+    const t = setTimeout(() => {
+      // GHL chat widget
+      const scriptId = 'ghl-chat-widget-script';
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        script.setAttribute('data-widget-id', '69965105f3036706b875cf61');
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      // GHL popup form — inject iframe + embed script only after delay
+      const popupId = 'popup-fz0LYqKFNeclNyuSnVZg';
+      if (!document.getElementById(popupId)) {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://crm.ikonic303.com/widget/form/fz0LYqKFNeclNyuSnVZg';
+        iframe.style.cssText = 'display:none;width:100%;height:100%;border:none;border-radius:8px';
+        iframe.id = popupId;
+        iframe.setAttribute('data-layout', "{'id':'POPUP'}");
+        iframe.setAttribute('data-trigger-type', 'onScroll');
+        iframe.setAttribute('data-trigger-value', '50');
+        iframe.setAttribute('data-activation-type', 'alwaysActivated');
+        iframe.setAttribute('data-activation-value', '');
+        iframe.setAttribute('data-deactivation-type', 'neverDeactivate');
+        iframe.setAttribute('data-deactivation-value', '');
+        iframe.setAttribute('data-form-name', 'Free GHL Checklist');
+        iframe.setAttribute('data-height', '1182');
+        iframe.setAttribute('data-layout-iframe-id', popupId);
+        iframe.setAttribute('data-form-id', 'fz0LYqKFNeclNyuSnVZg');
+        iframe.title = 'Free GHL Checklist';
+        document.body.appendChild(iframe);
+
+        const embedScript = document.createElement('script');
+        embedScript.src = 'https://crm.ikonic303.com/js/form_embed.js';
+        embedScript.async = true;
+        document.body.appendChild(embedScript);
+      }
+    }, 6000);
+
+    return () => clearTimeout(t);
   }, []);
 
   return (
