@@ -40,8 +40,23 @@ export default function MatrixBackground() {
     }
 
     let animationId: number;
+    // Mobile devices get ~15fps; desktop runs at full 60fps
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const frameInterval = isMobile ? 1000 / 15 : 0;
+    let lastFrameTime = 0;
 
-    const draw = () => {
+    const draw = (timestamp: number) => {
+      if (document.hidden) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+
+      if (frameInterval > 0 && timestamp - lastFrameTime < frameInterval) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrameTime = timestamp;
+
       ctx.fillStyle = 'rgba(11, 13, 16, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -83,7 +98,7 @@ export default function MatrixBackground() {
       animationId = requestAnimationFrame(draw);
     };
 
-    draw();
+    animationId = requestAnimationFrame(draw);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
