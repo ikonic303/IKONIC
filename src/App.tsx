@@ -36,6 +36,7 @@ const StickerBuilder = lazy(() => import('./pages/StickerBuilder'));
 const ViralBot = lazy(() => import('./pages/ViralBot'));
 const ViralBotAuth = lazy(() => import('./pages/ViralBotAuth'));
 const ViralBotApp = lazy(() => import('./pages/ViralBotApp'));
+const OpsTickerPage = lazy(() => import('./pages/OpsTickerPage'));
 
 function HomePage() {
   return (
@@ -136,6 +137,7 @@ function App() {
             <Route path="/viral-bot" element={<ViralBot />} />
             <Route path="/viral-bot/auth" element={<ViralBotAuth />} />
             <Route path="/viral-bot/app" element={<ViralBotApp />} />
+            <Route path="/ops/:slug" element={<OpsTickerPage />} />
           </Routes>
         </Suspense>
       </div>
