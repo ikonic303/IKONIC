@@ -29,6 +29,9 @@ export default defineConfig({
         '/lost-call-calculator',
         '/branded-to-win',
         '/sticker-builder',
+        '/services/paint-protection-film',
+        '/services/window-tint',
+        '/services/ceramic-coating',
       ],
     }),
   ],
@@ -38,6 +41,7 @@ export default defineConfig({
     },
   },
   build: {
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paint Protection Film (PPF) Denver | See Your Coverage | ikonic</title>
+<meta name="description" content="Paint protection film in Wheat Ridge & Denver. See exactly which panels get covered by each PPF package — partial front, full front, or full body. Free quote: (720) 679-1230.">
+<!--
+  IKONIC — PAINT PROTECTION FILM page (separate SEO page). Brand: near-black + mint green (#1ED88F), bold uppercase.
+  CENTERPIECE: interactive PPF coverage visualizer — pick a package, see which car panels get wrapped (green).
+  Glass areas are non-coverable (stay dark). Reuse the same brand CSS on the tint + ceramic pages.
+-->
+<style>
+  :root{--bg:#080b0a;--bg2:#0d1411;--card:#111c17;--line:#1f2e27;--ink:#eef5f1;--muted:#8aa399;--green:#1ED88F;--glow:0 0 40px rgba(30,216,143,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.eyebrow{font-weight:800;letter-spacing:-.01em;text-transform:uppercase;line-height:1.04}
+  h1{font-size:clamp(34px,6vw,64px)} h2{font-size:clamp(24px,4vw,40px);margin:0 0 8px}
+  .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--green);margin-bottom:14px}
+  .grn{color:var(--green)} p.lead{color:var(--muted);font-size:18px;max-width:640px}
+  .btn{display:inline-block;background:var(--green);color:#04110b;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:14px;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;box-shadow:var(--glow);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)} .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  header.hero{padding:70px 0 30px;background:radial-gradient(900px 380px at 78% -10%,rgba(30,216,143,.16),transparent 60%)}
+  .hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  /* VISUALIZER */
+  .vizcard{background:linear-gradient(160deg,var(--card),#0b1410);border:1px solid var(--line);border-radius:20px;padding:24px}
+  .pkgs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .pkg{flex:1;min-width:150px;text-align:center;background:var(--bg2);border:1px solid var(--line);color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:13px;padding:14px 10px;border-radius:12px;cursor:pointer}
+  .pkg .pr{display:block;font-size:12px;color:var(--green);margin-top:4px;letter-spacing:.02em}
+  .pkg.on{color:#04110b;background:var(--green);border-color:var(--green);box-shadow:var(--glow)}
+  .pkg.on .pr{color:#04110b}
+  .szlbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .sizes{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+  .size{flex:1;min-width:108px;text-align:center;background:var(--bg2);border:1px solid var(--line);color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em;padding:11px 8px;border-radius:10px;cursor:pointer}
+  .size.on{background:var(--green);color:#04110b;border-color:var(--green);box-shadow:var(--glow)}
+  .carwrap{background:#0a120e;border:1px solid var(--line);border-radius:14px;padding:10px}
+  svg.car{width:100%;height:auto;display:block}
+  .panel{fill:#16241d;stroke:#26392f;stroke-width:1.5;transition:fill .3s, filter .3s}
+  .panel.covered{fill:url(#grad);stroke:var(--green);filter:drop-shadow(0 0 6px rgba(30,216,143,.55))}
+  .glass{fill:#0e1a22;stroke:#1c2a30;stroke-width:1.5}
+  .wheel{fill:#0a0d0c;stroke:#2c4339;stroke-width:3}
+  .hubcap{fill:#16241d}
+  .lbl{font:600 11px/1 sans-serif;fill:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .cov-note{color:var(--muted);font-size:15px;margin-top:14px;min-height:44px}
+  .cov-note b{color:var(--ink)}
+  /* tiers */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+  .tier{background:linear-gradient(160deg,var(--card),#0c1512);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .tier.feat{border-color:var(--green);box-shadow:var(--glow)}
+  .tier h3{font-size:20px} .tier .price{font-size:26px;font-weight:800;color:var(--green);margin:8px 0}
+  .tier ul{list-style:none;margin:12px 0 0;font-size:14px;color:var(--muted)} .tier li{padding:6px 0;border-bottom:1px solid var(--line)}
+  .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#04110b;background:var(--green);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .faq h3{font-size:17px;margin:18px 0 4px} .faq p{color:var(--muted)}
+  footer.cta-band{padding:60px 0;text-align:center;background:radial-gradient(700px 300px at 50% 120%,rgba(30,216,143,.18),transparent)}
+  .fine{color:var(--muted);font-size:13px;margin-top:10px}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Paint Protection Film · Wheat Ridge / Denver</div>
+  <h1>Stop rock chips<br><span class="grn">before they start.</span></h1>
+  <p class="lead">Self-healing paint protection film shields your paint from rock chips, scratches, and road rash. Not sure how much coverage you need? <strong>Pick a package below and see exactly which panels we wrap.</strong></p>
+  <div class="cta"><a class="btn" href="tel:+17206791230">Get my free quote</a><a class="btn ghost" href="#viz">See coverage ↓</a></div>
+</div></header>
+
+<section id="viz"><div class="wrap">
+  <div class="eyebrow">Coverage Visualizer</div>
+  <h2>See what gets <span class="grn">covered</span></h2>
+  <p class="lead" style="margin-bottom:22px">Tap a package — the green panels are wrapped in film.</p>
+  <div class="vizcard">
+    <div class="szlbl">1. Your vehicle size</div>
+    <div class="sizes" id="sizes">
+      <div class="size" data-size="coupe">Coupe / 2-Door</div>
+      <div class="size on" data-size="sedan">Sedan / Sm SUV</div>
+      <div class="size" data-size="suv">SUV / Truck</div>
+      <div class="size" data-size="xl">XL / 3-Row</div>
+    </div>
+    <div class="szlbl">2. Your coverage</div>
+    <div class="pkgs">
+      <div class="pkg" data-pkg="partial">Partial Front<span class="pr" data-price="partial">from $899</span></div>
+      <div class="pkg on" data-pkg="full-front">Full Front<span class="pr" data-price="full-front">from $1,799</span></div>
+      <div class="pkg" data-pkg="full">Full Body<span class="pr" data-price="full">from $5,999</span></div>
+    </div>
+    <div class="carwrap">
+      <svg class="car" viewBox="0 0 720 300" id="car" aria-label="Tesla Model 3 PPF coverage diagram">
+        <defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#27f0a2"/><stop offset="1" stop-color="#12b574"/>
+        </linearGradient></defs>
+        <!-- greenhouse glass (non-coverable) — Model 3 fastback -->
+        <path class="glass" d="M286,138 C306,116 338,94 372,90 C414,85 458,87 486,94 C534,106 572,122 598,138 Z"/>
+        <!-- coverable panels (front = left) -->
+        <path class="panel" data-p="frontBumper" d="M44,200 C42,172 54,154 90,150 L108,150 L108,200 Z"/>
+        <path class="panel" data-p="hoodLeading" d="M108,150 L170,145 L170,166 L108,166 Z"/>
+        <path class="panel" data-p="hoodMain" d="M170,145 C210,141 255,138 286,138 L294,158 L170,166 Z"/>
+        <path class="panel" data-p="fender" d="M108,166 L294,158 L300,176 L300,214 L108,214 Z"/>
+        <path class="panel" data-p="aPillar" d="M286,138 C306,116 338,94 372,90 L380,96 C342,102 312,124 296,146 Z"/>
+        <path class="panel" data-p="mirror" d="M298,150 L322,146 L324,160 L298,162 Z"/>
+        <path class="panel" data-p="roof" d="M372,86 C414,81 458,83 486,90 L484,100 C458,93 416,91 374,96 Z"/>
+        <path class="panel" data-p="frontDoor" d="M300,148 L300,214 L424,214 L424,148 Z"/>
+        <path class="panel" data-p="rearDoor" d="M424,148 L536,148 L536,214 L424,214 Z"/>
+        <path class="panel" data-p="rocker" d="M236,210 L548,210 L548,221 L236,221 Z"/>
+        <path class="panel" data-p="rearQuarter" d="M536,148 L598,140 L618,162 L618,214 L536,214 Z"/>
+        <path class="panel" data-p="trunk" d="M598,138 L648,144 C668,147 676,156 678,170 L618,162 L598,150 Z"/>
+        <path class="panel" data-p="rearBumper" d="M678,170 C682,182 682,200 680,206 L618,206 L618,162 L678,170 Z"/>
+        <!-- wheels -->
+        <circle class="wheel" cx="188" cy="216" r="44"/><circle class="hubcap" cx="188" cy="216" r="18"/>
+        <circle class="wheel" cx="540" cy="216" r="44"/><circle class="hubcap" cx="540" cy="216" r="18"/>
+      </svg>
+    </div>
+    <div class="cov-note" id="covNote"></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Packages</div>
+  <h2>Choose your <span class="grn">coverage level</span></h2>
+  <div class="grid">
+    <div class="tier"><h3>Partial Front</h3><div class="price" data-price="partial">from $899</div><ul><li>Full front bumper</li><li>Hood leading edge (~18–24")</li><li>Fender leading edges</li><li>Side mirror caps</li><li>Self-healing film + up to 10-yr warranty</li></ul></div>
+    <div class="tier feat"><div class="badge">Most Popular</div><h3>Full Front</h3><div class="price" data-price="full-front">from $1,799</div><ul><li>Everything in Partial, plus:</li><li>Full hood + full fenders</li><li>Full headlights + A-pillars</li><li>Mirrors</li><li>Complete front-impact zone, edge-to-edge</li></ul></div>
+    <div class="tier"><h3>Full Body</h3><div class="price" data-price="full">from $5,999</div><ul><li>Every painted panel wrapped</li><li>Doors, rockers, quarters, trunk, roof, bumpers</li><li>Optional door cups + door edges</li><li>Matte/stealth + color PPF available</li><li>Add ceramic coating on top</li></ul></div>
+  </div>
+  <p class="fine">Starting prices vary by vehicle size + film line; exact number from a free assessment. Pairs perfectly with ceramic coating.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Why ikonic</div>
+  <h2>Film that <span class="grn">heals itself.</span></h2>
+  <p class="lead">Premium self-healing PPF — light scratches and swirl marks vanish with heat from the sun. Optically clear so your paint looks untouched, with a multi-year manufacturer warranty. Precision computer-cut patterns mean clean edges and full coverage on every panel we wrap, installed in-house in Wheat Ridge.</p>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <div class="eyebrow">FAQ</div>
+  <h2>PPF <span class="grn">questions</span></h2>
+  <h3>How much does paint protection film cost in Denver?</h3>
+  <p>Partial front starts around $899, full front around $1,799, and full-body wraps from $5,999 — final pricing depends on your vehicle and film line. Get an exact number from a free assessment.</p>
+  <h3>What's the difference between partial and full front?</h3>
+  <p>Partial covers the bumper, the leading edge of the hood, fender edges, and mirrors. Full front extends to the entire hood and fenders plus headlights and A-pillars — the complete highway rock-chip zone. Use the visualizer above to see the difference.</p>
+  <h3>Does PPF really self-heal?</h3>
+  <p>Yes — quality films have a self-healing topcoat; minor scratches and swirls disappear with heat from the sun or warm water.</p>
+  <h3>Can I add ceramic coating over PPF?</h3>
+  <p>Absolutely — ceramic on top of PPF adds gloss and makes the film easier to keep clean. Ask us about bundling.</p>
+</div></section>
+
+<footer class="cta-band"><div class="wrap">
+  <div class="eyebrow">Wheat Ridge · Arvada · Lakewood · Golden · Denver</div>
+  <h2>Protect your <span class="grn">paint.</span></h2>
+  <p class="lead" style="margin:10px auto 0">Free assessment, real quote, in-house install.</p>
+  <div style="margin-top:24px"><a class="btn" href="tel:+17206791230">Call (720) 679-1230</a> <a class="btn ghost" href="mailto:info@ikonicmarketing303.com">Email us</a></div>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"Paint Protection Film (PPF)","provider":{"@type":"LocalBusiness","name":"ikonic","telephone":"+1-720-679-1230","email":"info@ikonicmarketing303.com","areaServed":["Wheat Ridge","Arvada","Lakewood","Golden","Denver"],"url":"https://ikonic303.com/paint-protection-film"}}
+</script>
+
+<script>
+(function(){
+  var SETS={
+    partial:['frontBumper','hoodLeading','fender','mirror'],
+    'full-front':['frontBumper','hoodLeading','hoodMain','fender','mirror','aPillar'],
+    full:['frontBumper','hoodLeading','hoodMain','fender','mirror','aPillar','roof','frontDoor','rearDoor','rocker','rearQuarter','trunk','rearBumper']
+  };
+  var NOTES={
+    partial:'<b>Partial Front</b> — front bumper, leading edge of the hood, fender edges, and mirrors. The high-impact zones, budget-friendly.',
+    'full-front':'<b>Full Front</b> — the entire hood and fenders, headlights, A-pillars, and mirrors. The complete highway rock-chip zone, and our most popular package.',
+    full:'<b>Full Body</b> — every painted panel wrapped in self-healing film. Maximum protection and resale value.'
+  };
+  var panels=document.querySelectorAll('.panel'), covNote=document.getElementById('covNote');
+  function apply(pkg){
+    var set=SETS[pkg];
+    panels.forEach(function(p){p.classList.toggle('covered', set.indexOf(p.getAttribute('data-p'))>-1);});
+    covNote.innerHTML=NOTES[pkg];
+    document.querySelectorAll('.pkg').forEach(function(b){b.classList.toggle('on',b.dataset.pkg===pkg);});
+  }
+  document.querySelectorAll('.pkg').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.pkg);});});
+
+  // vehicle-size pricing
+  var PRICES={
+    coupe:{partial:799, 'full-front':1499, full:4999},
+    sedan:{partial:899, 'full-front':1799, full:5999},
+    suv:{partial:1099,'full-front':2199, full:7299},
+    xl:{partial:1299,'full-front':2499, full:8499}
+  };
+  function money(n){return 'from $'+n.toLocaleString();}
+  function setSize(size){
+    var row=PRICES[size];
+    document.querySelectorAll('[data-price]').forEach(function(el){el.textContent=money(row[el.getAttribute('data-price')]);});
+    document.querySelectorAll('.size').forEach(function(b){b.classList.toggle('on',b.dataset.size===size);});
+  }
+  document.querySelectorAll('.size').forEach(function(b){b.addEventListener('click',function(){setSize(b.dataset.size);});});
+
+  apply('full-front');
+  setSize('sedan');
+})();
+</script>
+</body>
+</html>
