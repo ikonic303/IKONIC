@@ -304,9 +304,9 @@ export default function BrandedToWin() {
               </div>
               <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: GOLD }}>The Complete Bundle</p>
               <p className="text-white/50 text-xs mb-3">Designed for the serious owner ready to dominate their local market</p>
-              <div className="flex items-end gap-1 mb-6">
-                <span className="font-display text-5xl font-bold text-white">$24.50</span>
-                <span className="text-white/40 mb-2">/one-time</span>
+              <div className="flex items-end gap-3 mb-6">
+                <span className="font-display text-3xl font-bold text-white/30 line-through">$24.50</span>
+                <span className="font-display text-5xl font-bold" style={{ color: GOLD }}>FREE</span>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {[
@@ -325,7 +325,7 @@ export default function BrandedToWin() {
                 style={{ background: GOLD }}>
                 Get the Complete Bundle
               </a>
-              <p className="text-center text-white/30 text-xs mt-3">30-day money-back guarantee</p>
+              <p className="text-center text-white/30 text-xs mt-3">Free for a limited time</p>
             </div>
           </div>
         </div>
