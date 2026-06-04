@@ -277,9 +277,9 @@ export default function BrandedToWin() {
             {/* Digital */}
             <div className="bg-[#1a1a1a]/80 border border-white/10 rounded-2xl p-8 flex flex-col">
               <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-2">Digital Edition</p>
-              <div className="flex items-end gap-1 mb-6">
-                <span className="font-display text-5xl font-bold text-white">$9.50</span>
-                <span className="text-white/40 mb-2">/one-time</span>
+              <div className="flex items-end gap-3 mb-6">
+                <span className="font-display text-3xl font-bold text-white/30 line-through">$9.50</span>
+                <span className="font-display text-5xl font-bold" style={{ color: GOLD }}>FREE</span>
               </div>
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {['Branded to Win eBook (PDF, ePub, Mobi)', 'Lifetime updates to digital editions'].map(f => (
@@ -289,9 +289,9 @@ export default function BrandedToWin() {
                 ))}
               </ul>
               <a href="https://crm.ikonic303.com/payment-link/69e2b311557558e89e520b78" target="_blank" rel="noopener noreferrer"
-                className="w-full text-center font-bold py-3 rounded-xl border transition-all hover:bg-white/5 text-white"
-                style={{ borderColor: `${GOLD}50` }}>
-                Get Digital Edition
+                className="w-full text-center font-bold py-3 rounded-xl transition-all hover:-translate-y-0.5 text-black"
+                style={{ background: GOLD }}>
+                Get Free eBook
               </a>
             </div>
 
@@ -377,7 +377,7 @@ export default function BrandedToWin() {
             <a href="https://brandedtowin.com" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl text-black transition-all hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: GOLD }}>
-              <Download className="w-5 h-5" /> Get the Book — $24.50
+              <Download className="w-5 h-5" /> Get the Free eBook
             </a>
             <Link to="/contact"
               className="flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl border text-white transition-all hover:bg-white/5"
