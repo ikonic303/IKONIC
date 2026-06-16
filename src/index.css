@@ -129,6 +129,57 @@
   }
 }
 
+/* Guarantee dark background on every device — never flash white */
+html,
+body {
+  background-color: #0B0D10;
+}
+
+/* ── Mobile overrides ────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Section pinned: let height be driven by content, not forced 100vh */
+  .section-pinned {
+    height: auto !important;
+    min-height: 100svh;
+    overflow: visible !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  /* Prevent any element from breaking the viewport width */
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  /* Full-width containers should not have horizontal overflow */
+  body, #root {
+    overflow-x: hidden;
+  }
+
+  /* Grid: collapse all multi-column grids to 1 column on mobile */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .md\:grid-cols-2,
+  .md\:grid-cols-3,
+  .lg\:grid-cols-2,
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove horizontal padding that was set for desktop */
+  .px-\[6vw\] {
+    padding-left: max(16px, 4vw) !important;
+    padding-right: max(16px, 4vw) !important;
+  }
+
+  /* Navigation logo size on mobile */
+  nav img {
+    height: 48px !important;
+  }
+}
+
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;

@@ -37,11 +37,33 @@ select:focus {
 /* Responsive typography adjustments */
 @media (max-width: 768px) {
   .text-display {
-    font-size: clamp(36px, 10vw, 64px) !important;
+    font-size: clamp(32px, 9vw, 60px) !important;
   }
-  
+
   .text-headline {
-    font-size: clamp(28px, 8vw, 48px) !important;
+    font-size: clamp(24px, 7vw, 44px) !important;
+  }
+
+  /* Prevent horizontal scroll from oversized elements */
+  img, video, iframe, canvas {
+    max-width: 100%;
+  }
+
+  /* Tighter horizontal padding on very small screens */
+  .px-\[6vw\] {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  /* Blog card grid: single column on mobile */
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure buttons don't overflow */
+  .btn-primary, .btn-outline {
+    font-size: 0.9rem;
+    padding: 0.625rem 1.25rem;
   }
 }
 

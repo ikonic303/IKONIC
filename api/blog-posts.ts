@@ -19,40 +19,96 @@ function resolveNuxtArr(arr: any[], idx: number, depth = 0): any {
   return val;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+async function upstash(command: unknown[]): Promise<any> {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return { result: null };
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(command),
+  });
+  return res.json();
+}
+
+async function getRedisPublishedPosts() {
   try {
-    const html = await fetch(GHL_BLOG_URL, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-    }).then(r => r.text());
+    const slugsData = await upstash(['SMEMBERS', 'blog:slugs']);
+    const slugs: string[] = slugsData.result || [];
+    if (!slugs.length) return [];
 
-    const match = html.match(/__NUXT_DATA__">\[(.+?)\]<\/script/s);
-    if (!match) return res.status(502).json({ error: 'Could not find blog data in page' });
+    const results = await Promise.all(
+      slugs.map(async (slug) => {
+        const d = await upstash(['GET', `blog:post:${slug}`]);
+        if (!d.result) return null;
+        return JSON.parse(d.result);
+      }),
+    );
 
-    const arr: any[] = JSON.parse('[' + match[1] + ']');
+    return results
+      .filter((p) => p && p.status === 'published')
+      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+      .map((p) => ({
+        title: p.title,
+        excerpt: p.excerpt,
+        slug: p.slug,
+        link: `/post/${p.slug}`,
+        date: new Date(p.publishedAt).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        }),
+        author: p.author,
+        category: p.category,
+        image: '',
+      }));
+  } catch {
+    return [];
+  }
+}
 
-    // Find the blogPosts key index in the state object
-    const stateStr = JSON.stringify(arr);
-    const blogKeyMatch = stateStr.match(/"blogPosts-[^"]+":(\d+)/);
-    if (!blogKeyMatch) return res.status(502).json({ error: 'blogPosts key not found' });
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  try {
+    const [redisPosts, ghlHtml] = await Promise.all([
+      getRedisPublishedPosts(),
+      fetch(GHL_BLOG_URL, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      }).then((r) => r.text()).catch(() => ''),
+    ]);
 
-    const blogRootIdx = parseInt(blogKeyMatch[1]);
-    const blogData = resolveNuxtArr(arr, blogRootIdx);
-    const rawPosts: any[] = blogData?.blogPosts ?? [];
+    let ghlPosts: any[] = [];
 
-    const posts = rawPosts.map((p: any) => ({
-      title: p.title ?? '',
-      excerpt: p.description ?? '',
-      slug: p.urlSlug ?? '',
-      link: p.canonicalLink ?? `https://go.ikonicmarketing303.com/post/${p.urlSlug}`,
-      date: p.publishedAt
-        ? new Date(p.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-        : '',
-      author: p.author?.name ?? 'Ikonic Team',
-      category: p.categories?.[0]?.label?.replace(/-/g, ' ') ?? 'Marketing',
-      image: p.imageUrl ?? '',
-    }));
+    if (ghlHtml) {
+      const match = ghlHtml.match(/__NUXT_DATA__">\[(.+?)\]<\/script/s);
+      if (match) {
+        const arr: any[] = JSON.parse('[' + match[1] + ']');
+        const stateStr = JSON.stringify(arr);
+        const blogKeyMatch = stateStr.match(/"blogPosts-[^"]+":(\d+)/);
+        if (blogKeyMatch) {
+          const blogRootIdx = parseInt(blogKeyMatch[1]);
+          const blogData = resolveNuxtArr(arr, blogRootIdx);
+          const rawPosts: any[] = blogData?.blogPosts ?? [];
 
-    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
+          ghlPosts = rawPosts.map((p: any) => ({
+            title: p.title ?? '',
+            excerpt: p.description ?? '',
+            slug: p.urlSlug ?? '',
+            link: p.canonicalLink ?? `https://go.ikonicmarketing303.com/post/${p.urlSlug}`,
+            date: p.publishedAt
+              ? new Date(p.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+              : '',
+            author: p.author?.name ?? 'Ikonic Team',
+            category: p.categories?.[0]?.label?.replace(/-/g, ' ') ?? 'Marketing',
+            image: p.imageUrl ?? '',
+          }));
+        }
+      }
+    }
+
+    const posts = [...redisPosts, ...ghlPosts];
+    if (!posts.length) return res.status(502).json({ error: 'Could not load blog posts' });
+
+    res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');
     return res.status(200).json({ posts });
   } catch (err: any) {
     return res.status(500).json({ error: err.message ?? 'Failed to load blog posts' });

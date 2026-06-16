@@ -2,6 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "crons": [
+    {
+      "path": "/api/auto-blog-generate",
+      "schedule": "0 14 * * *"
+    }
+  ],
   "rewrites": [
     { "source": "/services/paint-protection-film", "destination": "/paint-protection-film.html" },
     { "source": "/services/window-tint", "destination": "/window-tint.html" },

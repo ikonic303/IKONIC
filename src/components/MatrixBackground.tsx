@@ -7,11 +7,6 @@ const MATRIX_CHARS = FLIPPED_KATAKANA + FLIPPED_SYMBOLS;
 export default function MatrixBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Skip entirely on mobile — canvas animation is too expensive for mobile CPUs
-  if (typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches) {
-    return null;
-  }
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -19,25 +14,40 @@ export default function MatrixBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const mobile = window.innerWidth <= 768;
+    const dpr = window.devicePixelRatio || 1;
+    const fontSize = mobile ? 14 : 16;
+    const colStep = mobile ? 2 : 1;
+    const frameMs = mobile ? 66 : 33;
+
+    let logicalW = 0;
+    let logicalH = 0;
+
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      logicalW = window.innerWidth;
+      logicalH = window.innerHeight;
+      // Scale canvas to device pixel ratio for sharp rendering on HiDPI/retina screens
+      canvas.width = logicalW * dpr;
+      canvas.height = logicalH * dpr;
+      canvas.style.width = logicalW + 'px';
+      canvas.style.height = logicalH + 'px';
+      // Setting canvas.width resets the context, so reapply scale after every resize
+      ctx.scale(dpr, dpr);
     };
+
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas, { passive: true });
 
-    const fontSize = 16;
-    const columns = Math.ceil(canvas.width / fontSize);
+    const totalCols = Math.ceil(window.innerWidth / fontSize);
+    const activeCols = Math.ceil(totalCols / colStep);
 
-    const drops: number[] = [];
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * -canvas.height;
-    }
-
-    const speeds: number[] = [];
-    for (let i = 0; i < columns; i++) {
-      speeds[i] = Math.random() * 2 + 1;
-    }
+    const drops: number[] = Array.from({ length: activeCols }, () =>
+      Math.random() * -logicalH
+    );
+    // Mobile runs at 15fps vs 30fps desktop — double per-frame distance to match visual speed
+    const speeds: number[] = Array.from({ length: activeCols }, () =>
+      mobile ? Math.random() * 4 + 2.5 : Math.random() * 1.5 + 0.8
+    );
 
     let animationId: number;
     let lastFrameTime = 0;
@@ -47,34 +57,31 @@ export default function MatrixBackground() {
         animationId = requestAnimationFrame(draw);
         return;
       }
-
-      // Cap at 30fps on desktop to reduce CPU usage
-      if (timestamp - lastFrameTime < 33) {
+      if (timestamp - lastFrameTime < frameMs) {
         animationId = requestAnimationFrame(draw);
         return;
       }
       lastFrameTime = timestamp;
 
-      ctx.fillStyle = 'rgba(11, 13, 16, 0.08)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Slow fade so trails persist — 0.06 keeps characters visible for ~1s at 15fps
+      ctx.fillStyle = 'rgba(11,13,16,0.06)';
+      ctx.fillRect(0, 0, logicalW, logicalH);
 
       ctx.font = `bold ${fontSize}px monospace`;
       ctx.textBaseline = 'top';
 
       for (let i = 0; i < drops.length; i++) {
         const char = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
-        const x = i * fontSize;
+        const x = i * fontSize * colStep;
         const y = drops[i];
 
         const isBright = Math.random() > 0.97;
-
         if (isBright) {
           ctx.fillStyle = '#ccffcc';
           ctx.shadowColor = '#00ff41';
-          ctx.shadowBlur = 15;
+          ctx.shadowBlur = 14;
         } else {
-          const brightness = Math.random() * 0.4 + 0.6;
-          ctx.fillStyle = `rgba(0, 255, 65, ${brightness})`;
+          ctx.fillStyle = `rgba(0,255,65,${Math.random() * 0.25 + 0.75})`;
           ctx.shadowBlur = 0;
         }
 
@@ -86,10 +93,9 @@ export default function MatrixBackground() {
         ctx.restore();
 
         drops[i] += speeds[i];
-
-        if (drops[i] > canvas.height) {
+        if (drops[i] > logicalH) {
           drops[i] = -fontSize;
-          speeds[i] = Math.random() * 2 + 1;
+          speeds[i] = Math.random() * 1.5 + 0.8;
         }
       }
 
@@ -108,7 +114,7 @@ export default function MatrixBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ opacity: 0.7, zIndex: 0, background: 'transparent' }}
+      style={{ opacity: 0.9, zIndex: 0, background: '#0B0D10' }}
     />
   );
 }

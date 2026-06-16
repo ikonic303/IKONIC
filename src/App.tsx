@@ -62,6 +62,25 @@ function HomePage() {
 
 function App() {
   useEffect(() => {
+    // Meta Pixel — inject immediately so it fires on every page load
+    if (!(window as any).fbq) {
+      const fbq: any = function() {
+        fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+      };
+      (window as any).fbq = fbq;
+      (window as any)._fbq = fbq;
+      fbq.push = fbq;
+      fbq.loaded = true;
+      fbq.version = '2.0';
+      fbq.queue = [];
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(script);
+      fbq('init', '694226731767712');
+      fbq('track', 'PageView');
+    }
+
     // Load all third-party widgets after 6s — well outside the TBT measurement window
     const t = setTimeout(() => {
       // GHL chat widget

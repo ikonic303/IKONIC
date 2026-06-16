@@ -91,39 +91,39 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       id="home"
-      className="section-pinned bg-charcoal/80 backdrop-blur-sm z-10 overflow-hidden"
+      className="section-pinned bg-charcoal/80 backdrop-blur-sm z-10"
     >
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center">
-        <div className="w-full px-[6vw] grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="relative z-20 flex items-center min-h-[100svh] lg:h-full">
+        <div className="w-full px-[6vw] py-24 lg:py-0 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left - Text content */}
           <div className="max-w-2xl">
-            <h1 ref={headlineRef} className="space-y-2 mb-8">
-              <div className="headline-line text-headline text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
+            <h1 ref={headlineRef} className="space-y-1 mb-6">
+              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
                 DIGITAL MARKETING
               </div>
-              <div className="headline-line text-headline text-4xl md:text-5xl lg:text-6xl leading-tight">
+              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                 <span className="text-offwhite">AUTOMATION: YOUR</span>{' '}
                 <span className="text-mint drop-shadow-[0_0_15px_rgba(0,255,157,0.8)]">24/7</span>
               </div>
-              <div className="headline-line text-headline text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
+              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
                 LEAD CAPTURE SYSTEM
               </div>
             </h1>
 
             <p
               ref={subheadRef}
-              className="text-lg md:text-xl text-offwhite-dark leading-relaxed mb-10 max-w-xl"
+              className="text-base md:text-xl text-offwhite-dark leading-relaxed mb-8 max-w-xl"
             >
               We help Denver-area businesses build complete automated sales systems — from
               high-converting websites and sales funnels to CRM, automation, and lead flow —
               all inside one powerful, custom platform.
             </p>
 
-            <div ref={ctaRef} className="flex flex-wrap gap-4">
+            <div ref={ctaRef} className="flex flex-wrap gap-3">
               <Link 
                 to="/contact"
                 className="btn-primary flex items-center gap-2"

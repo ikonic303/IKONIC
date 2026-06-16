@@ -114,11 +114,53 @@ async function fetchFromPreview(slug: string): Promise<{ content: string; debug:
   }
 }
 
+// ── Redis helper ─────────────────────────────────────────────────────────────
+
+async function getRedisPost(slug: string) {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(['GET', `blog:post:${slug}`]),
+    });
+    const data = await res.json();
+    if (!data.result) return null;
+    const post = JSON.parse(data.result);
+    if (post.status !== 'published') return null;
+    const wordCount = post.content.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+    return {
+      title: post.title,
+      description: post.excerpt,
+      content: post.content,
+      urlSlug: post.slug,
+      image: '',
+      imageAlt: '',
+      author: post.author,
+      publishedAt: post.publishedAt,
+      category: post.category,
+      tags: post.tags,
+      readTime: Math.max(1, Math.round(wordCount / 200)),
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ── Main handler ─────────────────────────────────────────────────────────────
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { slug, _debug } = req.query;
   if (!slug || typeof slug !== 'string') return res.status(400).json({ error: 'slug required' });
+
+  // Check Redis-published posts first
+  const redisPost = await getRedisPost(slug);
+  if (redisPost) {
+    res.setHeader('Cache-Control', 'no-store');
+    return res.status(200).json(redisPost);
+  }
 
   try {
     const listingHtml = await fetch(`${GHL_BASE_URL}/blogs`, { headers: { 'User-Agent': UA } }).then(r => r.text());
