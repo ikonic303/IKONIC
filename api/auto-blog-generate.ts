@@ -6,20 +6,30 @@ import { randomUUID } from 'node:crypto';
 export const maxDuration = 60;
 
 const TOPICS = [
-  "Why Vehicle Wraps Are Denver's Best ROI Marketing Investment",
-  '5 Signs Your Business Brand Is Costing You Customers',
-  'How to Rank #1 on Google Maps as a Local Service Business',
-  'The Real Cost of Ignoring Online Reviews (And How to Fix It)',
-  'Paint Protection Film vs. Ceramic Coating: Which Is Right for You?',
-  'The 90-Day Local Marketing Plan for Service Businesses',
-  'How CRM Automation Can Double Your Lead Conversion Rate',
-  'Window Tinting: A Complete Guide for Denver Drivers',
-  'From One Truck to a Fleet: Scaling a Local Service Business with Brand',
-  'Why Most Small Business Websites Fail to Convert (And How to Fix Yours)',
-  'The Hidden Cost of a Weak Brand for Local Service Businesses',
-  'Ceramic Coating vs. Waxing: What Denver Vehicle Owners Need to Know',
-  'GoHighLevel for Small Business: A Beginners Guide to Lead Automation',
-  'How to Use Your Fleet as a Mobile Billboard (And Track the ROI)',
+  // Digital Marketing
+  'How Denver Businesses Can Use Digital Marketing to Get More Leads This Month',
+  'The ROI of Digital Marketing for Local Service Companies in Colorado',
+  'Email Automation vs. Social Media: Which Drives More Leads for Denver Businesses?',
+  'How to Build a 24/7 Lead Generation System with Digital Marketing',
+  'Google Ads vs. Meta Ads: Which Is Better for Denver Local Businesses?',
+  'Why Every Denver Service Business Needs a CRM and Marketing Automation System',
+  // Signage
+  'How Business Signage Drives Walk-In Traffic and Brand Recognition in Denver',
+  'Indoor vs. Outdoor Signage: What Denver Businesses Need to Know',
+  'The Psychology of Effective Business Signage: What Makes Customers Stop and Look',
+  'How to Choose the Right Signage for Your Denver Business Location',
+  // Commercial Wraps
+  'How Commercial Vehicle Wraps Turn Denver Fleets Into Mobile Billboards',
+  'The True ROI of Commercial Wraps for Denver Service Businesses',
+  'Full Wrap vs. Partial Wrap: Which Is Right for Your Denver Business Fleet?',
+  'How to Design a Commercial Wrap That Gets Your Denver Business Noticed',
+  'Fleet Branding 101: Wrapping Multiple Vehicles for Maximum Impact in Colorado',
+  // Wayfinding Signage
+  'What Is Wayfinding Signage and Why Does Your Denver Business Need It?',
+  'How Wayfinding Signage Improves the Customer Experience at Your Location',
+  'Interior Wayfinding Signs: Helping Customers Navigate Your Denver Business',
+  'Wayfinding Signage for Office Buildings and Commercial Properties in Denver',
+  'How to Design a Wayfinding System That Reflects Your Brand in Colorado',
 ];
 
 async function upstash(command: unknown[]) {
@@ -54,7 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const topic = TOPICS[Math.floor(Math.random() * TOPICS.length)];
 
   const ai = new GoogleGenAI({ apiKey: geminiKey });
-  const prompt = `You are a professional content writer for Ikonic Marketing, a Denver-based digital marketing and vehicle protection company (vehicle wraps, paint protection film, ceramic coating, window tinting, GoHighLevel CRM automation).
+  const prompt = `You are a professional content writer for Ikonic Marketing, a Denver-based company specializing in digital marketing, business signage, commercial vehicle wraps, and wayfinding signage.
 
 Write a high-quality, SEO-optimized blog post on this topic: "${topic}"
 
@@ -64,11 +74,11 @@ Return ONLY a single valid JSON object — no markdown, no code fences, just the
   "slug": "url-friendly-slug-with-hyphens-only",
   "excerpt": "2-3 sentence compelling description for the blog listing page",
   "content": "full article as clean HTML (use h2, h3, p, ul, li, strong tags; 900-1300 words; no outer html/body/head tags; no inline styles; no class attributes)",
-  "category": "one of: Marketing, Vehicle Protection, Branding, Local SEO, Automation",
+  "category": "one of: Digital Marketing, Signage, Commercial Wraps, Wayfinding Signage",
   "tags": ["tag1", "tag2", "tag3", "tag4"]
 }
 
-Make it genuinely helpful and relevant to Denver service business owners. Include real actionable advice. Write at an 8th-grade reading level. Mention Denver or Colorado where natural.`;
+Make it genuinely helpful and relevant to Denver business owners. Include real actionable advice. Write at an 8th-grade reading level. Mention Denver or Colorado where natural.`;
 
   let postData: {
     title: string;
