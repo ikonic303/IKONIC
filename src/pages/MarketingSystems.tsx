@@ -7,8 +7,21 @@ import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
 import PageSEO from '../components/PageSEO';
+import FaqSection, { type FaqItem } from '../components/FaqSection';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Visible FAQ + FAQPage JSON-LD share this single source so they always match.
+const marketingFaqs: FaqItem[] = [
+  {
+    question: 'Does Ikonic offer digital marketing?',
+    answer: 'Yes. Monthly retainers for local service businesses.',
+  },
+  {
+    question: 'What areas does Ikonic serve?',
+    answer: 'Wheat Ridge, Arvada, Lakewood, Golden, and Denver.',
+  },
+];
 
 const features = [
   'Complete marketing campaign management',
@@ -256,6 +269,13 @@ export default function MarketingSystems() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section — visible accordion + matching FAQPage JSON-LD */}
+      <FaqSection
+        items={marketingFaqs}
+        title="Digital Marketing FAQ"
+        subtitle="Common questions about our marketing services and service area."
+      />
 
       {/* CTA */}
       <section className="py-20 px-[6vw] bg-charcoal-light/80 backdrop-blur-sm relative z-10">

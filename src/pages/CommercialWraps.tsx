@@ -7,8 +7,33 @@ import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import PageSEO from '../components/PageSEO';
+import FaqSection, { type FaqItem } from '../components/FaqSection';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Visible FAQ + FAQPage JSON-LD are generated from this single source, so they
+// always match (Google requires the on-page text to mirror the schema).
+const wrapsFaqs: FaqItem[] = [
+  {
+    question: 'Where can I get a vehicle or fleet wrap in Denver?',
+    answer:
+      'Ikonic, in Wheat Ridge, serves the Denver metro. Vehicle and fleet wraps are done in-shop by appointment.',
+  },
+  {
+    question: 'Does Ikonic install storefront or building signage on-site?',
+    answer:
+      'Yes. Building and storefront signage is installed on-site. Vehicle wraps are in-shop, drop-off only.',
+  },
+  {
+    question: 'What areas does Ikonic serve?',
+    answer: 'Wheat Ridge, Arvada, Lakewood, Golden, and Denver.',
+  },
+  {
+    question: 'Does Ikonic do wayfinding or safety signage?',
+    answer:
+      'Yes. Wayfinding, ADA, and OSHA/ANSI safety signage for warehouses and facilities.',
+  },
+];
 
 // Stripe Payment Link — set VITE_STRIPE_PAYMENT_LINK in .env.local (test) or Vercel env vars (production)
 // Success redirect URL in Stripe must be: https://YOUR-SITE.com/commercial-wraps?payment=success
@@ -1400,6 +1425,13 @@ We will prepare production-ready vector files and contact you at ${formData.emai
           </div>
         </div>
       </section>
+
+      {/* FAQ Section — visible accordion + matching FAQPage JSON-LD */}
+      <FaqSection
+        items={wrapsFaqs}
+        title="Wraps & Signage FAQ"
+        subtitle="Common questions about vehicle wraps, signage, and the areas we serve."
+      />
 
       {/* CTA Section */}
       <section className="py-20 px-[6vw] relative z-10">
