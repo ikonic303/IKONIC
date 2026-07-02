@@ -21,7 +21,8 @@ export default defineConfig({
         '/services/speed-to-lead',
         '/services/marketing',
         '/learn-more',
-        '/commercial-wraps',
+        // AI wrap generator removed from live site per Josh — kept commented for re-enable
+        // '/commercial-wraps',
         '/careers',
         '/blogs',
         '/wrap-calculator',

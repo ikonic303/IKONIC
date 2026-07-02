@@ -1,5 +1,19 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { Resend } from 'resend';
+// import { Resend } from 'resend';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DISABLED per Josh's request — this endpoint emailed AI-generated wrap designs
+// for the (now retired) wrap generator. It is intentionally inert and returns
+// HTTP 410 Gone. The original implementation is preserved (commented) below so it
+// can be restored later. To re-enable: delete the stub handler, restore the
+// `Resend` import above, and uncomment the original handler.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export default function handler(_req: VercelRequest, res: VercelResponse) {
+  return res.status(410).json({ error: 'The AI wrap design service has been retired.' });
+}
+
+/* ORIGINAL IMPLEMENTATION — kept for future re-enable
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -74,3 +88,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: message });
   }
 }
+
+*/

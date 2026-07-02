@@ -1,5 +1,21 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// DISABLED per Josh's request — the AI wrap generator (Gemini-powered) has been
+// removed from the live site. This endpoint is intentionally inert and returns
+// HTTP 410 Gone. The original implementation is preserved (commented) below so it
+// can be restored later. To re-enable: delete the stub handler, uncomment the
+// `maxDuration` export and the original handler, and re-wire the UI (see the
+// commented route/links in src/App.tsx + src/components/Navigation.tsx and the
+// page at src/pages/CommercialWraps.tsx).
+// ─────────────────────────────────────────────────────────────────────────────
+
+export default function handler(_req: VercelRequest, res: VercelResponse) {
+  return res.status(410).json({ error: 'The AI wrap generator has been retired.' });
+}
+
+/* ORIGINAL IMPLEMENTATION — kept for future re-enable
+
 export const maxDuration = 60;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -86,3 +102,5 @@ QUALITY: Professional wrap design sheet, crisp vector edges, print-ready appeara
     return res.status(500).json({ error: message });
   }
 }
+
+*/
