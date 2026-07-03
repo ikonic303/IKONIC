@@ -154,11 +154,6 @@ export default function Navigation() {
               )}
             </div>
 
-            {/* AI Commercial Wrap (Gemini generator) — hidden per Josh's request; kept for future re-enable */}
-            {/* <Link to="/commercial-wraps" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              AI Commercial Wrap
-            </Link> */}
-
             <Link to="/blogs" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
               Blogs
             </Link>
@@ -252,11 +247,6 @@ export default function Navigation() {
               Lost Call Calculator
             </Link>
           </div>
-
-          {/* AI Commercial Wrap (Gemini generator) — hidden per Josh's request; kept for future re-enable */}
-          {/* <Link to="/commercial-wraps" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            AI Commercial Wrap
-          </Link> */}
 
           <Link to="/blogs" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
             Blogs

@@ -17,10 +17,6 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const AllServices = lazy(() => import('./pages/AllServices'));
 const LearnMore = lazy(() => import('./pages/LearnMore'));
-// AI wrap generator (Gemini-powered) — removed from the live site per Josh's request.
-// Code retained (commented) so it can be re-enabled later. See src/pages/CommercialWraps.tsx
-// and api/generate-wrap.ts + api/send-design.ts.
-// const CommercialWraps = lazy(() => import('./pages/CommercialWraps'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const WebDesign = lazy(() => import('./pages/WebDesign'));
@@ -141,8 +137,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<AllServices />} />
             <Route path="/learn-more" element={<LearnMore />} />
-            {/* AI wrap generator route disabled per Josh's request — kept for future re-enable */}
-            {/* <Route path="/commercial-wraps" element={<CommercialWraps />} /> */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/services/web-design" element={<WebDesign />} />
