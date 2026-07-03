@@ -38,8 +38,35 @@
   footer.cta-band{padding:60px 0;text-align:center;background:radial-gradient(700px 300px at 50% 120%,rgba(30,216,143,.18),transparent)}
   .fine{color:var(--muted);font-size:13px;margin-top:10px}
 </style>
+<style>
+  /* ── Ikonic brand nav bar (shared across the static service pages) ── */
+  .iknav-bar{position:sticky;top:0;z-index:100;background:rgba(8,11,10,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .iknav{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .iknav-logo{display:flex;align-items:center;flex-shrink:0}
+  .iknav-logo img{height:34px;width:auto;display:block}
+  .iknav-links{display:flex;align-items:center;justify-content:flex-end;gap:20px;flex:1;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .iknav-links::-webkit-scrollbar{display:none}
+  .iknav-links a{color:var(--muted);text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:color .15s}
+  .iknav-links a:hover,.iknav-links a.on{color:var(--green)}
+  .iknav-cta{background:var(--green);color:#04110b!important;padding:9px 18px;border-radius:999px;box-shadow:var(--glow);transition:transform .15s}
+  .iknav-cta:hover{transform:translateY(-1px)}
+  @media(max-width:640px){.iknav{padding:8px 14px;gap:10px}.iknav-logo img{height:28px}.iknav-links{gap:14px}}
+</style>
 </head>
 <body>
+
+<header class="iknav-bar"><div class="iknav">
+  <a class="iknav-logo" href="/"><img src="/logo-ikonic.webp" alt="ikonic"></a>
+  <nav class="iknav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services/paint-protection-film">PPF</a>
+    <a href="/services/window-tint" class="on">Window Tint</a>
+    <a href="/services/ceramic-coating">Ceramic</a>
+    <a href="/services">All Services</a>
+    <a class="iknav-cta" href="/contact">Free Quote</a>
+  </nav>
+</div></header>
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Window Tint · Auto + Flat Glass · Denver</div>

@@ -15,6 +15,7 @@ export default defineConfig({
         '/about',
         '/contact',
         '/services',
+        '/ai-website-generator',
         '/services/web-design',
         '/services/crm-automation',
         '/services/reputation',
