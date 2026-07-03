@@ -25,7 +25,8 @@ export default function Navigation() {
   }, [location.pathname]);
 
   const serviceLinks = [
-    { label: 'AI Website Generator', href: '/ai-website-generator' },
+    // AI Website Generator — temporarily hidden from the menu; will re-enable later. Keep the code.
+    // { label: 'AI Website Generator', href: '/ai-website-generator' },
     { label: 'Web Design & Funnels', href: '/services/web-design' },
     { label: 'CRM & Automations', href: '/services/crm-automation' },
     { label: 'Reputation Management', href: '/services/reputation' },
@@ -166,9 +167,10 @@ export default function Navigation() {
               Sticker Builder
             </Link>
 
-            <Link to="/ai-website-generator" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
+            {/* Web Design Builder — temporarily hidden from the menu; will re-enable later. Keep the code. */}
+            {/* <Link to="/ai-website-generator" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
               Web Design Builder
-            </Link>
+            </Link> */}
 
             <Link to="/branded-to-win" className="text-sm font-medium px-3 py-1.5 rounded-lg border transition-colors"
               style={{ borderColor: '#F5A623', color: '#F5A623' }}
@@ -257,9 +259,10 @@ export default function Navigation() {
           <Link to="/sticker-builder" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
             Sticker Builder
           </Link>
-          <Link to="/ai-website-generator" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
+          {/* Web Design Builder — temporarily hidden from the menu; will re-enable later. Keep the code. */}
+          {/* <Link to="/ai-website-generator" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
             Web Design Builder
-          </Link>
+          </Link> */}
           <Link to="/branded-to-win" className="text-2xl font-display font-bold transition-colors" style={{ color: '#F5A623' }}>
             Book
           </Link>
