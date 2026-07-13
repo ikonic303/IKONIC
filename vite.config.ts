@@ -9,7 +9,10 @@ export default defineConfig({
   plugins: [
     react(),
     Sitemap({
-      hostname: 'https://ikonicmarketing303.com',
+      hostname: 'https://ikonic303.com',
+      // Serve public/robots.txt verbatim (Josh's AI-crawler rules); don't let the
+      // plugin overwrite it with its minimal auto-generated robots.txt.
+      generateRobotsTxt: false,
       dynamicRoutes: [
         '/',
         '/about',
