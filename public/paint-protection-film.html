@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paint Protection Film Simulator</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paint Protection Film Simulator | ikonic303</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html,body{overflow-x:hidden}
-:root{--bg:#0b0e13;--panel:#141922;--panel2:#1b2230;--line:#27303f;--text:#eef2f7;--muted:#9aa7b8;--accent:#1ED88F;--accent2:#3dedaa;}
-body{margin:0;font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 50% -10%,#1a2230 0,var(--bg) 60%);color:var(--text);min-height:100vh}
+:root{--bg:#0B0D10;--panel:#141922;--panel2:#1b2230;--line:#27303f;--text:#eef2f7;--muted:#9aa7b8;--accent:#00FF9D;--accent2:#4DFFB8;--char:#0B0D10;--char2:#141619;--ow:#F6F7F9;--owd:#A6A9B0;--amber:#F5A623;}
+body{margin:0;font-family:"Inter","Segoe UI",system-ui,Helvetica,Arial,sans-serif;background:var(--char);color:var(--text);min-height:100vh;position:relative}
 .wrap{max-width:1040px;margin:0 auto;padding:22px 18px 60px}
 header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
@@ -27,9 +28,79 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
 .ok{display:none;background:#11331f;border:1px solid #1f6e3f;color:#b8f3cf;padding:12px;border-radius:10px;font-size:14px}
 .sumline{font-size:13px;color:var(--text);background:#0d1219;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:12px}
 .note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5}.foot{color:var(--muted);font-size:11px;text-align:center;margin-top:22px}
-</style></head><body><div class="wrap">
-<header><div class="brand"><div class="logo" id="logoMark"></div><div><h1 id="shopName">Paint Protection Film Simulator</h1><p id="shopTag"></p></div></div>
-<a class="callbtn" id="callBtn" href="#">Call / Book</a></header>
+/* ===== ikonic site chrome: matrix background + fixed nav + footer ===== */
+#matrix{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9;z-index:0;background:var(--char)}
+.wrap{position:relative;z-index:1;padding-top:112px}
+.site-nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 6vw;background:rgba(11,13,16,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.site-nav .logo-link{display:flex;align-items:center;gap:10px;text-decoration:none}
+.site-nav .logo-link img{height:56px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links>a{color:var(--owd);font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap}
+.nav-links>a:hover{color:var(--accent)}
+.nav-item{position:relative}
+.nav-trigger{display:flex;align-items:center;gap:4px;color:var(--owd);font-size:14px;font-weight:500;background:none;border:0;cursor:pointer;font-family:inherit;padding:6px 0}
+.nav-trigger:hover{color:var(--accent)}
+.nav-trigger .caret{width:14px;height:14px;transition:transform .2s}
+.nav-item:hover .caret,.nav-item:focus-within .caret{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;margin-top:8px;min-width:224px;background:var(--char);border:1px solid rgba(255,255,255,.1);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:11px 16px;font-size:14px;color:var(--owd);text-decoration:none}
+.dropdown a:hover{background:rgba(0,255,157,.1);color:var(--accent)}
+.dropdown a.head{color:var(--accent);font-weight:600;border-bottom:1px solid rgba(255,255,255,.1)}
+.dropdown a+a{border-top:1px solid rgba(255,255,255,.06)}
+.btn-book{padding:7px 14px !important;border:1px solid var(--amber);border-radius:9px;color:var(--amber) !important;transition:background .15s}
+.btn-book:hover{background:rgba(245,166,35,.12)}
+.btn-start{padding:9px 18px !important;background:var(--accent);color:var(--char) !important;font-weight:700 !important;border-radius:8px;box-shadow:0 0 20px rgba(0,255,157,.3);transition:transform .15s,box-shadow .15s}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,255,157,.5)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ow);cursor:pointer}
+#navchk{display:none}
+@media(max-width:1000px){
+  .nav-links{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:16px;background:var(--char);transform:translateX(100%);transition:transform .3s;overflow-y:auto;padding:88px 20px 40px}
+  #navchk:checked~.nav-links{transform:translateX(0)}
+  .nav-toggle{display:block;z-index:101}
+  .nav-item{text-align:center}
+  .nav-trigger{justify-content:center;width:100%}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;margin:6px auto;box-shadow:none;background:transparent;border:0;min-width:0;text-align:center}
+}
+.site-footer{position:relative;z-index:1;margin-top:80px;padding:44px 6vw 0;border-top:1px solid rgba(255,255,255,.1)}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:40px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.site-footer img.flogo{height:56px;width:auto;margin-bottom:14px;display:block}
+.site-footer .tag{color:var(--owd);font-size:14px;line-height:1.6}
+.site-footer h4{color:var(--ow);font-weight:600;font-size:15px;margin:0 0 14px}
+.site-footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.site-footer ul a{color:var(--owd);font-size:14px;text-decoration:none;transition:color .15s}
+.site-footer ul a:hover{color:var(--accent)}
+.foot-mail{display:flex;gap:8px;margin-top:4px}
+.foot-mail input{flex:1;min-width:0;padding:9px 12px;background:var(--char);border:1px solid rgba(255,255,255,.2);border-radius:9px;color:var(--ow);font-size:14px}
+.foot-mail input:focus{outline:none;border-color:var(--accent)}
+.foot-mail button{padding:9px 12px;background:var(--accent);color:var(--char);border:0;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.foot-social{display:flex;gap:10px;margin-top:14px}
+.foot-social a{width:40px;height:40px;border-radius:9px;background:var(--char2);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--ow);transition:.15s}
+.foot-social a:hover{border-color:rgba(0,255,157,.3);background:rgba(0,255,157,.1)}
+.foot-copy{padding:26px 0;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:var(--owd);font-size:14px}
+</style></head><body>
+<canvas id="matrix"></canvas>
+<nav class="site-nav">
+<a href="/" class="logo-link"><img src="/logo-ikonic.webp" alt="ikonic"></a>
+<input type="checkbox" id="navchk">
+<label class="nav-toggle" for="navchk" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></label>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/about">About</a>
+<div class="nav-item"><button class="nav-trigger" type="button">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="dropdown"><a class="head" href="/services">View All Services &rarr;</a><a href="/services/web-design">Web Design &amp; Funnels</a><a href="/services/crm-automation">CRM &amp; Automations</a><a href="/services/reputation">Reputation Management</a><a href="/services/speed-to-lead">Speed to Lead</a><a href="/services/marketing">Marketing Systems</a><a href="/services/paint-protection-film">Paint Protection Film (PPF)</a><a href="/services/window-tint">Window Tint</a><a href="/services/ceramic-coating">Ceramic Coating</a></div></div>
+<div class="nav-item"><button class="nav-trigger" type="button">Calculators <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="dropdown"><a href="/wrap-calculator">Wrap Calculator</a><a href="/print-ship">Print &amp; Ship</a><a href="/lost-call-calculator">Lost Call Calculator</a></div></div>
+<a href="/blogs">Blogs</a>
+<a href="/careers">Career</a>
+<a href="/sticker-builder">Sticker Builder</a>
+<a href="/branded-to-win" class="btn-book">Book</a>
+<a href="/contact" class="btn-start">Start Now</a>
+</div>
+</nav>
+<div class="wrap">
 <div class="stage"><div class="badge"><b id="pkgBig">Full Front</b><br><span id="finSub">Gloss PPF</span></div>
 <div id="carbox"><svg id="cov-partial" class="covsvg" viewBox="0 0 665.53 202.12" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -64,7 +135,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
       }
 
       .f1cls-8 {
-        fill: #1ED88F;
+        fill: #00FF9D;
         opacity: .8;
       }
 
@@ -320,7 +391,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
       }
 
       .f2cls-8 {
-        fill: #1ED88F;
+        fill: #00FF9D;
         opacity: .8;
       }
 
@@ -579,7 +650,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
       }
 
       .f3cls-8 {
-        fill: #1ED88F;
+        fill: #00FF9D;
         opacity: .8;
       }
 
@@ -843,7 +914,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
       }
 
       .f4cls-8 {
-        fill: #1ED88F;
+        fill: #00FF9D;
         opacity: .8;
       }
 
@@ -1064,13 +1135,25 @@ header{display:flex;align-items:center;justify-content:space-between;gap:14px;fl
 <p class="note">PPF is a clear, self-healing film that protects your paint from rock chips, scratches &amp; stains. Goes on paint only &mdash; never the glass.</p></div>
 <div class="row2">
 <div class="quote"><h3>Protect your paint &mdash; get a free quote</h3><div class="sumline" id="sumline"></div>
-<form id="qForm"><input id="qName" placeholder="Your name" required><input id="qPhone" placeholder="Phone number" required><input id="qVehicle" placeholder="Vehicle (year / make / model)" required>
-<button type="submit">Get My Free Quote</button><div class="ok" id="okMsg"></div></form>
-<p class="note">Demo form. Wire the submit handler to your CRM/email.</p></div>
+<iframe src="https://crm.ikonic303.com/widget/form/FYUgf5yqiwijQtxucvRn" style="width:100%;min-height:826px;border:none;border-radius:8px;display:block" id="inline-FYUgf5yqiwijQtxucvRn" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Contact Us" data-height="826" data-layout-iframe-id="inline-FYUgf5yqiwijQtxucvRn" data-form-id="FYUgf5yqiwijQtxucvRn" title="Contact Us"></iframe>
+<script src="https://crm.ikonic303.com/js/form_embed.js"></script></div>
 <div class="quote"><h3>Coverage guide</h3>
 <p class="note" style="font-size:13px;line-height:1.8;color:var(--text)"><b>Partial Front</b> &mdash; bumper, full fenders, mirrors + hood leading edge<br><b>Full Front</b> &mdash; bumper, full fenders, full hood, mirrors, A-pillars<br><b>Track Package</b> &mdash; full front + rocker panels<br><b>Full Vehicle</b> &mdash; every painted panel (glass excluded)</p>
 <p class="note">All PPF backed by manufacturer warranty.</p></div></div>
-<p class="foot" id="footName">Paint Protection Film Simulator</p></div>
+</div>
+<footer class="site-footer">
+<div class="foot-grid">
+<div><img class="flogo" src="/logo-ikonic.webp" alt="ikonic"><p class="tag">The Digital Agency That Works While You Sleep.</p></div>
+<div><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/services">Services</a></li><li><a href="/contact">Contact</a></li><li><a href="/blogs">Blogs</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="/services/web-design">Web Design &amp; Funnels</a></li><li><a href="/services/crm-automation">CRM &amp; Automations</a></li><li><a href="/services/reputation">Reputation Management</a></li><li><a href="/services/speed-to-lead">Speed to Lead Systems</a></li><li><a href="/services/marketing">Marketing Systems</a></li></ul></div>
+<div><h4>Free GHL Setup Checklist</h4><p class="tag" style="margin-bottom:14px">Get our free GHL setup checklist &mdash; join 500+ Colorado businesses automating their lead flow.</p>
+<form class="foot-mail" onsubmit="return false"><input type="email" placeholder="Your email"><button type="submit" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></form>
+<p class="tag" style="margin-top:22px">Follow Us</p>
+<div class="foot-social"><a href="https://www.facebook.com/ikonic303" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="https://www.instagram.com/ikonic_303/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.6" y2="6.5"/></svg></a><a href="https://www.tiktok.com/@ikonic_303" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a></div>
+</div>
+</div>
+<div class="foot-copy">&copy; 2026 Ikonic. All rights reserved.</div>
+</footer>
 <script>
 /* ========================================================================
    WHITE-LABEL CONFIG  —  edit this block per shop, then embed the file.
@@ -1080,10 +1163,10 @@ const CONFIG={
   shopName   : "ikonic303",                             // e.g. "Rocky Mountain Tint"  (blank = tool name only)
   tagline    : "",                                      // small line under the shop name
   initials   : "",                                      // logo text; auto-made from shopName if left blank
-  logoUrl    : "",                                      // image logo URL — overrides initials if set
+  logoUrl    : "/logo-ikonic.webp",                     // image logo URL — overrides initials if set
   phone      : "7206791230",                            // digits only, e.g. "3035551234" — powers Call button
   bookingUrl : "https://ikonicmarketing303.com/contact",// optional booking page URL; overrides the phone link
-  accent     : "#1ED88F",                               // brand color (hex)
+  accent     : "#00FF9D",                               // brand color (hex)
   leadWebhook: "",                                      // POST leads as JSON here (GHL / Zapier / Make / CRM)
   leadEmail  : ""                                       // fallback: opens an email to this address if no webhook
 };
@@ -1092,20 +1175,6 @@ const PKGS=[{id:"partial",name:"Partial Front"},{id:"fullfront",name:"Full Front
 const FINS=[{id:"gloss",name:"Gloss"},{id:"matte",name:"Matte"}];
 let pkg="fullfront", fin="gloss";
 document.documentElement.style.setProperty('--accent',CONFIG.accent);
-(function(){
-  var name=CONFIG.shopName||"";
-  var init=CONFIG.initials||name.split(/\s+/).filter(Boolean).slice(0,2).map(function(w){return w.charAt(0);}).join("").toUpperCase();
-  if(CONFIG.logoUrl){logoMark.innerHTML='<img src="'+CONFIG.logoUrl+'" alt="'+(name||"logo")+'" style="width:100%;height:100%;object-fit:contain;border-radius:inherit">';logoMark.style.background="transparent";}
-  else if(init){logoMark.textContent=init;}
-  else{logoMark.style.display="none";}
-  shopName.textContent=name||TOOL_TITLE;
-  var shopTag=document.getElementById("shopTag");
-  if(shopTag){if(CONFIG.tagline){shopTag.textContent=CONFIG.tagline;}else{shopTag.style.display="none";}}
-  footName.textContent=(name?name+" \u2014 ":"")+TOOL_TITLE;
-  if(CONFIG.bookingUrl){callBtn.href=CONFIG.bookingUrl;callBtn.target="_blank";callBtn.rel="noopener";callBtn.textContent="Book Now";}
-  else if(CONFIG.phone){callBtn.href="tel:"+CONFIG.phone;}
-  else{callBtn.style.display="none";}
-})();
 function render(){
   document.querySelectorAll('.covsvg').forEach(s=>s.classList.remove('on'));
   var el=document.getElementById('cov-'+pkg); if(el) el.classList.add('on');
@@ -1118,9 +1187,33 @@ function render(){
 function setActive(box,val){document.querySelectorAll('#'+box+' .opt').forEach(b=>b.classList.toggle('active',b.getAttribute('data-id')===val));}
 PKGS.forEach(o=>{const b=document.createElement('div');b.className='opt';b.setAttribute('data-id',o.id);b.innerHTML=`<div class="big">${o.name}</div>`;b.onclick=()=>{pkg=o.id;render();};pkgs.appendChild(b);});
 FINS.forEach(o=>{const b=document.createElement('div');b.className='opt';b.setAttribute('data-id',o.id);b.innerHTML=`<div class="big">${o.name}</div>`;b.onclick=()=>{fin=o.id;render();};fins.appendChild(b);});
-qForm.addEventListener('submit',function(e){e.preventDefault();const lead={name:qName.value,phone:qPhone.value,vehicle:qVehicle.value,package:pkg,finish:fin,tool:'ppf'};
-  if(CONFIG.leadWebhook){try{fetch(CONFIG.leadWebhook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true});}catch(err){}}
-  else if(CONFIG.leadEmail){var b=Object.keys(lead).map(function(k){return k+': '+lead[k];}).join('\n');window.open('mailto:'+CONFIG.leadEmail+'?subject='+encodeURIComponent('New PPF quote'+(lead.name?' — '+lead.name:''))+'&body='+encodeURIComponent(b),'_blank');}
-  okMsg.style.display='block';okMsg.textContent=`Thanks ${lead.name||''}! We'll follow up with a PPF quote for your ${qVehicle.value}.`;this.reset();});
 render();
+/* ===== ikonic matrix-rain background ===== */
+(function(){
+  var canvas=document.getElementById('matrix');if(!canvas)return;var ctx=canvas.getContext('2d');if(!ctx)return;
+  var CHARS='ᄀᄂᄃᄅᄆᄇᄉᄊᄋᄌᄍᄎᄏᄐᄑ하ᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᆨᆩᆪᆫᆬᆭᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂƆƎƧИႱႧႰႳႵႷႸႹႺႻႼႽႾႿჀჁჂჃჄჅაბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
+  var mobile=window.innerWidth<=768,dpr=window.devicePixelRatio||1,fontSize=mobile?14:16,colStep=mobile?2:1,frameMs=mobile?66:33,W=0,H=0;
+  function resize(){W=window.innerWidth;H=window.innerHeight;canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  var activeCols=Math.ceil(Math.ceil(window.innerWidth/fontSize)/colStep),drops=[],speeds=[];
+  for(var k=0;k<activeCols;k++){drops.push(Math.random()*-H);speeds.push(mobile?Math.random()*4+2.5:Math.random()*1.5+0.8);}
+  var last=0;
+  function draw(ts){
+    if(document.hidden){requestAnimationFrame(draw);return;}
+    if(ts-last<frameMs){requestAnimationFrame(draw);return;}
+    last=ts;
+    ctx.fillStyle='rgba(11,13,16,0.06)';ctx.fillRect(0,0,W,H);
+    ctx.font='bold '+fontSize+'px monospace';ctx.textBaseline='top';
+    for(var i=0;i<drops.length;i++){
+      var ch=CHARS[Math.floor(Math.random()*CHARS.length)],x=i*fontSize*colStep,y=drops[i];
+      if(Math.random()>0.97){ctx.fillStyle='#ccffcc';ctx.shadowColor='#00ff41';ctx.shadowBlur=14;}
+      else{ctx.fillStyle='rgba(0,255,65,'+(Math.random()*0.25+0.75)+')';ctx.shadowBlur=0;}
+      ctx.save();ctx.translate(x+fontSize/2,y+fontSize/2);ctx.scale(-1,-1);ctx.translate(-(x+fontSize/2),-(y+fontSize/2));ctx.fillText(ch,x,y);ctx.restore();
+      drops[i]+=speeds[i];
+      if(drops[i]>H){drops[i]=-fontSize;speeds[i]=Math.random()*1.5+0.8;}
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
 </script></body></html>
