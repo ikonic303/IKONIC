@@ -9,9 +9,37 @@
     }
   ],
   "rewrites": [
-    { "source": "/services/paint-protection-film", "destination": "/paint-protection-film.html" },
-    { "source": "/services/window-tint", "destination": "/window-tint.html" },
-    { "source": "/services/ceramic-coating", "destination": "/ceramic-coating.html" },
-    { "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
+    {
+      "source": "/window-tint",
+      "destination": "/window-tint.html"
+    },
+    {
+      "source": "/paint-protection-film",
+      "destination": "/paint-protection-film.html"
+    },
+    {
+      "source": "/ceramic-coating",
+      "destination": "/ceramic-coating.html"
+    },
+    {
+      "source": "/marketing",
+      "destination": "/marketing.html"
+    },
+    {
+      "source": "/services/paint-protection-film",
+      "destination": "/paint-protection-film.html"
+    },
+    {
+      "source": "/services/window-tint",
+      "destination": "/window-tint.html"
+    },
+    {
+      "source": "/services/ceramic-coating",
+      "destination": "/ceramic-coating.html"
+    },
+    {
+      "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)",
+      "destination": "/index.html"
+    }
   ]
 }
