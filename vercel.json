@@ -9,6 +9,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/commercial-wraps", "destination": "/commercial-wraps.html" },
     { "source": "/services/paint-protection-film", "destination": "/paint-protection-film.html" },
     { "source": "/services/window-tint", "destination": "/window-tint.html" },
     { "source": "/services/ceramic-coating", "destination": "/ceramic-coating.html" },
