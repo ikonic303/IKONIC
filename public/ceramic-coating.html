@@ -1,170 +1,283 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ceramic Coating Denver — Gloss & Protection | ikonic</title>
-<meta name="description" content="9H ceramic coating in Wheat Ridge & Denver — deep gloss, hydrophobic, multi-year paint protection. See the before/after. Free quote: (720) 679-1230.">
-<!-- IKONIC — CERAMIC COATING page (separate SEO page). Brand: near-black + mint green (#1ED88F). Before/after gloss slider + beading toggle. NOTE: tier prices are industry-research STARTERS — confirm Josh's real ceramic pricing. -->
-<style>
-  :root{--bg:#080b0a;--bg2:#0d1411;--card:#111c17;--line:#1f2e27;--ink:#eef5f1;--muted:#8aa399;--green:#1ED88F;--glow:0 0 40px rgba(30,216,143,.35)}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  h1,h2,h3,.eyebrow{font-weight:800;letter-spacing:-.01em;text-transform:uppercase;line-height:1.04}
-  h1{font-size:clamp(34px,6vw,64px)} h2{font-size:clamp(24px,4vw,40px);margin:0 0 8px}
-  .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--green);margin-bottom:14px}
-  .grn{color:var(--green)} p.lead{color:var(--muted);font-size:18px;max-width:640px}
-  .btn{display:inline-block;background:var(--green);color:#04110b;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:14px;padding:14px 26px;border-radius:999px;text-decoration:none;cursor:pointer;box-shadow:var(--glow);transition:transform .15s}
-  .btn:hover{transform:translateY(-2px)} .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
-  header.hero{padding:70px 0 30px;background:radial-gradient(900px 380px at 78% -10%,rgba(30,216,143,.16),transparent 60%)}
-  .hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-  section{padding:48px 0;border-top:1px solid var(--line)}
-  .vizcard{background:linear-gradient(160deg,var(--card),#0b1410);border:1px solid var(--line);border-radius:20px;padding:24px}
-  .stage{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/8}
-  .ph{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
-  .ph.before{background:linear-gradient(135deg,#33403b,#222b27)}
-  .ph.after{background:linear-gradient(135deg,#0e1a15,#0a120e);clip-path:inset(0 0 0 50%)}
-  .ph.after .sheen{position:absolute;inset:0;background:radial-gradient(circle at 32% 24%,rgba(255,255,255,.28),transparent 42%),linear-gradient(115deg,rgba(30,216,143,.10),transparent 60%)}
-  .ph span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#cfe;background:rgba(0,0,0,.45);padding:6px 12px;border-radius:8px;margin-bottom:16px;z-index:2}
-  .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--green);box-shadow:var(--glow);cursor:ew-resize;z-index:3}
-  .divider::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:var(--green);color:#04110b;display:flex;align-items:center;justify-content:center;font-weight:800}
-  .bead{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.85),rgba(180,220,205,.25));opacity:0;transition:opacity .4s;pointer-events:none;z-index:2}
-  .beadon .bead{opacity:1}
-  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-  .chip{background:var(--bg2);border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:13px;padding:9px 16px;border-radius:999px;cursor:pointer}
-  .chip.on{background:var(--green);color:#04110b;border-color:var(--green)}
-  .szlbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
-  .sizes{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
-  .size{flex:1;min-width:108px;text-align:center;background:var(--bg2);border:1px solid var(--line);color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em;padding:11px 8px;border-radius:10px;cursor:pointer}
-  .size.on{background:var(--green);color:#04110b;border-color:var(--green);box-shadow:var(--glow)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
-  .tier{background:linear-gradient(160deg,var(--card),#0c1512);border:1px solid var(--line);border-radius:16px;padding:22px}
-  .tier.feat{border-color:var(--green);box-shadow:var(--glow)}
-  .tier h3{font-size:20px} .tier .price{font-size:26px;font-weight:800;color:var(--green);margin:8px 0}
-  .tier ul{list-style:none;margin:12px 0 0;font-size:14px;color:var(--muted)} .tier li{padding:6px 0;border-bottom:1px solid var(--line)}
-  .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#04110b;background:var(--green);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .faq h3{font-size:17px;margin:18px 0 4px} .faq p{color:var(--muted)}
-  footer.cta-band{padding:60px 0;text-align:center;background:radial-gradient(700px 300px at 50% 120%,rgba(30,216,143,.18),transparent)}
-  .fine{color:var(--muted);font-size:13px;margin-top:10px}
-</style>
-<style>
-  /* ── Ikonic brand nav bar (shared across the static service pages) ── */
-  .iknav-bar{position:sticky;top:0;z-index:100;background:rgba(8,11,10,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .iknav{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .iknav-logo{display:flex;align-items:center;flex-shrink:0}
-  .iknav-logo img{height:34px;width:auto;display:block}
-  .iknav-links{display:flex;align-items:center;justify-content:flex-end;gap:20px;flex:1;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .iknav-links::-webkit-scrollbar{display:none}
-  .iknav-links a{color:var(--muted);text-decoration:none;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:color .15s}
-  .iknav-links a:hover,.iknav-links a.on{color:var(--green)}
-  .iknav-cta{background:var(--green);color:#04110b!important;padding:9px 18px;border-radius:999px;box-shadow:var(--glow);transition:transform .15s}
-  .iknav-cta:hover{transform:translateY(-1px)}
-  @media(max-width:640px){.iknav{padding:8px 14px;gap:10px}.iknav-logo img{height:28px}.iknav-links{gap:14px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ceramic Coating in Denver — 9H Gloss &amp; Protection | ikonic</title>
+  <meta name="description" content="9H ceramic coating in Wheat Ridge & Denver — deep gloss, hydrophobic, multi-year paint protection. Prepped, polished, and installed in-shop by ikonic. Free quote: (720) 679-1230." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ikonic303.com/ceramic-coating" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ikonic303.com/ceramic-coating" />
+  <meta property="og:title" content="Ceramic Coating in Denver — 9H Gloss &amp; Protection | ikonic" />
+  <meta property="og:description" content="9H ceramic coating in the Denver metro — deep gloss, hydrophobic, multi-year paint protection. Prepped, polished, and installed in-shop by ikonic." />
+  <meta property="og:image" content="https://ikonic303.com/logo-ikonic.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ceramic Coating in Denver — 9H Gloss &amp; Protection | ikonic" />
+  <meta name="twitter:description" content="9H ceramic coating in the Denver metro — deep gloss, hydrophobic, multi-year paint protection." />
+  <meta name="twitter:image" content="https://ikonic303.com/logo-ikonic.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Ceramic Coating",
+    "name": "9H Ceramic Coating",
+    "description": "9H ceramic coating applied to vehicles at ikonic's Wheat Ridge shop — full paint decontamination and machine-polish prep, then a hard, hydrophobic, UV-stable coating for years of deep gloss and easy-clean protection across the Denver metro.",
+    "areaServed": ["Wheat Ridge","Arvada","Lakewood","Golden","Denver","Colorado"],
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://ikonic303.com/#business",
+      "name": "ikonic",
+      "url": "https://ikonic303.com",
+      "telephone": "+1-720-679-1230",
+      "email": "info@ikonicmarketing303.com",
+      "address": {"@type":"PostalAddress","streetAddress":"4880 Robb St #8","addressLocality":"Wheat Ridge","addressRegion":"CO","postalCode":"80033","addressCountry":"US"}
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How long does ceramic coating last?","acceptedAnswer":{"@type":"Answer","text":"Depending on the package, one to two years up to five-plus years for multi-layer systems — with simple maintenance washes."}},
+      {"@type":"Question","name":"Ceramic coating or PPF — which do I need?","acceptedAnswer":{"@type":"Answer","text":"PPF physically stops rock chips and scratches; ceramic adds gloss and makes cleaning easy. Many clients do both — PPF on the high-impact panels, ceramic over everything."}},
+      {"@type":"Question","name":"Does it really make washing easier?","acceptedAnswer":{"@type":"Answer","text":"Yes — the hydrophobic surface means dirt and water sheet off, so washes are faster and your paint stays cleaner longer."}},
+      {"@type":"Question","name":"What prep is included?","acceptedAnswer":{"@type":"Answer","text":"Full decontamination and a machine polish to correct swirls before coating — prep is most of the work and we don't skip it."}}
+    ]
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box}
+    :root{--bg:#0B0D10;--panel:#141922;--line:#27303f;--text:#eef2f7;--muted:#9aa7b8;--accent:#00FF9D;--accent2:#4DFFB8;--char:#0B0D10;--char2:#141619;--ow:#F6F7F9;--owd:#A6A9B0;--amber:#F5A623}
+    html,body{overflow-x:hidden}
+    body{margin:0;font-family:"Inter","Segoe UI",system-ui,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .wrap{max-width:860px;margin:0 auto;padding:22px 20px 72px}
+    .callbtn{background:var(--accent);color:#04110b;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px;font-size:14px}
+    h1{font-family:"Space Grotesk",sans-serif;font-size:2.05rem;line-height:1.15;margin:.2em 0 .4em}
+    h2{font-family:"Space Grotesk",sans-serif;font-size:1.4rem;margin:2rem 0 .5rem;color:var(--accent2)}
+    h3{font-size:1.08rem;margin:1.3rem 0 .3rem}
+    p{color:#dbe3ee}
+    a{color:var(--accent2)}
+    .lead{font-size:1.12rem;color:#eef2f7}
+    .cta{margin:2.4rem 0;padding:1.4rem 1.5rem;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+    .cta a.callbtn{display:inline-block;margin-top:.6rem}
+/* ===== ikonic site chrome: matrix background + fixed nav + footer ===== */
+#matrix{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9;z-index:0;background:var(--char)}
+.wrap{position:relative;z-index:1;padding-top:112px}
+.site-nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 6vw;background:rgba(11,13,16,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.site-nav .logo-link{display:flex;align-items:center;gap:10px;text-decoration:none}
+.site-nav .logo-link img{height:56px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links>a{color:var(--owd);font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap}
+.nav-links>a:hover{color:var(--accent)}
+.nav-item{position:relative}
+.nav-trigger{display:flex;align-items:center;gap:4px;color:var(--owd);font-size:14px;font-weight:500;background:none;border:0;cursor:pointer;font-family:inherit;padding:6px 0}
+.nav-trigger:hover{color:var(--accent)}
+.nav-trigger .caret{width:14px;height:14px;transition:transform .2s}
+.nav-item:hover .caret,.nav-item:focus-within .caret{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;margin-top:8px;min-width:224px;background:var(--char);border:1px solid rgba(255,255,255,.1);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:11px 16px;font-size:14px;color:var(--owd);text-decoration:none}
+.dropdown a:hover{background:rgba(0,255,157,.1);color:var(--accent)}
+.dropdown a.head{color:var(--accent);font-weight:600;border-bottom:1px solid rgba(255,255,255,.1)}
+.dropdown a+a{border-top:1px solid rgba(255,255,255,.06)}
+.btn-book{padding:7px 14px !important;border:1px solid var(--amber);border-radius:9px;color:var(--amber) !important;transition:background .15s}
+.btn-book:hover{background:rgba(245,166,35,.12)}
+.btn-start{padding:9px 18px !important;background:var(--accent);color:var(--char) !important;font-weight:700 !important;border-radius:8px;box-shadow:0 0 20px rgba(0,255,157,.3);transition:transform .15s,box-shadow .15s}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,255,157,.5)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ow);cursor:pointer}
+#navchk{display:none}
+@media(max-width:1000px){
+  .nav-links{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:16px;background:var(--char);transform:translateX(100%);transition:transform .3s;overflow-y:auto;padding:88px 20px 40px}
+  #navchk:checked~.nav-links{transform:translateX(0)}
+  .nav-toggle{display:block;z-index:101}
+  .nav-item{text-align:center}
+  .nav-trigger{justify-content:center;width:100%}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;margin:6px auto;box-shadow:none;background:transparent;border:0;min-width:0;text-align:center}
+}
+.site-footer{position:relative;z-index:1;margin-top:80px;padding:44px 6vw 0;border-top:1px solid rgba(255,255,255,.1)}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:40px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.site-footer img.flogo{height:56px;width:auto;margin-bottom:14px;display:block}
+.site-footer .tag{color:var(--owd);font-size:14px;line-height:1.6}
+.site-footer h4{color:var(--ow);font-weight:600;font-size:15px;margin:0 0 14px}
+.site-footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.site-footer ul a{color:var(--owd);font-size:14px;text-decoration:none;transition:color .15s}
+.site-footer ul a:hover{color:var(--accent)}
+.foot-mail{display:flex;gap:8px;margin-top:4px}
+.foot-mail input{flex:1;min-width:0;padding:9px 12px;background:var(--char);border:1px solid rgba(255,255,255,.2);border-radius:9px;color:var(--ow);font-size:14px}
+.foot-mail input:focus{outline:none;border-color:var(--accent)}
+.foot-mail button{padding:9px 12px;background:var(--accent);color:var(--char);border:0;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.foot-social{display:flex;gap:10px;margin-top:14px}
+.foot-social a{width:40px;height:40px;border-radius:9px;background:var(--char2);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--ow);transition:.15s}
+.foot-social a:hover{border-color:rgba(0,255,157,.3);background:rgba(0,255,157,.1)}
+.foot-copy{padding:26px 0;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:var(--owd);font-size:14px}
+/* ===== ceramic-coating page content (scoped) ===== */
+.ceramic{--green:#00FF9D;--card:#111c17;--cline:#1f2e27;--ink:#eef5f1;--cmut:#9aa7b8;--bg2:#0d1411;--glow:0 0 40px rgba(0,255,157,.3)}
+.ceramic h1,.ceramic h2,.ceramic h3,.ceramic .eyebrow{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.01em;text-transform:uppercase;line-height:1.06;color:var(--text)}
+.ceramic h1{font-size:clamp(34px,6vw,60px);margin:.1em 0 .35em}
+.ceramic h2{font-size:clamp(24px,4vw,38px);margin:0 0 12px}
+.ceramic h3{font-size:1.05rem;margin:1.3rem 0 .3rem}
+.ceramic .eyebrow{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--green);margin-bottom:14px;display:block}
+.ceramic .grn{color:var(--green)}
+.ceramic .lead{color:var(--cmut);font-size:18px;max-width:640px;line-height:1.6}
+.ceramic .btn{display:inline-block;background:var(--green);color:#04110b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:14px;padding:14px 26px;border-radius:999px;text-decoration:none;cursor:pointer;box-shadow:var(--glow);transition:transform .15s}
+.ceramic .btn:hover{transform:translateY(-2px)}
+.ceramic .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--cline);box-shadow:none}
+.ceramic .hero{padding:8px 0 30px;background:radial-gradient(900px 380px at 82% -20%,rgba(0,255,157,.14),transparent 60%)}
+.ceramic .hero-cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.ceramic section{padding:44px 0;border-top:1px solid var(--cline)}
+.ceramic .szlbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cmut);margin:0 0 8px}
+.ceramic .sizes{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.ceramic .size{flex:1;min-width:108px;text-align:center;background:var(--bg2);border:1px solid var(--cline);color:var(--cmut);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em;padding:11px 8px;border-radius:10px;cursor:pointer;transition:.15s}
+.ceramic .size.on{background:var(--green);color:#04110b;border-color:var(--green);box-shadow:var(--glow)}
+.ceramic .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+.ceramic .tier{background:linear-gradient(160deg,var(--card),#0c1512);border:1px solid var(--cline);border-radius:16px;padding:22px}
+.ceramic .tier.feat{border-color:var(--green);box-shadow:var(--glow)}
+.ceramic .tier h3{font-size:20px;margin:0}
+.ceramic .tier .price{font-size:26px;font-weight:700;color:var(--green);margin:8px 0;font-family:"Space Grotesk",sans-serif}
+.ceramic .tier ul{list-style:none;margin:12px 0 0;padding:0;font-size:14px;color:var(--cmut)}
+.ceramic .tier li{padding:6px 0;border-bottom:1px solid var(--cline)}
+.ceramic .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#04110b;background:var(--green);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+.ceramic .faq h3{font-size:16px;margin:18px 0 4px}
+.ceramic .faq p{color:var(--cmut)}
+.ceramic .fine{color:var(--cmut);font-size:13px;margin-top:12px}
+.ceramic .band{text-align:center;padding:56px 0;background:radial-gradient(700px 300px at 50% 120%,rgba(0,255,157,.16),transparent);border-top:1px solid var(--cline)}
+.ceramic .band .lead{margin:10px auto 0}
+  </style>
 </head>
 <body>
+<canvas id="matrix"></canvas>
+<nav class="site-nav">
+<a href="/" class="logo-link"><img src="/logo-ikonic.webp" alt="ikonic"></a>
+<input type="checkbox" id="navchk">
+<label class="nav-toggle" for="navchk" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></label>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/about">About</a>
+<div class="nav-item"><button class="nav-trigger" type="button">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="dropdown"><a class="head" href="/services">View All Services &rarr;</a><a href="/services/web-design">Web Design &amp; Funnels</a><a href="/services/crm-automation">CRM &amp; Automations</a><a href="/services/reputation">Reputation Management</a><a href="/services/speed-to-lead">Speed to Lead</a><a href="/services/marketing">Marketing Systems</a><a href="/services/paint-protection-film">Paint Protection Film (PPF)</a><a href="/services/window-tint">Window Tint</a><a href="/services/ceramic-coating">Ceramic Coating</a></div></div>
+<div class="nav-item"><button class="nav-trigger" type="button">Calculators <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="dropdown"><a href="/wrap-calculator">Wrap Calculator</a><a href="/print-ship">Print &amp; Ship</a><a href="/lost-call-calculator">Lost Call Calculator</a></div></div>
+<a href="/blogs">Blogs</a>
+<a href="/careers">Career</a>
+<a href="/sticker-builder">Sticker Builder</a>
+<a href="/branded-to-win" class="btn-book">Book</a>
+<a href="/contact" class="btn-start">Start Now</a>
+</div>
+</nav>
+  <div class="wrap">
+    <main class="ceramic">
 
-<header class="iknav-bar"><div class="iknav">
-  <a class="iknav-logo" href="/"><img src="/logo-ikonic.webp" alt="ikonic"></a>
-  <nav class="iknav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/services/paint-protection-film">PPF</a>
-    <a href="/services/window-tint">Window Tint</a>
-    <a href="/services/ceramic-coating" class="on">Ceramic</a>
-    <a href="/services">All Services</a>
-    <a class="iknav-cta" href="/contact">Free Quote</a>
-  </nav>
-</div></header>
+      <header class="hero">
+        <span class="eyebrow">Ceramic Coating · Wheat Ridge / Denver</span>
+        <h1>Liquid glass<br><span class="grn">gloss.</span></h1>
+        <p class="lead">A 9H ceramic coating bonds to your paint for years of deep gloss and hydrophobic,
+          self-cleaning protection — dirt and water just slide off. Prepped, polished, and installed in-shop
+          by ikonic for drivers across the Denver metro.</p>
+        <div class="hero-cta"><a class="btn" href="tel:+17206791230">Get my free quote</a><a class="btn ghost" href="#packages">See packages ↓</a></div>
+      </header>
 
-<header class="hero"><div class="wrap">
-  <div class="eyebrow">Ceramic Coating · Wheat Ridge / Denver</div>
-  <h1>Liquid glass<br><span class="grn">gloss.</span></h1>
-  <p class="lead">A 9H ceramic coating bonds to your paint for years of deep gloss and hydrophobic, self-cleaning protection — dirt and water just slide off. Drag the slider to see it.</p>
-  <div class="cta"><a class="btn" href="tel:+17206791230">Get my free quote</a><a class="btn ghost" href="#viz">See the gloss ↓</a></div>
-</div></header>
+      <section id="packages">
+        <span class="eyebrow">Packages</span>
+        <h2>Pick your <span class="grn">protection</span></h2>
+        <div class="szlbl">Your vehicle size</div>
+        <div class="sizes" id="sizes">
+          <div class="size" data-size="coupe">Coupe / 2-Door</div>
+          <div class="size on" data-size="sedan">Sedan / Sm SUV</div>
+          <div class="size" data-size="suv">SUV / Truck</div>
+          <div class="size" data-size="xl">XL / 3-Row</div>
+        </div>
+        <div class="grid">
+          <div class="tier"><h3>Daily</h3><div class="price" data-price="daily">from $699</div><ul><li>Wash + iron/tar decon + clay</li><li>Single-stage light polish</li><li>1-layer ceramic on paint</li><li>1–2 yr · gloss + hydrophobic</li><li>Maintenance guide included</li></ul></div>
+          <div class="tier feat"><div class="badge">Most Popular</div><h3>Premium</h3><div class="price" data-price="premium">from $1,199</div><ul><li>Everything in Daily, plus:</li><li>Multi-stage paint correction</li><li>Ceramic coating + topper</li><li>Glass + wheel faces + trim coated</li><li>5 yr · 9H hardness</li></ul></div>
+          <div class="tier"><h3>Elite</h3><div class="price" data-price="elite">from $1,999</div><ul><li>Everything in Premium, plus:</li><li>Full multi-stage correction</li><li>Multi-layer system (base + topcoat)</li><li>All surfaces: paint, glass, wheels incl. barrels, trim, exhaust</li><li>Annual maintenance inspection</li></ul></div>
+        </div>
+        <p class="fine">Starting prices include full paint decontamination + machine polish prep. Pairs with PPF for total protection. (Final pricing from a free assessment.)</p>
+      </section>
 
-<section id="viz"><div class="wrap">
-  <div class="eyebrow">Before / After</div>
-  <h2>Dull paint → <span class="grn">mirror finish</span></h2>
-  <div class="vizcard">
-    <div class="stage" id="stage">
-      <div class="ph before" data-slot="BEFORE photo (uncoated paint)"><span>Before — uncoated</span></div>
-      <div class="ph after" id="after" data-slot="AFTER photo (ceramic-coated)"><div class="sheen"></div>
-        <span>After — ikonic ceramic</span>
-        <i class="bead" style="left:62%;top:30%;width:26px;height:26px"></i>
-        <i class="bead" style="left:74%;top:52%;width:18px;height:18px"></i>
-        <i class="bead" style="left:68%;top:68%;width:32px;height:32px"></i>
-        <i class="bead" style="left:84%;top:38%;width:14px;height:14px"></i>
-        <i class="bead" style="left:90%;top:62%;width:22px;height:22px"></i>
-      </div>
-      <div class="divider" id="divider"></div>
-    </div>
-    <div class="chips"><div class="chip" id="beadBtn">💧 Show water beading</div></div>
-    <p class="fine">Drag the divider. Drop in your real before/after shots in the marked slots to make it sing.</p>
+      <section>
+        <span class="eyebrow">Why ikonic</span>
+        <h2>Protection you can <span class="grn">feel.</span></h2>
+        <p class="lead">Every coating starts with the part that matters most: prep. We wash, decontaminate, and
+          machine-polish your paint to a flawless finish before a drop of coating goes on — because ceramic
+          locks in whatever's underneath. The result is a hard, slick, UV-stable layer that beads water,
+          resists swirls, and keeps your car looking just-detailed with a fraction of the upkeep.</p>
+      </section>
+
+      <section class="faq">
+        <span class="eyebrow">FAQ</span>
+        <h2>Ceramic <span class="grn">questions</span></h2>
+        <h3>How long does ceramic coating last?</h3>
+        <p>Depending on the package, 1–2 years up to 5+ years for multi-layer systems — with simple maintenance washes.</p>
+        <h3>Ceramic coating vs PPF — which do I need?</h3>
+        <p>PPF physically stops rock chips; ceramic adds gloss and makes cleaning easy. Many clients do both — PPF on the high-impact panels, ceramic over everything.</p>
+        <h3>Does it really make washing easier?</h3>
+        <p>Yes — the hydrophobic surface means dirt and water sheet off, so washes are faster and your paint stays cleaner longer.</p>
+        <h3>What prep is included?</h3>
+        <p>Full decontamination and a machine polish to correct swirls before coating — prep is most of the work and we don't skip it.</p>
+      </section>
+
+      <section class="band">
+        <span class="eyebrow">Wheat Ridge · Arvada · Lakewood · Golden · Denver</span>
+        <h2>Lock in the <span class="grn">gloss.</span></h2>
+        <p class="lead">Free assessment + real quote.</p>
+        <div class="hero-cta" style="justify-content:center;margin-top:24px"><a class="btn" href="tel:+17206791230">Call (720) 679-1230</a><a class="btn ghost" href="mailto:info@ikonicmarketing303.com">Email us</a></div>
+      </section>
+
+    </main>
   </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow">Packages</div>
-  <h2>Pick your <span class="grn">protection</span></h2>
-  <div class="szlbl">Your vehicle size</div>
-  <div class="sizes" id="sizes">
-    <div class="size" data-size="coupe">Coupe / 2-Door</div>
-    <div class="size on" data-size="sedan">Sedan / Sm SUV</div>
-    <div class="size" data-size="suv">SUV / Truck</div>
-    <div class="size" data-size="xl">XL / 3-Row</div>
-  </div>
-  <div class="grid">
-    <div class="tier"><h3>Daily</h3><div class="price" data-price="daily">from $699</div><ul><li>Wash + iron/tar decon + clay</li><li>Single-stage light polish</li><li>1-layer ceramic on paint</li><li>1–2 yr · gloss + hydrophobic</li><li>Maintenance guide included</li></ul></div>
-    <div class="tier feat"><div class="badge">Most Popular</div><h3>Premium</h3><div class="price" data-price="premium">from $1,199</div><ul><li>Everything in Daily, plus:</li><li>Multi-stage paint correction</li><li>Ceramic coating + topper</li><li>Glass + wheel faces + trim coated</li><li>5 yr · 9H hardness</li></ul></div>
-    <div class="tier"><h3>Elite</h3><div class="price" data-price="elite">from $1,999</div><ul><li>Everything in Premium, plus:</li><li>Full multi-stage correction</li><li>Multi-layer system (base + topcoat)</li><li>All surfaces: paint, glass, wheels incl. barrels, trim, exhaust</li><li>Annual maintenance inspection</li></ul></div>
-  </div>
-  <p class="fine">Starting prices include full paint decontamination + machine polish prep. Pairs with PPF for total protection. (Final pricing from a free assessment.)</p>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow">Why ikonic</div>
-  <h2>Protection you can <span class="grn">feel.</span></h2>
-  <p class="lead">Every coating starts with the part that matters most: prep. We wash, decontaminate, and machine-polish your paint to a flawless finish before a drop of coating goes on — because ceramic locks in whatever's underneath. The result is a hard, slick, UV-stable layer that beads water, resists swirls, and keeps your car looking just-detailed with a fraction of the upkeep.</p>
-</div></section>
-
-<section class="faq"><div class="wrap">
-  <div class="eyebrow">FAQ</div>
-  <h2>Ceramic <span class="grn">questions</span></h2>
-  <h3>How long does ceramic coating last?</h3>
-  <p>Depending on the package, 1–2 years up to 5+ years for multi-layer systems — with simple maintenance washes.</p>
-  <h3>Ceramic coating vs PPF — which do I need?</h3>
-  <p>PPF physically stops rock chips; ceramic adds gloss and makes cleaning easy. Many clients do both — PPF on the high-impact panels, ceramic over everything.</p>
-  <h3>Does it really make washing easier?</h3>
-  <p>Yes — the hydrophobic surface means dirt and water sheet off, so washes are faster and your paint stays cleaner longer.</p>
-  <h3>What prep is included?</h3>
-  <p>Full decontamination and a machine polish to correct swirls before coating — prep is most of the work and we don't skip it.</p>
-</div></section>
-
-<footer class="cta-band"><div class="wrap">
-  <div class="eyebrow">Wheat Ridge · Arvada · Lakewood · Golden · Denver</div>
-  <h2>Lock in the <span class="grn">gloss.</span></h2>
-  <p class="lead" style="margin:10px auto 0">Free assessment + real quote.</p>
-  <div style="margin-top:24px"><a class="btn" href="tel:+17206791230">Call (720) 679-1230</a> <a class="btn ghost" href="mailto:info@ikonicmarketing303.com">Email us</a></div>
-</div></footer>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","serviceType":"Ceramic Coating","provider":{"@type":"LocalBusiness","name":"ikonic","telephone":"+1-720-679-1230","email":"info@ikonicmarketing303.com","areaServed":["Wheat Ridge","Arvada","Lakewood","Golden","Denver"],"url":"https://ikonic303.com/ceramic-coating"}}
-</script>
-
+<footer class="site-footer">
+<div class="foot-grid">
+<div><img class="flogo" src="/logo-ikonic.webp" alt="ikonic"><p class="tag">The Digital Agency That Works While You Sleep.</p></div>
+<div><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/services">Services</a></li><li><a href="/contact">Contact</a></li><li><a href="/blogs">Blogs</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="/services/web-design">Web Design &amp; Funnels</a></li><li><a href="/services/crm-automation">CRM &amp; Automations</a></li><li><a href="/services/reputation">Reputation Management</a></li><li><a href="/services/speed-to-lead">Speed to Lead Systems</a></li><li><a href="/services/marketing">Marketing Systems</a></li></ul></div>
+<div><h4>Free GHL Setup Checklist</h4><p class="tag" style="margin-bottom:14px">Get our free GHL setup checklist &mdash; join 500+ Colorado businesses automating their lead flow.</p>
+<form class="foot-mail" onsubmit="return false"><input type="email" placeholder="Your email"><button type="submit" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></form>
+<p class="tag" style="margin-top:22px">Follow Us</p>
+<div class="foot-social"><a href="https://www.facebook.com/ikonic303" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="https://www.instagram.com/ikonic_303/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.6" y2="6.5"/></svg></a><a href="https://www.tiktok.com/@ikonic_303" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a></div>
+</div>
+</div>
+<div class="foot-copy">&copy; 2026 Ikonic. All rights reserved.</div>
+</footer>
 <script>
+/* ===== ikonic matrix-rain background ===== */
 (function(){
-  var stage=document.getElementById('stage'),divider=document.getElementById('divider'),after=document.getElementById('after');
-  function setSplit(p){p=Math.max(4,Math.min(96,p));divider.style.left=p+'%';after.style.clipPath='inset(0 0 0 '+p+'%)';}
-  var drag=false;function x(e){return e.touches?e.touches[0].clientX:e.clientX;}
-  divider.addEventListener('mousedown',function(){drag=true;});divider.addEventListener('touchstart',function(){drag=true;});
-  window.addEventListener('mouseup',function(){drag=false;});window.addEventListener('touchend',function(){drag=false;});
-  function mv(e){if(!drag)return;var r=stage.getBoundingClientRect();setSplit((x(e)-r.left)/r.width*100);}
-  window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv);setSplit(50);
-  document.getElementById('beadBtn').addEventListener('click',function(){stage.classList.toggle('beadon');this.classList.toggle('on');});
-
+  var canvas=document.getElementById('matrix');if(!canvas)return;var ctx=canvas.getContext('2d');if(!ctx)return;
+  var CHARS='ᄀᄂᄃᄅᄆᄇᄉᄊᄋᄌᄍᄎᄏᄐᄑ하ᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᆨᆩᆪᆫᆬᆭᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂƆƎƧИႱႧႰႳႵႷႸႹႺႻႼႽႾႿჀჁჂჃჄჅაბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
+  var mobile=window.innerWidth<=768,dpr=window.devicePixelRatio||1,fontSize=mobile?14:16,colStep=mobile?2:1,frameMs=mobile?66:33,W=0,H=0;
+  function resize(){W=window.innerWidth;H=window.innerHeight;canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  var activeCols=Math.ceil(Math.ceil(window.innerWidth/fontSize)/colStep),drops=[],speeds=[];
+  for(var k=0;k<activeCols;k++){drops.push(Math.random()*-H);speeds.push(mobile?Math.random()*4+2.5:Math.random()*1.5+0.8);}
+  var last=0;
+  function draw(ts){
+    if(document.hidden){requestAnimationFrame(draw);return;}
+    if(ts-last<frameMs){requestAnimationFrame(draw);return;}
+    last=ts;
+    ctx.fillStyle='rgba(11,13,16,0.06)';ctx.fillRect(0,0,W,H);
+    ctx.font='bold '+fontSize+'px monospace';ctx.textBaseline='top';
+    for(var i=0;i<drops.length;i++){
+      var ch=CHARS[Math.floor(Math.random()*CHARS.length)],x=i*fontSize*colStep,y=drops[i];
+      if(Math.random()>0.97){ctx.fillStyle='#ccffcc';ctx.shadowColor='#00ff41';ctx.shadowBlur=14;}
+      else{ctx.fillStyle='rgba(0,255,65,'+(Math.random()*0.25+0.75)+')';ctx.shadowBlur=0;}
+      ctx.save();ctx.translate(x+fontSize/2,y+fontSize/2);ctx.scale(-1,-1);ctx.translate(-(x+fontSize/2),-(y+fontSize/2));ctx.fillText(ch,x,y);ctx.restore();
+      drops[i]+=speeds[i];
+      if(drops[i]>H){drops[i]=-fontSize;speeds[i]=Math.random()*1.5+0.8;}
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+<script>
+/* ===== ceramic packages: vehicle-size pricing ===== */
+(function(){
   var PRICES={
     coupe:{daily:599,premium:999,elite:1699},
     sedan:{daily:699,premium:1199,elite:1999},
@@ -173,7 +286,7 @@
   };
   function money(n){return 'from $'+n.toLocaleString();}
   function setSize(size){
-    var row=PRICES[size];
+    var row=PRICES[size];if(!row)return;
     document.querySelectorAll('[data-price]').forEach(function(el){el.textContent=money(row[el.getAttribute('data-price')]);});
     document.querySelectorAll('.size').forEach(function(b){b.classList.toggle('on',b.dataset.size===size);});
   }
