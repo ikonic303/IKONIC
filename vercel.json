@@ -12,6 +12,7 @@
     { "source": "/services/paint-protection-film", "destination": "/paint-protection-film.html" },
     { "source": "/services/window-tint", "destination": "/window-tint.html" },
     { "source": "/services/ceramic-coating", "destination": "/ceramic-coating.html" },
+    { "source": "/commercial-wraps", "destination": "/commercial-wraps.html" },
     { "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
   ]
 }
