@@ -33,10 +33,11 @@ import { handler as post } from './_lib/blog/blog-post.js';
 import { handler as publish } from './_lib/blog/publish-blog.js';
 import { handler as generatePost } from './_lib/blog/generate-post.js';
 import { handler as autoGenerate } from './_lib/blog/auto-blog-generate.js';
+import { handler as unpublish } from './_lib/blog/unpublish.js';
 
 export const maxDuration = 60;
 
-type Action = 'list' | 'post' | 'publish' | 'generate-post' | 'auto-generate';
+type Action = 'list' | 'post' | 'publish' | 'generate-post' | 'auto-generate' | 'unpublish';
 
 const ROUTES: Record<Action, (req: VercelRequest, res: VercelResponse) => Promise<unknown>> = {
   list,
@@ -44,6 +45,7 @@ const ROUTES: Record<Action, (req: VercelRequest, res: VercelResponse) => Promis
   publish,
   'generate-post': generatePost,
   'auto-generate': autoGenerate,
+  unpublish,
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

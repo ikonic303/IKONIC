@@ -69,7 +69,56 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   if (!resendKey) return res.status(500).json({ error: 'RESEND_API_KEY not set' });
   if (!process.env.UPSTASH_REDIS_REST_URL) return res.status(500).json({ error: 'UPSTASH_REDIS_REST_URL not set' });
 
-  const topic = TOPICS[Math.floor(Math.random() * TOPICS.length)];
+  // TOPIC SELECTION — never write the same subject twice.
+  //
+  // This used to be `TOPICS[Math.floor(Math.random() * TOPICS.length)]` with no memory,
+  // running daily against a 20-item list. The result was severe self-cannibalisation:
+  // by post 47 there were SEVEN near-identical "fleet as mobile billboard" articles and
+  // three on "the hidden cost of a weak brand", each splitting the others' search
+  // authority. A content engine that republishes its own topics is worse than one that
+  // stops.
+  //
+  // Every post now records the exact topic string it came from. We read those back and
+  // only pick from what's left. When the list is exhausted we DO NOT generate — we email
+  // instead, because the right response to "nothing new to say" is to write new topics,
+  // not to say an old thing again.
+  const usedTopics = new Set<string>();
+  try {
+    const slugsData = await upstash(['SMEMBERS', 'blog:slugs']);
+    const existing: string[] = slugsData.result || [];
+    for (const s of existing) {
+      const d = await upstash(['GET', `blog:post:${s}`]);
+      if (!d.result) continue;
+      try {
+        const post = JSON.parse(d.result);
+        if (post.topic) usedTopics.add(post.topic);
+      } catch { /* ignore an unparseable record */ }
+    }
+  } catch (err) {
+    console.error('auto-blog-generate: could not read existing topics, proceeding:', err);
+  }
+
+  const available = TOPICS.filter((t) => !usedTopics.has(t));
+  if (!available.length) {
+    console.warn('auto-blog-generate: every topic is used — not generating a duplicate');
+    try {
+      await new Resend(resendKey).emails.send({
+        from: 'ikonic303 Blog <blog@ikonicmarketing303.com>',
+        to: 'info@ikonicmarketing303.com',
+        subject: 'Blog generator paused — the topic list is used up',
+        html: `<p>The daily blog generator ran but every topic in its list has already been
+               published, so it did not write anything rather than duplicate an existing post.</p>
+               <p><strong>To restart it:</strong> add new topics to <code>TOPICS</code> in
+               <code>api/_lib/blog/auto-blog-generate.ts</code>.</p>
+               <p>${usedTopics.size} topics used.</p>`,
+      });
+    } catch (err) {
+      console.error('auto-blog-generate: exhausted-notice email failed:', err);
+    }
+    return res.status(200).json({ ok: true, skipped: 'all topics used', used: usedTopics.size });
+  }
+
+  const topic = available[Math.floor(Math.random() * available.length)];
 
   const ai = new GoogleGenAI({ apiKey: geminiKey });
   const prompt = `You are a professional content writer for ikonic303, a Denver-based company specializing in digital marketing, business signage, commercial vehicle wraps, and wayfinding signage.
@@ -120,8 +169,11 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
   const slug = (postData.slug || token).replace(/[^a-z0-9-]/gi, '-').toLowerCase();
   const now = new Date().toISOString();
 
+  // NOTE: named `draft`, but status is 'published' — generated posts go LIVE immediately.
+  // The token/publish-blog flow is a leftover from when they were held for review.
   const draft = {
     token,
+    topic, // recorded so the next run can exclude this subject — see topic selection above
     title: postData.title,
     slug,
     excerpt: postData.excerpt,
