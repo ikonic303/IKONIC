@@ -97,7 +97,7 @@ export default function AIWebsiteGenerator() {
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  // Deposit flow: the form posts to /api/create-generator-deposit, which returns a
+  // Deposit flow: the form posts to /api/generator-deposit (action:'create'), which returns a
   // Square checkout URL. Square sends the customer back to
   // /ai-website-generator?token=… . We then ask OUR server to confirm with Square that
   // the order is genuinely paid before generating. The token in the URL is only a
@@ -129,10 +129,10 @@ export default function AIWebsiteGenerator() {
       setLoading(true);
       setError('');
       try {
-        const res = await fetch('/api/verify-generator-deposit', {
+        const res = await fetch('/api/generator-deposit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token }),
+          body: JSON.stringify({ action: 'verify', token }),
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data?.error || 'Could not verify your deposit.');
@@ -170,10 +170,11 @@ export default function AIWebsiteGenerator() {
       // Survive the round trip to Square.
       sessionStorage.setItem('ikonic:generator-form', JSON.stringify(form));
 
-      const res = await fetch('/api/create-generator-deposit', {
+      const res = await fetch('/api/generator-deposit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          action: 'create',
           businessName: form.businessName,
           businessType: form.businessType,
           email: form.email,
