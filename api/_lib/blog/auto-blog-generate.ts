@@ -45,14 +45,22 @@ async function upstash(command: unknown[]) {
 }
 
 export async function handler(req: VercelRequest, res: VercelResponse) {
-  // Auth — Vercel cron sends Authorization: Bearer {CRON_SECRET} automatically
+  // Auth — Vercel cron sends Authorization: Bearer {CRON_SECRET} automatically.
+  //
+  // FAIL CLOSED. This previously read `if (cronSecret) { ...check... }`, so when
+  // CRON_SECRET was unset the check was skipped entirely and this endpoint was
+  // publicly triggerable — every call costing a Gemini generation and a Resend email.
+  // CRON_SECRET was in fact NOT set in Vercel (found 2026-07-20), so that was live.
+  // A missing secret must mean NOBODY gets in, never everybody.
   const cronSecret = process.env.CRON_SECRET || '';
-  if (cronSecret) {
-    const authHeader = (req.headers['authorization'] as string) || '';
-    const querySecret = (req.query?.secret as string) || '';
-    if (authHeader !== `Bearer ${cronSecret}` && querySecret !== cronSecret) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
+  if (!cronSecret) {
+    console.error('auto-blog-generate: CRON_SECRET not configured — refusing to run');
+    return res.status(503).json({ error: 'Not configured' });
+  }
+  const authHeader = (req.headers['authorization'] as string) || '';
+  const querySecret = (req.query?.secret as string) || '';
+  if (authHeader !== `Bearer ${cronSecret}` && querySecret !== cronSecret) {
+    return res.status(401).json({ error: 'Unauthorized' });
   }
 
   const geminiKey = process.env.GEMINI_API_KEY;
