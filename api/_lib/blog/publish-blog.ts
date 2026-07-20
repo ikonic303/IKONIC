@@ -38,7 +38,7 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   post.publishedAt = new Date().toISOString();
   await upstash(['SET', `blog:post:${slug}`, JSON.stringify(post)]);
 
-  return res.status(200).send(page(post.title, 'Your blog post is now live on ikonicmarketing303.com/blogs', 'success', post.slug));
+  return res.status(200).send(page(post.title, 'Your blog post is now live on ikonic303.com/blogs', 'success', post.slug));
 }
 
 function page(title: string, message: string, state: 'success' | 'already' | 'error', slug?: string) {
@@ -51,7 +51,7 @@ function page(title: string, message: string, state: 'success' | 'already' | 'er
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>${heading} | Ikonic Blog</title>
+  <title>${heading} | ikonic303 Blog</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Arial, sans-serif; background: #0B0D10; color: white;
@@ -78,9 +78,9 @@ function page(title: string, message: string, state: 'success' | 'already' | 'er
     <p class="post-title">"${title}"</p>
     <p>${message}</p>
     ${slug
-      ? `<a class="btn" href="https://ikonicmarketing303.com/post/${slug}" target="_blank">View Post →</a>
-         <a class="btn-outline" href="https://ikonicmarketing303.com/blogs">All Posts</a>`
-      : `<a class="btn-outline" href="https://ikonicmarketing303.com/blogs">Go to Blog</a>`}
+      ? `<a class="btn" href="https://ikonic303.com/post/${slug}" target="_blank">View Post →</a>
+         <a class="btn-outline" href="https://ikonic303.com/blogs">All Posts</a>`
+      : `<a class="btn-outline" href="https://ikonic303.com/blogs">Go to Blog</a>`}
   </div>
 </body>
 </html>`;
