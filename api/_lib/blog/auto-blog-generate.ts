@@ -3,7 +3,7 @@ import { GoogleGenAI } from '@google/genai';
 import { Resend } from 'resend';
 import { randomUUID } from 'node:crypto';
 
-export const maxDuration = 60;
+
 
 const TOPICS = [
   // Digital Marketing
@@ -44,7 +44,7 @@ async function upstash(command: unknown[]) {
   return res.json();
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export async function handler(req: VercelRequest, res: VercelResponse) {
   // Auth — Vercel cron sends Authorization: Bearer {CRON_SECRET} automatically
   const cronSecret = process.env.CRON_SECRET || '';
   if (cronSecret) {

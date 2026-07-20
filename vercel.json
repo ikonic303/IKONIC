@@ -4,29 +4,95 @@
   "framework": "vite",
   "crons": [
     {
-      "path": "/api/auto-blog-generate",
+      "path": "/api/blog?action=auto-generate",
       "schedule": "0 14 * * *"
     }
   ],
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "(www\\.)?ikonicmarketing303\\.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?ikonicmarketing303\\.com"
+        }
+      ],
       "destination": "https://ikonic303.com/:path*",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/signage", "destination": "/signage.html" },
-    { "source": "/wayfinding", "destination": "/wayfinding.html" },
-    { "source": "/marketing", "destination": "/marketing.html" },
-    { "source": "/paint-protection-film", "destination": "/paint-protection-film.html" },
-    { "source": "/window-tint", "destination": "/window-tint.html" },
-    { "source": "/ceramic-coating", "destination": "/ceramic-coating.html" },
-    { "source": "/services/paint-protection-film", "destination": "/paint-protection-film.html" },
-    { "source": "/services/window-tint", "destination": "/window-tint.html" },
-    { "source": "/services/ceramic-coating", "destination": "/ceramic-coating.html" },
-    { "source": "/commercial-wraps", "destination": "/commercial-wraps.html" },
-    { "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
+    {
+      "source": "/api/blog-posts",
+      "destination": "/api/blog?action=list"
+    },
+    {
+      "source": "/api/blog-post",
+      "destination": "/api/blog?action=post"
+    },
+    {
+      "source": "/api/publish-blog",
+      "destination": "/api/blog?action=publish"
+    },
+    {
+      "source": "/api/generate-post",
+      "destination": "/api/blog?action=generate-post"
+    },
+    {
+      "source": "/api/auto-blog-generate",
+      "destination": "/api/blog?action=auto-generate"
+    },
+    {
+      "source": "/api/ops-feed",
+      "destination": "/api/ops"
+    },
+    {
+      "source": "/api/ops-ingest",
+      "destination": "/api/ops"
+    },
+    {
+      "source": "/signage",
+      "destination": "/signage.html"
+    },
+    {
+      "source": "/wayfinding",
+      "destination": "/wayfinding.html"
+    },
+    {
+      "source": "/marketing",
+      "destination": "/marketing.html"
+    },
+    {
+      "source": "/paint-protection-film",
+      "destination": "/paint-protection-film.html"
+    },
+    {
+      "source": "/window-tint",
+      "destination": "/window-tint.html"
+    },
+    {
+      "source": "/ceramic-coating",
+      "destination": "/ceramic-coating.html"
+    },
+    {
+      "source": "/services/paint-protection-film",
+      "destination": "/paint-protection-film.html"
+    },
+    {
+      "source": "/services/window-tint",
+      "destination": "/window-tint.html"
+    },
+    {
+      "source": "/services/ceramic-coating",
+      "destination": "/ceramic-coating.html"
+    },
+    {
+      "source": "/commercial-wraps",
+      "destination": "/commercial-wraps.html"
+    },
+    {
+      "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)",
+      "destination": "/index.html"
+    }
   ]
 }
