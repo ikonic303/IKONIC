@@ -54,7 +54,7 @@ export default function CRMAutomation() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="GoHighLevel CRM Setup & Automation Denver CO | Ikonic Marketing"
+        title="GoHighLevel CRM Setup & Automation Denver CO | ikonic303"
         description="Expert GoHighLevel CRM setup and automation for Colorado businesses. Automate follow-ups, nurture leads, and close more deals. Free CRM audit available."
         canonical="/services/crm-automation"
       />

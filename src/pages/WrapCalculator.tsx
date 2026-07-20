@@ -225,7 +225,7 @@ export default function WrapCalculator() {
   return (
     <div className="relative min-h-screen bg-charcoal">
       <PageSEO
-        title="Commercial Vehicle Wrap Cost Calculator Denver | Ikonic Marketing"
+        title="Commercial Vehicle Wrap Cost Calculator Denver | ikonic303"
         description="Get an instant vehicle wrap price estimate for your business vehicle. Our free wrap calculator covers cars, trucks, vans, and trailers. Serving Denver and Colorado."
         canonical="/wrap-calculator"
       />

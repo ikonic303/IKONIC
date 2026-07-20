@@ -218,7 +218,7 @@ export default function PrintAndShip() {
   return (
     <div className="relative min-h-screen bg-charcoal">
       <PageSEO
-        title="Print & Ship Vinyl Wraps Denver | Ikonic Marketing"
+        title="Print & Ship Vinyl Wraps Denver | ikonic303"
         description="Order custom-printed vinyl wraps and have them shipped directly to you. Professional print quality for vehicle wraps, banners, and signage. Serving Denver and Colorado."
         canonical="/print-ship"
       />

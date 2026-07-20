@@ -42,7 +42,7 @@ function HomePage() {
   return (
     <>
       <PageSEO
-        title="Digital Marketing Agency Denver CO | Ikonic Marketing"
+        title="Digital Marketing Agency Denver CO | ikonic303"
         description="Denver's #1 GoHighLevel agency. We build 24/7 lead capture systems — custom websites, CRM automation, sales funnels, and reputation management. Get more leads on autopilot."
         canonical="/"
       />

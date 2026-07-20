@@ -39,8 +39,8 @@ export default function About() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="About Ikonic Marketing | Denver Digital Marketing Agency"
-        description="Meet the Ikonic Marketing team. Denver-based digital marketing agency specializing in GoHighLevel automation, CRM setup, and lead generation for Colorado businesses."
+        title="About ikonic303 | Denver Digital Marketing Agency"
+        description="Meet the ikonic303 team. Denver-based digital marketing agency specializing in GoHighLevel automation, CRM setup, and lead generation for Colorado businesses."
         canonical="/about"
       />
       <MatrixBackground />
@@ -70,7 +70,7 @@ export default function About() {
           </h2>
           <div className="space-y-6 text-offwhite-dark">
             <p>
-              Ikonic Marketing was founded with a simple belief: local businesses deserve 
+              ikonic was founded with a simple belief: local businesses deserve 
               access to the same powerful marketing tools and automation that big corporations use. 
               We saw too many small businesses struggling to keep up with the digital world, 
               juggling dozens of tools and still falling behind.

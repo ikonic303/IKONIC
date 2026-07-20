@@ -289,7 +289,7 @@ export default function StickerBuilder() {
   return (
     <div className="sb-wrap" style={{ position: 'relative', zIndex: 10 }}>
       <PageSEO
-        title="Custom Sticker Builder — Design & Order Online | Ikonic Marketing"
+        title="Custom Sticker Builder — Design & Order Online | ikonic303"
         description="Design and order custom stickers online. Choose your shape, size, material, and finish — die-cut, kiss-cut, bumper stickers, and more. Fast shipping across Colorado and the US."
         canonical="/sticker-builder"
       />

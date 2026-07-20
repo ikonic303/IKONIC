@@ -8,6 +8,14 @@
       "schedule": "0 14 * * *"
     }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(www\\.)?ikonicmarketing303\\.com" }],
+      "destination": "https://ikonic303.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/signage", "destination": "/signage.html" },
     { "source": "/wayfinding", "destination": "/wayfinding.html" },

@@ -35,8 +35,8 @@ export default function Contact() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Contact Ikonic Marketing | Free Strategy Call — Denver, CO"
-        description="Book your free marketing strategy session with Ikonic Marketing. Denver-based GoHighLevel experts ready to build your lead generation system. Call (720) 679-1230."
+        title="Contact ikonic303 | Free Strategy Call — Denver, CO"
+        description="Book your free marketing strategy session with ikonic303. Denver-based GoHighLevel experts ready to build your lead generation system. Call (720) 679-1230."
         canonical="/contact"
       />
       <MatrixBackground />

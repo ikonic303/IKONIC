@@ -85,7 +85,7 @@ export default function BrandedToWin() {
   return (
     <div className="min-h-screen" style={{ position: 'relative', zIndex: 10 }}>
       <PageSEO
-        title="Branded to Win Book by Joshua Soderblom | Ikonic Marketing"
+        title="Branded to Win Book by Joshua Soderblom | ikonic303"
         description="Get the Branded to Win book — the complete guide to building a business brand that attracts customers, generates leads, and dominates your local market. Digital & bundle editions available."
         canonical="/branded-to-win"
       />

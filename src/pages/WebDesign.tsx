@@ -53,7 +53,7 @@ export default function WebDesign() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Web Design & Sales Funnels Denver CO | Ikonic Marketing"
+        title="Web Design & Sales Funnels Denver CO | ikonic303"
         description="Custom websites and high-converting GoHighLevel sales funnels for Denver businesses. Mobile-responsive, conversion-optimized, built by GHL experts. Get a free quote."
         canonical="/services/web-design"
       />
@@ -169,7 +169,7 @@ export default function WebDesign() {
           </h2>
           <div className="space-y-6 text-offwhite-dark">
             <p>
-              Looking for professional web design services in Colorado? Ikonic Marketing 
+              Looking for professional web design services in Colorado? ikonic 
               specializes in creating custom websites and high-converting sales funnels for 
               local businesses. Our team of GoHighLevel experts builds digital experiences 
               that drive results.

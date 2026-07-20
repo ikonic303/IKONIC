@@ -55,7 +55,7 @@ export default function MarketingSystems() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Digital Marketing Systems & Automation Denver CO | Ikonic Marketing"
+        title="Digital Marketing Systems & Automation Denver CO | ikonic303"
         description="Full-service digital marketing for Colorado businesses — social media, paid ads (Google & Facebook), email automation, and analytics dashboards. Fill your pipeline on autopilot."
         canonical="/services/marketing"
       />

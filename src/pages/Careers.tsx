@@ -75,8 +75,8 @@ export default function Careers() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Careers at Ikonic Marketing | Join Our Denver Marketing Team"
-        description="Join the Ikonic Marketing team in Denver, CO. We're hiring driven marketers, GoHighLevel specialists, and automation experts. Build your career in digital marketing."
+        title="Careers at ikonic303 | Join Our Denver Marketing Team"
+        description="Join the ikonic303 team in Denver, CO. We're hiring driven marketers, GoHighLevel specialists, and automation experts. Build your career in digital marketing."
         canonical="/careers"
       />
       <MatrixBackground />
@@ -87,7 +87,7 @@ export default function Careers() {
         <div ref={heroRef} className="max-w-4xl mx-auto text-center">
           <p className="text-micro text-mint mb-4">CAREERS AT IKONIC MARKETING</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite mb-6 leading-tight">
-            Join <span className="text-mint">Ikonic Marketing</span><br />
+            Join <span className="text-mint">ikonic</span><br />
             Build a High Income Sales Career
           </h1>
           <p className="text-lg text-offwhite-dark max-w-2xl mx-auto mb-8">
@@ -115,7 +115,7 @@ export default function Careers() {
             A Local Team Focused on <span className="text-mint">Real Results</span>
           </h2>
           <p className="text-offwhite-dark text-center max-w-2xl mx-auto mb-6">
-            Ikonic Marketing helps local businesses in Colorado grow using websites, CRM 
+            ikonic helps local businesses in Colorado grow using websites, CRM 
             automation, SEO, and lead follow-up systems.
           </p>
           <p className="text-offwhite-dark text-center max-w-2xl mx-auto">

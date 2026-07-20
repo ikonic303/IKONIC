@@ -88,7 +88,7 @@ export default function AllServices() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Digital Marketing Services Denver CO | Ikonic Marketing"
+        title="Digital Marketing Services Denver CO | ikonic303"
         description="Full-service digital marketing for Denver businesses — web design, GoHighLevel CRM automation, reputation management, speed-to-lead, and marketing systems. All under one roof."
         canonical="/services"
       />
