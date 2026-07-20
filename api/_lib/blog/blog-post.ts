@@ -151,7 +151,7 @@ async function getRedisPost(slug: string) {
 
 // ── Main handler ─────────────────────────────────────────────────────────────
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export async function handler(req: VercelRequest, res: VercelResponse) {
   const { slug, _debug } = req.query;
   if (!slug || typeof slug !== 'string') return res.status(400).json({ error: 'slug required' });
 

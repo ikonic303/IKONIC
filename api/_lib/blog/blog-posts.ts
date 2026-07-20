@@ -67,7 +67,7 @@ async function getRedisPublishedPosts() {
   }
 }
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
     const [redisPosts, ghlHtml] = await Promise.all([
       getRedisPublishedPosts(),

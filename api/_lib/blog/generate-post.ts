@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
 
-export const maxDuration = 30;
+
 
 const PLATFORM_GUIDES: Record<string, string> = {
   'Twitter / X': 'Max 280 characters. Punchy, direct, hook in the first sentence. Use 1-2 hashtags. No fluff.',
@@ -11,7 +11,7 @@ const PLATFORM_GUIDES: Record<string, string> = {
   'TikTok':      '50-100 words. High energy, trending language. Hook in the first line ("POV:", "Nobody talks about this...", etc.). 3-5 trending hashtags.',
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

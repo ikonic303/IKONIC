@@ -12,7 +12,7 @@ async function upstash(command: unknown[]) {
   return res.json();
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export async function handler(req: VercelRequest, res: VercelResponse) {
   const { token, slug } = req.query as { token?: string; slug?: string };
 
   if (!token || !slug) {
