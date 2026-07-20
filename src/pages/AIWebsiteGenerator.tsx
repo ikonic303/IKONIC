@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Sparkles, Wand2, Layout, Palette, LayoutTemplate, ArrowRight, Check, Loader2,
   MessageSquare, Cpu, Eye, Rocket, Type, MousePointerClick, Users, PhoneCall,
@@ -97,6 +97,66 @@ export default function AIWebsiteGenerator() {
 
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+  // Deposit flow: the form posts to /api/create-generator-deposit, which returns a
+  // Square checkout URL. Square sends the customer back to
+  // /ai-website-generator?token=… . We then ask OUR server to confirm with Square that
+  // the order is genuinely paid before generating. The token in the URL is only a
+  // pointer — the browser never gets to assert "paid".
+  //
+  // If the server is running in free lead-magnet mode (GENERATOR_REQUIRE_DEPOSIT=0)
+  // /api/generate-website simply accepts the request without a token, so the same code
+  // path works for both models with no front-end change.
+  const generate = async (payload: FormState, token?: string) => {
+    const res = await fetch('/api/generate-website', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(token ? { ...payload, token } : payload),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data?.error || 'Something went wrong generating your design.');
+    setConcept(data.concept as WebsiteConcept);
+    (window as any).fbq?.('track', 'Lead', { content_name: 'AI Website Generator' });
+    setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  };
+
+  // Returning from Square — verify, then generate using the details we saved before
+  // sending them to checkout (the form state is gone after the redirect).
+  useEffect(() => {
+    const token = new URLSearchParams(window.location.search).get('token');
+    if (!token) return;
+
+    (async () => {
+      setLoading(true);
+      setError('');
+      try {
+        const res = await fetch('/api/verify-generator-deposit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || 'Could not verify your deposit.');
+        if (!data.paid) {
+          setError('We have not received your payment yet. If you just paid, refresh in a moment.');
+          return;
+        }
+        const saved = sessionStorage.getItem('ikonic:generator-form');
+        const payload: FormState = saved ? { ...EMPTY_FORM, ...JSON.parse(saved) } : EMPTY_FORM;
+        if (!payload.businessName) {
+          setError('Deposit confirmed, but your details were lost. Please re-enter them below.');
+          return;
+        }
+        await generate(payload, token);
+        sessionStorage.removeItem('ikonic:generator-form');
+        window.history.replaceState({}, '', '/ai-website-generator');
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Something went wrong. Please call (720) 679-1230.');
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -107,20 +167,31 @@ export default function AIWebsiteGenerator() {
     setLoading(true);
     setConcept(null);
     try {
-      const res = await fetch('/api/generate-website', {
+      // Survive the round trip to Square.
+      sessionStorage.setItem('ikonic:generator-form', JSON.stringify(form));
+
+      const res = await fetch('/api/create-generator-deposit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          businessName: form.businessName,
+          businessType: form.businessType,
+          email: form.email,
+        }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || 'Something went wrong generating your design.');
-      setConcept(data.concept as WebsiteConcept);
-      // fire a lead/conversion pixel event if present
-      (window as any).fbq?.('track', 'Lead', { content_name: 'AI Website Generator' });
-      setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+      // 404 => deposits aren't deployed; 402-free mode => generate directly. Either
+      // way, fall back to generating so a config gap never dead-ends a real lead.
+      if (res.status === 404) {
+        await generate(form);
+        return;
+      }
+      if (!res.ok) throw new Error(data?.error || 'Could not start checkout.');
+
+      window.location.href = data.url;
     } catch (err: any) {
       setError(err?.message || 'Something went wrong. Please try again.');
-    } finally {
       setLoading(false);
     }
   };

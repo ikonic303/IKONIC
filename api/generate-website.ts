@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
 import { Resend } from 'resend';
+import { blocked, readToken, consumeToken } from './_lib/guard';
 
 export const maxDuration = 45;
 
@@ -33,10 +34,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Kill switch + per-IP rate limit. This endpoint calls Gemini on every valid
+  // request, so an unguarded loop here is an unbounded bill. See api/_lib/guard.ts.
+  if (await blocked(req, res, { limit: 3, windowSec: 3600, name: 'gen-website' })) return;
+
   const body = (req.body || {}) as FormPayload;
 
   if (!body.businessName || !body.businessType) {
     return res.status(400).json({ error: 'Business name and business type are required' });
+  }
+
+  // Deposit gate. GENERATOR_REQUIRE_DEPOSIT=0 runs the generator free (lead-magnet
+  // mode) while still rate-limited; unset/any other value requires a paid deposit.
+  // The token is minted by create-generator-deposit and only marked 'paid' by
+  // verify-generator-deposit after SQUARE confirms — never by the browser.
+  const requireDeposit = process.env.GENERATOR_REQUIRE_DEPOSIT !== '0';
+  let depositToken: string | null = null;
+
+  if (requireDeposit) {
+    depositToken = typeof (req.body as any)?.token === 'string' ? (req.body as any).token : null;
+    if (!depositToken) {
+      return res.status(402).json({ error: 'A deposit is required before generating.' });
+    }
+    const record = await readToken(depositToken);
+    if (!record || record.status !== 'paid') {
+      return res.status(402).json({ error: 'Deposit not found or not yet confirmed.' });
+    }
   }
 
   const apiKey = process.env.GEMINI_API_KEY;
@@ -151,6 +174,13 @@ Rules: Every hex value must be a valid 6-digit hex color. Provide 4-6 page struc
       console.error('generate-website lead email failed:', err);
       // Do not fail the request — the user still gets their concept.
     }
+  }
+
+  // Burn the deposit token only now that a concept actually exists. Consuming it
+  // earlier would charge someone for a generation that failed — they'd have paid and
+  // have nothing, and the only remedy would be a refund, which we do not do.
+  if (depositToken) {
+    await consumeToken(depositToken);
   }
 
   return res.status(200).json({ concept });
