@@ -1,7 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_NAME = 'Ikonic Marketing';
-const BASE_URL = 'https://ikonicmarketing303.com';
+// Brand token is "ikonic303" (Josh 2026-07-20: "ikonic303 branding on all pages") — used for
+// og:site_name and the title suffix. The check below is case-insensitive so a title already
+// naming the brand never gets a second one appended.
+const SITE_NAME = 'ikonic303';
+// The canonical host is the APEX ikonic303.com. ikonicmarketing303.com is the EMAIL domain and
+// also serves this site at HTTP 200, so pointing canonicals there told Google the preferred
+// copy of every page lived on the other hostname — splitting authority across two domains.
+// Keep this in sync with vercel.json's host redirect and index.html's canonical.
+const BASE_URL = 'https://ikonic303.com';
 const DEFAULT_IMAGE = `${BASE_URL}/logo-ikonic.webp`;
 
 interface PageSEOProps {
@@ -21,7 +28,9 @@ export default function PageSEO({
   ogType = 'website',
   noIndex = false,
 }: PageSEOProps) {
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  const fullTitle = title.toLowerCase().includes(SITE_NAME.toLowerCase())
+    ? title
+    : `${title} | ${SITE_NAME}`;
   const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : undefined;
 
   return (

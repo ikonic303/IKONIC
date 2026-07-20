@@ -45,8 +45,8 @@ export default function BlogPost() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title={post ? `${post.title} | Ikonic Marketing Blog` : 'Blog | Ikonic Marketing'}
-        description={post ? post.description : 'Digital marketing tips and strategies for Denver businesses from the Ikonic Marketing team.'}
+        title={post ? `${post.title} | ikonic303 Blog` : 'Blog | ikonic303'}
+        description={post ? post.description : 'Digital marketing tips and strategies for Denver businesses from the ikonic303 team.'}
         canonical={post ? `/post/${post.urlSlug}` : undefined}
         ogType="article"
         ogImage={post?.image || undefined}

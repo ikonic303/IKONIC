@@ -41,7 +41,7 @@ export default function ReputationManagement() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Reputation Management & Google Reviews Denver CO | Ikonic Marketing"
+        title="Reputation Management & Google Reviews Denver CO | ikonic303"
         description="Build your 5-star reputation and dominate Google Maps. Automated review collection, Google Business Profile optimization, and local SEO for Denver businesses."
         canonical="/services/reputation"
       />

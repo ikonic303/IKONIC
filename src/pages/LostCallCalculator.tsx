@@ -32,7 +32,7 @@ export default function LostCallCalculator() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Missed Call Revenue Calculator | How Much Are Lost Calls Costing You? | Ikonic"
+        title="Missed Call Revenue Calculator | How Much Are Lost Calls Costing You? | ikonic303"
         description="Find out how much revenue your business loses from missed calls. Use our free calculator and see how missed call text-back automation can recover that revenue instantly."
         canonical="/lost-call-calculator"
       />
@@ -162,7 +162,7 @@ export default function LostCallCalculator() {
             <p className="text-center text-xs text-offwhite-dark/50 mt-4">
               Powered by{' '}
               <a href="https://ikonicmarketing303.com" className="text-mint hover:underline">
-                Ikonic Marketing 303
+                ikonic 303
               </a>
             </p>
           </div>

@@ -77,7 +77,7 @@ export default function Blogs() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Digital Marketing Blog | Tips for Denver Businesses | Ikonic Marketing"
+        title="Digital Marketing Blog | Tips for Denver Businesses | ikonic303"
         description="Marketing tips, GoHighLevel guides, and growth strategies for Denver-area businesses. Learn how to automate leads, improve your reputation, and scale your business."
         canonical="/blogs"
       />

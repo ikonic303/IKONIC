@@ -41,7 +41,7 @@ export default function SpeedToLead() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Speed to Lead Automation Denver CO | Ikonic Marketing"
+        title="Speed to Lead Automation Denver CO | ikonic303"
         description="Respond to leads in under 60 seconds with automated SMS and email follow-up. Never lose a lead again. Speed-to-lead automation for Colorado businesses."
         canonical="/services/speed-to-lead"
       />

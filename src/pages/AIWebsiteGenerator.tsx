@@ -128,7 +128,7 @@ export default function AIWebsiteGenerator() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="AI Website Generator | Free Custom Website Design Concept | Ikonic"
+        title="AI Website Generator | Free Custom Website Design Concept | ikonic303"
         description="Answer a few questions and let Ikonic's AI create a custom website design concept for your business — layout, copy, sections, colors, and a design direction ready to build."
         canonical="/ai-website-generator"
       />
