@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
 import { Resend } from 'resend';
-import { blocked, readToken, consumeToken } from './_lib/guard';
+import { blocked, readToken, consumeToken } from './_lib/guard.js';
 
 export const maxDuration = 45;
 
