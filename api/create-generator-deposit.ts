@@ -21,7 +21,7 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { randomUUID } from 'crypto';
-import { blocked, putToken } from './_lib/guard';
+import { blocked, putToken } from './_lib/guard.js';
 
 const DEPOSIT_USD = Number(process.env.GENERATOR_DEPOSIT_USD || 250);
 
