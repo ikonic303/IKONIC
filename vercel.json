@@ -43,14 +43,6 @@
       "destination": "/api/blog?action=auto-generate"
     },
     {
-      "source": "/api/ops-feed",
-      "destination": "/api/ops"
-    },
-    {
-      "source": "/api/ops-ingest",
-      "destination": "/api/ops"
-    },
-    {
       "source": "/signage",
       "destination": "/signage.html"
     },
