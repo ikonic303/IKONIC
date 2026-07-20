@@ -8,6 +8,9 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   const auth = (req.headers.authorization || '');
   const [, b64] = auth.split(' ');
   const [user, pass] = b64 ? Buffer.from(b64, 'base64').toString().split(':') : ['', ''];
+  // FAIL CLOSED: with OPS_PASSWORD unset every comparison failed anyway, but make the
+  // intent explicit rather than relying on undefined-never-matches.
+  if (!process.env.OPS_PASSWORD) return res.status(503).json({ error: 'Not configured' });
   const okUser = process.env.OPS_USER || 'ikonic';
 
   if (user !== okUser || pass !== process.env.OPS_PASSWORD) {
