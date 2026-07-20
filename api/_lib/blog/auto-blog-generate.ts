@@ -72,7 +72,7 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   const topic = TOPICS[Math.floor(Math.random() * TOPICS.length)];
 
   const ai = new GoogleGenAI({ apiKey: geminiKey });
-  const prompt = `You are a professional content writer for Ikonic Marketing, a Denver-based company specializing in digital marketing, business signage, commercial vehicle wraps, and wayfinding signage.
+  const prompt = `You are a professional content writer for ikonic303, a Denver-based company specializing in digital marketing, business signage, commercial vehicle wraps, and wayfinding signage.
 
 Write a high-quality, SEO-optimized blog post on this topic: "${topic}"
 
@@ -128,7 +128,7 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
     content: postData.content,
     category: postData.category,
     tags: Array.isArray(postData.tags) ? postData.tags : [],
-    author: 'Ikonic Team',
+    author: 'ikonic303',
     status: 'published',
     createdAt: now,
     publishedAt: now,
@@ -137,7 +137,7 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
   await upstash(['SET', `blog:post:${slug}`, JSON.stringify(draft)]);
   await upstash(['SADD', 'blog:slugs', slug]);
 
-  const postUrl = `https://ikonicmarketing303.com/post/${slug}`;
+  const postUrl = `https://ikonic303.com/post/${slug}`;
 
   // Content preview — strip HTML tags for a clean text preview in the email
   const textPreview = draft.content
@@ -151,7 +151,7 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
 
   <div style="background:#0B0D10;padding:22px 28px;border-radius:12px;margin-bottom:20px;text-align:center;">
     <h1 style="color:#00FF9D;font-size:18px;margin:0;letter-spacing:2px;">✅ NEW BLOG POST PUBLISHED</h1>
-    <p style="color:rgba(255,255,255,0.5);margin:6px 0 0;font-size:12px;">Auto-published · Live on ikonicmarketing303.com/blogs</p>
+    <p style="color:rgba(255,255,255,0.5);margin:6px 0 0;font-size:12px;">Auto-published · Live on ikonic303.com/blogs</p>
   </div>
 
   <div style="background:white;border-radius:12px;padding:28px;margin-bottom:16px;">
@@ -172,13 +172,13 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
     </a>
   </div>
 
-  <p style="text-align:center;color:#aaa;font-size:11px;margin:0;">Ikonic Marketing · ikonicmarketing303.com</p>
+  <p style="text-align:center;color:#aaa;font-size:11px;margin:0;">ikonic303 · ikonic303.com</p>
 </div>`;
 
   const resend = new Resend(resendKey);
   try {
     await resend.emails.send({
-      from: 'Ikonic Blog <blog@ikonicmarketing303.com>',
+      from: 'ikonic303 Blog <blog@ikonicmarketing303.com>',
       to: 'info@ikonicmarketing303.com',
       subject: `✅ New Blog Post Live: "${draft.title}"`,
       html: emailHtml,
