@@ -84,7 +84,7 @@
     },
     {
       "source": "/post/:slug",
-      "destination": "/index.html"
+      "destination": "/404.html"
     },
     {
       "source": "/proof-manager",
