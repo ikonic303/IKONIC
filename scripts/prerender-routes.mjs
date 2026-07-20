@@ -280,6 +280,37 @@ function buildPage(template, route) {
   return html;
 }
 
+/**
+ * The 404 shell. Every unmatched path rewrites here (see vercel.json), so it must:
+ *  - carry <meta name="robots" content="noindex"> — otherwise every mistyped or stale
+ *    URL returns the HOMEPAGE's title and canonical, telling Google there are infinite
+ *    copies of the homepage (a "soft 404");
+ *  - still load the JS bundle, so if someone adds a React route and forgets to add a
+ *    rewrite here, the page STILL WORKS for humans — it just isn't indexed until the
+ *    entry is added. Degrade gracefully, never blank-screen.
+ */
+function build404(template) {
+  let html = template;
+  html = html.replace(/<title>[\s\S]*?<\/title>/, '<title>Page Not Found | ikonic303</title>');
+  html = setTag(html, /<meta\s+name="description"[^>]*>/, "That page doesn't exist. Vehicle wraps, signage and marketing for Denver businesses.");
+  html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
+    '<meta name="robots" content="noindex,follow" />');
+  const rootRe = /(<div id="root">)[\s\S]*?(<\/div>\s*(?:<script|<\/body>))/;
+  const body = `
+      <main style="max-width:820px;margin:0 auto;padding:2rem 1.25rem;font-family:Inter,system-ui,sans-serif;line-height:1.6;color:#e8e8e8;background:#0b0b0f">
+        <h1>Page not found</h1>
+        <p>That page doesn't exist. The link may be out of date, or the address slightly off.</p>
+        <p><a href="${ORIGIN}/">ikonic303 home</a> ·
+           <a href="${ORIGIN}/services">services</a> ·
+           <a href="${ORIGIN}/wrap-calculator">wrap calculator</a> ·
+           <a href="${ORIGIN}/blogs">guides</a> ·
+           <a href="${ORIGIN}/contact">contact</a></p>
+        <p>Or call <a href="tel:+17206791230">(720) 679-1230</a>.</p>
+      </main>
+    `;
+  return html.replace(rootRe, `$1${body}$2`);
+}
+
 function main() {
   const templatePath = join(DIST, 'index.html');
   if (!existsSync(templatePath)) {
@@ -295,7 +326,8 @@ function main() {
     writeFileSync(join(outDir, 'index.html'), buildPage(template, route), 'utf8');
     count++;
   }
-  console.log(`prerender: wrote ${count} route shells into dist/`);
+  writeFileSync(join(DIST, '404.html'), build404(template), 'utf8');
+  console.log(`prerender: wrote ${count} route shells + 404.html into dist/`);
 }
 
 main();

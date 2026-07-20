@@ -83,8 +83,28 @@
       "destination": "/commercial-wraps.html"
     },
     {
-      "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)",
+      "source": "/post/:slug",
       "destination": "/index.html"
+    },
+    {
+      "source": "/proof-manager",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/proof/:token",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/viral-bot",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/viral-bot/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)",
+      "destination": "/404.html"
     }
   ]
 }

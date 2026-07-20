@@ -36,6 +36,7 @@ const ViralBot = lazy(() => import('./pages/ViralBot'));
 const ViralBotAuth = lazy(() => import('./pages/ViralBotAuth'));
 const ViralBotApp = lazy(() => import('./pages/ViralBotApp'));
 const AIWebsiteGenerator = lazy(() => import('./pages/AIWebsiteGenerator'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function HomePage() {
   return (
@@ -155,6 +156,8 @@ function App() {
             <Route path="/viral-bot/auth" element={<ViralBotAuth />} />
             <Route path="/viral-bot/app" element={<ViralBotApp />} />
             <Route path="/ai-website-generator" element={<AIWebsiteGenerator />} />
+            {/* Catch-all. Must stay LAST — react-router matches in order. */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>
