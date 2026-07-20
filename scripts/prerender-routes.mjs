@@ -281,6 +281,136 @@ function buildPage(template, route) {
 }
 
 /**
+ * Blog posts. There are ~53 of them and they were ALL served the homepage shell —
+ * same <title>, canonical="https://ikonic303.com/" — so to a crawler that doesn't run
+ * JS, every post looked like another copy of the homepage. Posts are the whole point
+ * of the daily generator and the most citable thing on the site, so they get real
+ * shells with their own title, description, canonical, opening text and Article schema.
+ *
+ * FAIL SOFT: the post list is fetched from the live API at build time. If that fetch
+ * fails (site down, API blip, offline build) we log and skip — a broken blog feed must
+ * never break the deploy of the whole site.
+ *
+ * STALENESS: a post published between builds has no shell until the next deploy. It
+ * still renders for humans (the SPA handles /post/:slug) and is still indexable — it
+ * just shows the generic shell to a crawler until then. Run scripts/deploy-site.sh
+ * after publishing if a post matters immediately.
+ */
+async function fetchJson(url, ms = 15000) {
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), ms);
+  try {
+    const r = await fetch(url, { signal: ac.signal });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return await r.json();
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+const stripHtml = (html) =>
+  String(html || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+function buildPost(template, post) {
+  const url = `${ORIGIN}/post/${post.slug}`;
+  const title = `${post.title} | ikonic303`;
+  const desc = (post.description || post.excerpt || '').slice(0, 300);
+  let html = template;
+
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`);
+  html = setTag(html, /<meta\s+name="description"[^>]*>/, desc);
+  html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${url}" />`);
+  html = setTag(html, /<meta\s+property="og:url"[^>]*>/, url);
+  html = setTag(html, /<meta\s+property="og:title"[^>]*>/, title);
+  html = setTag(html, /<meta\s+property="og:description"[^>]*>/, desc);
+  html = setTag(html, /<meta\s+name="twitter:title"[^>]*>/, title);
+  html = setTag(html, /<meta\s+name="twitter:description"[^>]*>/, desc);
+  html = html.replace(/<meta\s+property="og:type"[^>]*>/, '<meta property="og:type" content="article" />');
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: desc,
+    datePublished: post.publishedAt || undefined,
+    author: { '@type': 'Organization', name: 'ikonic303' },
+    publisher: { '@type': 'Organization', name: 'ikonic303', url: ORIGIN },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    articleSection: post.category || undefined,
+    keywords: Array.isArray(post.tags) && post.tags.length ? post.tags.join(', ') : undefined,
+  };
+
+  const body = `
+      <main style="max-width:820px;margin:0 auto;padding:2rem 1.25rem;font-family:Inter,system-ui,sans-serif;line-height:1.6;color:#e8e8e8;background:#0b0b0f">
+        <article>
+          <h1>${esc(post.title)}</h1>
+          <p><em>${esc(post.category || 'Marketing')}${post.publishedAt ? ' · ' + new Date(post.publishedAt).toDateString() : ''}</em></p>
+          ${post.body ? `<p>${esc(post.body)}</p>` : `<p>${esc(desc)}</p>`}
+        </article>
+        <p><a href="${ORIGIN}/blogs">All guides</a> ·
+           <a href="${ORIGIN}/services">services</a> ·
+           <a href="${ORIGIN}/contact">contact</a></p>
+      </main>
+      <script type="application/ld+json">${JSON.stringify(schema)}</script>
+    `;
+  return html.replace(/(<div id="root">)[\s\S]*?(<\/div>\s*(?:<script|<\/body>))/, `$1${body}$2`);
+}
+
+async function prerenderPosts(template) {
+  let list;
+  try {
+    const d = await fetchJson(`${ORIGIN}/api/blog-posts`, 20000);
+    list = (d.posts || []).filter((p) => p.slug && !String(p.link || '').startsWith('http'));
+  } catch (err) {
+    console.warn(`prerender: skipping blog posts — could not load the list (${err.message})`);
+    return { count: 0, slugs: [] };
+  }
+
+  const slugs = [];
+  for (const p of list) {
+    // Opening text makes the shell genuinely citable; excerpt-only is the fallback.
+    try {
+      const full = await fetchJson(`${ORIGIN}/api/blog-post?slug=${encodeURIComponent(p.slug)}`, 12000);
+      p.description = full.description || p.excerpt;
+      p.body = stripHtml(full.content).slice(0, 1200);
+      p.publishedAt = full.publishedAt || p.publishedAt;
+      p.tags = full.tags;
+      p.category = full.category || p.category;
+    } catch {
+      /* excerpt-only shell — still far better than a homepage clone */
+    }
+    const outDir = join(DIST, 'post', p.slug);
+    mkdirSync(outDir, { recursive: true });
+    writeFileSync(join(outDir, 'index.html'), buildPost(template, p), 'utf8');
+    slugs.push(p.slug);
+  }
+  return { count: slugs.length, slugs };
+}
+
+/**
+ * Rewrite dist/sitemap.xml: add every prerendered post, drop duplicates, and drop the
+ * /services/* aliases of the standalone .html pages (those canonicalise to the short
+ * form, so listing both invites Google to pick the wrong one).
+ */
+function fixSitemap(postSlugs) {
+  const smPath = join(DIST, 'sitemap.xml');
+  if (!existsSync(smPath)) return 0;
+  const xml = readFileSync(smPath, 'utf8');
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+
+  const ALIASES = ['/services/window-tint', '/services/paint-protection-film', '/services/ceramic-coating'];
+  const keep = [...new Set(locs)].filter((u) => !ALIASES.some((a) => u.endsWith(a)));
+  for (const slug of postSlugs) keep.push(`${ORIGIN}/post/${slug}`);
+
+  const body = [...new Set(keep)]
+    .sort()
+    .map((u) => `  <url><loc>${u}</loc></url>`)
+    .join('\n');
+  writeFileSync(smPath, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`, 'utf8');
+  return [...new Set(keep)].length;
+}
+
+/**
  * The 404 shell. Every unmatched path rewrites here (see vercel.json), so it must:
  *  - carry <meta name="robots" content="noindex"> — otherwise every mistyped or stale
  *    URL returns the HOMEPAGE's title and canonical, telling Google there are infinite
@@ -311,7 +441,7 @@ function build404(template) {
   return html.replace(rootRe, `$1${body}$2`);
 }
 
-function main() {
+async function main() {
   const templatePath = join(DIST, 'index.html');
   if (!existsSync(templatePath)) {
     console.error(`prerender: ${templatePath} not found — run \`vite build\` first.`);
@@ -327,7 +457,13 @@ function main() {
     count++;
   }
   writeFileSync(join(DIST, '404.html'), build404(template), 'utf8');
-  console.log(`prerender: wrote ${count} route shells + 404.html into dist/`);
+
+  const { count: postCount, slugs } = await prerenderPosts(template);
+  const smCount = fixSitemap(slugs);
+
+  console.log(
+    `prerender: ${count} route shells + 404.html + ${postCount} post shells; sitemap has ${smCount} urls`
+  );
 }
 
-main();
+await main();
