@@ -35,10 +35,6 @@
       "destination": "/api/blog?action=publish"
     },
     {
-      "source": "/api/generate-post",
-      "destination": "/api/blog?action=generate-post"
-    },
-    {
       "source": "/api/auto-blog-generate",
       "destination": "/api/blog?action=auto-generate"
     },

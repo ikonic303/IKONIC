@@ -14,9 +14,15 @@
  *
  * ROUTING: old public paths are preserved by rewrites in vercel.json, which cost zero
  * functions and pass query strings through. Anything already pointing at
- * /api/blog-posts, /api/blog-post?slug=…, /api/publish-blog?token=…&slug=… or
- * /api/generate-post keeps working — including publish links already sitting in
- * Josh's inbox, which would otherwise have broken.
+ * /api/blog-posts, /api/blog-post?slug=… or /api/publish-blog?token=…&slug=… keeps
+ * working — including publish links already sitting in Josh's inbox, which would
+ * otherwise have broken.
+ *
+ * REMOVED 2026-07-21 (security audit): the `generate-post` action and its
+ * /api/generate-post rewrite. It called Gemini with NO auth, NO rate limit and NO size
+ * cap, and interpolated the caller's `topic` straight into the prompt — a free public
+ * LLM proxy billed to our key. Its only callers were the ViralBot mockup pages, which
+ * were unrouted in the same change.
  *
  * AUTH IS PER-ACTION, never at the door. These five endpoints have four different auth
  * models (cron secret, public read, URL token, none), so each handler keeps doing its
@@ -31,19 +37,17 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { handler as list } from './_lib/blog/blog-posts.js';
 import { handler as post } from './_lib/blog/blog-post.js';
 import { handler as publish } from './_lib/blog/publish-blog.js';
-import { handler as generatePost } from './_lib/blog/generate-post.js';
 import { handler as autoGenerate } from './_lib/blog/auto-blog-generate.js';
 import { handler as unpublish } from './_lib/blog/unpublish.js';
 
 export const maxDuration = 60;
 
-type Action = 'list' | 'post' | 'publish' | 'generate-post' | 'auto-generate' | 'unpublish';
+type Action = 'list' | 'post' | 'publish' | 'auto-generate' | 'unpublish';
 
 const ROUTES: Record<Action, (req: VercelRequest, res: VercelResponse) => Promise<unknown>> = {
   list,
   post,
   publish,
-  'generate-post': generatePost,
   'auto-generate': autoGenerate,
   unpublish,
 };
@@ -51,7 +55,14 @@ const ROUTES: Record<Action, (req: VercelRequest, res: VercelResponse) => Promis
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const action = ((req.query?.action as string) || (req.body?.action as string) || 'list') as Action;
 
-  const route = ROUTES[action];
+  // HARDENED 2026-07-21: this was `ROUTES[action]`, a raw property lookup, so
+  // action=constructor / toString / valueOf resolved to Object.prototype members,
+  // passed the falsy check, were invoked as handlers, and never sent a response —
+  // pinning the lambda until maxDuration (60s). Confirmed live before the fix: a
+  // single GET hung for 65s with zero bytes. hasOwnProperty closes it.
+  const route = Object.prototype.hasOwnProperty.call(ROUTES, action)
+    ? ROUTES[action as Action]
+    : undefined;
   if (!route) {
     return res.status(400).json({
       error: `Unknown blog action "${action}". Expected one of: ${Object.keys(ROUTES).join(', ')}.`,

@@ -32,9 +32,12 @@ const ProofManager = lazy(() => import('./pages/ProofManager'));
 const ProofClient = lazy(() => import('./pages/ProofClient'));
 const BrandedToWin = lazy(() => import('./pages/BrandedToWin'));
 const StickerBuilder = lazy(() => import('./pages/StickerBuilder'));
-const ViralBot = lazy(() => import('./pages/ViralBot'));
-const ViralBotAuth = lazy(() => import('./pages/ViralBotAuth'));
-const ViralBotApp = lazy(() => import('./pages/ViralBotApp'));
+// ViralBot routes REMOVED 2026-07-21 (security audit). It was a mockup that
+// (a) stored user passwords in PLAINTEXT in localStorage with a client-side-only
+// trial gate, and (b) was the sole caller of /api/generate-post — an unauthenticated,
+// unmetered Gemini endpoint anyone could drive as a free LLM proxy on our key.
+// Pages remain in src/pages/ if the product is ever revived; auth must be rebuilt on
+// Supabase Auth and the generation endpoint must be guarded before re-enabling.
 const AIWebsiteGenerator = lazy(() => import('./pages/AIWebsiteGenerator'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -152,9 +155,6 @@ function App() {
             <Route path="/proof/:token" element={<ProofClient />} />
             <Route path="/branded-to-win" element={<BrandedToWin />} />
             <Route path="/sticker-builder" element={<StickerBuilder />} />
-            <Route path="/viral-bot" element={<ViralBot />} />
-            <Route path="/viral-bot/auth" element={<ViralBotAuth />} />
-            <Route path="/viral-bot/app" element={<ViralBotApp />} />
             <Route path="/ai-website-generator" element={<AIWebsiteGenerator />} />
             {/* Catch-all. Must stay LAST — react-router matches in order. */}
             <Route path="*" element={<NotFound />} />
