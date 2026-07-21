@@ -27,7 +27,9 @@ export default function Breadcrumb({ crumbs }: BreadcrumbProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        // JSON.stringify leaves "/" unescaped, so a value containing </script> would
+        // break out of this block. Static data today, escaped anyway.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
       />
       <nav aria-label="Breadcrumb" className="text-xs text-white/40 flex items-center gap-1.5 mb-6">
         {crumbs.map((c, i) => (

@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { sanitizeHtml } from '../sanitize-html.js';
 
 const GHL_BASE_URL    = 'https://go.ikonicmarketing303.com';
 const GHL_PREVIEW_LOC = 'ZFg6wMxjGeRh7lGwtZDW';
@@ -134,7 +135,9 @@ async function getRedisPost(slug: string) {
     return {
       title: post.title,
       description: post.excerpt,
-      content: post.content,
+      // SANITIZED 2026-07-21: this HTML is rendered via dangerouslySetInnerHTML in
+      // src/pages/BlogPost.tsx and baked into the prerendered shells. See sanitize-html.ts.
+      content: sanitizeHtml(post.content),
       urlSlug: post.slug,
       image: '',
       imageAlt: '',
@@ -188,7 +191,10 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({
       title: post.title ?? '',
       description: post.description ?? '',
-      content,
+      // The regex "cleaning" in fetchFromPreview removes ELEMENTS but leaves every
+      // ATTRIBUTE vector (onerror=, javascript: hrefs, iframes). Sanitize here, at the
+      // single point where scraped HTML leaves the handler.
+      content: sanitizeHtml(content),
       urlSlug: post.urlSlug ?? '',
       image: post.imageUrl ?? '',
       imageAlt: post.imageAltText ?? '',
@@ -200,6 +206,9 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
       ...(_debug === '1' ? { _debug: { slug, debug } } : {}),
     });
   } catch (err: any) {
-    return res.status(500).json({ error: err.message ?? 'Failed to load post' });
+    // Log the detail; return a generic message. Upstream errors quote internal
+    // endpoints and upstream status that a visitor has no business seeing.
+    console.error('blog-post error:', err?.message ?? err);
+    return res.status(500).json({ error: 'Failed to load post' });
   }
 }

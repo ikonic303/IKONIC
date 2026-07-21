@@ -164,6 +164,49 @@ export async function readToken(token: string): Promise<Record<string, any> | nu
   }
 }
 
+/**
+ * Atomically CLAIM a token for the duration of a generation.
+ *
+ * ADDED 2026-07-21 (security audit). readToken() + a later consumeToken() is a
+ * time-of-check/time-of-use race: the token was read at the top of the handler, Gemini
+ * then ran for 10-40s, and only then was the token deleted. N concurrent requests with
+ * one paid token all read status:'paid' before any delete landed — one $250 deposit
+ * bought N generations.
+ *
+ * Redis SET NX is the atomic primitive: exactly one caller creates the claim key and
+ * gets true; everyone else gets false immediately. The claim expires on its own so a
+ * crashed generation cannot strand a paid token forever.
+ *
+ * Returns false when KV is unavailable — without a shared store we cannot guarantee
+ * single use, and a deposit flow that can't count is one we don't run (same posture as
+ * putToken refusing to issue).
+ */
+export const CLAIM_TTL_SEC = 300; // longer than maxDuration=45, short enough to self-heal
+
+export async function claimToken(token: string): Promise<boolean> {
+  if (!kv) return false;
+  try {
+    const res = await kv.set(`claim:${token}`, Date.now().toString(), {
+      nx: true,
+      ex: CLAIM_TTL_SEC,
+    });
+    return res === 'OK' || res === true;
+  } catch (err) {
+    console.error('claimToken failed — refusing to proceed:', err);
+    return false;
+  }
+}
+
+/** Release a claim so a FAILED generation can be retried with the same paid token. */
+export async function releaseClaim(token: string): Promise<void> {
+  if (!kv) return;
+  try {
+    await kv.del(`claim:${token}`);
+  } catch (err) {
+    console.error('releaseClaim failed (claim will expire on its own):', err);
+  }
+}
+
 /** Atomically consume a token so one deposit buys exactly one generation. */
 export async function consumeToken(token: string): Promise<boolean> {
   if (!kv) return false;
