@@ -1,6 +1,11 @@
 # ikonic — search + AI answer engines welcome
 User-agent: *
 Allow: /
+# Staff dashboard and per-client proof links. This is DISCOVERY hygiene, not a security
+# control — robots.txt is advisory and publicly readable. The access control that matters
+# is the Supabase login on /proof-manager and token-scoped RLS on /proof/:token.
+Disallow: /proof-manager
+Disallow: /proof/
 
 # AI / answer-engine crawlers — explicitly welcomed
 User-agent: GPTBot

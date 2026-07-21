@@ -33,16 +33,19 @@ interface Annotation {
 }
 
 // ── GHL Webhook ───────────────────────────────────────────────────────────────
-const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/DSt3GeDVV0wQXQt9iuGn/webhook-trigger/23d15f93-c4a0-49c3-9c90-79770f056cee';
 
+// The GHL webhook-trigger URL is a CREDENTIAL — for an inbound webhook, possession of
+// the URL is authorisation. It used to be hardcoded here and fired from the browser, so
+// it shipped in the public bundle and the public repo. It now lives server-side in
+// GHL_PROOF_WEBHOOK_URL; see api/proof-webhook.ts.
 async function fireWebhook(payload: object) {
   try {
-    await fetch(GHL_WEBHOOK, {
+    await fetch('/api/proof-webhook', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
-  } catch (_) { /* silent */ }
+  } catch (_) { /* silent — a webhook failure must never block the client's approval */ }
 }
 
 // Generate 48-char hex token
