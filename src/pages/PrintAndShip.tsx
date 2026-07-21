@@ -190,13 +190,24 @@ export default function PrintAndShip() {
     setPaying(true);
     setPayError('');
     try {
+      // Send the SPEC, not the price. The server re-derives the total from its own
+      // table (api/_lib/pricing.ts) — a number from the browser is a request, not a
+      // fact, and trusting it previously let anyone name their own price. The estimate
+      // shown above is display-only; the server's figure is what Square charges.
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          total: est.total,
-          description: `${qty}× ${w}"×${h}" ${selectedMat?.name}${lamType !== 'none' ? ` + ${selectedLam?.name} Lam` : ''}`,
-          successUrl: `${window.location.origin}/print-and-ship?payment=success`,
+          spec: {
+            material: mat,
+            lamination: lamType,
+            widthIn: parseFloat(w),
+            heightIn: parseFloat(h),
+            qty,
+            needDesign,
+            aiRework,
+            zip,
+          },
         }),
       });
       const data = await res.json();
