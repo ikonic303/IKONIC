@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { timingSafeEqual } from 'crypto';
 import { GoogleGenAI } from '@google/genai';
 import { Resend } from 'resend';
 import { randomUUID } from 'node:crypto';
@@ -44,6 +45,19 @@ async function upstash(command: unknown[]) {
   return res.json();
 }
 
+
+/**
+ * Constant-time secret comparison.
+ * ADDED 2026-07-21: `!==` on a secret leaks length and prefix through timing. Not
+ * practically exploitable across the public internet, but this is one line.
+ */
+function secretMatches(provided: string, expected: string): boolean {
+  const a = Buffer.from(provided);
+  const b = Buffer.from(expected);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
 export async function handler(req: VercelRequest, res: VercelResponse) {
   // Auth — Vercel cron sends Authorization: Bearer {CRON_SECRET} automatically.
   //
@@ -57,9 +71,12 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
     console.error('auto-blog-generate: CRON_SECRET not configured — refusing to run');
     return res.status(503).json({ error: 'Not configured' });
   }
+  // HEADER ONLY (2026-07-21 security audit). The ?secret= path was removed: a secret in
+  // a URL lands in Vercel access logs, browser history, and any Referer sent by the
+  // rendered page. Vercel cron sends Authorization: Bearer $CRON_SECRET automatically.
   const authHeader = (req.headers['authorization'] as string) || '';
-  const querySecret = (req.query?.secret as string) || '';
-  if (authHeader !== `Bearer ${cronSecret}` && querySecret !== cronSecret) {
+  const provided = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
+  if (!provided || !secretMatches(provided, cronSecret)) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 

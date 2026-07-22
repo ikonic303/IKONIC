@@ -33,11 +33,40 @@ export function isEnabled(flag = 'GENERATOR_ENABLED'): boolean {
   return process.env[flag] !== '0';
 }
 
-/** Best-effort client IP behind Vercel's proxy. */
+/**
+ * Client IP behind Vercel's proxy.
+ *
+ * HARDENED 2026-07-21 (security audit). This used to read the FIRST element of
+ * `x-forwarded-for`. That is the attacker-controlled position: a proxy chain APPENDS,
+ * so the leftmost value is whatever the caller typed. Sending a random XFF on every
+ * request gave each request its own rate-limit bucket, which silently defeated every
+ * limit in this file — including the 3/hour on the Gemini endpoint that exists purely
+ * to stop an unbounded bill.
+ *
+ * Order of trust:
+ *  1. `x-vercel-forwarded-for` — set by Vercel's edge, not settable by the client.
+ *  2. `x-real-ip` — likewise platform-set.
+ *  3. the LAST element of `x-forwarded-for` — the hop nearest us, the only element a
+ *     remote caller cannot prepend to.
+ *  4. the socket address.
+ */
 export function clientIp(req: VercelRequest): string {
-  const fwd = req.headers['x-forwarded-for'];
-  const raw = Array.isArray(fwd) ? fwd[0] : fwd;
-  return (raw?.split(',')[0] || req.socket?.remoteAddress || 'unknown').trim();
+  const first = (v: string | string[] | undefined): string =>
+    (Array.isArray(v) ? v[0] : v || '').trim();
+
+  const vercelIp = first(req.headers['x-vercel-forwarded-for']);
+  if (vercelIp) return vercelIp.split(',')[0].trim();
+
+  const realIp = first(req.headers['x-real-ip']);
+  if (realIp) return realIp;
+
+  const fwd = first(req.headers['x-forwarded-for']);
+  if (fwd) {
+    const hops = fwd.split(',').map((h) => h.trim()).filter(Boolean);
+    if (hops.length) return hops[hops.length - 1];
+  }
+
+  return (req.socket?.remoteAddress || 'unknown').trim();
 }
 
 /** In-memory fallback. Per-instance only — Vercel may run several, so this is a
@@ -74,15 +103,30 @@ export async function rateLimit(
         retryAfter: ttl > 0 ? ttl : windowSec,
       };
     } catch (err) {
-      // KV blipped — fall through to memory rather than failing the request outright.
-      console.error('rateLimit: KV unavailable, using in-memory fallback:', err);
+      // HARDENED 2026-07-21: KV is CONFIGURED but erroring. The file header promises
+      // "if even that can't be trusted, DENY" — the old code instead fell through to a
+      // per-instance memory map, which under Vercel's per-request instances degrades to
+      // roughly no limit at all. If the accounting store we chose is broken, we refuse
+      // the request rather than pay for one we cannot count.
+      console.error('rateLimit: KV unavailable — failing CLOSED:', err);
+      return { allowed: false, remaining: 0, retryAfter: 30 };
     }
   }
 
+  // No KV configured at all (local dev / preview). Per-instance backstop.
   const hits = (memHits.get(key) || []).filter((t) => now - t < windowMs);
   hits.push(now);
   memHits.set(key, hits);
-  if (memHits.size > 5000) memHits.clear(); // crude bound; this is a backstop, not a store
+  // Evict only EXPIRED keys. The old code called memHits.clear() at 5000 entries, wiping
+  // everyone's counters at once — trivially triggerable, and it reset the limiter for
+  // every caller each time it fired.
+  if (memHits.size > 5000) {
+    for (const [k, ts] of memHits) {
+      const live = ts.filter((t) => now - t < windowMs);
+      if (live.length) memHits.set(k, live);
+      else memHits.delete(k);
+    }
+  }
   return {
     allowed: hits.length <= limit,
     remaining: Math.max(0, limit - hits.length),
@@ -120,6 +164,49 @@ export async function readToken(token: string): Promise<Record<string, any> | nu
   }
 }
 
+/**
+ * Atomically CLAIM a token for the duration of a generation.
+ *
+ * ADDED 2026-07-21 (security audit). readToken() + a later consumeToken() is a
+ * time-of-check/time-of-use race: the token was read at the top of the handler, Gemini
+ * then ran for 10-40s, and only then was the token deleted. N concurrent requests with
+ * one paid token all read status:'paid' before any delete landed — one $250 deposit
+ * bought N generations.
+ *
+ * Redis SET NX is the atomic primitive: exactly one caller creates the claim key and
+ * gets true; everyone else gets false immediately. The claim expires on its own so a
+ * crashed generation cannot strand a paid token forever.
+ *
+ * Returns false when KV is unavailable — without a shared store we cannot guarantee
+ * single use, and a deposit flow that can't count is one we don't run (same posture as
+ * putToken refusing to issue).
+ */
+export const CLAIM_TTL_SEC = 300; // longer than maxDuration=45, short enough to self-heal
+
+export async function claimToken(token: string): Promise<boolean> {
+  if (!kv) return false;
+  try {
+    const res = await kv.set(`claim:${token}`, Date.now().toString(), {
+      nx: true,
+      ex: CLAIM_TTL_SEC,
+    });
+    return res === 'OK' || res === true;
+  } catch (err) {
+    console.error('claimToken failed — refusing to proceed:', err);
+    return false;
+  }
+}
+
+/** Release a claim so a FAILED generation can be retried with the same paid token. */
+export async function releaseClaim(token: string): Promise<void> {
+  if (!kv) return;
+  try {
+    await kv.del(`claim:${token}`);
+  } catch (err) {
+    console.error('releaseClaim failed (claim will expire on its own):', err);
+  }
+}
+
 /** Atomically consume a token so one deposit buys exactly one generation. */
 export async function consumeToken(token: string): Promise<boolean> {
   if (!kv) return false;
@@ -139,9 +226,12 @@ export async function consumeToken(token: string): Promise<boolean> {
 export async function blocked(
   req: VercelRequest,
   res: VercelResponse,
-  opts: { limit: number; windowSec: number; name: string }
+  opts: { limit: number; windowSec: number; name: string; flag?: string }
 ): Promise<boolean> {
-  if (!isEnabled()) {
+  // `flag` added 2026-07-21: non-generator endpoints (checkout, reviews, notify) reuse this
+  // limiter but must NOT be killed by GENERATOR_ENABLED=0 — flipping the generator off should
+  // not silently stop the shop taking orders. Defaults to the original behaviour.
+  if (!isEnabled(opts.flag)) {
     res.status(503).json({
       error: 'This feature is temporarily unavailable. Please call (720) 679-1230.',
     });

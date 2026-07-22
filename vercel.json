@@ -35,10 +35,6 @@
       "destination": "/api/blog?action=publish"
     },
     {
-      "source": "/api/generate-post",
-      "destination": "/api/blog?action=generate-post"
-    },
-    {
       "source": "/api/auto-blog-generate",
       "destination": "/api/blog?action=auto-generate"
     },
@@ -105,6 +101,50 @@
     {
       "source": "/((?!api/|@vite|@react-refresh|src/|node_modules/|.*\\.[a-zA-Z0-9]+$).*)",
       "destination": "/404.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://widgets.leadconnectorhq.com https://crm.ikonic303.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://www.facebook.com https://widgets.leadconnectorhq.com https://services.leadconnectorhq.com https://crm.ikonic303.com; frame-src https://crm.ikonic303.com https://widgets.leadconnectorhq.com https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://crm.ikonic303.com; object-src 'none'; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
     }
   ]
 }

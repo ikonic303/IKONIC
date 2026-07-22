@@ -237,6 +237,15 @@ to us to build for you.</p>`,
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** Replace the content of a meta/link tag matched by `attrRe`, preserving the rest of the tag. */
+
+// JSON.stringify does NOT escape "/", so a value containing </script> breaks out of the
+// block below and is baked into dist/**/index.html — XSS that fires before React mounts
+// and even for JS-disabled crawlers. Blog titles/descriptions come from GHL, so they are
+// not fully trusted. Escaping "<" to \u003c keeps the JSON valid and inert.
+function jsonLd(obj) {
+  return JSON.stringify(obj).replace(/</g, '\\u003c');
+}
+
 function setTag(html, attrRe, value) {
   return html.replace(attrRe, (m) => m.replace(/content="[^"]*"/, `content="${esc(value)}"`));
 }
@@ -351,7 +360,7 @@ function buildPost(template, post) {
            <a href="${ORIGIN}/services">services</a> ·
            <a href="${ORIGIN}/contact">contact</a></p>
       </main>
-      <script type="application/ld+json">${JSON.stringify(schema)}</script>
+      <script type="application/ld+json">${jsonLd(schema)}</script>
     `;
   return html.replace(/(<div id="root">)[\s\S]*?(<\/div>\s*(?:<script|<\/body>))/, `$1${body}$2`);
 }

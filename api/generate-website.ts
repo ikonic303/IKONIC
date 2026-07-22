@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
 import { Resend } from 'resend';
-import { blocked, readToken, consumeToken } from './_lib/guard.js';
+import { blocked, readToken, consumeToken, claimToken, releaseClaim } from './_lib/guard.js';
 
 export const maxDuration = 45;
 
@@ -59,6 +59,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const record = await readToken(depositToken);
     if (!record || record.status !== 'paid') {
       return res.status(402).json({ error: 'Deposit not found or not yet confirmed.' });
+    }
+
+    // ATOMIC CLAIM (2026-07-21 security audit). Reading the token here and deleting it
+    // ~40s later (after Gemini returns) is a TOCTOU race: N concurrent requests with one
+    // paid token all saw status:'paid' before any delete landed, so one $250 deposit
+    // bought N generations. SET NX lets exactly one caller through.
+    if (!(await claimToken(depositToken))) {
+      return res.status(409).json({
+        error: 'This deposit is already being used to generate a concept. Please wait a moment and refresh.',
+      });
     }
   }
 
@@ -122,7 +132,13 @@ Rules: Every hex value must be a valid 6-digit hex color. Provide 4-6 page struc
     concept = JSON.parse(cleaned);
   } catch (err: any) {
     console.error('generate-website error:', err);
-    return res.status(500).json({ error: err?.message || 'Generation failed' });
+    // The customer PAID. Generation failed, so the token was never consumed — release
+    // the claim immediately so they can retry now rather than waiting out CLAIM_TTL_SEC.
+    // Without this, a transient Gemini error locks a paid deposit for 5 minutes, and the
+    // only remedy would be a refund, which we do not do.
+    if (depositToken) await releaseClaim(depositToken);
+    // Don't return the raw SDK error — it quotes upstream endpoints and quota state.
+    return res.status(502).json({ error: 'Generation failed. Please try again in a moment.' });
   }
 
   // ── Save the lead (email notification to Ikonic) — non-fatal on failure ──────
@@ -181,6 +197,7 @@ Rules: Every hex value must be a valid 6-digit hex color. Provide 4-6 page struc
   // have nothing, and the only remedy would be a refund, which we do not do.
   if (depositToken) {
     await consumeToken(depositToken);
+    await releaseClaim(depositToken);
   }
 
   return res.status(200).json({ concept });
