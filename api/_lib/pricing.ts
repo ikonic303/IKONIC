@@ -57,7 +57,7 @@ const MAX_QTY = 500;
  * phone call. Set CHECKOUT_MAX_USD in Vercel to enforce a lower threshold — the
  * rejection already tells the customer to call.
  */
-const MAX_TOTAL_USD = Number(process.env.CHECKOUT_MAX_USD) || 100000;
+const MAX_TOTAL_USD = Number(process.env.CHECKOUT_MAX_USD) || 5000;
 
 export interface OrderSpec {
   material: string;
