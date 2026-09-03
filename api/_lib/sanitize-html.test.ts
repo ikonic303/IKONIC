@@ -63,7 +63,7 @@ const KEEP: [string, RegExp][] = [
   [`<ul><li>One</li><li>Two</li></ul>`, /<ul><li>One<\/li><li>Two<\/li><\/ul>/],
   [`<blockquote>Quoted</blockquote>`, /<blockquote>Quoted<\/blockquote>/],
   [`<a href="/services">Relative</a>`, /href="\/services"/],
-  [`<a href="mailto:info@ikonicmarketing303.com">Mail</a>`, /mailto:/],
+  [`<a href="mailto:info@ikonic303.com">Mail</a>`, /mailto:/],
   [`<table><tr><td colspan="2">Cell</td></tr></table>`, /<td colspan="2">Cell<\/td>/],
   [`<p>Ampersand &amp; entity</p>`, /&amp;/],
 ];

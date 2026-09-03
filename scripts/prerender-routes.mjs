@@ -37,189 +37,360 @@ const DIST = join(__dirname, '..', 'dist');
 const ORIGIN = 'https://ikonic303.com';
 
 const PHONE = '(720) 679-1230';
-const CONTACT_BLOCK = `<h2>Get a quote</h2>
+const CONTACT_BLOCK = `<h2>Free in-home estimate</h2>
 <p>Call <a href="tel:+17206791230">${PHONE}</a> or email
-<a href="mailto:info@ikonicmarketing303.com">info@ikonicmarketing303.com</a>.
-ikonic — 4880 Robb St. #8, Wheat Ridge, CO 80033. Storefront signage, window graphics, and
-wayfinding are installed on-site; printing and fabrication happen in our Wheat Ridge shop.</p>`;
+<a href="mailto:info@ikonic303.com">info@ikonic303.com</a>.
+ikonic — 4880 Robb St. #8, Wheat Ridge, CO 80033. We visit your home in the Denver metro
+(Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver), look at the actual windows, and
+send one clear written quote. Commercial storefront work is scheduled around business hours.</p>`;
 
 /** @type {{path:string,title:string,description:string,body:string}[]} */
 const ROUTES = [
   {
     path: '/about',
-    title: 'About ikonic303 | Denver Digital Marketing Agency',
+    title: 'About ikonic303 | Denver Residential Window Tinting',
     description:
-      'Meet the ikonic303 team. Denver-based digital marketing agency specializing in GoHighLevel automation, CRM setup, and lead generation for Colorado businesses.',
-    body: `<h1>About ikonic303 — Wheat Ridge, Colorado</h1>
-<p>ikonic is a brand-transformation company for local service businesses in the Denver metro.
-We design, print, and install storefront signage, window graphics and murals, and wayfinding and
-ADA/safety signage — and we run AI-powered digital marketing retainers for the same kind of
-business.</p>
-<p>The through-line is consistency: a customer should see the same brand, at the same level of
-quality, on your storefront, inside your building, and in their search results. Most shops do
-one of those things. We do all of them under one roof in Wheat Ridge.</p>`,
+      "ikonic is a Wheat Ridge, CO window film company specializing in residential window tinting for the Denver metro — heat, glare, UV, privacy, and energy savings. Commercial storefront tint also available.",
+    body: `<h1>About ikonic303 — Denver's Residential Window Tinting Specialists</h1>
+<p>ikonic is a Wheat Ridge, Colorado window film company. Home window tinting is what we do most:
+heat and glare reduction, up to 99% UV protection, daytime privacy, improved comfort, energy
+savings, and fade protection for floors, furniture, and artwork — plus decorative and security
+film options.</p>
+<p>We recommend a film per window rather than one film for the whole house, we check the glass
+against the manufacturer's compatibility chart before quoting, and we finish most homes in a
+single visit with floors and furniture protected. Commercial storefront window tint and graphics
+are a supporting, secondary service. Serving Wheat Ridge, Arvada, Lakewood, Golden, and greater
+Denver.</p>`,
   },
   {
     path: '/services',
-    title: 'Digital Marketing Services Denver CO | ikonic303',
+    title: 'Window Tinting Services Denver | Residential & Commercial | ikonic303',
     description:
-      'Full-service digital marketing for Denver businesses — web design, GoHighLevel CRM automation, reputation management, speed-to-lead, and marketing systems. All under one roof.',
-    body: `<h1>ikonic services — Denver, Colorado</h1>
-<p>Two sides of one business: the physical brand and the digital front office.</p>
-<h2>Brand &amp; signage</h2>
-<p>Storefront and building signage, window graphics and wall murals, storefront branding, and
-wayfinding and ADA/safety signage — designed and printed in our Wheat Ridge shop, installed
+      'ikonic specializes in residential window tinting in Denver — heat, glare, UV, privacy, and energy-efficient home window film. Commercial storefront window tint and graphics are also available as a secondary service.',
+    body: `<h1>Window Tinting Services — Denver, Colorado</h1>
+<p>Residential window tinting is ikonic's primary service. Commercial storefront window tint and
+graphics are offered as a supporting, secondary service.</p>
+<h2>Residential Window Tinting (primary)</h2>
+<p>Home window film for Denver houses: solar and heat-rejection film for hot west- and
+south-facing rooms, up to 99% UV protection to stop fading of hardwood, carpet, furniture, and
+artwork, daytime privacy film, improved room-to-room comfort, and energy savings. Decorative and
+frosted film for style and privacy; tear-resistant security and safety film for ground-floor and
+patio glass. Free in-home estimate; glass checked for compatibility; most homes installed in one
+visit; manufacturer film warranty plus workmanship guarantee.</p>
+<h2>Commercial Storefront Window Tint (secondary)</h2>
+<p>Solar heat and glare control, energy savings, and privacy or security film for retail, offices,
+and multi-tenant buildings. Scoped window by window or room by room; installed before or after
+business hours.</p>
+<h2>Commercial Storefront Film &amp; Window Graphics (secondary)</h2>
+<p>Custom window graphics (hours, logos, offers, full-window art), privacy and decorative film,
+security film, and business branding and promotional graphics — designed in-house and installed
 on-site.</p>
-<h2>Digital marketing</h2>
-<p>Web design and sales funnels, CRM automation, speed-to-lead response, reputation and review
-generation, SEO and AEO, and monthly reporting — delivered as a flat monthly retainer.</p>`,
+<h2>Why homeowners choose ikonic</h2>
+<p><strong>Residential window tinting is our specialty.</strong> <strong>A film recommended per
+window</strong>, not one for the whole house. <strong>Glass checked first</strong> against the
+film compatibility chart before quoting. <strong>Clean, one-day install</strong> with your home
+protected. ikonic serves Wheat Ridge, Arvada, Lakewood, Golden, and Denver.</p>
+${CONTACT_BLOCK}`,
   },
   {
     path: '/contact',
-    title: 'Contact ikonic303 | Free Strategy Call — Denver, CO',
+    title: 'Contact ikonic303 | Free In-Home Window Tint Estimate — Denver, CO',
     description:
-      'Book your free marketing strategy session with ikonic303. Denver-based GoHighLevel experts ready to build your lead generation system. Call (720) 679-1230.',
+      'Request a free in-home estimate for residential window tinting in the Denver metro. We look at your actual windows and send one clear written quote. Call (720) 679-1230.',
     body: `<h1>Contact ikonic303 — Wheat Ridge, Colorado</h1>
-<p>Talk to us about storefront signage, window graphics, or a marketing retainer for your local
-service business. We serve the Denver metro including Wheat Ridge, Arvada, Lakewood, and
-Golden.</p>
+<p>Request a free in-home estimate for residential window tinting — heat, glare, privacy, fading,
+or a decorative look. We also quote commercial storefront window tint and graphics. Serving the
+Denver metro including Wheat Ridge, Arvada, Lakewood, and Golden.</p>
 ${CONTACT_BLOCK}`,
   },
   {
     path: '/blogs',
-    title: 'Digital Marketing Blog | Tips for Denver Businesses | ikonic303',
+    title: 'Residential Window Tinting Blog | Denver Home Window Film Guides | ikonic303',
     description:
-      'Marketing tips, GoHighLevel guides, and growth strategies for Denver-area businesses. Learn how to automate leads, improve your reputation, and scale your business.',
-    body: `<h1>ikonic guides — marketing for local service businesses</h1>
-<p>Practical guides on marketing a local service business in the Denver metro: capturing and
-responding to leads, generating reviews, getting found in search and in AI answers, and what
-branding actually costs. Written for owners, not marketers.</p>`,
-  },
-  {
-    path: '/branded-to-win',
-    title: 'Branded to Win Book by Joshua Soderblom | ikonic303',
-    description:
-      'Get the Branded to Win book — the complete guide to building a business brand that attracts customers, generates leads, and dominates your local market. Digital & bundle editions available.',
-    body: `<h1>Branded to Win — by Joshua Soderblom</h1>
-<p><em>Branded to Win</em> is ikonic founder Joshua Soderblom's guide to building a local brand
-that brings customers in: how a service business earns recognition in its own market, why
-consistency across vehicle, storefront, and search beats a bigger ad budget, and how to
-compound that recognition instead of renting it.</p>
-<p>Available in digital and bundle editions.</p>`,
+      'Guides on residential window tinting for Denver homes — heat and glare control, UV and fade protection, privacy film, energy-efficient window tint, and decorative and security film. Plus commercial storefront tint.',
+    body: `<h1>ikonic guides — residential window tinting</h1>
+<p>Practical guides on home window tinting in the Denver metro: heat and glare control, UV and
+fade protection, privacy film, energy-efficient window tint, and decorative and security film —
+plus commercial storefront window tint. Written for homeowners, not marketers.</p>`,
   },
   {
     path: '/careers',
-    title: 'Careers at ikonic303 | Join Our Denver Marketing Team',
+    title: 'Careers at ikonic303 | Window Tint Installers — Denver, CO',
     description:
-      "Join the ikonic303 team in Denver, CO. We're hiring driven marketers, GoHighLevel specialists, and automation experts. Build your career in digital marketing.",
+      "Join the ikonic303 crew in Wheat Ridge, CO. We're hiring residential window film / tint installers. Craft-focused, steady year-round work across the Denver metro. Training provided.",
     body: `<h1>Careers at ikonic303 — Wheat Ridge, Colorado</h1>
-<p>ikonic hires for the shop and for the marketing side: vinyl installers, designers, and
-marketing and automation specialists. We are a small team in Wheat Ridge that values doing the
-work right over doing it fast.</p>
+<p>ikonic hires residential window film / tint installers. We are a small Wheat Ridge crew that
+values a clean finished edge and treating a customer's home like our own. Window-film experience
+is a plus, not required — we train the technique. Steady, year-round home work across the Denver
+metro, plus some commercial storefront tint.</p>
 ${CONTACT_BLOCK}`,
   },
   {
     path: '/learn-more',
-    title: 'How It Works | Marketing Automation for Denver Businesses | ikonic303',
+    title: 'How Home Window Tinting Works | ikonic303 Denver',
     description:
-      'Learn how ikonic303 builds automated lead generation systems for Denver businesses. Our proven 4-step process captures leads 24/7 while you focus on your business.',
-    body: `<h1>How ikonic works</h1>
-<p>Every lead gets captured, answered fast, followed up with until they respond, and tracked
-through to the job. Most local service businesses lose revenue in the gap between a customer
-reaching out and someone getting back to them — that gap is what we close first, then we build
-the rest of the marketing on top of it.</p>`,
+      'How ikonic scopes and installs residential window film in the Denver metro: free in-home estimate, glass compatibility check, one written quote, a clean one-day install, and a manufacturer-backed warranty.',
+    body: `<h1>How home window tinting works</h1>
+<p>Every ikonic home job starts with a free in-home estimate — we look at the actual glass and
+rooms and talk through your goals. Then we match your glass to the film manufacturer's
+compatibility chart, send one clear written quote with the right film spec'd per window, and do a
+clean, dust-controlled install with your floors and furniture protected. Most homes are finished
+in a single visit, backed by a manufacturer film warranty plus our workmanship guarantee.</p>`,
   },
   {
-    path: '/services/web-design',
-    title: 'Web Design & Sales Funnels Denver CO | ikonic303',
+    path: '/gallery',
+    title: 'Residential Window Tinting Gallery Denver | ikonic303',
     description:
-      'Custom websites and high-converting GoHighLevel sales funnels for Denver businesses. Mobile-responsive, conversion-optimized, built by GHL experts. Get a free quote.',
-    body: `<h1>Web design &amp; sales funnels — Denver, Colorado</h1>
-<p>Websites and funnels built to turn visitors into booked jobs: mobile-first, fast, and wired
-into the CRM so every enquiry lands somewhere it will be answered. Built and maintained for
-local service businesses across the Denver metro.</p>`,
+      'Completed residential window tinting projects across Denver — living rooms, bedrooms, sunrooms, and entryways treated with solar, UV, privacy, and decorative film. Plus commercial storefront tint and graphics.',
+    body: `<h1>Completed Residential Window Tinting Projects</h1>
+<p>Homes across Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver — living rooms,
+bedrooms, sunrooms, home offices, and entryways, each treated with the right film for the window:
+solar and heat-rejection film, near-invisible UV film, daytime privacy film, decorative frosted
+film, and security film. We also tint and brand commercial storefronts as a secondary service.</p>
+${CONTACT_BLOCK}`,
+  },
+
+  // ── Service pages (React Router routes in src/pages/services). Residential-first
+  //    (2026-09-04). Keep this copy roughly in sync with serviceData.tsx.
+  //    /window-tint/home 301s to /window-tint; /signage and /wayfinding 301 to
+  //    /storefront-graphics (vercel.json), so they no longer get shells.
+  {
+    path: '/window-tint',
+    title: 'Residential Window Tinting Denver | Home Window Film | ikonic303',
+    description:
+      'Professional residential window tinting in Denver — heat and glare reduction, 99% UV protection, privacy window film, energy-efficient window tint, and fade protection for floors and furniture. Free in-home estimate.',
+    body: `<h1>Professional Residential Window Tinting in Denver</h1>
+<p>Home window film makes a Denver house more comfortable, more private, and cheaper to run
+without changing how it looks from the street. ikonic installs solar, UV, privacy, decorative,
+and security film for homeowners across Wheat Ridge, Arvada, Lakewood, Golden, and greater
+Denver.</p>
+<h2>What home window tinting does</h2>
+<p><strong>Heat &amp; glare reduction</strong> on west- and south-facing rooms. <strong>UV
+protection</strong> — up to 99% — to stop fading of hardwood, carpet, furniture, cabinetry, and
+artwork. <strong>Daytime privacy</strong> without living behind blinds. <strong>Improved
+comfort</strong> with fewer hot and cold spots. <strong>Energy savings</strong> — a lighter AC
+load in summer, and low-E options that retain heat in winter. <strong>Decorative and security
+film</strong> options for style, privacy, and safety.</p>
+<h2>Residential film options</h2>
+<p>Solar &amp; heat-rejection film, near-invisible UV-blocking film, daytime privacy film,
+decorative and frosted film, and tear-resistant security and safety film. We recommend a film per
+window rather than one film for the whole house.</p>
+<h2>We check your glass first</h2>
+<p>Single-pane, dual-pane, low-E, tempered, and laminated glass each behave differently. The
+wrong film on the wrong glass can cause thermal-stress cracks or void a window's seal warranty,
+so every quote starts with identifying your glass and matching it to the film manufacturer's
+compatibility chart.</p>
+<h2>How the installation works</h2>
+<p>A free in-home estimate, one clear written quote, a clean one-day install with your home
+protected, and a manufacturer film warranty plus our workmanship guarantee.</p>
+<h2>FAQ</h2>
+<p><strong>Will it make my rooms dark?</strong> Not unless you want it to — solar and UV films
+stay close to clear. <strong>Can film stop my floors and furniture fading?</strong> Yes — UV is
+the biggest driver of fading and quality film blocks up to 99% of it. <strong>Does it really
+save energy?</strong> It reduces solar heat gain, lowering the AC load; low-E options help in
+winter.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/services/crm-automation',
-    title: 'GoHighLevel CRM Setup & Automation Denver CO | ikonic303',
+    path: '/window-tint/office',
+    title: 'Commercial Storefront Window Tint Denver | ikonic303',
     description:
-      'Expert GoHighLevel CRM setup and automation for Colorado businesses. Automate follow-ups, nurture leads, and close more deals. Free CRM audit available.',
-    body: `<h1>CRM setup &amp; automation — Denver, Colorado</h1>
-<p>Your customer list, pipeline, and follow-up in one place, automated: every lead tagged and
-routed, follow-up that runs without anyone remembering to send it, and a pipeline that shows
-what is actually going to close this month.</p>`,
+      'Commercial storefront window tint in Denver — solar heat and glare control, energy savings, privacy and decorative film, and security film for retail, offices, and multi-tenant buildings.',
+    body: `<h1>Commercial Storefront Window Tint in Denver</h1>
+<p>Alongside our residential work, ikonic tints commercial storefronts and offices across Denver —
+cutting solar heat and glare, lowering cooling costs, and adding privacy or security. Same crew
+and clean install as our home jobs, scheduled around your business hours.</p>
+<h2>Storefront &amp; office window tint</h2>
+<p>Solar-control film on retail and office glass cuts afternoon heat and glare. Jobs are scoped
+window by window or room by room, so you can treat the problem glass first and roll out the rest
+as budget allows.</p>
+<h2>Privacy, decorative &amp; security film</h2>
+<p>Frosted and etched privacy film for conference rooms, clinics, and street-facing glass;
+tear-resistant security film that holds broken glass in the frame; and clear anti-graffiti film
+for ground-floor glass.</p>
+<h2>FAQ</h2>
+<p><strong>Will it help our cooling bill?</strong> It reduces the solar heat load through the
+glass. <strong>Can you tint just the problem windows?</strong> Yes — most commercial jobs are
+scoped window by window. <strong>Do you install outside business hours?</strong> Yes.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/services/reputation',
-    title: 'Reputation Management & Google Reviews Denver CO | ikonic303',
+    path: '/storefront-graphics',
+    title: 'Commercial Storefront Film & Window Graphics Denver | ikonic303',
     description:
-      'Build your 5-star reputation and dominate Google Maps. Automated review collection, Google Business Profile optimization, and local SEO for Denver businesses.',
-    body: `<h1>Reputation &amp; Google reviews — Denver, Colorado</h1>
-<p>Reviews are the single strongest local ranking and trust signal a service business has. We
-ask every finished customer at the right moment, route unhappy ones to you privately first, and
-keep your Google Business Profile accurate and complete.</p>`,
+      'Commercial storefront window graphics, privacy and decorative film, security film, and business branding & promotional graphics — designed, printed, and installed on-site across the Denver metro.',
+    body: `<h1>Commercial Storefront Film &amp; Window Graphics in Denver</h1>
+<p>A supporting service to our residential window tinting: ikonic brands and protects commercial
+storefronts across Denver with custom window graphics, privacy and decorative film, security
+film, and promotional graphics — designed in-house and installed on-site.</p>
+<h2>Custom window graphics &amp; business branding</h2>
+<p>Hours, logo, service lists, and full-window art. Perforated film reads as a solid graphic from
+the sidewalk while you still see out from inside. We design from your brand and proof it with you
+before anything prints.</p>
+<h2>Privacy, decorative &amp; security film</h2>
+<p>Frosted, etched-glass, and patterned films for privacy with daylight still passing through;
+tear-resistant security film for ground-floor storefront glass.</p>
+<h2>Promotional graphics</h2>
+<p>Grand-opening takeovers, seasonal offers, and event graphics in removable vinyl — up for the
+promotion, off cleanly when it's over.</p>
+<h2>FAQ</h2>
+<p><strong>Will graphics block the view out?</strong> Only where you want them to. <strong>Can
+you match our brand colors?</strong> Yes — we print from your brand files and proof against
+them. <strong>Do you also tint the storefront glass?</strong> Yes — see commercial storefront
+window tint.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/services/speed-to-lead',
-    title: 'Speed to Lead Automation Denver CO | ikonic303',
+    path: '/window-tint/solar-heat',
+    title: 'Heat-Rejection Window Film Denver | Solar Window Tint for Homes | ikonic303',
     description:
-      'Respond to leads in under 60 seconds with automated SMS and email follow-up. Never lose a lead again. Speed-to-lead automation for Colorado businesses.',
-    body: `<h1>Speed to lead — Denver, Colorado</h1>
-<p>Most local service leads go to whoever answers first. We answer for you in under a minute,
-day or night, then keep following up until the customer replies — so the job does not go to the
-competitor who happened to pick up.</p>`,
+      'Solar and heat-rejection window film for Denver homes — cuts a large share of solar heat and afternoon glare on west- and south-facing glass while staying nearly clear. Lower AC load, comfortable rooms. Free in-home estimate.',
+    body: `<h1>Solar &amp; Heat-Rejection Window Film in Denver</h1>
+<p>Solar heat-rejection film stops the heat and glare at the glass, so the west-facing living room
+stops spiking in temperature every afternoon and screens stay readable. Modern spectrally-selective
+film rejects a large share of the sun's total energy while still passing most of the visible
+light, so you keep the view and the daylight — it will not make your rooms dark.</p>
+<h2>Where it earns its keep</h2>
+<p>West- and south-facing living rooms, sunrooms and enclosed porches, upstairs bedrooms that bake
+in the afternoon, home offices with screen glare, and any wall of glass. Colorado's
+high-altitude sun makes the difference noticeable day to day. Most homes get interior film;
+exterior film is an option for glass that can't take an interior film or for the highest heat
+rejection on a brutal west elevation.</p>
+<h2>FAQ</h2>
+<p><strong>Will it make my rooms dark?</strong> No — spectrally-selective film separates heat from
+light, so you keep a bright room and a clear view. <strong>Does it cut glare?</strong> Yes, glare
+reduction comes with the heat control. <strong>Does it help in winter?</strong> Solar film still
+lets winter sun in; ask about low-E film if winter heat loss is the bigger concern.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/services/marketing',
-    title: 'Digital Marketing Systems & Automation Denver CO | ikonic303',
+    path: '/window-tint/uv-protection',
+    title: 'UV Protection Window Film Denver | Fade Protection for Homes | ikonic303',
     description:
-      'Full-service digital marketing for Colorado businesses — social media, paid ads (Google & Facebook), email automation, and analytics dashboards. Fill your pipeline on autopilot.',
-    body: `<h1>Marketing systems — Denver, Colorado</h1>
-<p>The full front office on a flat monthly retainer: search and AI visibility, Google Business
-Profile, social, paid ads when they earn their keep, email and SMS follow-up, and a monthly
-report that shows what came in and what it was worth.</p>`,
+      'Near-invisible UV-blocking window film for Denver homes — blocks up to 99% of ultraviolet light to slow fading of hardwood floors, rugs, furniture, artwork, and cabinetry. Clear film, no change to your view. Free in-home estimate.',
+    body: `<h1>UV &amp; Fade Protection Window Film in Denver</h1>
+<p>Ultraviolet light is the main driver of fading in hardwood and engineered floors, rugs and
+carpet, upholstery and drapes, leather furniture, wood cabinetry, artwork, and photographs. A
+near-invisible film on the glass blocks up to 99% of UV, dramatically slowing that damage without
+changing how the room looks or how bright it is.</p>
+<h2>Near-invisible, goes on almost any window</h2>
+<p>Dedicated fade-protection film is optically clear — no darkening, no color cast, no change to
+the view — which makes it the easy choice for street-facing rooms, formal spaces, and windows
+with a view you don't want to touch. Skylights and south-facing sliding doors are common fade
+culprits and good candidates; we check each pane's glass type first.</p>
+<h2>FAQ</h2>
+<p><strong>Can you see the film once installed?</strong> No — it's optically clear.
+<strong>Will it stop fading completely?</strong> It blocks up to 99% of UV, the largest single
+cause of fading; heat and visible light still contribute over long periods. <strong>Do I need it
+if I want heat-rejection film?</strong> No — a good solar film already blocks ~99% of UV.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/print-ship',
-    title: 'Print & Ship Vinyl Wraps Denver | ikonic303',
+    path: '/window-tint/privacy',
+    title: 'Privacy Window Film for Homes Denver | Daytime Privacy Tint | ikonic303',
     description:
-      'Order custom-printed vinyl wraps and have them shipped directly to you. Professional print quality for vehicle wraps, banners, and signage. Serving Denver and Colorado.',
-    body: `<h1>Print &amp; ship vinyl</h1>
-<p>Custom-printed vinyl wraps, banners, and signage printed to spec and shipped to you or your
-installer — the same print quality we install in our own shop, for shops and businesses outside
-the Denver metro.</p>`,
+      'Privacy window film for Denver homes — daytime one-way and frosted films for bedrooms, bathrooms, and street- or neighbor-facing glass. Privacy without blinds, daylight kept. Free in-home estimate.',
+    body: `<h1>Privacy Window Film for Homes in Denver</h1>
+<p>Privacy window film gives street- and neighbor-facing glass privacy during the day without
+blinds or curtains. <strong>Daytime one-way (reflective) film</strong> reads as a mirror from the
+street while you still see out clearly; <strong>frosted film</strong> diffuses the view entirely
+in both directions but passes daylight through — better for bathrooms.</p>
+<h2>The night-time trade-off</h2>
+<p>Reflective one-way film depends on the outside being brighter than the inside, so after dark
+with interior lights on it gives less privacy. For bedrooms and bathrooms we recommend a frosted
+or heavier dual-reflective film, or pairing a lighter film with a shade. We walk through this at
+the estimate. One-way films have a visible exterior look from a subtle silver sheen to a distinct
+mirror; frosted film looks like etched glass. Many privacy films also add UV and some heat
+rejection.</p>
+<h2>FAQ</h2>
+<p><strong>Can people see in at night?</strong> Reflective film loses its effect after dark;
+frosted or heavier films keep night privacy. <strong>Will my house look mirrored?</strong> It
+depends on the film — you choose the level after seeing samples. <strong>Can I still see
+out?</strong> Yes with reflective one-way film during the day; frosted film diffuses the view
+both ways.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/lost-call-calculator',
-    title:
-      'Missed Call Revenue Calculator | How Much Are Lost Calls Costing You? | ikonic303',
+    path: '/window-tint/decorative-privacy',
+    title: 'Frosted & Decorative Window Film Denver | Privacy Film | ikonic303',
     description:
-      'Find out how much revenue your business loses from missed calls. Use our free calculator and see how missed call text-back automation can recover that revenue instantly.',
-    body: `<h1>Missed call revenue calculator</h1>
-<p>Work out what unanswered calls cost your business each month. Every missed call at a local
-service business is a customer who is already calling the next name on the list — this puts a
-number on it, and shows what automatic text-back recovers.</p>`,
+      'Frosted, etched, and decorative window film for Denver homes and businesses — daytime privacy for bathrooms, sidelights, and street-facing glass, plus branded and patterned looks, without blinds.',
+    body: `<h1>Frosted &amp; Decorative Window Film in Denver</h1>
+<p>Frosted and decorative film changes what a window shows without closing it off. Frosted film
+passes daylight through while blocking a clear line of sight — a bathroom stays bright without
+anyone seeing in, a street-facing room keeps its privacy without blinds, and a home office or
+conference room can go opaque for a meeting without construction.</p>
+<h2>Decorative &amp; branded options</h2>
+<p>Decorative film can be cut into a band, a pattern, a gradient, a logo, or an etched-glass-style
+design for glass doors, sidelights, feature walls, and storefronts. Because it's a film, not
+sandblasted glass, it costs far less and is fully reversible.</p>
+<h2>FAQ</h2>
+<p><strong>Does frosted film block all the light?</strong> No — it passes light while blocking a
+clear view. <strong>Can you cut it into our logo?</strong> Yes — bands, patterns, gradients, and
+custom logo shapes, approved before anything is cut.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/sticker-builder',
-    title: 'Custom Sticker Builder — Design & Order Online | ikonic303',
+    path: '/window-tint/security-film',
+    title: 'Security & Safety Window Film Denver | ikonic303',
     description:
-      'Design and order custom stickers online. Choose your shape, size, material, and finish — die-cut, kiss-cut, bumper stickers, and more. Fast shipping across Colorado and the US.',
-    body: `<h1>Custom sticker builder</h1>
-<p>Design and order custom stickers online — die-cut, kiss-cut, and bumper stickers in your
-choice of shape, size, material, and finish. Printed by ikonic in Wheat Ridge, Colorado and
-shipped nationwide.</p>`,
+      'Security and safety window film for Denver homes and businesses — tear-resistant film that holds shattered glass in the frame, slowing forced entry and containing storm and accident damage.',
+    body: `<h1>Security &amp; Safety Window Film in Denver</h1>
+<p>Security film doesn't make a pane unbreakable, but it changes what happens next: instead of the
+glass shattering and falling away, a thick, tear-resistant film holds it together in the frame —
+slowing a break-in and containing storm and accident damage. On a home it protects patio doors,
+ground-floor windows, and door sidelights; for a business, street-level storefront glass and
+entry doors.</p>
+<h2>We check your glass first</h2>
+<p>Pane size, thickness, and existing glass condition all affect what's safe to install. We
+identify the glass and confirm the right product before quoting, and security film can be layered
+with a solar or decorative film on the same pane.</p>
+<h2>FAQ</h2>
+<p><strong>Does it stop a break-in?</strong> It doesn't make glass unbreakable, but it holds
+shattered glass in the frame instead of falling away, which slows a smash-and-grab and often ends
+it. <strong>Is it the same as tinted film?</strong> No — it's a thicker film built for impact
+performance; it can be clear or combined with other films.</p>
+${CONTACT_BLOCK}`,
   },
   {
-    path: '/ai-website-generator',
-    title: 'AI Website Generator | Free Custom Website Design Concept | ikonic303',
+    path: '/window-tint/storefront',
+    title: 'Storefront Window Tinting Denver | ikonic303',
     description:
-      "Answer a few questions and let Ikonic's AI create a custom website design concept for your business — layout, copy, sections, colors, and a design direction ready to build.",
-    body: `<h1>AI website generator</h1>
-<p>Answer a few questions about your business and get a custom website design concept back —
-layout, sections, copy direction, and colors — as a starting point you can build from or hand
-to us to build for you.</p>`,
+      'Storefront window tinting in Denver — solar film that cuts heat, glare, and merchandise fade on retail glass while keeping the view from the sidewalk clear. Scheduled around your hours.',
+    body: `<h1>Storefront Window Tinting in Denver</h1>
+<p>Retail glass takes full sun most of the day, with merchandise against it and customers who need
+to feel comfortable near the windows. Solar film cuts the heat and UV that cause fade and
+window-side discomfort while keeping visibility from the sidewalk intact — the whole point of a
+storefront.</p>
+<h2>We check your glass before we quote</h2>
+<p>Storefront glass is often larger and older than residential glass, and large single panes
+carry their own thermal-stress risk. We identify the glass and confirm the film against the
+manufacturer's compatibility chart first. Many storefronts combine solar film with window
+graphics in one visit.</p>
+<h2>FAQ</h2>
+<p><strong>Will tinting hide us from the street?</strong> No — storefront solar films stay close
+to clear from both sides. <strong>Can film protect our displays from fading?</strong> Yes — UV
+and heat are the main drivers of fade and quality film blocks most of both.</p>
+${CONTACT_BLOCK}`,
   },
+
+  // ---------------------------------------------------------------------------
+  // HIDDEN 2026-08-29 — site refocused on architectural window film & graphics.
+  // The digital-marketing service pages, the founder's book, and the print/AI/
+  // sticker tools are unrouted in the SPA and 301-redirect to /services (see
+  // vercel.json), so they no longer need prerendered shells or sitemap entries.
+  // The route definitions are kept here, commented out, for an easy revert.
+  // ---------------------------------------------------------------------------
+  // { path: '/branded-to-win', ... },
+  // { path: '/services/web-design', ... },
+  // { path: '/services/crm-automation', ... },
+  // { path: '/services/reputation', ... },
+  // { path: '/services/speed-to-lead', ... },
+  // { path: '/services/marketing', ... },
+  // { path: '/print-ship', ... },
+  // { path: '/lost-call-calculator', ... },
+  // { path: '/sticker-builder', ... },
+  // { path: '/ai-website-generator', ... },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -341,7 +512,7 @@ function buildPost(template, post) {
       <main style="max-width:820px;margin:0 auto;padding:2rem 1.25rem;font-family:Inter,system-ui,sans-serif;line-height:1.6;color:#e8e8e8;background:#0b0b0f">
         <article>
           <h1>${esc(post.title)}</h1>
-          <p><em>${esc(post.category || 'Marketing')}${post.publishedAt ? ' · ' + new Date(post.publishedAt).toDateString() : ''}</em></p>
+          <p><em>${esc(post.category || 'Window Film')}${post.publishedAt ? ' · ' + new Date(post.publishedAt).toDateString() : ''}</em></p>
           ${post.body ? `<p>${esc(post.body)}</p>` : `<p>${esc(desc)}</p>`}
         </article>
         <p><a href="${ORIGIN}/blogs">All guides</a> ·
@@ -370,7 +541,26 @@ const MOON_RIVER_CATEGORIES = new Set([
 // longer queues these topics (see TOPICS_BY_CATEGORY in auto-blog-generate.ts). This
 // filter is defense-in-depth, same as MOON_RIVER_CATEGORIES above: it keeps any
 // leftover or manually-added vehicle post out of the sitemap and prerendered shells.
-const VEHICLE_CATEGORIES = new Set(['Commercial Wraps', 'Vehicle Protection']);
+//
+// 2026-08-29 refocus: 'Digital Marketing' is retired from the blog for the same reason.
+// Existing marketing posts are unpublished; this keeps any that slip through out of the
+// sitemap and prerendered shells. See auto-blog-generate.ts for the matching change.
+// 2026-09-04 refocus on RESIDENTIAL window tinting: the 'Signage' and 'Wayfinding
+// Signage' blog categories are retired in auto-blog-generate.ts (no new posts),
+// but the ~28 existing signage/wayfinding posts stay published AND stay in the
+// sitemap/shells — dropping that many indexed pages would hurt more than help.
+// Their in-body /signage and /wayfinding links 301 to /storefront-graphics.
+const VEHICLE_CATEGORIES = new Set([
+  'Commercial Wraps', 'Vehicle Protection', 'Digital Marketing',
+]);
+
+// 2026-08-29 refocus: some older marketing posts were filed under generic categories
+// ('Marketing', 'Lead Generation', etc.) so the category set alone doesn't catch them.
+// This slug/title keyword filter is the belt-and-braces: any post that is clearly about
+// digital marketing, SEO, ads, CRM, funnels, or lead automation is kept out of the
+// prerendered shells and the sitemap. Unpublishing them in Redis is still the real fix.
+const OFF_TOPIC_SLUG_RE =
+  /(^|-)(marketing|gohighlevel|ghl|crm|seo|sem|ppc|funnel|funnels|lead-|leads-|lead-gen|lead-generation|automation|chatbot|ai-voice|retarget|ad-|ads-|advertising|google-ads|meta-ads|facebook-ads|newsletter|email-marketing|reputation|reviews?-automation|website-|web-design|sales-funnel)(-|$)/i;
 
 async function prerenderPosts(template) {
   let list;
@@ -379,7 +569,8 @@ async function prerenderPosts(template) {
     list = (d.posts || [])
       .filter((p) => p.slug && !String(p.link || '').startsWith('http'))
       .filter((p) => !MOON_RIVER_CATEGORIES.has(p.category))
-      .filter((p) => !VEHICLE_CATEGORIES.has(p.category));
+      .filter((p) => !VEHICLE_CATEGORIES.has(p.category))
+      .filter((p) => !OFF_TOPIC_SLUG_RE.test(p.slug || '') && !OFF_TOPIC_SLUG_RE.test(p.title || ''));
   } catch (err) {
     console.warn(`prerender: skipping blog posts — could not load the list (${err.message})`);
     return { count: 0, slugs: [] };
@@ -438,7 +629,7 @@ function fixSitemap(postSlugs) {
 function build404(template) {
   let html = template;
   html = html.replace(/<title>[\s\S]*?<\/title>/, '<title>Page Not Found | ikonic303</title>');
-  html = setTag(html, /<meta\s+name="description"[^>]*>/, "That page doesn't exist. Signage, wayfinding and marketing for Denver businesses.");
+  html = setTag(html, /<meta\s+name="description"[^>]*>/, "That page doesn't exist. Architectural window film, window graphics, and signage for Denver-area homes and businesses.");
   html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
     '<meta name="robots" content="noindex,follow" />');
   const rootRe = /(<div id="root">)[\s\S]*?(<\/div>\s*(?:<script|<\/body>))/;

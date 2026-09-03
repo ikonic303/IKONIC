@@ -31,7 +31,7 @@ img {
 input:focus,
 textarea:focus,
 select:focus {
-  box-shadow: 0 0 0 2px rgba(255, 77, 46, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.25);
 }
 
 /* Responsive typography adjustments */

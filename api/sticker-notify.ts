@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 import { blocked } from './_lib/guard.js';
 
-const SHARED_EMAIL = 'info@ikonicmarketing303.com';
+const SHARED_EMAIL = 'info@ikonic303.com';
 
 /**
  * Order notification for the sticker builder.

@@ -1,15 +1,15 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Users, Clock, TrendingUp, Headphones } from 'lucide-react';
+import { Sun, PanelsTopLeft, MapPin, ShieldCheck } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { icon: Users, label: 'Leads Captured', value: '10K+' },
-  { icon: Clock, label: 'Hours Saved', value: '5K+' },
-  { icon: TrendingUp, label: 'Avg. ROI Increase', value: '340%' },
-  { icon: Headphones, label: 'Support', value: '24/7' }
+  { icon: PanelsTopLeft, label: 'Panes & Panels Installed', value: '10K+' },
+  { icon: Sun, label: 'UV Blocked by Quality Film', value: '99%' },
+  { icon: MapPin, label: 'Denver-Metro Service Radius', value: '30 mi' },
+  { icon: ShieldCheck, label: 'Manufacturer Film Warranty', value: 'Lifetime' }
 ];
 
 export default function AboutSection() {
@@ -22,6 +22,9 @@ export default function AboutSection() {
     const section = sectionRef.current;
     if (!section) return;
 
+    // Respect reduced-motion: skip the reveal entirely so content is just there.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const ctx = gsap.context(() => {
       // Content animation
       gsap.fromTo(contentRef.current,
@@ -33,8 +36,8 @@ export default function AboutSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: contentRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -49,8 +52,8 @@ export default function AboutSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: imageRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -68,8 +71,8 @@ export default function AboutSection() {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: statsRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              start: 'top 88%',
+              once: true
             }
           }
         );
@@ -109,36 +112,36 @@ export default function AboutSection() {
           <div ref={contentRef}>
             <p className="text-micro text-mint mb-4">ABOUT US</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-offwhite mb-6 leading-tight">
-              The Digital Agency That<br />
-              <span className="text-mint">Works While You Sleep</span>
+              One Shop for Film,<br />
+              <span className="text-mint">Graphics &amp; Signage</span>
             </h2>
-            
+
             <div className="space-y-4 text-offwhite-dark leading-relaxed">
               <p>
-                Running a business shouldn't feel chaotic. We help companies scale with smart 
-                automation, a powerful CRM, trained virtual assistants, and done-for-you social 
-                media — so your operations keep moving even when you're off the clock.
+                ikonic is a Wheat Ridge, Colorado shop for the visible skin of a building.
+                We install architectural window film for homes and businesses, print and apply
+                storefront and window graphics, and fabricate and hang signage and wayfinding.
               </p>
               <p>
-                Instead of juggling tools, tasks, and inconsistent workflows, we turn your entire 
-                backend into a smooth, automated engine. From lead capture to follow-ups, client 
-                onboarding to daily operations, we build systems that remove the manual work and 
-                let you focus on growth.
+                The through-line is consistency: the film on your glass, the graphics on your
+                windows, and the sign over your door should look like the same company did all
+                three — because we did. Design, print, and installation happen under one roof,
+                so nothing gets lost between vendors.
               </p>
               <p>
-                Whether you're a local service business, a fast-moving startup, or a growing online 
-                brand, our team builds everything inside GoHighLevel — clean, organized, and designed 
-                to run effortlessly on autopilot.
+                Every job starts the same way — we check the glass or walk the site, confirm the
+                film or substrate is right for the surface, and send one written quote with no
+                surprise add-ons.
               </p>
             </div>
 
             {/* Mission */}
             <div className="mt-8 p-6 bg-charcoal-light border border-mint/30 rounded-xl">
-              <h3 className="font-display text-lg font-bold text-mint mb-3">Our Mission</h3>
+              <h3 className="font-display text-lg font-bold text-mint mb-3">Our Standard</h3>
               <p className="text-offwhite-dark text-sm">
-                We're here to skip the fluff and equip you with tools that actually drive impact. 
-                No heavy platforms. No copy-paste setups. Just tailored systems built to capture 
-                leads, nurture relationships, and scale your business.
+                We only install film a manufacturer's chart says is safe for your glass, we only
+                promise timelines we can hold, and we finish the edges you can see and the ones
+                you can't. Quality-first, every pane and every panel.
               </p>
             </div>
           </div>

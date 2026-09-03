@@ -2,269 +2,186 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
+// Commercial is the secondary service — grouped under one dropdown so residential
+// stays the clear primary in the bar.
+const commercialLinks = [
+  { label: 'Storefront Window Tint', href: '/window-tint/office' },
+  { label: 'Storefront Film & Graphics', href: '/storefront-graphics' },
+];
+
+// City pages are prerendered SPA routes served by static HTML (vercel rewrites),
+// so these use full-page <a> loads.
+const areaLinks = [
+  { label: 'Wheat Ridge', href: '/service-areas/wheat-ridge' },
+  { label: 'Arvada', href: '/service-areas/arvada' },
+  { label: 'Lakewood', href: '/service-areas/lakewood' },
+  { label: 'Golden', href: '/service-areas/golden' },
+];
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<null | 'commercial' | 'areas'>(null);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setIsServicesOpen(false);
-    setIsCalcOpen(false);
+    setOpenMenu(null);
   }, [location.pathname]);
 
-  const serviceLinks = [
-    // AI Website Generator — temporarily hidden from the menu; will re-enable later. Keep the code.
-    // { label: 'AI Website Generator', href: '/ai-website-generator' },
-    { label: 'Web Design & Funnels', href: '/services/web-design' },
-    { label: 'CRM & Automations', href: '/services/crm-automation' },
-    { label: 'Reputation Management', href: '/services/reputation' },
-    { label: 'Speed to Lead', href: '/services/speed-to-lead' },
-    { label: 'Marketing Systems', href: '/services/marketing' },
-    // Static (prerendered) SEO page served via a vercel.json rewrite — use a full
-    // page load (external) so the browser hits the server-served HTML, not the SPA.
-    { label: 'Window Tint', href: '/services/window-tint', external: true },
-  ];
+  const linkCls =
+    'text-sm font-medium text-offwhite-dark hover:text-mint transition-colors';
 
   return (
     <>
-      <nav 
+      <nav
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-charcoal/95 backdrop-blur-md py-3' 
-            : 'bg-transparent py-5'
+          isScrolled ? 'bg-charcoal/95 backdrop-blur-md py-3' : 'bg-transparent py-5'
         }`}
       >
         <div className="px-[6vw] flex items-center justify-between">
-          {/* Logo - Home button with green hover */}
-          <Link 
-            to="/" 
-            className="flex items-center gap-3 group"
-          >
-            <img 
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
               src="/logo-ikonic.webp"
-              alt="Ikonic" 
+              alt="ikonic"
               style={{ height: '64px', width: 'auto' }}
               className="transition-all duration-300 group-hover:brightness-0 group-hover:invert-[.8] group-hover:sepia group-hover:saturate-[500%] group-hover:hue-rotate-[100deg]"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Home
-            </Link>
-            
-            <Link to="/about" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              About
+          {/* Desktop */}
+          <div className="hidden lg:flex items-center gap-5">
+            <Link to="/" className={linkCls}>Home</Link>
+
+            <Link to="/window-tint" className="text-sm font-semibold text-offwhite hover:text-mint transition-colors">
+              Residential Tinting
             </Link>
 
-            {/* Services Dropdown */}
+            {/* Commercial dropdown (secondary) */}
             <div className="relative">
-              <button 
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                className="flex items-center gap-1 text-sm font-medium text-offwhite-dark hover:text-mint transition-colors"
+              <button
+                onClick={() => setOpenMenu(openMenu === 'commercial' ? null : 'commercial')}
+                onMouseEnter={() => setOpenMenu('commercial')}
+                className={`flex items-center gap-1 ${linkCls}`}
               >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                Commercial
+                <ChevronDown className={`w-4 h-4 transition-transform ${openMenu === 'commercial' ? 'rotate-180' : ''}`} />
               </button>
-              
-              {isServicesOpen && (
-                <div 
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-56 bg-charcoal border border-white/10 rounded-lg shadow-xl overflow-hidden"
+              {openMenu === 'commercial' && (
+                <div
+                  onMouseLeave={() => setOpenMenu(null)}
+                  className="absolute top-full left-0 mt-2 w-60 bg-charcoal border border-white/10 rounded-lg shadow-xl overflow-hidden"
                 >
-                  <Link
-                    to="/services"
-                    className="block px-4 py-3 text-sm font-semibold text-mint hover:bg-mint/10 transition-colors border-b border-white/10"
-                  >
-                    View All Services →
-                  </Link>
-                  {serviceLinks.map((link) => (
-                    link.external ? (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        key={link.label}
-                        to={link.href}
-                        className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    )
+                  {commercialLinks.map((l) => (
+                    <Link
+                      key={l.href}
+                      to={l.href}
+                      className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
+                    >
+                      {l.label}
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
-            
-            {/* Calculators Dropdown */}
+
+            <Link to="/gallery" className={linkCls}>Gallery</Link>
+
+            {/* Service areas dropdown */}
             <div className="relative">
               <button
-                onClick={() => setIsCalcOpen(!isCalcOpen)}
-                onMouseEnter={() => setIsCalcOpen(true)}
-                className="flex items-center gap-1 text-sm font-medium text-offwhite-dark hover:text-mint transition-colors"
+                onClick={() => setOpenMenu(openMenu === 'areas' ? null : 'areas')}
+                onMouseEnter={() => setOpenMenu('areas')}
+                className={`flex items-center gap-1 ${linkCls}`}
               >
-                Calculators
-                <ChevronDown className={`w-4 h-4 transition-transform ${isCalcOpen ? 'rotate-180' : ''}`} />
+                Service Areas
+                <ChevronDown className={`w-4 h-4 transition-transform ${openMenu === 'areas' ? 'rotate-180' : ''}`} />
               </button>
-
-              {isCalcOpen && (
+              {openMenu === 'areas' && (
                 <div
-                  onMouseLeave={() => setIsCalcOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-52 bg-charcoal border border-white/10 rounded-lg shadow-xl overflow-hidden"
+                  onMouseLeave={() => setOpenMenu(null)}
+                  className="absolute top-full left-0 mt-2 w-48 bg-charcoal border border-white/10 rounded-lg shadow-xl overflow-hidden"
                 >
-                  <Link
-                    to="/print-ship"
-                    className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
-                  >
-                    Print &amp; Ship
-                  </Link>
-                  <Link
-                    to="/lost-call-calculator"
-                    className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors border-t border-white/10"
-                  >
-                    Lost Call Calculator
-                  </Link>
+                  {areaLinks.map((l) => (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  ))}
                 </div>
               )}
             </div>
 
-            <Link to="/blogs" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Blogs
-            </Link>
-
-            <Link to="/careers" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Career
-            </Link>
-
-            <Link to="/sticker-builder" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Sticker Builder
-            </Link>
-
-            <Link to="/gallery" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Gallery
-            </Link>
-
-            {/* Web Design Builder — temporarily hidden from the menu; will re-enable later. Keep the code. */}
-            {/* <Link to="/ai-website-generator" className="text-sm font-medium text-offwhite-dark hover:text-mint transition-colors">
-              Web Design Builder
-            </Link> */}
-
-            <Link to="/branded-to-win" className="text-sm font-medium px-3 py-1.5 rounded-lg border transition-colors"
-              style={{ borderColor: '#F5A623', color: '#F5A623' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#F5A62320'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}>
-              Book
-            </Link>
+            <Link to="/blogs" className={linkCls}>Blog</Link>
+            <Link to="/about" className={linkCls}>About</Link>
 
             <Link to="/contact" className="btn-primary text-sm">
-              Start Now
+              Get a Free Estimate
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
+          <button
             className="lg:hidden text-offwhite"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      <div 
+      {/* Mobile */}
+      <div
         className={`fixed inset-0 bg-charcoal z-[99] transition-transform duration-300 lg:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-6 overflow-y-auto py-20">
-          <Link to="/" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Home
-          </Link>
-          <Link to="/about" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            About
+        <div className="flex flex-col items-center justify-center h-full gap-5 overflow-y-auto py-24">
+          <Link to="/" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Home</Link>
+          <Link to="/window-tint" className="text-2xl font-display font-bold text-mint hover:text-mint-light transition-colors">
+            Residential Tinting
           </Link>
 
           <div className="text-center">
-            <p className="text-mint text-sm mb-3">Services</p>
-            <Link 
-              to="/services"
-              className="block text-xl font-display font-bold text-mint hover:text-mint-light transition-colors py-2"
-            >
-              View All Services →
-            </Link>
-            {serviceLinks.map((link) => (
-              link.external ? (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-2"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-2"
-                >
-                  {link.label}
-                </Link>
-              )
+            <p className="text-mint text-sm mb-2">Commercial</p>
+            {commercialLinks.map((l) => (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1.5"
+              >
+                {l.label}
+              </Link>
             ))}
           </div>
-          
+
+          <Link to="/gallery" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Gallery</Link>
+
           <div className="text-center">
-            <p className="text-mint text-sm mb-3">Calculators</p>
-            <Link to="/print-ship" className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-2">
-              Print &amp; Ship
-            </Link>
-            <Link to="/lost-call-calculator" className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-2">
-              Lost Call Calculator
-            </Link>
+            <p className="text-mint text-sm mb-2">Service Areas</p>
+            {areaLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1.5"
+              >
+                {l.label}
+              </a>
+            ))}
           </div>
 
-          <Link to="/blogs" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Blogs
-          </Link>
-          <Link to="/careers" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Career
-          </Link>
-          <Link to="/sticker-builder" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Sticker Builder
-          </Link>
-          <Link to="/gallery" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Gallery
-          </Link>
-          {/* Web Design Builder — temporarily hidden from the menu; will re-enable later. Keep the code. */}
-          {/* <Link to="/ai-website-generator" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">
-            Web Design Builder
-          </Link> */}
-          <Link to="/branded-to-win" className="text-2xl font-display font-bold transition-colors" style={{ color: '#F5A623' }}>
-            Book
-          </Link>
-          <Link to="/contact" className="btn-primary mt-4">
-            Start Now
-          </Link>
+          <Link to="/blogs" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Blog</Link>
+          <Link to="/about" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">About</Link>
+          <Link to="/contact" className="btn-primary mt-2">Get a Free Estimate</Link>
         </div>
       </div>
     </>

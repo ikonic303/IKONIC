@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { isOffTopicPost } from './off-topic.js';
 
 const GHL_BLOG_URL = 'https://go.ikonicmarketing303.com/blogs';
 
@@ -105,7 +106,8 @@ export async function handler(_req: VercelRequest, res: VercelResponse) {
       }
     }
 
-    const posts = [...redisPosts, ...ghlPosts];
+    // Drop retired digital-marketing (and vehicle) posts — see off-topic.ts.
+    const posts = [...redisPosts, ...ghlPosts].filter((p) => !isOffTopicPost(p));
     if (!posts.length) return res.status(502).json({ error: 'Could not load blog posts' });
 
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');

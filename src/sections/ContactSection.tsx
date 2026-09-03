@@ -16,6 +16,9 @@ export default function ContactSection() {
     const section = sectionRef.current;
     if (!section) return;
 
+    // Respect reduced-motion: skip the reveal entirely so content is just there.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const ctx = gsap.context(() => {
       // Header animation
       gsap.fromTo(headerRef.current,
@@ -27,8 +30,8 @@ export default function ContactSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: headerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -43,8 +46,8 @@ export default function ContactSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: formRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -59,8 +62,8 @@ export default function ContactSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: infoRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -70,20 +73,22 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="contact" 
-      className="relative bg-charcoal/90 backdrop-blur-sm py-24 lg:py-32 z-20"
+      id="contact"
+      className="relative bg-charcoal/90 backdrop-blur-sm py-24 lg:py-32 z-20 scroll-mt-24"
     >
       <div className="px-[6vw]">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
+          <p className="text-micro text-mint mb-4">FREE ESTIMATE</p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite mb-6">
-            Let's <span className="text-mint">Build</span> Your<br />System
+            Get a Free <span className="text-mint">Home Tint</span><br />Estimate
           </h2>
           <p className="text-lg text-offwhite-dark max-w-2xl mx-auto">
-            Got a quick ask? Looking to collaborate or send us a referral? 
-            Share your message and we'll respond within one business day.
+            Tell us which rooms and windows you want treated and what you&rsquo;re trying to fix —
+            heat, glare, privacy, fading, or a decorative look. We&rsquo;ll set up a free in-home
+            visit and send one clear written quote, usually within a business day.
           </p>
         </div>
 
@@ -95,13 +100,13 @@ export default function ContactSection() {
             className="bg-charcoal-light border border-white/10 rounded-2xl p-8 lg:p-10"
           >
             <h3 className="font-display text-2xl font-bold text-offwhite mb-6">
-              Get Started
+              Request Your Estimate
             </h3>
 
             <iframe
               src="https://crm.ikonic303.com/widget/form/YoKGheZ0aVCEaSOJQFxY"
               className="w-full h-[1199px] border-0 rounded-[3px] bg-charcoal-light"
-              title="Client Information"
+              title="Free home window tint estimate request"
               loading="lazy"
             />
           </div>
@@ -110,18 +115,18 @@ export default function ContactSection() {
           <div ref={infoRef} className="space-y-8">
             <div>
               <h3 className="font-display text-2xl font-bold text-offwhite mb-6">
-                Connect With Us
+                Prefer to Talk First?
               </h3>
               <p className="text-offwhite-dark mb-8">
-                Have a question? Curious how our solutions perform? Whether you're ready 
-                to begin or simply weighing options, our team is here for you.
+                Call or email and we&rsquo;ll answer questions about film for a specific type of
+                glass, privacy options, or scheduling — no pressure.
               </p>
             </div>
 
             {/* Contact Details */}
             <div className="space-y-4">
               <a 
-                href="mailto:info@ikonicmarketing303.com"
+                href="mailto:info@ikonic303.com"
                 className="flex items-center gap-4 p-4 bg-charcoal-light border border-white/10 rounded-xl hover:border-mint/30 transition-colors"
               >
                 <div className="w-12 h-12 bg-mint/10 rounded-lg flex items-center justify-center">
@@ -129,7 +134,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-offwhite-dark">Email</p>
-                  <p className="text-offwhite">info@ikonicmarketing303.com</p>
+                  <p className="text-offwhite">info@ikonic303.com</p>
                 </div>
               </a>
               
@@ -151,8 +156,8 @@ export default function ContactSection() {
                   <MapPin className="w-5 h-5 text-mint" />
                 </div>
                 <div>
-                  <p className="text-sm text-offwhite-dark">Location</p>
-                  <p className="text-offwhite">Colorado, USA</p>
+                  <p className="text-sm text-offwhite-dark">Shop</p>
+                  <p className="text-offwhite">4880 Robb St #8, Wheat Ridge, CO 80033</p>
                 </div>
               </div>
             </div>
@@ -193,16 +198,17 @@ export default function ContactSection() {
             {/* CTA */}
             <div className="bg-gradient-to-r from-mint/20 to-mint/5 border border-mint/30 rounded-xl p-6">
               <p className="text-offwhite font-medium mb-2">
-                Ready to Automate Your Sales & Lead Flow?
+                Free in-home estimate — no commitment
               </p>
               <p className="text-offwhite-dark text-sm mb-4">
-                Book your free 15-minute GHL Audit. No commitment, just a clear plan to scale your business.
+                We look at your actual windows, recommend the right film per room, and send one
+                clear written quote.
               </p>
-              <a 
+              <a
                 href="tel:+17206791230"
                 className="inline-flex items-center gap-2 text-mint font-medium hover:gap-3 transition-all"
               >
-                Call Now
+                Call (720) 679-1230
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
