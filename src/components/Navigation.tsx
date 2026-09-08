@@ -56,7 +56,7 @@ export default function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
-          isScrolled ? 'bg-charcoal/95 backdrop-blur-md py-3' : 'bg-transparent py-5'
+          isScrolled || isMobileMenuOpen ? 'bg-charcoal/95 backdrop-blur-md py-3' : 'bg-transparent py-5'
         }`}
       >
         <div className="px-[6vw] flex items-center justify-between">
@@ -64,7 +64,7 @@ export default function Navigation() {
             <img
               src="/logo-ikonic.webp"
               alt="ikonic"
-              style={{ height: '64px', width: 'auto' }}
+              style={{ height: isScrolled || isMobileMenuOpen ? '44px' : '64px', width: 'auto' }}
               className="transition-all duration-300 group-hover:brightness-0 group-hover:invert-[.8] group-hover:sepia group-hover:saturate-[500%] group-hover:hue-rotate-[100deg]"
             />
           </Link>
@@ -179,56 +179,56 @@ export default function Navigation() {
 
       {/* Mobile */}
       <div
-        className={`fixed inset-0 bg-charcoal z-[99] transition-transform duration-300 lg:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 bg-charcoal z-[99] overflow-y-auto overscroll-contain transition-transform duration-300 lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-5 overflow-y-auto py-24">
-          <Link to="/" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Home</Link>
+        <div className="min-h-full w-full max-w-xs mx-auto flex flex-col items-center justify-center gap-4 px-6 pt-24 pb-32 text-center">
+          <Link to="/" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Home</Link>
 
-          <div className="text-center">
-            <p className="text-mint text-sm mb-2">Residential Tinting</p>
+          <div className="w-full">
+            <p className="text-mint text-xs font-semibold uppercase tracking-wider mb-2">Residential Tinting</p>
             {residentialLinks.map((l) => (
               <Link
                 key={l.href}
                 to={l.href}
-                className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1.5"
+                className="block text-base font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1 leading-tight"
               >
                 {l.label}
               </Link>
             ))}
           </div>
 
-          <div className="text-center">
-            <p className="text-mint text-sm mb-2">Commercial</p>
+          <div className="w-full">
+            <p className="text-mint text-xs font-semibold uppercase tracking-wider mb-2">Commercial</p>
             {commercialLinks.map((l) => (
               <Link
                 key={l.label}
                 to={l.href}
-                className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1.5"
+                className="block text-base font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1 leading-tight"
               >
                 {l.label}
               </Link>
             ))}
           </div>
 
-          <Link to="/gallery" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Gallery</Link>
+          <Link to="/gallery" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Gallery</Link>
 
-          <div className="text-center">
-            <p className="text-mint text-sm mb-2">Service Areas</p>
+          <div className="w-full">
+            <p className="text-mint text-xs font-semibold uppercase tracking-wider mb-2">Service Areas</p>
             {areaLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="block text-xl font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1.5"
+                className="block text-base font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1 leading-tight"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          <Link to="/blogs" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">Blog</Link>
-          <Link to="/about" className="text-2xl font-display font-bold text-offwhite hover:text-mint transition-colors">About</Link>
+          <Link to="/blogs" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Blog</Link>
+          <Link to="/about" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">About</Link>
           <Link to="/contact" className="btn-primary mt-2">Get a Free Estimate</Link>
         </div>
       </div>
