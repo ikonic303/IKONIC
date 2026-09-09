@@ -4,13 +4,21 @@ import PageSEO from './components/PageSEO';
 import MatrixBackground from './components/MatrixBackground';
 import Navigation from './components/Navigation';
 import HeroSection from './sections/HeroSection';
+import { services } from './pages/services/serviceData';
 import './App.css';
 
-// Below-fold home sections — lazy loaded
-const ServicesSection = lazy(() => import('./sections/ServicesSection'));
-const AboutSection = lazy(() => import('./sections/AboutSection'));
+// Below-fold home sections — lazy loaded. Residential-first order (2026-09-04):
+// benefits → film options → process → gallery → reviews → commercial → areas → estimate.
+const HomeBenefitsSection = lazy(() => import('./sections/HomeBenefitsSection'));
+const FilmOptionsSection = lazy(() => import('./sections/FilmOptionsSection'));
+const ProcessSection = lazy(() => import('./sections/ProcessSection'));
+const HomeGallerySection = lazy(() => import('./sections/HomeGallerySection'));
 const TestimonialsSection = lazy(() => import('./sections/TestimonialsSection'));
+const CommercialSection = lazy(() => import('./sections/CommercialSection'));
+const ServiceAreasSection = lazy(() => import('./sections/ServiceAreasSection'));
 const ContactSection = lazy(() => import('./sections/ContactSection'));
+// ServicesSection.tsx and AboutSection.tsx are the pre-refocus homepage sections —
+// kept in src/sections/ but no longer rendered on the homepage.
 
 // All route pages — lazy loaded
 const About = lazy(() => import('./pages/About'));
@@ -19,43 +27,62 @@ const AllServices = lazy(() => import('./pages/AllServices'));
 const LearnMore = lazy(() => import('./pages/LearnMore'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Blogs = lazy(() => import('./pages/Blogs'));
-const WebDesign = lazy(() => import('./pages/WebDesign'));
-const CRMAutomation = lazy(() => import('./pages/CRMAutomation'));
-const ReputationManagement = lazy(() => import('./pages/ReputationManagement'));
-const SpeedToLead = lazy(() => import('./pages/SpeedToLead'));
-const MarketingSystems = lazy(() => import('./pages/MarketingSystems'));
-const PrintAndShip = lazy(() => import('./pages/PrintAndShip'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
-const LostCallCalculator = lazy(() => import('./pages/LostCallCalculator'));
 const ProofManager = lazy(() => import('./pages/ProofManager'));
 const ProofClient = lazy(() => import('./pages/ProofClient'));
-const BrandedToWin = lazy(() => import('./pages/BrandedToWin'));
-const StickerBuilder = lazy(() => import('./pages/StickerBuilder'));
-// ViralBot routes REMOVED 2026-07-21 (security audit). It was a mockup that
-// (a) stored user passwords in PLAINTEXT in localStorage with a client-side-only
-// trial gate, and (b) was the sole caller of /api/generate-post — an unauthenticated,
-// unmetered Gemini endpoint anyone could drive as a free LLM proxy on our key.
-// Pages remain in src/pages/ if the product is ever revived; auth must be rebuilt on
-// Supabase Auth and the generation endpoint must be guarded before re-enabling.
-const AIWebsiteGenerator = lazy(() => import('./pages/AIWebsiteGenerator'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Service pages — one shared <ServicePage> renderer, driven by serviceData. Paths
+// are unchanged from the old prerendered static HTML (/window-tint, /signage, …)
+// so no SEO equity moves. Crawler shells live in scripts/prerender-routes.mjs.
+const ServicePage = lazy(() => import('./pages/services/ServicePage'));
+// Staging page (2026-09-04): Edge film rate card + glass-compatibility filter.
+const FilmsAndPricing = lazy(() => import('./pages/services/FilmsAndPricing'));
+
+// ---------------------------------------------------------------------------
+// HIDDEN 2026-08-29 — site refocused on architectural window film & graphics
+// only (window film / residential + commercial tint / storefront + window
+// graphics / signage). The pages below are digital-marketing, AI, print-shop,
+// and book offerings that no longer fit that scope. Files are kept in
+// src/pages/ (nothing deleted); their imports, <Route>s, and all nav/footer
+// links are commented out so they are unreachable and unlinked. To bring one
+// back, un-comment its import + <Route> here and restore its nav entry.
+// ---------------------------------------------------------------------------
+// const WebDesign = lazy(() => import('./pages/WebDesign'));
+// const CRMAutomation = lazy(() => import('./pages/CRMAutomation'));
+// const ReputationManagement = lazy(() => import('./pages/ReputationManagement'));
+// const SpeedToLead = lazy(() => import('./pages/SpeedToLead'));
+// const MarketingSystems = lazy(() => import('./pages/MarketingSystems'));
+// const PrintAndShip = lazy(() => import('./pages/PrintAndShip'));
+// const LostCallCalculator = lazy(() => import('./pages/LostCallCalculator'));
+// const BrandedToWin = lazy(() => import('./pages/BrandedToWin'));
+// const StickerBuilder = lazy(() => import('./pages/StickerBuilder'));
+// const AIWebsiteGenerator = lazy(() => import('./pages/AIWebsiteGenerator'));
+// ViralBot routes were already removed 2026-07-21 (security audit); pages remain
+// in src/pages/ but are not wired up.
 
 function HomePage() {
   return (
     <>
       <PageSEO
-        title="Digital Marketing Agency Denver CO | ikonic303"
-        description="Denver's #1 GoHighLevel agency. We build 24/7 lead capture systems — custom websites, CRM automation, sales funnels, and reputation management. Get more leads on autopilot."
+        title="Residential Window Tinting Denver | Home Window Film | ikonic303"
+        description="Professional residential window tinting in Denver. Heat and glare reduction, 99% UV protection, privacy, energy savings, and fade protection for floors and furniture. Free in-home estimate — call (720) 679-1230. Commercial storefront window tint also available."
         canonical="/"
       />
       <Navigation />
       <main className="relative z-10">
         <HeroSection />
-        <Suspense fallback={null}>
-          <ServicesSection />
-          <AboutSection />
+        {/* Reserve space while the below-fold section chunks load so the page
+            doesn't collapse to the hero and then jump as each one arrives. */}
+        <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
+          <HomeBenefitsSection />
+          <FilmOptionsSection />
+          <ProcessSection />
+          <HomeGallerySection />
           <TestimonialsSection />
+          <CommercialSection />
+          <ServiceAreasSection />
           <ContactSection />
         </Suspense>
       </main>
@@ -98,32 +125,10 @@ function App() {
         document.body.appendChild(script);
       }
 
-      // GHL popup form — inject iframe + embed script only after delay
-      const popupId = 'popup-fz0LYqKFNeclNyuSnVZg';
-      if (!document.getElementById(popupId)) {
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://crm.ikonic303.com/widget/form/fz0LYqKFNeclNyuSnVZg';
-        iframe.style.cssText = 'display:none;width:100%;height:100%;border:none;border-radius:8px';
-        iframe.id = popupId;
-        iframe.setAttribute('data-layout', "{'id':'POPUP'}");
-        iframe.setAttribute('data-trigger-type', 'onScroll');
-        iframe.setAttribute('data-trigger-value', '50');
-        iframe.setAttribute('data-activation-type', 'alwaysActivated');
-        iframe.setAttribute('data-activation-value', '');
-        iframe.setAttribute('data-deactivation-type', 'neverDeactivate');
-        iframe.setAttribute('data-deactivation-value', '');
-        iframe.setAttribute('data-form-name', 'Free GHL Checklist');
-        iframe.setAttribute('data-height', '1182');
-        iframe.setAttribute('data-layout-iframe-id', popupId);
-        iframe.setAttribute('data-form-id', 'fz0LYqKFNeclNyuSnVZg');
-        iframe.title = 'Free GHL Checklist';
-        document.body.appendChild(iframe);
-
-        const embedScript = document.createElement('script');
-        embedScript.src = 'https://crm.ikonic303.com/js/form_embed.js';
-        embedScript.async = true;
-        document.body.appendChild(embedScript);
-      }
+      // HIDDEN 2026-08-29 — the scroll-triggered "Free GHL Checklist" popup form was a
+      // digital-marketing lead magnet and no longer fits the site (architectural window
+      // film & graphics only). The injection is disabled; the GHL form itself
+      // (fz0LYqKFNeclNyuSnVZg) still exists in the CRM if it's ever wanted back.
     }, 6000);
 
     return () => clearTimeout(t);
@@ -142,6 +147,31 @@ function App() {
             <Route path="/learn-more" element={<LearnMore />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/post/:slug" element={<BlogPost />} />
+
+            {/* Service pages. Residential-first (2026-09-04):
+                  /window-tint          → Residential Window Tinting (primary)
+                  /window-tint/office   → Commercial Storefront Window Tint (secondary)
+                  /storefront-graphics  → Commercial Storefront Film & Graphics (secondary)
+                /window-tint/home 301s to /window-tint; /signage and /wayfinding
+                301 to /storefront-graphics (see vercel.json). Those serviceData
+                entries and the old static HTML are kept for reference. */}
+            <Route path="/window-tint" element={<ServicePage data={services.residential} />} />
+            <Route path="/window-tint/films-and-pricing" element={<FilmsAndPricing />} />
+            <Route path="/window-tint/solar-heat" element={<ServicePage data={services.solarHeat} />} />
+            <Route path="/window-tint/uv-protection" element={<ServicePage data={services.uvProtection} />} />
+            <Route path="/window-tint/privacy" element={<ServicePage data={services.privacyFilm} />} />
+            <Route path="/window-tint/decorative-privacy" element={<ServicePage data={services.decorativePrivacy} />} />
+            <Route path="/window-tint/security-film" element={<ServicePage data={services.securityFilm} />} />
+            <Route path="/window-tint/office" element={<ServicePage data={services.commercialTint} />} />
+            <Route path="/window-tint/storefront" element={<ServicePage data={services.storefrontTint} />} />
+            <Route path="/storefront-graphics" element={<ServicePage data={services.storefrontGraphics} />} />
+            <Route path="/proof-manager" element={<ProofManager />} />
+            <Route path="/proof/:token" element={<ProofClient />} />
+            <Route path="/gallery" element={<Gallery />} />
+            {/* HIDDEN 2026-08-29 — off-scope pages (digital marketing, AI, print,
+                book). Kept in src/pages/ but not routed. vercel.json 301-redirects
+                these old paths to /services so the URLs never dead-end.
             <Route path="/services/web-design" element={<WebDesign />} />
             <Route path="/services/crm-automation" element={<CRMAutomation />} />
             <Route path="/services/reputation" element={<ReputationManagement />} />
@@ -149,13 +179,10 @@ function App() {
             <Route path="/services/marketing" element={<MarketingSystems />} />
             <Route path="/print-ship" element={<PrintAndShip />} />
             <Route path="/lost-call-calculator" element={<LostCallCalculator />} />
-            <Route path="/post/:slug" element={<BlogPost />} />
-            <Route path="/proof-manager" element={<ProofManager />} />
-            <Route path="/proof/:token" element={<ProofClient />} />
             <Route path="/branded-to-win" element={<BrandedToWin />} />
             <Route path="/sticker-builder" element={<StickerBuilder />} />
             <Route path="/ai-website-generator" element={<AIWebsiteGenerator />} />
-            <Route path="/gallery" element={<Gallery />} />
+            */}
             {/* Catch-all. Must stay LAST — react-router matches in order. */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -52,17 +52,142 @@
     },
     {
       "source": "/commercial-wraps",
-      "destination": "/signage",
+      "destination": "/storefront-graphics",
       "permanent": true
     },
     {
       "source": "/commercial-wraps.html",
-      "destination": "/signage",
+      "destination": "/storefront-graphics",
       "permanent": true
     },
     {
       "source": "/wrap-calculator",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-design",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/crm-automation",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/reputation",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/speed-to-lead",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/marketing",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/marketing",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/marketing.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/print-ship",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/lost-call-calculator",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/sticker-builder",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/ai-website-generator",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/branded-to-win",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/window-tint",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint.html",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/storefront-graphics.html",
+      "destination": "/storefront-graphics",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/office.html",
+      "destination": "/window-tint/office",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/storefront.html",
+      "destination": "/window-tint/storefront",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/security-film.html",
+      "destination": "/window-tint/security-film",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/decorative-privacy.html",
+      "destination": "/window-tint/decorative-privacy",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/home",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/window-tint/home.html",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/signage",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/signage.html",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/wayfinding",
+      "destination": "/window-tint",
+      "permanent": true
+    },
+    {
+      "source": "/wayfinding.html",
+      "destination": "/window-tint",
       "permanent": true
     }
   ],
@@ -84,24 +209,20 @@
       "destination": "/api/blog?action=auto-generate"
     },
     {
-      "source": "/signage",
-      "destination": "/signage.html"
+      "source": "/service-areas/wheat-ridge",
+      "destination": "/service-areas/wheat-ridge.html"
     },
     {
-      "source": "/wayfinding",
-      "destination": "/wayfinding.html"
+      "source": "/service-areas/arvada",
+      "destination": "/service-areas/arvada.html"
     },
     {
-      "source": "/marketing",
-      "destination": "/marketing.html"
+      "source": "/service-areas/lakewood",
+      "destination": "/service-areas/lakewood.html"
     },
     {
-      "source": "/window-tint",
-      "destination": "/window-tint.html"
-    },
-    {
-      "source": "/services/window-tint",
-      "destination": "/window-tint.html"
+      "source": "/service-areas/golden",
+      "destination": "/service-areas/golden.html"
     },
     {
       "source": "/post/:slug",

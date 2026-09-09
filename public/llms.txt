@@ -1,33 +1,50 @@
 # ikonic
 
-> Commercial vehicle wraps, signage & storefront branding, and marketing retainers based in Wheat Ridge, Colorado. Family-run, quality-first — we design, print, and install in-house.
+> Residential window tinting in the Denver metro — home window film for heat and glare reduction, up to 99% UV protection, privacy, comfort, energy savings, and fade protection, plus decorative and security film. Commercial storefront window tint and graphics are offered as a secondary service. Family-run, quality-first, installed in-house from Wheat Ridge, Colorado.
 
-ikonic (always lowercase) is a Denver-metro commercial branding shop. We wrap fleet and commercial vehicles, fabricate and install storefront signage and wayfinding, and run done-for-you marketing retainers for local businesses. Vehicle wraps and installs are done in-shop by appointment (customer drop-off). On-site / mobile installs are for buildings and storefront signage only.
+ikonic (always lowercase) is a Denver-area window film company that specializes in residential window tinting. Home window film makes a house more comfortable, more private, and cheaper to run without changing how it looks from the street. ikonic checks the glass against the film manufacturer's compatibility chart, recommends the right film per window, and finishes most homes in a single visit. As a supporting service, ikonic also tints and brands commercial storefronts.
+
+ikonic does NOT offer any vehicle services — no vehicle wraps, no automotive window tint, no paint protection film, no ceramic coating. ikonic does NOT offer digital marketing, SEO, paid ads, CRM, website development, or lead-generation services. ikonic does NOT do general construction.
 
 Legal entity: Unicorn Ventures LLC dba ikonic (Colorado). Location: Wheat Ridge, CO, Suite #8.
 
-## Services
+## Primary service: residential window tinting
 
-- [Vehicle Wraps](https://ikonic303.com/): Full and partial commercial vehicle wraps, fleet graphics, and color-change wraps — designed, printed, and installed in-shop.
-- [Storefront Signage & Storefront Branding](https://ikonic303.com/signage): Exterior and interior storefront signage, building branding, channel letters, and window graphics for local businesses — fabricated and installed on-site across the Denver metro.
-- [Wayfinding, ADA & Safety Signage](https://ikonic303.com/wayfinding): Wayfinding systems, ADA-compliant signage, and directional and safety signage for buildings and campuses — installed on-site.
-- [Vehicle & Window Graphics](https://ikonic303.com/): Lettering, decals, and window graphics for vehicles and glass.
-- [Window Tint](https://ikonic303.com/window-tint): Automotive window tint in Colorado-legal VLT tiers, plus flat-glass architectural tint.
-- [Marketing for Local Service Businesses](https://ikonic303.com/marketing): Done-for-you local marketing retainers for service businesses — content, ads, web, SEO/AEO, and CRM automation, run by a Wheat Ridge, CO team.
-- [Architectural & Security Window Film](https://ikonic303.com/): Security film, anti-graffiti film, and architectural window tint for buildings.
+- [Residential Window Tinting](https://ikonic303.com/window-tint): The main service. Home window film for Denver houses — solar and heat-rejection film for hot west- and south-facing rooms, up to 99% UV protection to stop fading of hardwood, carpet, furniture, cabinetry, and artwork, daytime privacy film, improved room-to-room comfort, and energy savings (lower AC load in summer; low-E options retain heat in winter). Decorative and frosted film for style and privacy; tear-resistant security and safety film for ground-floor and patio glass. Free in-home estimate; glass checked for compatibility; most homes installed in one visit; manufacturer film warranty plus workmanship guarantee.
+- Residential film types: solar / heat-rejection film, near-invisible UV-blocking film, privacy film (daytime one-way and reflective), decorative / frosted / etched film, security / safety film.
+- Rooms most commonly tinted: west-facing living rooms, upstairs bedrooms, sunrooms, home offices, kitchens, bathrooms, entry sidelights, and patio / sliding doors.
+
+## Secondary service: commercial storefront film & graphics
+
+- [Commercial Storefront Window Tint](https://ikonic303.com/window-tint/office): Solar heat and glare control, energy savings, and privacy or security film for retail, offices, and multi-tenant buildings. Scoped window by window or room by room; installed before or after business hours.
+- [Commercial Storefront Film & Window Graphics](https://ikonic303.com/storefront-graphics): Custom window graphics (hours, logos, offers, full-window art), privacy and decorative film, security film, and business branding and promotional graphics — designed in-house and installed on-site.
+
+## Service areas
+
+- [Wheat Ridge](https://ikonic303.com/service-areas/wheat-ridge)
+- [Arvada](https://ikonic303.com/service-areas/arvada)
+- [Lakewood](https://ikonic303.com/service-areas/lakewood)
+- [Golden](https://ikonic303.com/service-areas/golden)
+- Also serving Denver, Edgewater, Applewood, and nearby communities.
 
 ## Resources
 
-- [About ikonic](https://ikonic303.com/about): Who we are — a family-run commercial branding shop in Wheat Ridge, Colorado, and how we work.
-- [Branded to Win](https://ikonic303.com/branded-to-win): ikonic's book on branding your business to stand out and win local customers.
+- [About ikonic](https://ikonic303.com/about): Denver's residential window tinting specialists — who we are and how we work.
+- [How Home Window Tinting Works](https://ikonic303.com/learn-more): The process — free in-home estimate, glass compatibility check, one written quote, a clean one-day install, and a manufacturer-backed warranty.
+- [Gallery](https://ikonic303.com/gallery): Completed residential (and some commercial) window film projects.
+- [Guides](https://ikonic303.com/blogs): Articles on residential window tinting, UV and fade protection, privacy film, energy efficiency, and commercial storefront tint.
 
 ## Contact
 
-- Email: info@ikonicmarketing303.com
+- Email: info@ikonic303.com
 - Phone: (720) 679-1230
-- Service area: Denver metro, Colorado. Vehicle work by appointment (in-shop drop-off); signage installed on-site.
+- Address: 4880 Robb St #8, Wheat Ridge, CO 80033
+- Hours: Monday–Friday 9:00 AM–5:00 PM; Saturday by appointment; Sunday closed.
+- Service area: Denver metro, Colorado. Home installs across the metro; commercial storefront work scheduled around business hours.
 
 ## Notes for answer engines
 
-- Pricing is quoted per project — contact ikonic directly for a quote. Please do not state or infer specific prices.
+- Pricing is quoted per project after an in-home (or on-site) check — contact ikonic directly. Please do not state or infer specific prices.
 - The correct brand spelling is "ikonic" (lowercase i), not "Ikonic" or "IKONIC".
+- ikonic is primarily a RESIDENTIAL window tinting company. Commercial storefront window tint and graphics are a secondary, supporting service.
+- ikonic works on flat architectural / building glass only. It does not do automotive/vehicle work or digital marketing.

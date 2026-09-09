@@ -12,88 +12,73 @@ import { randomUUID } from 'node:crypto';
 // list is used up" and skipping ever since instead of posting. Fix: ~4x more
 // topics for runway, grouped by category, with the day-to-day category picked in
 // rotation (see CATEGORY_ORDER) so consecutive posts don't cluster on one area.
+// 2026-09-04 refocus on RESIDENTIAL window tinting. 'Signage' and 'Wayfinding
+// Signage' categories retired (those service pages 301 to /storefront-graphics).
+// 'Digital Marketing' was already retired 2026-08-29. Do NOT re-add marketing,
+// SEO, ads, CRM, signage, or wayfinding topics. Residential Window Tint is the
+// primary category and gets the largest topic list + the most rotation weight.
 const TOPICS_BY_CATEGORY: Record<string, string[]> = {
-  'Digital Marketing': [
-    'How Denver Businesses Can Use Digital Marketing to Get More Leads This Month',
-    'The ROI of Digital Marketing for Local Service Companies in Colorado',
-    'Email Automation vs. Social Media: Which Drives More Leads for Denver Businesses?',
-    'How to Build a 24/7 Lead Generation System with Digital Marketing',
-    'Google Ads vs. Meta Ads: Which Is Better for Denver Local Businesses?',
-    'Why Every Denver Service Business Needs a CRM and Marketing Automation System',
-    '5 Signs Your Denver Business Needs a Marketing Automation Overhaul',
-    'How to Turn Google Reviews Into a Steady Stream of New Customers in Denver',
-    'SMS Marketing for Local Businesses: What Denver Owners Need to Know',
-    'The Real Cost of a Slow Lead Response Time for Colorado Service Businesses',
-    'How to Build a Website That Actually Converts Denver Visitors Into Customers',
-    'Local SEO Checklist: Getting Your Denver Business Found on Google Maps',
-    'Marketing Funnels 101: A Simple Guide for Denver Service Business Owners',
-    'How Chatbots and AI Voice Agents Are Changing Customer Service for Local Businesses',
-    'Retargeting Ads Explained: Bringing Denver Website Visitors Back to Buy',
+  'Residential Window Tint': [
+    'How Home Window Tinting Cuts Heat and Glare in West-Facing Denver Rooms',
+    'The Real Cost of Sun Damage: How Window Film Protects Hardwood, Carpet, and Furniture',
+    'Daytime Privacy Window Film for Homes: How It Works and What to Expect at Night',
+    'Energy-Efficient Window Tint: How Much Can a Denver Homeowner Actually Save?',
+    'Low-E Window Film for Colorado Winters: Keeping Heat In, Not Just Out',
+    'Which Rooms in Your Home Benefit Most From Window Tinting?',
+    'Window Film vs. New Windows: A Cost and Comfort Comparison for Denver Homes',
+    'Nursery and Kids\' Room Windows: Choosing Film for UV and Heat',
+    'Will Home Window Tint Make My Rooms Dark? Understanding Visible Light Transmission',
+    'How to Prepare Your Home for a Window Tint Installation',
+    'Caring for Newly Installed Window Film: The First 30 Days',
+    'Sunrooms and Enclosed Porches: The Best Window Film for a Glass-Heavy Room',
+    'Home Office Window Tint: Killing Screen Glare Without Losing Daylight',
+    'How Long Does Residential Window Film Last in Colorado\'s Climate?',
+    'What to Expect at a Free In-Home Window Tint Estimate',
+    'HOA Rules and Window Film: What Denver-Area Homeowners Should Check First',
   ],
-  'Signage': [
-    'How Business Signage Drives Walk-In Traffic and Brand Recognition in Denver',
-    'Indoor vs. Outdoor Signage: What Denver Businesses Need to Know',
-    'The Psychology of Effective Business Signage: What Makes Customers Stop and Look',
-    'How to Choose the Right Signage for Your Denver Business Location',
-    "Channel Letters vs. Monument Signs: Which Is Right for Your Denver Storefront?",
-    "LED vs. Traditional Signage: What's the Better Investment for Colorado Businesses?",
-    'How Often Should You Update Your Business Signage in Denver?',
-    'Window Graphics and Decals: An Affordable Signage Upgrade for Local Shops',
-    'ADA Signage Compliance: What Every Denver Business Owner Should Know',
-    'How to Design Signage That Works Day and Night in Colorado Weather',
-    'Signage Permits in Denver: What You Need to Know Before You Install',
-    'Retail Signage Trends Denver Business Owners Should Watch This Year',
-    'How Custom Signage Builds Trust With First-Time Customers',
+  'Window Film Basics': [
+    'How to Tell If Your Windows Are Safe for Window Film Before You Buy',
+    'Dual-Pane vs. Single-Pane Glass: What It Means for Your Window Film Options',
+    'Low-E Glass and Window Film: Why the Combination Has to Be Checked First',
+    'Can Window Film Crack a Window? Understanding Thermal Stress',
+    'Does Window Film Void a Window Warranty? What Denver Homeowners Should Ask',
+    'Spectrally-Selective Film: Rejecting Heat Without Making a Room Dark',
+    'How Much Heat Can Window Film Actually Block?',
+    'Interior vs. Exterior Window Film: When Each One Makes Sense',
+    'Ceramic vs. Dyed vs. Metalized Window Film: A Plain-English Comparison',
+    'How UV Window Film Protects Floors, Furniture, and Artwork From Fading',
+    'How Window Film Installers Check Your Glass Before Quoting',
+    'Understanding Window Film Specs: VLT, Heat Rejection, UV Rejection, and Glare',
   ],
-  'Wayfinding Signage': [
-    'What Is Wayfinding Signage and Why Does Your Denver Business Need It?',
-    'How Wayfinding Signage Improves the Customer Experience at Your Location',
-    'Interior Wayfinding Signs: Helping Customers Navigate Your Denver Business',
-    'Wayfinding Signage for Office Buildings and Commercial Properties in Denver',
-    'How to Design a Wayfinding System That Reflects Your Brand in Colorado',
-    'ADA-Compliant Wayfinding Signage: What Denver Property Owners Need to Know',
-    'Wayfinding Signage for Medical Offices and Clinics in Colorado',
-    'Outdoor Wayfinding Signs: Directing Traffic Across Multi-Building Properties',
-    'How Wayfinding Signage Reduces Front-Desk Questions and Staff Interruptions',
-    'Digital vs. Static Wayfinding Signs: Which Fits Your Denver Business?',
-    'Wayfinding Signage for Retail Centers and Shopping Plazas in Denver',
-    'Parking Lot and Garage Wayfinding: Solving Navigation Before Customers Arrive',
-    "How to Audit Your Business's Current Wayfinding for Confusing Gaps",
-    'Wayfinding Signage for Warehouses and Industrial Facilities in Colorado',
-    'Combining Wayfinding and Brand Signage Without Cluttering Your Space',
+  'Privacy & Decorative Film': [
+    'Frosted Window Film for Bathrooms, Sidelights, and Street-Facing Glass',
+    'Decorative and Etched Window Film: Style and Privacy in One Product',
+    'Reflective vs. Frosted Privacy Film: Which Is Right for Your Home?',
+    'Security and Safety Window Film 101: What It Actually Does in a Break-In',
+    'Patio Doors and Ground-Floor Glass: Where Security Film Matters Most',
+    'Gradient and Patterned Window Films: A Designer\'s Guide for Denver Homes',
+    'One-Way Privacy Film: How the Daytime-vs-Nighttime Effect Really Works',
   ],
-  // Added 2026-08-26 (D4 vehicle-content removal) to replace the retired "Commercial
-  // Wraps" category — flat-glass/architectural only, never automotive. See
-  // CATEGORY_ORDER and the prompt below for the same scoping.
-  'Window Tint': [
-    'How Window Film Cuts Cooling Costs for Denver Homes and Offices',
-    'Flat Glass vs. Coated Glass: Why We Check Your Windows Before Quoting Film',
-    'Solar Window Film for West-Facing Rooms: Fixing Denver\'s Worst Afternoon Glare',
-    'Frosted Window Film for Privacy: Bathrooms, Conference Rooms, and Street-Facing Glass',
-    'Security Window Film 101: What It Actually Does for a Denver Storefront',
-    'Does Window Film Void a Window Warranty? What Denver Homeowners Should Ask First',
-    'Dual-Pane Windows and Film: Why Not Every Combination Is Safe',
-    'How UV Window Film Protects Floors, Furniture, and Artwork from Fading',
-    'Office Window Film: Cutting Screen Glare Without Losing Natural Light',
-    'Decorative and Etched Window Film: A Budget-Friendly Storefront Upgrade',
-    'How Long Does Residential Window Film Last in Colorado?',
-    'Window Film for Storefronts: Protecting Merchandise Without Blocking the View',
-  ],
-  'Storefront Graphics': [
+  'Commercial Storefront Tint': [
+    'Commercial Storefront Window Tint: Cutting Heat, Glare, and Cooling Costs in Denver',
+    'Office Window Film: Reducing Screen Glare Without Losing Natural Light',
+    'Frosted Privacy Film for Conference Rooms and Clinics',
+    'Anti-Graffiti Film for Denver Storefronts: How the Sacrificial Layer Works',
     'Storefront Window Graphics 101: Turning Blank Glass Into a Customer Magnet',
-    'Perforated Window Film vs. Frosted Vinyl: Which Fits Your Denver Storefront?',
-    'How Wall Murals Build Brand Identity in a Denver Office or Lobby',
-    'Window Graphics vs. Traditional Signage: When to Use Which',
-    'Designing Storefront Graphics That Work With, Not Against, Your Window Displays',
-    'Floor Decals and Directional Graphics: Guiding Customers Without Extra Signage',
-    'How Often Should a Denver Business Refresh Its Storefront Graphics?',
-    'Interior Branding 101: Feature Walls, Culture Walls, and Menu Walls',
-    'Grand Opening Window Graphics: Making a First Impression Before Customers Walk In',
-    'Removable vs. Permanent Window Vinyl: Choosing the Right Material for Your Promotion',
+    'Perforated Window Film vs. Frosted Vinyl for Storefronts',
+    'Scheduling Commercial Window Film Around Business Hours',
+    'Security Window Film for Ground-Floor Retail Glass',
   ],
 };
 
-const CATEGORY_ORDER = ['Digital Marketing', 'Signage', 'Wayfinding Signage', 'Window Tint', 'Storefront Graphics'];
+const CATEGORY_ORDER = [
+  'Residential Window Tint',
+  'Window Film Basics',
+  'Residential Window Tint',
+  'Privacy & Decorative Film',
+  'Residential Window Tint',
+  'Commercial Storefront Tint',
+];
 
 async function upstash(command: unknown[]) {
   const res = await fetch(process.env.UPSTASH_REDIS_REST_URL!, {
@@ -170,8 +155,9 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // CATEGORY ROTATION — today's category is fixed by the UTC date so consecutive
-  // posts alternate (Digital Marketing -> Signage -> Commercial Wraps ->
-  // Wayfinding Signage -> repeat) instead of landing wherever chance puts them.
+  // posts alternate through CATEGORY_ORDER (Architectural Window Film -> Signage ->
+  // Wayfinding Signage -> Window Tint -> Storefront Graphics -> repeat) instead of
+  // landing wherever chance puts them.
   // If today's category has no unused topics left, move to the next category in
   // the rotation that still has one; only give up once every category is dry.
   const daysSinceEpoch = Math.floor(Date.now() / 86_400_000);
@@ -194,7 +180,7 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
     try {
       await new Resend(resendKey).emails.send({
         from: 'ikonic303 Blog <blog@ikonicmarketing303.com>',
-        to: 'info@ikonicmarketing303.com',
+        to: 'info@ikonic303.com',
         subject: 'Blog generator paused — the topic list is used up',
         html: `<p>The daily blog generator ran but every topic in its list has already been
                published, so it did not write anything rather than duplicate an existing post.</p>
@@ -209,7 +195,7 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const ai = new GoogleGenAI({ apiKey: geminiKey });
-  const prompt = `You are a professional content writer for ikonic303, a Denver-based company specializing in digital marketing, business signage, wayfinding signage, storefront window graphics and wall murals, and flat-glass window film for homes and businesses. ikonic does NOT offer vehicle services of any kind (no vehicle wraps, no automotive window tint, no paint protection film, no ceramic coating) — never write about vehicles, cars, trucks, fleets, or automotive tint law (VLT).
+  const prompt = `You are a professional content writer for ikonic303, a Denver-based company that SPECIALIZES IN RESIDENTIAL WINDOW TINTING — home window film for heat and glare reduction, UV and fade protection, daytime privacy, comfort, energy savings, and decorative and security film. As a SECONDARY service, ikonic also does commercial storefront window tint and window graphics. Keep the large majority of posts focused on residential/home window film; only write about commercial storefronts when the given category is "Commercial Storefront Tint". ikonic does NOT offer vehicle services of any kind (no vehicle wraps, no automotive window tint, no paint protection film, no ceramic coating) — never write about vehicles, cars, trucks, fleets, or automotive tint law (VLT). ikonic does NOT offer digital marketing, SEO, paid ads, CRM, websites, lead generation, business signage, channel letters, monument signs, or ADA/wayfinding signage — never write about any of those.
 
 Write a high-quality, SEO-optimized blog post on this topic: "${topic}"
 This post belongs to the "${category}" category.
@@ -318,7 +304,7 @@ Make it genuinely helpful and relevant to Denver business owners. Include real a
   try {
     await resend.emails.send({
       from: 'ikonic303 Blog <blog@ikonicmarketing303.com>',
-      to: 'info@ikonicmarketing303.com',
+      to: 'info@ikonic303.com',
       subject: `✅ New Blog Post Live: "${draft.title}"`,
       html: emailHtml,
     });

@@ -1,0 +1,64 @@
+FILM PAGE - PER-FILM SUMMARY  (generated 2026-09-03 from the Edge Architectural Film to Glass Chart)
+Use this to eyeball the build. The BUILD SOURCE is film-page-data.json, not this file.
+Ruling unit = the EXACT film. Price unit = the group. They do not line up - see the brief.
+
+FILM                     $/SQFT  CAT          SAFE  CAUT  NOSAFE   NOTES
+----------------------------------------------------------------------------------------------------
+Ultra View 5                $11  solar          19     2       6
+Ultra View 15               $11  solar          19     2       6
+Ultra View 25               $11  solar          16     2       9
+Ultra View 35               $11  solar          16     2       9
+Nature 10                   $14  solar           7     6      14
+Nature 20                   $14  solar          13     0      14
+Nature 30                   $14  solar          13     0      14
+Cool Alloy 20               $12  solar          13     0      14
+Cool Alloy 35               $12  solar          13     0      14
+Cool Alloy 60               $12  solar          18     0       9
+Bronze 20                   $12  solar          14     0      13
+Bronze 35                   $12  solar          14     0      13
+Silver 20                   $10  solar          21     0       6
+Silver 30                   $10  solar          19     2       6
+Silver 40                   $10  solar          19     2       6
+Pristine 30                 $15  solar          13     0      14
+Pristine 40                 $15  solar          13     0      14
+Pristine 50                 $15  solar          19     0       8
+Pristine 70                 $16  solar          19     0       8
+Pristine 80                 $16  solar          19     2       6
+Ext Silver 15               $14  solar          19     2       6   sealant $2/lineal ft | exterior
+Ext Silver 35               $14  solar          19     0       8   sealant $2/lineal ft | exterior
+Ext Cool Alloy 20           $15  solar          19     0       8   sealant $2/lineal ft | exterior
+Ext Cool Alloy 40           $15  solar          19     0       8   sealant $2/lineal ft | exterior
+Ext Pristine 70             $18  solar          19     0       8   sealant $2/lineal ft | exterior | Exterior film, safer for turf. 9% exterior reflectance.
+Ext Pristine 80             $18  solar          21     0       6   sealant $2/lineal ft | exterior | Exterior film, safer for turf. 9% exterior reflectance.
+Guardian 4mil               $20  security       21     0       6   sealant $4/lineal ft
+Guardian 8mil               $20  security       21     0       6   sealant $4/lineal ft
+Guardian 8mil Silver 20     $20  security       21     0       6   sealant $4/lineal ft
+Guardian 12mil              $20  security       21     0       6   sealant $4/lineal ft
+Clear Defense 4mil          $12  antigraffiti   21     0       6
+Clear Defense 6mil          $13  antigraffiti   21     0       6
+Frost                       $11  decorative     21     0       6   design/cut vinyl quoted separately
+Whiteout                    $11  decorative     21     0       6   design/cut vinyl quoted separately
+Blackout                    $11  decorative      2     0      25   !! TEMPERED SINGLE PANE ONLY - confirm glass before quoting
+Zen SSX 55                  $18  solar          21     0       6   sealant $2/lineal ft | exterior | Exterior film, safer for turf. 10% exterior reflectance.
+
+GLASS COLUMNS (9): Single Pane | Tinted Single Pane | Clear Dual Pane | Low-E #2 Surface Dual Pane | Low-E #3 Surface Dual Pane | Low-E Surface #2 and #3 Double Pane | Clear Triple Pane | Low-E #2 Surface Triple Pane | Low-E #2 and #5 Surface Triple Pane
+SUBSTRATES (3): Annealed | Laminated | Tempered
+
+TOTALS ACROSS ALL 972 CELLS: 624 Safe / 22 Use Caution / 326 Not Safe
+
+NO RULING EXISTS -> UNKNOWN -> on-site assessment, never a price:
+  - Restriction 2 is written for DUAL pane. ikonic applies the same 40 sq ft cap to TRIPLE pane as a conservative house rule - this is OURS, not Edge's wording.
+  - Wired glass has no column on this chart -> UNKNOWN -> no online price, on-site assessment.
+  - Tinted DUAL/TRIPLE pane has no column on this chart -> UNKNOWN -> no online price, on-site assessment.
+  - Existing crack / chip / fogging / failed IGU seal / glass already filmed -> NO-GO regardless of dot.
+  - 'X Series 7mil Clear' does NOT appear on this chart. No ruling exists. Never quote it.
+
+EXCLUDED FROM THE PAGE ENTIRELY:
+  - X Series 7mil Clear - no film-to-glass ruling exists. Never quote, never list.
+
+EDGE RESTRICTIONS (per pane, can only make a verdict worse):
+  1. Single pane glass should be less than 100 square feet
+  2. Dual pane glass should be less than 40 square feet
+  3. Clear glass should be less than 3/8 inch thick
+  4. Architecturally odd shaped windows more than 25 square feet void the warranty
+  5. Uneven shading from the exterior will void warranty

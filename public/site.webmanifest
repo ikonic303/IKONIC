@@ -1,11 +1,11 @@
 {
-  "name": "Ikonic Marketing",
-  "short_name": "Ikonic",
-  "description": "Denver's digital marketing automation agency — GoHighLevel, CRM, web design, and lead generation.",
+  "name": "ikonic — Residential Window Tinting Denver",
+  "short_name": "ikonic",
+  "description": "Professional residential window tinting in Denver — heat, glare, UV, privacy, and energy savings for your home. Commercial storefront window tint and graphics also available.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0D0D0D",
-  "theme_color": "#00D9FF",
+  "background_color": "#0A1428",
+  "theme_color": "#00FF9D",
   "icons": [
     {
       "src": "/favicon-16x16.png",

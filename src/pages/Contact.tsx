@@ -35,8 +35,8 @@ export default function Contact() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="Contact ikonic303 | Free Strategy Call — Denver, CO"
-        description="Book your free marketing strategy session with ikonic303. Denver-based GoHighLevel experts ready to build your lead generation system. Call (720) 679-1230."
+        title="Contact ikonic303 | Free On-Site Window Film Quote — Denver, CO"
+        description="Book a free on-site consultation for architectural window film, window graphics, or signage in the Denver metro. We check your glass and send one written quote. Call (720) 679-1230."
         canonical="/contact"
       />
       <MatrixBackground />
@@ -47,11 +47,11 @@ export default function Contact() {
         <div ref={headerRef} className="max-w-4xl mx-auto text-center">
           <p className="text-micro text-mint mb-4">CONTACT US</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite mb-6">
-            Let's <span className="text-mint">Build</span> Your<br />System
+            Get a <span className="text-mint">Quote</span> on<br />Your Glass
           </h1>
           <p className="text-lg text-offwhite-dark max-w-2xl mx-auto">
-            Got a quick ask? Looking to collaborate or send us a referral? 
-            Share your message and we'll respond within one business day.
+            Tell us the building, the windows, and what you want the glass to do. We'll set up a
+            free on-site check and send one written quote — usually within one business day.
           </p>
         </div>
       </section>
@@ -83,15 +83,15 @@ export default function Contact() {
                 Connect With Us
               </h3>
               <p className="text-offwhite-dark mb-8">
-                Have a question? Curious how our solutions perform? Whether you're ready 
-                to begin or simply weighing options, our team is here for you.
+                Questions about film for a specific type of glass, a storefront graphics idea, or
+                a sign permit? Call or email and we'll talk it through.
               </p>
             </div>
 
             {/* Contact Details */}
             <div className="space-y-4">
               <a 
-                href="mailto:info@ikonicmarketing303.com"
+                href="mailto:info@ikonic303.com"
                 className="flex items-center gap-4 p-4 bg-charcoal-light border border-white/10 rounded-xl hover:border-mint/30 transition-colors"
               >
                 <div className="w-12 h-12 bg-mint/10 rounded-lg flex items-center justify-center">
@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-offwhite-dark">Email</p>
-                  <p className="text-offwhite">info@ikonicmarketing303.com</p>
+                  <p className="text-offwhite">info@ikonic303.com</p>
                 </div>
               </a>
               
@@ -121,8 +121,8 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-mint" />
                 </div>
                 <div>
-                  <p className="text-sm text-offwhite-dark">Location</p>
-                  <p className="text-offwhite">Colorado, USA</p>
+                  <p className="text-sm text-offwhite-dark">Shop</p>
+                  <p className="text-offwhite">4880 Robb St #8, Wheat Ridge, CO 80033</p>
                 </div>
               </div>
             </div>
@@ -163,10 +163,10 @@ export default function Contact() {
             {/* CTA */}
             <div className="bg-gradient-to-r from-mint/20 to-mint/5 border border-mint/30 rounded-xl p-6">
               <p className="text-offwhite font-medium mb-2">
-                Ready to Automate Your Sales & Lead Flow?
+                Ready for a Free On-Site Consultation?
               </p>
               <p className="text-offwhite-dark text-sm mb-4">
-                Book your free 15-minute GHL Audit. No commitment, just a clear plan to scale your business.
+                No commitment — we check the glass or walk the site and send one honest quote.
               </p>
               <a 
                 href="tel:+17206791230"

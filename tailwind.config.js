@@ -43,13 +43,20 @@ module.exports = {
           dark: "#00D484",
           light: "#4DFFB8",
         },
+        // Brand palette: dark blue, green, white. "charcoal" is a deep navy (not
+        // black) so the site reads as dark blue. Do not introduce red.
         charcoal: {
-          DEFAULT: "#0B0D10",
-          light: "#141619",
+          DEFAULT: "#0A1428",
+          light: "#132238",
+        },
+        navy: {
+          DEFAULT: "#0A1428",
+          light: "#132238",
+          lighter: "#1C3055",
         },
         offwhite: {
           DEFAULT: "#F6F7F9",
-          dark: "#A6A9B0",
+          dark: "#AEB6C2",
         },
         lightgray: "#F2F2F2",
       },
