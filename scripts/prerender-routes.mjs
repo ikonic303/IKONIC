@@ -346,10 +346,10 @@ ${CONTACT_BLOCK}`,
   },
   {
     path: '/window-tint/decorative-privacy',
-    title: 'Frosted & Decorative Window Film Denver | Privacy Film | ikonic303',
+    title: 'Decorative & Privacy Window Film Denver | Frosted & Etched Glass | ikonic303',
     description:
-      'Frosted, etched, and decorative window film for Denver homes and businesses — daytime privacy for bathrooms, sidelights, and street-facing glass, plus branded and patterned looks, without blinds.',
-    body: `<h1>Frosted &amp; Decorative Window Film in Denver</h1>
+      'Decorative and privacy window film for Denver homes and businesses — frosted, etched, and patterned film for daytime privacy on bathrooms, sidelights, and street-facing glass, plus custom bands and logos.',
+    body: `<h1>Decorative &amp; Privacy Window Film in Denver</h1>
 <p>Frosted and decorative film changes what a window shows without closing it off. Frosted film
 passes daylight through while blocking a clear line of sight — a bathroom stays bright without
 anyone seeing in, a street-facing room keeps its privacy without blinds, and a home office or

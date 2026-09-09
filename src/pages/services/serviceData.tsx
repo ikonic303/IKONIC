@@ -353,9 +353,9 @@ const storefrontGraphics: ServiceData = {
 
 const decorativePrivacy: ServiceData = {
   path: '/window-tint/decorative-privacy',
-  seoTitle: 'Frosted & Decorative Window Film Denver | Privacy Film | ikonic303',
+  seoTitle: 'Decorative & Privacy Window Film Denver | Frosted & Etched Glass | ikonic303',
   seoDescription:
-    'Frosted, etched, and decorative window film for Denver homes and businesses — daytime privacy for bathrooms, sidelights, and street-facing glass, plus branded and patterned looks, without blinds.',
+    'Decorative and privacy window film for Denver homes and businesses — frosted, etched, and patterned film for daytime privacy on bathrooms, sidelights, and street-facing glass, plus custom bands and logos.',
   schemaServiceType: 'Decorative and Privacy Window Film',
   schemaName: 'Frosted & Decorative Window Film',
   schemaDescription:
@@ -363,7 +363,7 @@ const decorativePrivacy: ServiceData = {
   eyebrow: 'RESIDENTIAL FILM OPTION · ALSO COMMERCIAL',
   h1: (
     <>
-      Frosted &amp; Decorative <span className="text-mint">Window Film</span>
+      Decorative &amp; Privacy <span className="text-mint">Window Film</span>
     </>
   ),
   lead: "A bathroom window that faces the neighbor's yard. A front-door sidelight you'd rather no one saw through. A conference room with a glass wall and no privacy. Frosted and decorative film solves all of them the same way — it changes what a window shows without closing it off, and it reads as an intentional design choice, not an obstruction.",
