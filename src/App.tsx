@@ -23,6 +23,7 @@ const ContactSection = lazy(() => import('./sections/ContactSection'));
 // All route pages — lazy loaded
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Terms = lazy(() => import('./pages/Terms'));
 const AllServices = lazy(() => import('./pages/AllServices'));
 const LearnMore = lazy(() => import('./pages/LearnMore'));
 const Careers = lazy(() => import('./pages/Careers'));
@@ -143,6 +144,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/services" element={<AllServices />} />
             <Route path="/learn-more" element={<LearnMore />} />
             <Route path="/careers" element={<Careers />} />

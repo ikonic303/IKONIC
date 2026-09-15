@@ -69,11 +69,26 @@ export default function Contact() {
             </h3>
 
             <iframe
-              src="https://crm.ikonic303.com/widget/form/YoKGheZ0aVCEaSOJQFxY"
-              className="w-full h-[1199px] border-0 rounded-[3px] bg-charcoal-light"
-              title="Client Information"
+              src="https://crm.ikonic303.com/widget/form/QuY0wUkGL9AoNqcDSf4V"
+              id="inline-QuY0wUkGL9AoNqcDSf4V"
+              className="w-full h-[2191px] border-0 rounded-[3px] bg-charcoal-light"
+              data-layout='{"id":"INLINE"}'
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Request a Free Window Film Estimate"
+              data-height="2191"
+              data-layout-iframe-id="inline-QuY0wUkGL9AoNqcDSf4V"
+              data-form-id="QuY0wUkGL9AoNqcDSf4V"
+              data-cookie-consent="true"
+              data-cookie-consent-provider="auto"
+              title="Request a Free Window Film Estimate"
               loading="lazy"
             />
+            <script src="https://crm.ikonic303.com/js/form_embed.js"></script>
           </div>
 
           {/* Contact Info */}

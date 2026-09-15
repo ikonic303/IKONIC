@@ -621,11 +621,26 @@ export default function FilmsAndPricing() {
           <div className="bg-charcoal border border-white/10 rounded-2xl p-6 lg:p-8">
             <h3 className="font-display text-xl font-bold text-offwhite mb-5">Request your estimate</h3>
             <iframe
-              src="https://crm.ikonic303.com/widget/form/YoKGheZ0aVCEaSOJQFxY"
-              className="w-full h-[1199px] border-0 rounded-[3px] bg-charcoal"
-              title="Window film estimate request"
+              src="https://crm.ikonic303.com/widget/form/QuY0wUkGL9AoNqcDSf4V"
+              id="inline-QuY0wUkGL9AoNqcDSf4V"
+              className="w-full h-[2191px] border-0 rounded-[3px] bg-charcoal"
+              data-layout='{"id":"INLINE"}'
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Request a Free Window Film Estimate"
+              data-height="2191"
+              data-layout-iframe-id="inline-QuY0wUkGL9AoNqcDSf4V"
+              data-form-id="QuY0wUkGL9AoNqcDSf4V"
+              data-cookie-consent="true"
+              data-cookie-consent-provider="auto"
+              title="Request a Free Window Film Estimate"
               loading="lazy"
             />
+            <script src="https://crm.ikonic303.com/js/form_embed.js"></script>
           </div>
 
           {/* Keep the related links + intent consistent with the other service pages. */}

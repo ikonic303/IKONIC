@@ -21,9 +21,9 @@ import type { ServiceData } from './ServicePage';
 
 const residential: ServiceData = {
   path: '/window-tint',
-  seoTitle: 'Residential Window Tinting Denver | Home Window Film | ikonic303',
+  seoTitle: 'Home Window Tinting Denver | Residential Window Film | ikonic303',
   seoDescription:
-    'Professional residential window tinting in Denver — heat and glare reduction, 99% UV protection, privacy window film, energy-efficient window tint, and fade protection for floors and furniture. Free in-home estimate.',
+    'Home window tinting in Denver — heat and glare reduction, 99% UV protection, privacy window film, energy-efficient window tint, and fade protection for floors and furniture. Free in-home estimate.',
   schemaServiceType: 'Residential Window Tinting',
   schemaName: 'Residential Window Tinting & Home Window Film',
   schemaDescription:
@@ -31,8 +31,7 @@ const residential: ServiceData = {
   eyebrow: 'RESIDENTIAL WINDOW TINTING · DENVER',
   h1: (
     <>
-      Professional Residential Window Tinting in{' '}
-      <span className="text-mint">Denver</span>
+      Home Window Tinting in <span className="text-mint">Denver</span>
     </>
   ),
   lead: "Home window film makes a Denver house more comfortable, more private, and cheaper to run — without changing how it looks from the street. ikonic installs solar, UV, privacy, decorative, and security film for homeowners across Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver. We check your glass, recommend the right film per window, and finish most homes in a single visit.",
@@ -266,9 +265,9 @@ const commercialTint: ServiceData = {
 
 const storefrontGraphics: ServiceData = {
   path: '/storefront-graphics',
-  seoTitle: 'Commercial Storefront Film & Window Graphics Denver | ikonic303',
+  seoTitle: 'Window Graphics Denver | Commercial Storefront Film & Graphics | ikonic303',
   seoDescription:
-    'Commercial storefront window graphics, privacy and decorative film, security film, and business branding & promotional graphics — designed, printed, and installed on-site across the Denver metro.',
+    'Custom window graphics in Denver for storefronts, offices, and retail — plus privacy and decorative film, security film, and business branding & promotional graphics, designed, printed, and installed on-site.',
   schemaServiceType: 'Storefront Film and Window Graphics',
   schemaName: 'Commercial Storefront Film & Window Graphics',
   schemaDescription:
@@ -276,7 +275,7 @@ const storefrontGraphics: ServiceData = {
   eyebrow: 'COMMERCIAL · SECONDARY SERVICE',
   h1: (
     <>
-      Storefront Film &amp; Window Graphics That{' '}
+      Window Graphics in Denver That{' '}
       <span className="text-mint">Work for Your Brand</span>
     </>
   ),
@@ -799,9 +798,9 @@ const uvProtection: ServiceData = {
 
 const privacyFilm: ServiceData = {
   path: '/window-tint/privacy',
-  seoTitle: 'Privacy Window Film for Homes Denver | Daytime Privacy Tint | ikonic303',
+  seoTitle: 'Privacy Window Film Denver | Daytime Privacy Tint for Homes | ikonic303',
   seoDescription:
-    'Privacy window film for Denver homes — daytime one-way and frosted films for bedrooms, bathrooms, and street- or neighbor-facing glass. Privacy without blinds, daylight kept. Free in-home estimate.',
+    'Privacy window film in Denver — daytime one-way and frosted films for bedrooms, bathrooms, and street- or neighbor-facing glass. Privacy without blinds, daylight kept. Free in-home estimate.',
   schemaServiceType: 'Residential Privacy Window Film',
   schemaName: 'Privacy Window Film for Homes',
   schemaDescription:
@@ -809,7 +808,7 @@ const privacyFilm: ServiceData = {
   eyebrow: 'RESIDENTIAL WINDOW FILM',
   h1: (
     <>
-      Privacy Window Film <span className="text-mint">for Homes</span>
+      Privacy Window Film <span className="text-mint">for Denver Homes</span>
     </>
   ),
   lead: "The bedroom window that faces the neighbor's deck. The ground-floor rooms where the blinds stay shut all day. The bathroom you'd like to have some daylight in. Privacy window film gives street- and neighbor-facing glass privacy during the day without blinds or curtains — and depending on the film, you can still see out.",

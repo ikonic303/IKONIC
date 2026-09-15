@@ -108,7 +108,10 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 text-center">
           <p className="text-offwhite-dark text-sm">
             © {new Date().getFullYear()} ikonic. All rights reserved. · Residential &amp; commercial
-            window tinting, Denver, CO.
+            window tinting, Denver, CO. ·{' '}
+            <Link to="/terms" className="hover:text-mint transition-colors">
+              Terms &amp; Conditions
+            </Link>
           </p>
         </div>
       </div>
