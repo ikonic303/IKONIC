@@ -169,10 +169,10 @@ ${CONTACT_BLOCK}`,
   //    /storefront-graphics (vercel.json), so they no longer get shells.
   {
     path: '/window-tint',
-    title: 'Residential Window Tinting Denver | Home Window Film | ikonic303',
+    title: 'Home Window Tinting Denver | Residential Window Film | ikonic303',
     description:
-      'Professional residential window tinting in Denver — heat and glare reduction, 99% UV protection, privacy window film, energy-efficient window tint, and fade protection for floors and furniture. Free in-home estimate.',
-    body: `<h1>Professional Residential Window Tinting in Denver</h1>
+      'Home window tinting in Denver — heat and glare reduction, 99% UV protection, privacy window film, energy-efficient window tint, and fade protection for floors and furniture. Free in-home estimate.',
+    body: `<h1>Home Window Tinting in Denver</h1>
 <p>Home window film makes a Denver house more comfortable, more private, and cheaper to run
 without changing how it looks from the street. ikonic installs solar, UV, privacy, decorative,
 and security film for homeowners across Wheat Ridge, Arvada, Lakewood, Golden, and greater
@@ -263,9 +263,9 @@ ${CONTACT_BLOCK}`,
   },
   {
     path: '/storefront-graphics',
-    title: 'Commercial Storefront Film & Window Graphics Denver | ikonic303',
+    title: 'Window Graphics Denver | Commercial Storefront Film & Graphics | ikonic303',
     description:
-      'Commercial storefront window graphics, privacy and decorative film, security film, and business branding & promotional graphics — designed, printed, and installed on-site across the Denver metro.',
+      'Custom window graphics in Denver for storefronts, offices, and retail — plus privacy and decorative film, security film, and business branding & promotional graphics, designed, printed, and installed on-site.',
     body: `<h1>Commercial Storefront Film &amp; Window Graphics in Denver</h1>
 <p>A supporting service to our residential window tinting: ikonic brands and protects commercial
 storefronts across Denver with custom window graphics, privacy and decorative film, security
@@ -334,10 +334,10 @@ ${CONTACT_BLOCK}`,
   },
   {
     path: '/window-tint/privacy',
-    title: 'Privacy Window Film for Homes Denver | Daytime Privacy Tint | ikonic303',
+    title: 'Privacy Window Film Denver | Daytime Privacy Tint for Homes | ikonic303',
     description:
-      'Privacy window film for Denver homes — daytime one-way and frosted films for bedrooms, bathrooms, and street- or neighbor-facing glass. Privacy without blinds, daylight kept. Free in-home estimate.',
-    body: `<h1>Privacy Window Film for Homes in Denver</h1>
+      'Privacy window film in Denver — daytime one-way and frosted films for bedrooms, bathrooms, and street- or neighbor-facing glass. Privacy without blinds, daylight kept. Free in-home estimate.',
+    body: `<h1>Privacy Window Film for Denver Homes</h1>
 <p>Privacy window film gives street- and neighbor-facing glass privacy during the day without
 blinds or curtains. <strong>Daytime one-way (reflective) film</strong> reads as a mirror from the
 street while you still see out clearly; <strong>frosted film</strong> diffuses the view entirely
