@@ -104,6 +104,19 @@ Denver metro including Wheat Ridge, Arvada, Lakewood, and Golden.</p>
 ${CONTACT_BLOCK}`,
   },
   {
+    path: '/terms',
+    title: 'Terms & Conditions | ikonic303',
+    description:
+      'Terms and conditions (terms of service) governing use of the ikonic303 website and our residential and commercial window film and window graphics services in the Denver metro.',
+    body: `<h1>Terms &amp; Conditions</h1>
+<p>Also referred to as our Terms of Service. These Terms govern use of the ikonic303 website and
+our residential and commercial window film, window graphics, and related services in the Denver
+metro — estimates and quotes, scheduling and site access, payment, cancellations, film and
+workmanship warranty, glass compatibility, website use, disclaimers, limitation of liability, and
+governing law (Colorado). See the full Terms &amp; Conditions page for details.</p>
+${CONTACT_BLOCK}`,
+  },
+  {
     path: '/blogs',
     title: 'Residential Window Tinting Blog | Denver Home Window Film Guides | ikonic303',
     description:

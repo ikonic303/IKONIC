@@ -10,6 +10,16 @@
   ],
   "redirects": [
     {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
