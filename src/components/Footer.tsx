@@ -31,6 +31,8 @@ const areas = [
   { label: 'Arvada', href: '/service-areas/arvada' },
   { label: 'Lakewood', href: '/service-areas/lakewood' },
   { label: 'Golden', href: '/service-areas/golden' },
+  { label: 'Denver', href: '/service-areas/denver' },
+  { label: 'All Front Range Areas', href: '/service-areas' },
 ];
 
 export default function Footer() {
