@@ -10,7 +10,7 @@ function serviceAreaCleanUrls() {
   return {
     name: 'service-area-clean-urls',
     configureServer(server: import('vite').ViteDevServer) {
-      server.middlewares.use((req, res, next) => {
+      server.middlewares.use((req, _res, next) => {
         if (!req.url) return next();
         const pathname = req.url.split('?')[0];
         if (pathname === '/service-areas' || pathname === '/service-areas/') {
