@@ -1,0 +1,3055 @@
+{
+ "_source": {
+  "municipalities_and_population": "Wikipedia: List of municipalities in Colorado (U.S. Census Bureau 2020 counts)",
+  "coordinates": "Wikipedia geo-coordinates via MediaWiki API",
+  "elevation": "USGS National Map EPQS, feet",
+  "distance": "great-circle miles from Wheat Ridge, CO (39.7661,-105.0772)",
+  "front_range_counties": [
+   "Larimer",
+   "Weld",
+   "Boulder",
+   "Broomfield",
+   "Adams",
+   "Arapahoe",
+   "Denver",
+   "Jefferson",
+   "Douglas",
+   "El Paso",
+   "Pueblo"
+  ],
+  "generated": "2026-09-16"
+ },
+ "towns": [
+  {
+   "name": "Arvada",
+   "counties": [
+    "Jefferson",
+    "Adams"
+   ],
+   "pop": 124402,
+   "type": "Home rule city",
+   "lat": 39.85444444,
+   "lon": -105.235,
+   "mi": 10.4,
+   "elev_ft": 5990,
+   "slug": "arvada",
+   "bearing": 306,
+   "dir": "north-west",
+   "tier": "core",
+   "band": "foothills",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Superior",
+     "slug": "superior",
+     "mi": 6.8
+    },
+    {
+     "name": "Golden",
+     "slug": "golden",
+     "mi": 7.1
+    },
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 8.3
+    }
+   ]
+  },
+  {
+   "name": "Ault",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1887,
+   "type": "Statutory town",
+   "lat": 40.59166667,
+   "lon": -104.74666667,
+   "mi": 59.7,
+   "elev_ft": 4950,
+   "slug": "ault",
+   "bearing": 17,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Pierce",
+     "slug": "pierce",
+     "mi": 3.6
+    },
+    {
+     "name": "Eaton",
+     "slug": "eaton",
+     "mi": 4.9
+    },
+    {
+     "name": "Severance",
+     "slug": "severance",
+     "mi": 7.3
+    }
+   ]
+  },
+  {
+   "name": "Aurora",
+   "counties": [
+    "Arapahoe",
+    "Adams",
+    "Douglas"
+   ],
+   "pop": 386261,
+   "type": "Home rule city",
+   "lat": 39.70888889,
+   "lon": -104.72138889,
+   "mi": 19.3,
+   "elev_ft": 5560,
+   "slug": "aurora",
+   "bearing": 102,
+   "dir": "east",
+   "tier": "metro",
+   "band": "plains",
+   "size": "large",
+   "nearest": [
+    {
+     "name": "Centennial",
+     "slug": "centennial",
+     "mi": 7.4
+    },
+    {
+     "name": "Foxfield",
+     "slug": "foxfield",
+     "mi": 9.0
+    },
+    {
+     "name": "Greenwood Village",
+     "slug": "greenwood-village",
+     "mi": 10.2
+    }
+   ]
+  },
+  {
+   "name": "Bennett",
+   "counties": [
+    "Adams",
+    "Arapahoe"
+   ],
+   "pop": 2862,
+   "type": "Statutory town",
+   "lat": 39.75305556,
+   "lon": -104.43138889,
+   "mi": 34.3,
+   "elev_ft": 5490,
+   "slug": "bennett",
+   "bearing": 91,
+   "dir": "east",
+   "tier": "metro",
+   "band": "plains",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Aurora",
+     "slug": "aurora",
+     "mi": 15.7
+    },
+    {
+     "name": "Centennial",
+     "slug": "centennial",
+     "mi": 20.2
+    },
+    {
+     "name": "Commerce City",
+     "slug": "commerce-city",
+     "mi": 20.8
+    }
+   ]
+  },
+  {
+   "name": "Berthoud",
+   "counties": [
+    "Larimer",
+    "Weld"
+   ],
+   "pop": 10332,
+   "type": "Statutory town",
+   "lat": 40.31222222,
+   "lon": -105.06111111,
+   "mi": 37.7,
+   "elev_ft": 4970,
+   "slug": "berthoud",
+   "bearing": 1,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Loveland",
+     "slug": "loveland",
+     "mi": 5.5
+    },
+    {
+     "name": "Johnstown",
+     "slug": "johnstown",
+     "mi": 5.7
+    },
+    {
+     "name": "Mead",
+     "slug": "mead",
+     "mi": 5.8
+    }
+   ]
+  },
+  {
+   "name": "Boone",
+   "counties": [
+    "Pueblo"
+   ],
+   "pop": 305,
+   "type": "Statutory town",
+   "lat": 38.25055556,
+   "lon": -104.25777778,
+   "mi": 113.6,
+   "elev_ft": 4490,
+   "slug": "boone",
+   "bearing": 157,
+   "dir": "south-east",
+   "tier": "outer",
+   "band": "plains",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Pueblo",
+     "slug": "pueblo",
+     "mi": 19.3
+    },
+    {
+     "name": "Fountain",
+     "slug": "fountain",
+     "mi": 38.0
+    },
+    {
+     "name": "Rye",
+     "slug": "rye",
+     "mi": 43.1
+    }
+   ]
+  },
+  {
+   "name": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 108250,
+   "type": "Home rule city",
+   "lat": 39.99333333,
+   "lon": -105.245,
+   "mi": 18.0,
+   "elev_ft": 5350,
+   "slug": "boulder",
+   "bearing": 331,
+   "dir": "north-west",
+   "tier": "metro",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Superior",
+     "slug": "superior",
+     "mi": 6.1
+    },
+    {
+     "name": "Louisville",
+     "slug": "louisville",
+     "mi": 6.3
+    },
+    {
+     "name": "Lafayette",
+     "slug": "lafayette",
+     "mi": 7.3
+    }
+   ]
+  },
+  {
+   "name": "Bow Mar",
+   "counties": [
+    "Arapahoe",
+    "Jefferson"
+   ],
+   "pop": 853,
+   "type": "Statutory town",
+   "lat": 39.6225,
+   "lon": -105.05083333,
+   "mi": 10.0,
+   "elev_ft": 5480,
+   "slug": "bow-mar",
+   "bearing": 172,
+   "dir": "south",
+   "tier": "core",
+   "band": "central",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Columbine Valley",
+     "slug": "columbine-valley",
+     "mi": 1.8
+    },
+    {
+     "name": "Littleton",
+     "slug": "littleton",
+     "mi": 1.9
+    },
+    {
+     "name": "Sheridan",
+     "slug": "sheridan",
+     "mi": 2.4
+    }
+   ]
+  },
+  {
+   "name": "Brighton",
+   "counties": [
+    "Adams",
+    "Weld"
+   ],
+   "pop": 40083,
+   "type": "Home rule city",
+   "lat": 39.98055556,
+   "lon": -104.76944444,
+   "mi": 22.0,
+   "elev_ft": 5130,
+   "slug": "brighton",
+   "bearing": 48,
+   "dir": "north-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Lochbuie",
+     "slug": "lochbuie",
+     "mi": 2.5
+    },
+    {
+     "name": "Commerce City",
+     "slug": "commerce-city",
+     "mi": 7.1
+    },
+    {
+     "name": "Fort Lupton",
+     "slug": "fort-lupton",
+     "mi": 8.3
+    }
+   ]
+  },
+  {
+   "name": "Broomfield",
+   "counties": [
+    "Broomfield"
+   ],
+   "pop": 74112,
+   "type": "Consolidated city and county",
+   "lat": 39.95416667,
+   "lon": -105.05277778,
+   "mi": 13.1,
+   "elev_ft": 5350,
+   "slug": "broomfield",
+   "bearing": 6,
+   "dir": "north",
+   "tier": "core",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Louisville",
+     "slug": "louisville",
+     "mi": 4.3
+    },
+    {
+     "name": "Lafayette",
+     "slug": "lafayette",
+     "mi": 4.4
+    },
+    {
+     "name": "Westminster",
+     "slug": "westminster",
+     "mi": 4.9
+    }
+   ]
+  },
+  {
+   "name": "Calhan",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 762,
+   "type": "Statutory town",
+   "lat": 39.03444444,
+   "lon": -104.29944444,
+   "mi": 65.4,
+   "elev_ft": 6530,
+   "slug": "calhan",
+   "bearing": 140,
+   "dir": "south-east",
+   "tier": "extended",
+   "band": "divide",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Ramah",
+     "slug": "ramah",
+     "mi": 9.3
+    },
+    {
+     "name": "Colorado Springs",
+     "slug": "colorado-springs",
+     "mi": 20.5
+    },
+    {
+     "name": "Monument",
+     "slug": "monument",
+     "mi": 30.4
+    }
+   ]
+  },
+  {
+   "name": "Castle Pines",
+   "counties": [
+    "Douglas"
+   ],
+   "pop": 11036,
+   "type": "Home rule city",
+   "lat": 39.47,
+   "lon": -104.88666667,
+   "mi": 22.8,
+   "elev_ft": 6460,
+   "slug": "castle-pines",
+   "bearing": 154,
+   "dir": "south-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Lone Tree",
+     "slug": "lone-tree",
+     "mi": 4.5
+    },
+    {
+     "name": "Parker",
+     "slug": "parker",
+     "mi": 6.7
+    },
+    {
+     "name": "Castle Rock",
+     "slug": "castle-rock",
+     "mi": 6.8
+    }
+   ]
+  },
+  {
+   "name": "Castle Rock",
+   "counties": [
+    "Douglas"
+   ],
+   "pop": 73158,
+   "type": "Home rule town",
+   "lat": 39.37222222,
+   "lon": -104.875,
+   "mi": 29.3,
+   "elev_ft": 6310,
+   "slug": "castle-rock",
+   "bearing": 158,
+   "dir": "south",
+   "tier": "metro",
+   "band": "divide",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Castle Pines",
+     "slug": "castle-pines",
+     "mi": 6.8
+    },
+    {
+     "name": "Larkspur",
+     "slug": "larkspur",
+     "mi": 9.1
+    },
+    {
+     "name": "Parker",
+     "slug": "parker",
+     "mi": 10.4
+    }
+   ]
+  },
+  {
+   "name": "Centennial",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 108418,
+   "type": "Home rule city",
+   "lat": 39.60555556,
+   "lon": -104.76,
+   "mi": 20.2,
+   "elev_ft": 5830,
+   "slug": "centennial",
+   "bearing": 123,
+   "dir": "south-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Foxfield",
+     "slug": "foxfield",
+     "mi": 1.8
+    },
+    {
+     "name": "Greenwood Village",
+     "slug": "greenwood-village",
+     "mi": 6.5
+    },
+    {
+     "name": "Aurora",
+     "slug": "aurora",
+     "mi": 7.4
+    }
+   ]
+  },
+  {
+   "name": "Cherry Hills Village",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 6442,
+   "type": "Home rule city",
+   "lat": 39.63111111,
+   "lon": -104.94638889,
+   "mi": 11.6,
+   "elev_ft": 5420,
+   "slug": "cherry-hills-village",
+   "bearing": 143,
+   "dir": "south-east",
+   "tier": "core",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Englewood",
+     "slug": "englewood",
+     "mi": 3.0
+    },
+    {
+     "name": "Greenwood Village",
+     "slug": "greenwood-village",
+     "mi": 3.6
+    },
+    {
+     "name": "Littleton",
+     "slug": "littleton",
+     "mi": 4.0
+    }
+   ]
+  },
+  {
+   "name": "Colorado Springs",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 478961,
+   "type": "Home rule city",
+   "lat": 38.85777778,
+   "lon": -104.60583333,
+   "mi": 67.6,
+   "elev_ft": 6290,
+   "slug": "colorado-springs",
+   "bearing": 158,
+   "dir": "south",
+   "tier": "extended",
+   "band": "plains",
+   "size": "large",
+   "nearest": [
+    {
+     "name": "Fountain",
+     "slug": "fountain",
+     "mi": 12.4
+    },
+    {
+     "name": "Manitou Springs",
+     "slug": "manitou-springs",
+     "mi": 16.5
+    },
+    {
+     "name": "Calhan",
+     "slug": "calhan",
+     "mi": 20.5
+    }
+   ]
+  },
+  {
+   "name": "Columbine Valley",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 1502,
+   "type": "Statutory town",
+   "lat": 39.59944444,
+   "lon": -105.03527778,
+   "mi": 11.7,
+   "elev_ft": 5360,
+   "slug": "columbine-valley",
+   "bearing": 169,
+   "dir": "south",
+   "tier": "core",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Littleton",
+     "slug": "littleton",
+     "mi": 1.3
+    },
+    {
+     "name": "Bow Mar",
+     "slug": "bow-mar",
+     "mi": 1.8
+    },
+    {
+     "name": "Englewood",
+     "slug": "englewood",
+     "mi": 2.8
+    }
+   ]
+  },
+  {
+   "name": "Commerce City",
+   "counties": [
+    "Adams"
+   ],
+   "pop": 62418,
+   "type": "Home rule city",
+   "lat": 39.87916667,
+   "lon": -104.78805556,
+   "mi": 17.2,
+   "elev_ft": 5210,
+   "slug": "commerce-city",
+   "bearing": 63,
+   "dir": "north-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Brighton",
+     "slug": "brighton",
+     "mi": 7.1
+    },
+    {
+     "name": "Lochbuie",
+     "slug": "lochbuie",
+     "mi": 9.2
+    },
+    {
+     "name": "Thornton",
+     "slug": "thornton",
+     "mi": 9.5
+    }
+   ]
+  },
+  {
+   "name": "Dacono",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 6297,
+   "type": "Home rule city",
+   "lat": 40.06222222,
+   "lon": -104.94694444,
+   "mi": 21.6,
+   "elev_ft": 5110,
+   "slug": "dacono",
+   "bearing": 19,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Erie",
+     "slug": "erie",
+     "mi": 4.1
+    },
+    {
+     "name": "Frederick",
+     "slug": "frederick",
+     "mi": 4.9
+    },
+    {
+     "name": "Firestone",
+     "slug": "firestone",
+     "mi": 6.2
+    }
+   ]
+  },
+  {
+   "name": "Deer Trail",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 1068,
+   "type": "Statutory town",
+   "lat": 39.6225,
+   "lon": -104.045,
+   "mi": 55.8,
+   "elev_ft": 5200,
+   "slug": "deer-trail",
+   "bearing": 100,
+   "dir": "east",
+   "tier": "extended",
+   "band": "plains",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Bennett",
+     "slug": "bennett",
+     "mi": 22.4
+    },
+    {
+     "name": "Ramah",
+     "slug": "ramah",
+     "mi": 35.1
+    },
+    {
+     "name": "Aurora",
+     "slug": "aurora",
+     "mi": 36.5
+    }
+   ]
+  },
+  {
+   "name": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "pop": 715522,
+   "type": "Consolidated city and county",
+   "lat": 39.74,
+   "lon": -104.99,
+   "mi": 5.0,
+   "elev_ft": 5240,
+   "slug": "denver",
+   "bearing": 111,
+   "dir": "east",
+   "tier": "core",
+   "band": "central",
+   "size": "large",
+   "nearest": [
+    {
+     "name": "Glendale",
+     "slug": "glendale",
+     "mi": 3.8
+    },
+    {
+     "name": "Edgewater",
+     "slug": "edgewater",
+     "mi": 3.9
+    },
+    {
+     "name": "Mountain View",
+     "slug": "mountain-view",
+     "mi": 4.3
+    }
+   ]
+  },
+  {
+   "name": "Eaton",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 5802,
+   "type": "Statutory town",
+   "lat": 40.52555556,
+   "lon": -104.71305556,
+   "mi": 55.9,
+   "elev_ft": 4820,
+   "slug": "eaton",
+   "bearing": 20,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Ault",
+     "slug": "ault",
+     "mi": 4.9
+    },
+    {
+     "name": "Severance",
+     "slug": "severance",
+     "mi": 7.4
+    },
+    {
+     "name": "Greeley",
+     "slug": "greeley",
+     "mi": 7.5
+    }
+   ]
+  },
+  {
+   "name": "Edgewater",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 5005,
+   "type": "Home rule city",
+   "lat": 39.74944444,
+   "lon": -105.06222222,
+   "mi": 1.4,
+   "elev_ft": 5360,
+   "slug": "edgewater",
+   "bearing": 145,
+   "dir": "south-east",
+   "tier": "core",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Mountain View",
+     "slug": "mountain-view",
+     "mi": 1.8
+    },
+    {
+     "name": "Lakeside",
+     "slug": "lakeside",
+     "mi": 2.1
+    },
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 3.5
+    }
+   ]
+  },
+  {
+   "name": "Englewood",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 33659,
+   "type": "Home rule city",
+   "lat": 39.63166667,
+   "lon": -105.00361111,
+   "mi": 10.1,
+   "elev_ft": 5350,
+   "slug": "englewood",
+   "bearing": 157,
+   "dir": "south-east",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Sheridan",
+     "slug": "sheridan",
+     "mi": 1.3
+    },
+    {
+     "name": "Littleton",
+     "slug": "littleton",
+     "mi": 1.5
+    },
+    {
+     "name": "Bow Mar",
+     "slug": "bow-mar",
+     "mi": 2.6
+    }
+   ]
+  },
+  {
+   "name": "Erie",
+   "counties": [
+    "Weld",
+    "Boulder"
+   ],
+   "pop": 30038,
+   "type": "Home rule town",
+   "lat": 40.04888889,
+   "lon": -105.02222222,
+   "mi": 19.8,
+   "elev_ft": 5120,
+   "slug": "erie",
+   "bearing": 8,
+   "dir": "north",
+   "tier": "metro",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Dacono",
+     "slug": "dacono",
+     "mi": 4.1
+    },
+    {
+     "name": "Frederick",
+     "slug": "frederick",
+     "mi": 4.5
+    },
+    {
+     "name": "Lafayette",
+     "slug": "lafayette",
+     "mi": 5.5
+    }
+   ]
+  },
+  {
+   "name": "Estes Park",
+   "counties": [
+    "Larimer"
+   ],
+   "pop": 5904,
+   "type": "Statutory town",
+   "lat": 40.38083333,
+   "lon": -105.52222222,
+   "mi": 48.6,
+   "elev_ft": 7560,
+   "slug": "estes-park",
+   "bearing": 331,
+   "dir": "north-west",
+   "tier": "extended",
+   "band": "mountain",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Lyons",
+     "slug": "lyons",
+     "mi": 18.2
+    },
+    {
+     "name": "Jamestown",
+     "slug": "jamestown",
+     "mi": 19.1
+    },
+    {
+     "name": "Ward",
+     "slug": "ward",
+     "mi": 21.3
+    }
+   ]
+  },
+  {
+   "name": "Evans",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 22165,
+   "type": "Home rule city",
+   "lat": 40.36083333,
+   "lon": -104.725,
+   "mi": 45.1,
+   "elev_ft": 4660,
+   "slug": "evans",
+   "bearing": 24,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "LaSalle",
+     "slug": "lasalle",
+     "mi": 1.3
+    },
+    {
+     "name": "Garden City",
+     "slug": "garden-city",
+     "mi": 3.0
+    },
+    {
+     "name": "Greeley",
+     "slug": "greeley",
+     "mi": 4.1
+    }
+   ]
+  },
+  {
+   "name": "Federal Heights",
+   "counties": [
+    "Adams"
+   ],
+   "pop": 14382,
+   "type": "Home rule city",
+   "lat": 39.865,
+   "lon": -105.01555556,
+   "mi": 7.6,
+   "elev_ft": 5420,
+   "slug": "federal-heights",
+   "bearing": 26,
+   "dir": "north-east",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Northglenn",
+     "slug": "northglenn",
+     "mi": 2.6
+    },
+    {
+     "name": "Westminster",
+     "slug": "westminster",
+     "mi": 2.8
+    },
+    {
+     "name": "Thornton",
+     "slug": "thornton",
+     "mi": 4.6
+    }
+   ]
+  },
+  {
+   "name": "Firestone",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 16381,
+   "type": "Statutory town",
+   "lat": 40.15083333,
+   "lon": -104.97,
+   "mi": 27.2,
+   "elev_ft": 4870,
+   "slug": "firestone",
+   "bearing": 12,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Frederick",
+     "slug": "frederick",
+     "mi": 3.4
+    },
+    {
+     "name": "Longmont",
+     "slug": "longmont",
+     "mi": 6.1
+    },
+    {
+     "name": "Dacono",
+     "slug": "dacono",
+     "mi": 6.2
+    }
+   ]
+  },
+  {
+   "name": "Fort Collins",
+   "counties": [
+    "Larimer"
+   ],
+   "pop": 169810,
+   "type": "Home rule city",
+   "lat": 40.5475,
+   "lon": -105.06583333,
+   "mi": 54.0,
+   "elev_ft": 5000,
+   "slug": "fort-collins",
+   "bearing": 1,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "large",
+   "nearest": [
+    {
+     "name": "Timnath",
+     "slug": "timnath",
+     "mi": 5.4
+    },
+    {
+     "name": "Windsor",
+     "slug": "windsor",
+     "mi": 9.4
+    },
+    {
+     "name": "Loveland",
+     "slug": "loveland",
+     "mi": 10.8
+    }
+   ]
+  },
+  {
+   "name": "Fort Lupton",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 7955,
+   "type": "Statutory city",
+   "lat": 40.09166667,
+   "lon": -104.82916667,
+   "mi": 26.1,
+   "elev_ft": 4890,
+   "slug": "fort-lupton",
+   "bearing": 30,
+   "dir": "north-east",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Dacono",
+     "slug": "dacono",
+     "mi": 6.6
+    },
+    {
+     "name": "Lochbuie",
+     "slug": "lochbuie",
+     "mi": 7.6
+    },
+    {
+     "name": "Brighton",
+     "slug": "brighton",
+     "mi": 8.3
+    }
+   ]
+  },
+  {
+   "name": "Fountain",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 29802,
+   "type": "Home rule city",
+   "lat": 38.68888889,
+   "lon": -104.68277778,
+   "mi": 77.4,
+   "elev_ft": 5560,
+   "slug": "fountain",
+   "bearing": 164,
+   "dir": "south",
+   "tier": "outer",
+   "band": "plains",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Colorado Springs",
+     "slug": "colorado-springs",
+     "mi": 12.4
+    },
+    {
+     "name": "Manitou Springs",
+     "slug": "manitou-springs",
+     "mi": 17.0
+    },
+    {
+     "name": "Green Mountain Falls",
+     "slug": "green-mountain-falls",
+     "mi": 25.0
+    }
+   ]
+  },
+  {
+   "name": "Foxfield",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 754,
+   "type": "Statutory town",
+   "lat": 39.58805556,
+   "lon": -104.78583333,
+   "mi": 19.8,
+   "elev_ft": 5810,
+   "slug": "foxfield",
+   "bearing": 128,
+   "dir": "south-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Centennial",
+     "slug": "centennial",
+     "mi": 1.8
+    },
+    {
+     "name": "Greenwood Village",
+     "slug": "greenwood-village",
+     "mi": 5.7
+    },
+    {
+     "name": "Parker",
+     "slug": "parker",
+     "mi": 6.4
+    }
+   ]
+  },
+  {
+   "name": "Frederick",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 14513,
+   "type": "Statutory town",
+   "lat": 40.11388889,
+   "lon": -105.01111111,
+   "mi": 24.3,
+   "elev_ft": 4920,
+   "slug": "frederick",
+   "bearing": 8,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Firestone",
+     "slug": "firestone",
+     "mi": 3.4
+    },
+    {
+     "name": "Erie",
+     "slug": "erie",
+     "mi": 4.5
+    },
+    {
+     "name": "Dacono",
+     "slug": "dacono",
+     "mi": 4.9
+    }
+   ]
+  },
+  {
+   "name": "Garden City",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 254,
+   "type": "Statutory town",
+   "lat": 40.39472222,
+   "lon": -104.68944444,
+   "mi": 48.0,
+   "elev_ft": 4700,
+   "slug": "garden-city",
+   "bearing": 25,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Greeley",
+     "slug": "greeley",
+     "mi": 1.7
+    },
+    {
+     "name": "Evans",
+     "slug": "evans",
+     "mi": 3.0
+    },
+    {
+     "name": "LaSalle",
+     "slug": "lasalle",
+     "mi": 3.3
+    }
+   ]
+  },
+  {
+   "name": "Gilcrest",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1029,
+   "type": "Statutory town",
+   "lat": 40.28416667,
+   "lon": -104.78194444,
+   "mi": 39.1,
+   "elev_ft": 4750,
+   "slug": "gilcrest",
+   "bearing": 23,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Milliken",
+     "slug": "milliken",
+     "mi": 4.1
+    },
+    {
+     "name": "Platteville",
+     "slug": "platteville",
+     "mi": 5.7
+    },
+    {
+     "name": "LaSalle",
+     "slug": "lasalle",
+     "mi": 6.0
+    }
+   ]
+  },
+  {
+   "name": "Glendale",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 4613,
+   "type": "Home rule city",
+   "lat": 39.70361111,
+   "lon": -104.93527778,
+   "mi": 8.7,
+   "elev_ft": 5350,
+   "slug": "glendale",
+   "bearing": 120,
+   "dir": "south-east",
+   "tier": "core",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Denver",
+     "slug": "denver",
+     "mi": 3.8
+    },
+    {
+     "name": "Cherry Hills Village",
+     "slug": "cherry-hills-village",
+     "mi": 5.0
+    },
+    {
+     "name": "Sheridan",
+     "slug": "sheridan",
+     "mi": 5.9
+    }
+   ]
+  },
+  {
+   "name": "Golden",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 20399,
+   "type": "Home rule city",
+   "lat": 39.75333333,
+   "lon": -105.21527778,
+   "mi": 7.4,
+   "elev_ft": 5730,
+   "slug": "golden",
+   "bearing": 263,
+   "dir": "west",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 5.2
+    },
+    {
+     "name": "Lakewood",
+     "slug": "lakewood",
+     "mi": 6.5
+    },
+    {
+     "name": "Arvada",
+     "slug": "arvada",
+     "mi": 7.1
+    }
+   ]
+  },
+  {
+   "name": "Greeley",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 108795,
+   "type": "Home rule city",
+   "lat": 40.4175,
+   "lon": -104.70333333,
+   "mi": 49.2,
+   "elev_ft": 4700,
+   "slug": "greeley",
+   "bearing": 24,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Garden City",
+     "slug": "garden-city",
+     "mi": 1.7
+    },
+    {
+     "name": "Evans",
+     "slug": "evans",
+     "mi": 4.1
+    },
+    {
+     "name": "LaSalle",
+     "slug": "lasalle",
+     "mi": 4.8
+    }
+   ]
+  },
+  {
+   "name": "Green Mountain Falls",
+   "counties": [
+    "El Paso",
+    "Teller"
+   ],
+   "pop": 646,
+   "type": "Statutory town",
+   "lat": 38.93444444,
+   "lon": -105.02388889,
+   "mi": 57.5,
+   "elev_ft": 8010,
+   "slug": "green-mountain-falls",
+   "bearing": 177,
+   "dir": "south",
+   "tier": "extended",
+   "band": "mountain",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Manitou Springs",
+     "slug": "manitou-springs",
+     "mi": 8.0
+    },
+    {
+     "name": "Monument",
+     "slug": "monument",
+     "mi": 13.3
+    },
+    {
+     "name": "Palmer Lake",
+     "slug": "palmer-lake",
+     "mi": 14.0
+    }
+   ]
+  },
+  {
+   "name": "Greenwood Village",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 15691,
+   "type": "Home rule city",
+   "lat": 39.62583333,
+   "lon": -104.88,
+   "mi": 14.3,
+   "elev_ft": 5660,
+   "slug": "greenwood-village",
+   "bearing": 133,
+   "dir": "south-east",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Cherry Hills Village",
+     "slug": "cherry-hills-village",
+     "mi": 3.6
+    },
+    {
+     "name": "Foxfield",
+     "slug": "foxfield",
+     "mi": 5.7
+    },
+    {
+     "name": "Glendale",
+     "slug": "glendale",
+     "mi": 6.1
+    }
+   ]
+  },
+  {
+   "name": "Grover",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 157,
+   "type": "Statutory town",
+   "lat": 40.87333333,
+   "lon": -104.22722222,
+   "mi": 88.6,
+   "elev_ft": 5080,
+   "slug": "grover",
+   "bearing": 30,
+   "dir": "north-east",
+   "tier": "outer",
+   "band": "north",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Raymer",
+     "slug": "raymer",
+     "mi": 27.2
+    },
+    {
+     "name": "Nunn",
+     "slug": "nunn",
+     "mi": 31.4
+    },
+    {
+     "name": "Pierce",
+     "slug": "pierce",
+     "mi": 32.2
+    }
+   ]
+  },
+  {
+   "name": "Hudson",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1651,
+   "type": "Statutory town",
+   "lat": 40.07611111,
+   "lon": -104.62277778,
+   "mi": 32.2,
+   "elev_ft": 4960,
+   "slug": "hudson",
+   "bearing": 48,
+   "dir": "north-east",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Keenesburg",
+     "slug": "keenesburg",
+     "mi": 6.3
+    },
+    {
+     "name": "Lochbuie",
+     "slug": "lochbuie",
+     "mi": 7.7
+    },
+    {
+     "name": "Brighton",
+     "slug": "brighton",
+     "mi": 10.2
+    }
+   ]
+  },
+  {
+   "name": "Jamestown",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 256,
+   "type": "Statutory town",
+   "lat": 40.1225,
+   "lon": -105.39416667,
+   "mi": 29.8,
+   "elev_ft": 7250,
+   "slug": "jamestown",
+   "bearing": 326,
+   "dir": "north-west",
+   "tier": "metro",
+   "band": "mountain",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Ward",
+     "slug": "ward",
+     "mi": 7.2
+    },
+    {
+     "name": "Lyons",
+     "slug": "lyons",
+     "mi": 10.1
+    },
+    {
+     "name": "Boulder",
+     "slug": "boulder",
+     "mi": 11.9
+    }
+   ]
+  },
+  {
+   "name": "Johnstown",
+   "counties": [
+    "Weld",
+    "Larimer"
+   ],
+   "pop": 17303,
+   "type": "Home rule town",
+   "lat": 40.37305556,
+   "lon": -104.98722222,
+   "mi": 42.2,
+   "elev_ft": 4910,
+   "slug": "johnstown",
+   "bearing": 6,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Loveland",
+     "slug": "loveland",
+     "mi": 4.6
+    },
+    {
+     "name": "Berthoud",
+     "slug": "berthoud",
+     "mi": 5.7
+    },
+    {
+     "name": "Mead",
+     "slug": "mead",
+     "mi": 8.2
+    }
+   ]
+  },
+  {
+   "name": "Keenesburg",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1250,
+   "type": "Statutory town",
+   "lat": 40.125,
+   "lon": -104.52277778,
+   "mi": 38.4,
+   "elev_ft": 5000,
+   "slug": "keenesburg",
+   "bearing": 50,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Hudson",
+     "slug": "hudson",
+     "mi": 6.3
+    },
+    {
+     "name": "Lochbuie",
+     "slug": "lochbuie",
+     "mi": 14.0
+    },
+    {
+     "name": "Brighton",
+     "slug": "brighton",
+     "mi": 16.4
+    }
+   ]
+  },
+  {
+   "name": "Kersey",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1495,
+   "type": "Statutory town",
+   "lat": 40.39416667,
+   "lon": -104.59472222,
+   "mi": 50.3,
+   "elev_ft": 4630,
+   "slug": "kersey",
+   "bearing": 30,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Garden City",
+     "slug": "garden-city",
+     "mi": 5.0
+    },
+    {
+     "name": "Greeley",
+     "slug": "greeley",
+     "mi": 5.9
+    },
+    {
+     "name": "LaSalle",
+     "slug": "lasalle",
+     "mi": 6.7
+    }
+   ]
+  },
+  {
+   "name": "LaSalle",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 2359,
+   "type": "Statutory town",
+   "lat": 40.34861111,
+   "lon": -104.70611111,
+   "mi": 44.8,
+   "elev_ft": 4680,
+   "slug": "lasalle",
+   "bearing": 26,
+   "dir": "north-east",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Evans",
+     "slug": "evans",
+     "mi": 1.3
+    },
+    {
+     "name": "Garden City",
+     "slug": "garden-city",
+     "mi": 3.3
+    },
+    {
+     "name": "Greeley",
+     "slug": "greeley",
+     "mi": 4.8
+    }
+   ]
+  },
+  {
+   "name": "Lafayette",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 30411,
+   "type": "Home rule city",
+   "lat": 40.00333333,
+   "lon": -105.10694444,
+   "mi": 16.5,
+   "elev_ft": 5340,
+   "slug": "lafayette",
+   "bearing": 355,
+   "dir": "north",
+   "tier": "metro",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Louisville",
+     "slug": "louisville",
+     "mi": 2.6
+    },
+    {
+     "name": "Broomfield",
+     "slug": "broomfield",
+     "mi": 4.4
+    },
+    {
+     "name": "Erie",
+     "slug": "erie",
+     "mi": 5.5
+    }
+   ]
+  },
+  {
+   "name": "Lakeside",
+   "counties": [
+    "Jefferson",
+    "Summit"
+   ],
+   "pop": 16,
+   "type": "Statutory town",
+   "lat": 39.78027778,
+   "lon": -105.05777778,
+   "mi": 1.4,
+   "elev_ft": 5340,
+   "slug": "lakeside",
+   "bearing": 46,
+   "dir": "north-east",
+   "tier": "core",
+   "band": "central",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Mountain View",
+     "slug": "mountain-view",
+     "mi": 0.4
+    },
+    {
+     "name": "Edgewater",
+     "slug": "edgewater",
+     "mi": 2.1
+    },
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 3.4
+    }
+   ]
+  },
+  {
+   "name": "Lakewood",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 155984,
+   "type": "Home rule city",
+   "lat": 39.69777778,
+   "lon": -105.11722222,
+   "mi": 5.2,
+   "elev_ft": 5660,
+   "slug": "lakewood",
+   "bearing": 204,
+   "dir": "south-west",
+   "tier": "core",
+   "band": "central",
+   "size": "large",
+   "nearest": [
+    {
+     "name": "Edgewater",
+     "slug": "edgewater",
+     "mi": 4.6
+    },
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 5.2
+    },
+    {
+     "name": "Mountain View",
+     "slug": "mountain-view",
+     "mi": 6.2
+    }
+   ]
+  },
+  {
+   "name": "Larkspur",
+   "counties": [
+    "Douglas"
+   ],
+   "pop": 206,
+   "type": "Home rule town",
+   "lat": 39.24166667,
+   "lon": -104.89444444,
+   "mi": 37.5,
+   "elev_ft": 6850,
+   "slug": "larkspur",
+   "bearing": 165,
+   "dir": "south",
+   "tier": "extended",
+   "band": "divide",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Palmer Lake",
+     "slug": "palmer-lake",
+     "mi": 8.8
+    },
+    {
+     "name": "Castle Rock",
+     "slug": "castle-rock",
+     "mi": 9.1
+    },
+    {
+     "name": "Monument",
+     "slug": "monument",
+     "mi": 11.2
+    }
+   ]
+  },
+  {
+   "name": "Littleton",
+   "counties": [
+    "Arapahoe",
+    "Jefferson",
+    "Douglas counties",
+    "Douglas"
+   ],
+   "pop": 45652,
+   "type": "Home rule city",
+   "lat": 39.61333333,
+   "lon": -105.01805556,
+   "mi": 11.0,
+   "elev_ft": 5350,
+   "slug": "littleton",
+   "bearing": 163,
+   "dir": "south",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Columbine Valley",
+     "slug": "columbine-valley",
+     "mi": 1.3
+    },
+    {
+     "name": "Englewood",
+     "slug": "englewood",
+     "mi": 1.5
+    },
+    {
+     "name": "Bow Mar",
+     "slug": "bow-mar",
+     "mi": 1.9
+    }
+   ]
+  },
+  {
+   "name": "Lochbuie",
+   "counties": [
+    "Weld",
+    "Adams"
+   ],
+   "pop": 8088,
+   "type": "Statutory town",
+   "lat": 40.00694444,
+   "lon": -104.7375,
+   "mi": 24.5,
+   "elev_ft": 5080,
+   "slug": "lochbuie",
+   "bearing": 47,
+   "dir": "north-east",
+   "tier": "metro",
+   "band": "plains",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Brighton",
+     "slug": "brighton",
+     "mi": 2.5
+    },
+    {
+     "name": "Fort Lupton",
+     "slug": "fort-lupton",
+     "mi": 7.6
+    },
+    {
+     "name": "Hudson",
+     "slug": "hudson",
+     "mi": 7.7
+    }
+   ]
+  },
+  {
+   "name": "Lone Tree",
+   "counties": [
+    "Douglas"
+   ],
+   "pop": 14253,
+   "type": "Home rule city",
+   "lat": 39.53444444,
+   "lon": -104.88777778,
+   "mi": 18.9,
+   "elev_ft": 6000,
+   "slug": "lone-tree",
+   "bearing": 148,
+   "dir": "south-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Castle Pines",
+     "slug": "castle-pines",
+     "mi": 4.5
+    },
+    {
+     "name": "Greenwood Village",
+     "slug": "greenwood-village",
+     "mi": 6.3
+    },
+    {
+     "name": "Foxfield",
+     "slug": "foxfield",
+     "mi": 6.6
+    }
+   ]
+  },
+  {
+   "name": "Longmont",
+   "counties": [
+    "Boulder",
+    "Weld"
+   ],
+   "pop": 98885,
+   "type": "Home rule city",
+   "lat": 40.16166667,
+   "lon": -105.08444444,
+   "mi": 27.3,
+   "elev_ft": 4970,
+   "slug": "longmont",
+   "bearing": 359,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Frederick",
+     "slug": "frederick",
+     "mi": 5.1
+    },
+    {
+     "name": "Firestone",
+     "slug": "firestone",
+     "mi": 6.1
+    },
+    {
+     "name": "Mead",
+     "slug": "mead",
+     "mi": 8.3
+    }
+   ]
+  },
+  {
+   "name": "Louisville",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 21226,
+   "type": "Home rule city",
+   "lat": 39.97055556,
+   "lon": -105.13055556,
+   "mi": 14.4,
+   "elev_ft": 5330,
+   "slug": "louisville",
+   "bearing": 349,
+   "dir": "north",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Lafayette",
+     "slug": "lafayette",
+     "mi": 2.6
+    },
+    {
+     "name": "Superior",
+     "slug": "superior",
+     "mi": 2.9
+    },
+    {
+     "name": "Broomfield",
+     "slug": "broomfield",
+     "mi": 4.3
+    }
+   ]
+  },
+  {
+   "name": "Loveland",
+   "counties": [
+    "Larimer"
+   ],
+   "pop": 76378,
+   "type": "Home rule city",
+   "lat": 40.39083333,
+   "lon": -105.07194444,
+   "mi": 43.2,
+   "elev_ft": 4960,
+   "slug": "loveland",
+   "bearing": 0,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Johnstown",
+     "slug": "johnstown",
+     "mi": 4.6
+    },
+    {
+     "name": "Berthoud",
+     "slug": "berthoud",
+     "mi": 5.5
+    },
+    {
+     "name": "Windsor",
+     "slug": "windsor",
+     "mi": 10.3
+    }
+   ]
+  },
+  {
+   "name": "Lyons",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 2209,
+   "type": "Statutory town",
+   "lat": 40.21833333,
+   "lon": -105.25055556,
+   "mi": 32.6,
+   "elev_ft": 5550,
+   "slug": "lyons",
+   "bearing": 344,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Longmont",
+     "slug": "longmont",
+     "mi": 9.6
+    },
+    {
+     "name": "Jamestown",
+     "slug": "jamestown",
+     "mi": 10.1
+    },
+    {
+     "name": "Berthoud",
+     "slug": "berthoud",
+     "mi": 11.9
+    }
+   ]
+  },
+  {
+   "name": "Manitou Springs",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 4858,
+   "type": "Home rule city",
+   "lat": 38.8575,
+   "lon": -104.91277778,
+   "mi": 63.4,
+   "elev_ft": 6300,
+   "slug": "manitou-springs",
+   "bearing": 172,
+   "dir": "south",
+   "tier": "extended",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Green Mountain Falls",
+     "slug": "green-mountain-falls",
+     "mi": 8.0
+    },
+    {
+     "name": "Monument",
+     "slug": "monument",
+     "mi": 15.7
+    },
+    {
+     "name": "Colorado Springs",
+     "slug": "colorado-springs",
+     "mi": 16.5
+    }
+   ]
+  },
+  {
+   "name": "Mead",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 4781,
+   "type": "Statutory town",
+   "lat": 40.25388889,
+   "lon": -104.98277778,
+   "mi": 34.1,
+   "elev_ft": 5050,
+   "slug": "mead",
+   "bearing": 8,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Berthoud",
+     "slug": "berthoud",
+     "mi": 5.8
+    },
+    {
+     "name": "Platteville",
+     "slug": "platteville",
+     "mi": 6.5
+    },
+    {
+     "name": "Milliken",
+     "slug": "milliken",
+     "mi": 6.8
+    }
+   ]
+  },
+  {
+   "name": "Milliken",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 8386,
+   "type": "Statutory town",
+   "lat": 40.28388889,
+   "lon": -104.86,
+   "mi": 37.6,
+   "elev_ft": 4740,
+   "slug": "milliken",
+   "bearing": 18,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Platteville",
+     "slug": "platteville",
+     "mi": 3.7
+    },
+    {
+     "name": "Gilcrest",
+     "slug": "gilcrest",
+     "mi": 4.1
+    },
+    {
+     "name": "Mead",
+     "slug": "mead",
+     "mi": 6.8
+    }
+   ]
+  },
+  {
+   "name": "Monument",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 10399,
+   "type": "Home rule town",
+   "lat": 39.08111111,
+   "lon": -104.8625,
+   "mi": 48.7,
+   "elev_ft": 6950,
+   "slug": "monument",
+   "bearing": 166,
+   "dir": "south",
+   "tier": "extended",
+   "band": "divide",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Palmer Lake",
+     "slug": "palmer-lake",
+     "mi": 3.3
+    },
+    {
+     "name": "Larkspur",
+     "slug": "larkspur",
+     "mi": 11.2
+    },
+    {
+     "name": "Green Mountain Falls",
+     "slug": "green-mountain-falls",
+     "mi": 13.3
+    }
+   ]
+  },
+  {
+   "name": "Morrison",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 396,
+   "type": "Home rule town",
+   "lat": 39.62916667,
+   "lon": -105.20555556,
+   "mi": 11.7,
+   "elev_ft": 6700,
+   "slug": "morrison",
+   "bearing": 216,
+   "dir": "south-west",
+   "tier": "core",
+   "band": "foothills",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Lakewood",
+     "slug": "lakewood",
+     "mi": 6.7
+    },
+    {
+     "name": "Bow Mar",
+     "slug": "bow-mar",
+     "mi": 8.2
+    },
+    {
+     "name": "Golden",
+     "slug": "golden",
+     "mi": 8.6
+    }
+   ]
+  },
+  {
+   "name": "Mountain View",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 541,
+   "type": "Home rule town",
+   "lat": 39.77472222,
+   "lon": -105.05666667,
+   "mi": 1.2,
+   "elev_ft": 5380,
+   "slug": "mountain-view",
+   "bearing": 61,
+   "dir": "north-east",
+   "tier": "core",
+   "band": "central",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Lakeside",
+     "slug": "lakeside",
+     "mi": 0.4
+    },
+    {
+     "name": "Edgewater",
+     "slug": "edgewater",
+     "mi": 1.8
+    },
+    {
+     "name": "Wheat Ridge",
+     "slug": "wheat-ridge",
+     "mi": 3.4
+    }
+   ]
+  },
+  {
+   "name": "Nederland",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 1471,
+   "type": "Statutory town",
+   "lat": 39.96194444,
+   "lon": -105.50138889,
+   "mi": 26.3,
+   "elev_ft": 8180,
+   "slug": "nederland",
+   "bearing": 301,
+   "dir": "north-west",
+   "tier": "metro",
+   "band": "mountain",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Ward",
+     "slug": "ward",
+     "mi": 7.6
+    },
+    {
+     "name": "Jamestown",
+     "slug": "jamestown",
+     "mi": 12.5
+    },
+    {
+     "name": "Boulder",
+     "slug": "boulder",
+     "mi": 13.7
+    }
+   ]
+  },
+  {
+   "name": "Northglenn",
+   "counties": [
+    "Adams",
+    "Weld"
+   ],
+   "pop": 38131,
+   "type": "Home rule city",
+   "lat": 39.89055556,
+   "lon": -104.97916667,
+   "mi": 10.1,
+   "elev_ft": 5300,
+   "slug": "northglenn",
+   "bearing": 31,
+   "dir": "north-east",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Thornton",
+     "slug": "thornton",
+     "mi": 2.1
+    },
+    {
+     "name": "Federal Heights",
+     "slug": "federal-heights",
+     "mi": 2.6
+    },
+    {
+     "name": "Westminster",
+     "slug": "westminster",
+     "mi": 4.4
+    }
+   ]
+  },
+  {
+   "name": "Nunn",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 504,
+   "type": "Statutory town",
+   "lat": 40.71361111,
+   "lon": -104.78888889,
+   "mi": 67.2,
+   "elev_ft": 5210,
+   "slug": "nunn",
+   "bearing": 13,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Pierce",
+     "slug": "pierce",
+     "mi": 5.1
+    },
+    {
+     "name": "Ault",
+     "slug": "ault",
+     "mi": 8.7
+    },
+    {
+     "name": "Wellington",
+     "slug": "wellington",
+     "mi": 11.1
+    }
+   ]
+  },
+  {
+   "name": "Palmer Lake",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 2636,
+   "type": "Statutory town",
+   "lat": 39.115,
+   "lon": -104.905,
+   "mi": 45.9,
+   "elev_ft": 7150,
+   "slug": "palmer-lake",
+   "bearing": 168,
+   "dir": "south",
+   "tier": "extended",
+   "band": "mountain",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Monument",
+     "slug": "monument",
+     "mi": 3.3
+    },
+    {
+     "name": "Larkspur",
+     "slug": "larkspur",
+     "mi": 8.8
+    },
+    {
+     "name": "Green Mountain Falls",
+     "slug": "green-mountain-falls",
+     "mi": 14.0
+    }
+   ]
+  },
+  {
+   "name": "Parker",
+   "counties": [
+    "Douglas"
+   ],
+   "pop": 58512,
+   "type": "Home rule town",
+   "lat": 39.49722222,
+   "lon": -104.76583333,
+   "mi": 24.9,
+   "elev_ft": 5860,
+   "slug": "parker",
+   "bearing": 138,
+   "dir": "south-east",
+   "tier": "metro",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Foxfield",
+     "slug": "foxfield",
+     "mi": 6.4
+    },
+    {
+     "name": "Castle Pines",
+     "slug": "castle-pines",
+     "mi": 6.7
+    },
+    {
+     "name": "Lone Tree",
+     "slug": "lone-tree",
+     "mi": 7.0
+    }
+   ]
+  },
+  {
+   "name": "Pierce",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 1097,
+   "type": "Statutory town",
+   "lat": 40.64305556,
+   "lon": -104.76277778,
+   "mi": 62.8,
+   "elev_ft": 5060,
+   "slug": "pierce",
+   "bearing": 15,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Ault",
+     "slug": "ault",
+     "mi": 3.6
+    },
+    {
+     "name": "Nunn",
+     "slug": "nunn",
+     "mi": 5.1
+    },
+    {
+     "name": "Eaton",
+     "slug": "eaton",
+     "mi": 8.5
+    }
+   ]
+  },
+  {
+   "name": "Platteville",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 2955,
+   "type": "Statutory town",
+   "lat": 40.23,
+   "lon": -104.86305556,
+   "mi": 34.0,
+   "elev_ft": 4770,
+   "slug": "platteville",
+   "bearing": 19,
+   "dir": "north",
+   "tier": "metro",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Milliken",
+     "slug": "milliken",
+     "mi": 3.7
+    },
+    {
+     "name": "Gilcrest",
+     "slug": "gilcrest",
+     "mi": 5.7
+    },
+    {
+     "name": "Mead",
+     "slug": "mead",
+     "mi": 6.5
+    }
+   ]
+  },
+  {
+   "name": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "pop": 111876,
+   "type": "Home rule city",
+   "lat": 38.25555556,
+   "lon": -104.61388889,
+   "mi": 107.3,
+   "elev_ft": 4740,
+   "slug": "pueblo",
+   "bearing": 166,
+   "dir": "south",
+   "tier": "outer",
+   "band": "plains",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Boone",
+     "slug": "boone",
+     "mi": 19.3
+    },
+    {
+     "name": "Rye",
+     "slug": "rye",
+     "mi": 28.8
+    },
+    {
+     "name": "Fountain",
+     "slug": "fountain",
+     "mi": 30.2
+    }
+   ]
+  },
+  {
+   "name": "Ramah",
+   "counties": [
+    "El Paso"
+   ],
+   "pop": 111,
+   "type": "Statutory town",
+   "lat": 39.12333333,
+   "lon": -104.16805556,
+   "mi": 65.8,
+   "elev_ft": 6100,
+   "slug": "ramah",
+   "bearing": 132,
+   "dir": "south-east",
+   "tier": "extended",
+   "band": "plains",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Calhan",
+     "slug": "calhan",
+     "mi": 9.3
+    },
+    {
+     "name": "Colorado Springs",
+     "slug": "colorado-springs",
+     "mi": 29.8
+    },
+    {
+     "name": "Deer Trail",
+     "slug": "deer-trail",
+     "mi": 35.1
+    }
+   ]
+  },
+  {
+   "name": "Raymer",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 110,
+   "type": "Statutory town",
+   "lat": 40.60861111,
+   "lon": -103.84305556,
+   "mi": 87.4,
+   "elev_ft": 4780,
+   "slug": "raymer",
+   "bearing": 48,
+   "dir": "north-east",
+   "tier": "outer",
+   "band": "north",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Grover",
+     "slug": "grover",
+     "mi": 27.2
+    },
+    {
+     "name": "Kersey",
+     "slug": "kersey",
+     "mi": 42.2
+    },
+    {
+     "name": "Eaton",
+     "slug": "eaton",
+     "mi": 46.0
+    }
+   ]
+  },
+  {
+   "name": "Rye",
+   "counties": [
+    "Pueblo"
+   ],
+   "pop": 206,
+   "type": "Statutory town",
+   "lat": 37.92138889,
+   "lon": -104.93194444,
+   "mi": 127.7,
+   "elev_ft": 6830,
+   "slug": "rye",
+   "bearing": 176,
+   "dir": "south",
+   "tier": "outer",
+   "band": "central",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Pueblo",
+     "slug": "pueblo",
+     "mi": 28.8
+    },
+    {
+     "name": "Boone",
+     "slug": "boone",
+     "mi": 43.1
+    },
+    {
+     "name": "Fountain",
+     "slug": "fountain",
+     "mi": 54.7
+    }
+   ]
+  },
+  {
+   "name": "Severance",
+   "counties": [
+    "Weld"
+   ],
+   "pop": 7683,
+   "type": "Statutory town",
+   "lat": 40.52333333,
+   "lon": -104.85388889,
+   "mi": 53.6,
+   "elev_ft": 4880,
+   "slug": "severance",
+   "bearing": 13,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Windsor",
+     "slug": "windsor",
+     "mi": 4.4
+    },
+    {
+     "name": "Timnath",
+     "slug": "timnath",
+     "mi": 5.8
+    },
+    {
+     "name": "Ault",
+     "slug": "ault",
+     "mi": 7.3
+    }
+   ]
+  },
+  {
+   "name": "Sheridan",
+   "counties": [
+    "Arapahoe"
+   ],
+   "pop": 6105,
+   "type": "Home rule city",
+   "lat": 39.64666667,
+   "lon": -105.01805556,
+   "mi": 8.8,
+   "elev_ft": 5290,
+   "slug": "sheridan",
+   "bearing": 159,
+   "dir": "south",
+   "tier": "core",
+   "band": "central",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Englewood",
+     "slug": "englewood",
+     "mi": 1.3
+    },
+    {
+     "name": "Littleton",
+     "slug": "littleton",
+     "mi": 2.3
+    },
+    {
+     "name": "Bow Mar",
+     "slug": "bow-mar",
+     "mi": 2.4
+    }
+   ]
+  },
+  {
+   "name": "Superior",
+   "counties": [
+    "Boulder",
+    "Jefferson"
+   ],
+   "pop": 13094,
+   "type": "Statutory town",
+   "lat": 39.93388889,
+   "lon": -105.15888889,
+   "mi": 12.4,
+   "elev_ft": 5520,
+   "slug": "superior",
+   "bearing": 340,
+   "dir": "north",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Louisville",
+     "slug": "louisville",
+     "mi": 2.9
+    },
+    {
+     "name": "Lafayette",
+     "slug": "lafayette",
+     "mi": 5.5
+    },
+    {
+     "name": "Broomfield",
+     "slug": "broomfield",
+     "mi": 5.8
+    }
+   ]
+  },
+  {
+   "name": "Thornton",
+   "counties": [
+    "Adams",
+    "Weld"
+   ],
+   "pop": 141867,
+   "type": "Home rule city",
+   "lat": 39.91722222,
+   "lon": -104.96111111,
+   "mi": 12.1,
+   "elev_ft": 5280,
+   "slug": "thornton",
+   "bearing": 30,
+   "dir": "north-east",
+   "tier": "core",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Northglenn",
+     "slug": "northglenn",
+     "mi": 2.1
+    },
+    {
+     "name": "Federal Heights",
+     "slug": "federal-heights",
+     "mi": 4.6
+    },
+    {
+     "name": "Broomfield",
+     "slug": "broomfield",
+     "mi": 5.5
+    }
+   ]
+  },
+  {
+   "name": "Timnath",
+   "counties": [
+    "Larimer"
+   ],
+   "pop": 6487,
+   "type": "Home rule town",
+   "lat": 40.533209,
+   "lon": -104.964501,
+   "mi": 53.3,
+   "elev_ft": 4860,
+   "slug": "timnath",
+   "bearing": 6,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "small",
+   "nearest": [
+    {
+     "name": "Windsor",
+     "slug": "windsor",
+     "mi": 4.8
+    },
+    {
+     "name": "Fort Collins",
+     "slug": "fort-collins",
+     "mi": 5.4
+    },
+    {
+     "name": "Severance",
+     "slug": "severance",
+     "mi": 5.8
+    }
+   ]
+  },
+  {
+   "name": "Ward",
+   "counties": [
+    "Boulder"
+   ],
+   "pop": 128,
+   "type": "Home rule town",
+   "lat": 40.07222222,
+   "lon": -105.51388889,
+   "mi": 31.4,
+   "elev_ft": 9460,
+   "slug": "ward",
+   "bearing": 313,
+   "dir": "north-west",
+   "tier": "metro",
+   "band": "mountain",
+   "size": "village",
+   "nearest": [
+    {
+     "name": "Jamestown",
+     "slug": "jamestown",
+     "mi": 7.2
+    },
+    {
+     "name": "Nederland",
+     "slug": "nederland",
+     "mi": 7.6
+    },
+    {
+     "name": "Boulder",
+     "slug": "boulder",
+     "mi": 15.2
+    }
+   ]
+  },
+  {
+   "name": "Wellington",
+   "counties": [
+    "Larimer"
+   ],
+   "pop": 11047,
+   "type": "Statutory town",
+   "lat": 40.69833333,
+   "lon": -105.00027778,
+   "mi": 64.5,
+   "elev_ft": 5190,
+   "slug": "wellington",
+   "bearing": 4,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Fort Collins",
+     "slug": "fort-collins",
+     "mi": 11.0
+    },
+    {
+     "name": "Nunn",
+     "slug": "nunn",
+     "mi": 11.1
+    },
+    {
+     "name": "Timnath",
+     "slug": "timnath",
+     "mi": 11.6
+    }
+   ]
+  },
+  {
+   "name": "Westminster",
+   "counties": [
+    "Adams",
+    "Jefferson"
+   ],
+   "pop": 116317,
+   "type": "Home rule city",
+   "lat": 39.88361111,
+   "lon": -105.0625,
+   "mi": 8.2,
+   "elev_ft": 5320,
+   "slug": "westminster",
+   "bearing": 5,
+   "dir": "north",
+   "tier": "core",
+   "band": "central",
+   "size": "city",
+   "nearest": [
+    {
+     "name": "Federal Heights",
+     "slug": "federal-heights",
+     "mi": 2.8
+    },
+    {
+     "name": "Northglenn",
+     "slug": "northglenn",
+     "mi": 4.4
+    },
+    {
+     "name": "Broomfield",
+     "slug": "broomfield",
+     "mi": 4.9
+    }
+   ]
+  },
+  {
+   "name": "Wheat Ridge",
+   "counties": [
+    "Jefferson"
+   ],
+   "pop": 32398,
+   "type": "Home rule city",
+   "lat": 39.77305556,
+   "lon": -105.12027778,
+   "mi": 2.3,
+   "elev_ft": 5420,
+   "slug": "wheat-ridge",
+   "bearing": 282,
+   "dir": "west",
+   "tier": "core",
+   "band": "central",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Lakeside",
+     "slug": "lakeside",
+     "mi": 3.4
+    },
+    {
+     "name": "Mountain View",
+     "slug": "mountain-view",
+     "mi": 3.4
+    },
+    {
+     "name": "Edgewater",
+     "slug": "edgewater",
+     "mi": 3.5
+    }
+   ]
+  },
+  {
+   "name": "Windsor",
+   "counties": [
+    "Weld",
+    "Larimer"
+   ],
+   "pop": 32716,
+   "type": "Home rule town",
+   "lat": 40.47722222,
+   "lon": -104.91194444,
+   "mi": 49.9,
+   "elev_ft": 4800,
+   "slug": "windsor",
+   "bearing": 10,
+   "dir": "north",
+   "tier": "extended",
+   "band": "north",
+   "size": "mid",
+   "nearest": [
+    {
+     "name": "Severance",
+     "slug": "severance",
+     "mi": 4.4
+    },
+    {
+     "name": "Timnath",
+     "slug": "timnath",
+     "mi": 4.8
+    },
+    {
+     "name": "Johnstown",
+     "slug": "johnstown",
+     "mi": 8.2
+    }
+   ]
+  }
+ ]
+}

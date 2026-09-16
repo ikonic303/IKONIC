@@ -219,20 +219,12 @@
       "destination": "/api/blog?action=auto-generate"
     },
     {
-      "source": "/service-areas/wheat-ridge",
-      "destination": "/service-areas/wheat-ridge.html"
+      "source": "/service-areas",
+      "destination": "/service-areas/index.html"
     },
     {
-      "source": "/service-areas/arvada",
-      "destination": "/service-areas/arvada.html"
-    },
-    {
-      "source": "/service-areas/lakewood",
-      "destination": "/service-areas/lakewood.html"
-    },
-    {
-      "source": "/service-areas/golden",
-      "destination": "/service-areas/golden.html"
+      "source": "/service-areas/:slug",
+      "destination": "/service-areas/:slug.html"
     },
     {
       "source": "/post/:slug",
