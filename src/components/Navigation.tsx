@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import townsData from '../../data/front-range-towns.json';
 
 // Residential window tinting is the primary service — the dropdown lists the
 // overview hub plus every dedicated film page.
@@ -23,14 +24,12 @@ const commercialLinks = [
   { label: 'Business Branding & Promo Graphics', href: '/storefront-graphics' },
 ];
 
-// City pages are prerendered SPA routes served by static HTML (vercel rewrites),
-// so these use full-page <a> loads.
-const areaLinks = [
-  { label: 'Wheat Ridge', href: '/service-areas/wheat-ridge' },
-  { label: 'Arvada', href: '/service-areas/arvada' },
-  { label: 'Lakewood', href: '/service-areas/lakewood' },
-  { label: 'Golden', href: '/service-areas/golden' },
-];
+// City pages are static HTML (vercel rewrites), so these use full-page <a> loads.
+// All 86 Front Range towns, generated from the same data the pages are built from.
+const areaLinks = townsData.towns
+  .slice()
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((t) => ({ label: t.name, href: `/service-areas/${t.slug}` }));
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,17 +143,25 @@ export default function Navigation() {
               {openMenu === 'areas' && (
                 <div
                   onMouseLeave={() => setOpenMenu(null)}
-                  className="absolute top-full left-0 mt-2 w-48 bg-charcoal border border-white/10 rounded-lg shadow-xl overflow-hidden"
+                  className="absolute top-full left-0 mt-2 w-[min(560px,90vw)] max-h-[70vh] overflow-y-auto bg-charcoal border border-white/10 rounded-lg shadow-xl p-2"
                 >
-                  {areaLinks.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      className="block px-4 py-3 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint transition-colors"
-                    >
-                      {l.label}
-                    </a>
-                  ))}
+                  <a
+                    href="/service-areas"
+                    className="block px-4 py-2 text-sm font-semibold text-mint hover:bg-mint/10 rounded-md transition-colors"
+                  >
+                    All Service Areas ({areaLinks.length}) →
+                  </a>
+                  <div className="grid grid-cols-3 gap-x-1 gap-y-0.5 mt-1">
+                    {areaLinks.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        className="block truncate px-4 py-2 text-sm text-offwhite-dark hover:bg-mint/10 hover:text-mint rounded-md transition-colors"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -216,15 +223,23 @@ export default function Navigation() {
 
           <div className="w-full">
             <p className="text-mint text-xs font-semibold uppercase tracking-wider mb-2">Service Areas</p>
-            {areaLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="block text-base font-display font-bold text-offwhite-dark hover:text-mint transition-colors py-1 leading-tight"
-              >
-                {l.label}
-              </a>
-            ))}
+            <a
+              href="/service-areas"
+              className="block text-base font-display font-bold text-mint transition-colors py-1 leading-tight"
+            >
+              All {areaLinks.length} Areas →
+            </a>
+            <div className="grid grid-cols-2 gap-x-2 gap-y-0.5 max-h-44 overflow-y-auto mt-1 overscroll-contain">
+              {areaLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="block truncate text-sm font-medium text-offwhite-dark hover:text-mint transition-colors py-1 leading-tight"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           <Link to="/blogs" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Blog</Link>
