@@ -171,8 +171,8 @@ export default function ContactSection() {
                   <MapPin className="w-5 h-5 text-mint" />
                 </div>
                 <div>
-                  <p className="text-sm text-offwhite-dark">Shop</p>
-                  <p className="text-offwhite">4880 Robb St #8, Wheat Ridge, CO 80033</p>
+                  <p className="text-sm text-offwhite-dark">Based in</p>
+                  <p className="text-offwhite">Wheat Ridge, Colorado</p>
                 </div>
               </div>
             </div>

@@ -40,7 +40,7 @@ const PHONE = '(720) 679-1230';
 const CONTACT_BLOCK = `<h2>Free in-home estimate</h2>
 <p>Call <a href="tel:+17206791230">${PHONE}</a> or email
 <a href="mailto:info@ikonic303.com">info@ikonic303.com</a>.
-ikonic — 4880 Robb St. #8, Wheat Ridge, CO 80033. We visit your home in the Denver metro
+ikonic — based in Wheat Ridge, Colorado. We visit your home in the Denver metro
 (Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver), look at the actual windows, and
 send one clear written quote. Commercial storefront work is scheduled around business hours.</p>`;
 

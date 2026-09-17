@@ -10,10 +10,8 @@ export const LOCAL_BUSINESS = {
   email: 'info@ikonic303.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '4880 Robb St #8',
     addressLocality: 'Wheat Ridge',
     addressRegion: 'CO',
-    postalCode: '80033',
     addressCountry: 'US',
   },
 } as const;
