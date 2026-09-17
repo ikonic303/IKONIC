@@ -207,7 +207,7 @@ const sections: { heading: string; body: React.ReactNode }[] = [
         <a href="tel:+17206791230" className="text-mint hover:underline">
           (720) 679-1230
         </a>
-        , or write to ikonic303, 4880 Robb St. #8, Wheat Ridge, CO 80033.
+        , or write to ikonic303, Wheat Ridge, Colorado.
       </p>
     ),
   },
