@@ -129,7 +129,6 @@ export default function Navigation() {
             </div>
 
             <Link to="/gallery" className={linkCls}>Gallery</Link>
-            <Link to="/vehicle-wraps" className={linkCls}>Wraps</Link>
 
             {/* Service areas dropdown */}
             <div className="relative">
@@ -221,7 +220,6 @@ export default function Navigation() {
           </div>
 
           <Link to="/gallery" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Gallery</Link>
-          <Link to="/vehicle-wraps" className="text-xl font-display font-bold text-offwhite hover:text-mint transition-colors">Wraps</Link>
 
           <div className="w-full">
             <p className="text-mint text-xs font-semibold uppercase tracking-wider mb-2">Service Areas</p>

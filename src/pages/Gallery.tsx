@@ -4,6 +4,8 @@ import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
 import PageSEO from '../components/PageSEO';
 import PhotoFrame from '../components/PhotoFrame';
+import LazyVideo from '../components/LazyVideo';
+import { wrapImages, wrapVideos } from '../data/wrapGallery';
 
 // No install photography ships with the repo yet. Drop real photos into
 // public/photos/ and add `src` to the items below (e.g. src="/photos/xyz.jpg").
@@ -30,7 +32,7 @@ export default function Gallery() {
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
         title="Residential Window Tinting Gallery Denver | ikonic303"
-        description="Completed residential window tinting projects across Denver — living rooms, bedrooms, sunrooms, and entryways treated with solar, UV, privacy, and decorative film. Plus commercial storefront tint and graphics."
+        description="Completed residential window tinting projects across Denver — living rooms, bedrooms, sunrooms, and entryways treated with solar, UV, privacy, and decorative film. Plus commercial storefront tint, graphics, and vehicle wraps."
         canonical="/gallery"
       />
       <MatrixBackground />
@@ -75,6 +77,34 @@ export default function Gallery() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {commercialProjects.map((p) => (
               <PhotoFrame key={p.label} alt={p.alt} label={p.label} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vehicle Wraps */}
+      <section className="px-[6vw] pb-20 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-display text-2xl font-bold text-offwhite mb-2">Vehicle Wraps</h2>
+          <p className="text-offwhite-dark text-sm mb-6">
+            {wrapImages.length} photos and {wrapVideos.length} videos from completed wraps.
+          </p>
+
+          <h3 className="font-display text-lg font-semibold text-offwhite mb-4">
+            Photos ({wrapImages.length})
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mb-10">
+            {wrapImages.map((img) => (
+              <PhotoFrame key={img.id} src={img.src} alt="Completed vehicle wrap" />
+            ))}
+          </div>
+
+          <h3 className="font-display text-lg font-semibold text-offwhite mb-4">
+            Videos ({wrapVideos.length})
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            {wrapVideos.map((vid) => (
+              <LazyVideo key={vid.id} src={vid.src} />
             ))}
           </div>
         </div>
