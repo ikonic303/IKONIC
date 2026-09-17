@@ -61,6 +61,11 @@
       "permanent": true
     },
     {
+      "source": "/vehicle-wraps",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
       "source": "/commercial-wraps",
       "destination": "/storefront-graphics",
       "permanent": true
