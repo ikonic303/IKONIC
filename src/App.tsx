@@ -32,6 +32,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 const ProofManager = lazy(() => import('./pages/ProofManager'));
 const ProofClient = lazy(() => import('./pages/ProofClient'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const Wraps = lazy(() => import('./pages/Wraps'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Service pages — one shared <ServicePage> renderer, driven by serviceData. Paths
@@ -171,6 +172,7 @@ function App() {
             <Route path="/proof-manager" element={<ProofManager />} />
             <Route path="/proof/:token" element={<ProofClient />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/vehicle-wraps" element={<Wraps />} />
             {/* HIDDEN 2026-08-29 — off-scope pages (digital marketing, AI, print,
                 book). Kept in src/pages/ but not routed. vercel.json 301-redirects
                 these old paths to /services so the URLs never dead-end.
