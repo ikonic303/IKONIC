@@ -4,24 +4,26 @@
 
 @layer base {
   :root {
-    --background: 220 14% 4%;
-    --foreground: 220 14% 96%;
-    --card: 220 14% 6%;
-    --card-foreground: 220 14% 96%;
-    --popover: 220 14% 6%;
-    --popover-foreground: 220 14% 96%;
+    /* Brand palette: dark blue (navy), green, white. No red. */
+    --background: 219 52% 10%;
+    --foreground: 220 24% 97%;
+    --card: 218 45% 14%;
+    --card-foreground: 220 24% 97%;
+    --popover: 218 45% 13%;
+    --popover-foreground: 220 24% 97%;
     --primary: 158 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 220 8% 12%;
-    --secondary-foreground: 220 14% 96%;
-    --muted: 220 8% 16%;
-    --muted-foreground: 220 8% 65%;
+    --primary-foreground: 218 60% 8%;
+    --secondary: 218 36% 18%;
+    --secondary-foreground: 220 24% 97%;
+    --muted: 218 30% 22%;
+    --muted-foreground: 218 18% 70%;
     --accent: 158 100% 50%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 84.2% 60.2%;
+    --accent-foreground: 218 60% 8%;
+    /* Kept for shadcn form validation only — never used as a brand/UI color. */
+    --destructive: 4 74% 54%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 8% 20%;
-    --input: 220 8% 20%;
+    --border: 218 26% 26%;
+    --input: 218 26% 26%;
     --ring: 158 100% 50%;
     --radius: 0.375rem;
   }
@@ -129,10 +131,35 @@
   }
 }
 
-/* Guarantee dark background on every device — never flash white */
+/* Guarantee dark navy background on every device — never flash white */
 html,
 body {
-  background-color: #0B0D10;
+  background-color: #0A1428;
+}
+
+/* ── Responsive safety (all widths) ──────────────────────────────────────── */
+/* Replaced media / images can't push the page wider than its container.
+   In @layer base so explicit Tailwind width utilities still win. */
+@layer base {
+  img,
+  video,
+  iframe,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+}
+
+/* The hero pins/scrubs only at lg+ (see HeroSection isSmallScreen). Below that,
+   let its height be driven by content so tall copy is never clipped. */
+@media (max-width: 1023px) {
+  .section-pinned {
+    height: auto !important;
+    min-height: 100svh;
+    overflow: visible !important;
+    position: relative !important;
+    width: 100% !important;
+  }
 }
 
 /* ── Mobile overrides ────────────────────────────────────────────────────── */

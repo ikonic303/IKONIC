@@ -27,38 +27,38 @@ gsap.registerPlugin(ScrollTrigger);
 const testimonials = [
   {
     name: 'Sarah Mitchell',
-    title: 'Owner, Peak Fitness Denver',
-    quote: 'Ikonic built our entire lead system from scratch. New member inquiries now get an immediate text response, and our front desk spends less time on follow-ups.',
+    title: 'Homeowner, Arvada',
+    quote: 'Our west-facing living room was unusable by 3pm every summer. ikonic put heat-rejection film on it and now we actually use that room in the afternoon. Clean install, no bubbles, and they protected the floors while they worked.',
     rating: 5
   },
   {
     name: 'Marcus Chen',
-    title: 'Practice Manager, Chen Dental',
-    quote: 'Our review collection went from sporadic to consistent. We went from 12 Google reviews to over 80 in six months, and new patients mention finding us online.',
+    title: 'Homeowner, Wheat Ridge',
+    quote: 'We wanted privacy on the bedroom and bathroom windows that face the neighbor without living behind blinds. The frosted film they recommended is exactly right — private during the day, still bright inside.',
     rating: 5
   },
   {
     name: 'Jake Rodriguez',
-    title: 'Owner, Rodriguez HVAC',
-    quote: 'Before Ikonic, leads would sit in my inbox for hours. Now customers get an instant response even when I am on a job site. The system pays for itself.',
+    title: 'Homeowner, Lakewood',
+    quote: 'The hardwood by the back windows was fading in one obvious stripe. They did near-invisible UV film on the whole back of the house. You can’t tell it’s there and the fading stopped.',
     rating: 5
   },
   {
     name: 'Amanda Foster',
-    title: 'Director, Foster Law Group',
-    quote: 'They migrated our outdated website to GHL and set up automated intake workflows. Our consultation bookings have increased, and the process is smoother for clients.',
+    title: 'Homeowner, Golden',
+    quote: 'Estimate was on time, the quote was clear, and the crew was in and out in a day. Our upstairs is noticeably more even temperature now — fewer hot rooms.',
     rating: 5
   },
   {
     name: 'David Park',
-    title: 'Owner, Park Auto Repair',
-    quote: 'I was skeptical about another marketing service, but Ikonic actually delivers. They handle the technical stuff so I can focus on running my shop.',
+    title: 'Property Manager, Denver',
+    quote: 'Used ikonic for solar film on a duplex and then for our storefront office. Same clean work both times, fair quote, no add-ons at the end.',
     rating: 5
   },
   {
     name: 'Lisa Thompson',
-    title: 'Manager, Thompson Realty',
-    quote: 'The CRM setup and automation sequences have changed how we handle buyer leads. Our agents know exactly when to follow up, and nothing falls through the cracks.',
+    title: 'Business Owner, Denver',
+    quote: 'They tinted our storefront glass for heat and glare and added privacy film on the back office. Scheduled around our hours so we never closed.',
     rating: 5
   }
 ];
@@ -88,6 +88,9 @@ export default function TestimonialsSection() {
     const section = sectionRef.current;
     if (!section) return;
 
+    // Respect reduced-motion: skip the reveal entirely so content is just there.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const ctx = gsap.context(() => {
       // Header animation
       gsap.fromTo(headerRef.current,
@@ -99,8 +102,8 @@ export default function TestimonialsSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: headerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 88%',
+            once: true
           }
         }
       );
@@ -118,8 +121,8 @@ export default function TestimonialsSection() {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: cardsRef.current,
-              start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              start: 'top 88%',
+              once: true
             }
           }
         );
@@ -137,14 +140,13 @@ export default function TestimonialsSection() {
       <div className="px-[6vw]">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
-          <p className="text-micro text-mint mb-4">TESTIMONIALS</p>
+          <p className="text-micro text-mint mb-4">CUSTOMER REVIEWS</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-offwhite mb-6">
-            See It From Our <span className="text-mint">Customers</span>
+            What Denver Homeowners <span className="text-mint">Say</span>
           </h2>
           <p className="text-lg text-offwhite-dark max-w-2xl mx-auto">
-            We don't just provide systems — we provide outcomes. From quicker responses to 
-            polished design and live human guidance, companies in every field rely on Ikonic 
-            to fuel their growth.
+            Families across Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver trust ikonic
+            for residential window tinting that&rsquo;s installed clean and holds up.
           </p>
         </div>
 
@@ -238,25 +240,25 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Case Study Preview */}
+        {/* Featured home project */}
         <div className="mt-16 bg-gradient-to-r from-mint/20 to-mint/5 border border-mint/30 rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="text-micro text-mint mb-2">CASE STUDY</p>
+              <p className="text-micro text-mint mb-2">FEATURED HOME PROJECT</p>
               <h3 className="font-display text-2xl lg:text-3xl font-bold text-offwhite mb-4">
-                Peak Fitness: From Scattered Tools to One System
+                Arvada Two-Story: Hot Rooms &amp; Fading, Fixed in a Day
               </h3>
               <p className="text-offwhite-dark mb-6">
-                A Denver fitness studio was juggling Mailchimp, Calendly, and spreadsheets to manage 
-                leads. Ikonic consolidated everything into a single GHL system with automated follow-up 
-                and a new booking funnel.
+                A west-facing living room overheated every afternoon and the hardwood near the back
+                windows was fading. We checked the dual-pane glass, spec&rsquo;d a spectrally-selective
+                solar film, and installed the whole main floor in one visit.
               </p>
               <ul className="space-y-2 mb-6">
                 {[
-                  'Migrated website and booking system to GHL',
-                  'Built automated SMS/email follow-up sequences',
-                  'Set up Google Business Profile optimization',
-                  'Created lead tracking dashboard for owners'
+                  'Glass checked against the film compatibility chart before quoting',
+                  'Spectrally-selective solar film on the west and south elevations',
+                  'Near-invisible UV film on the fading rooms',
+                  'One-day install with floors and furniture protected'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-offwhite-dark text-sm">
                     <div className="w-1.5 h-1.5 bg-mint rounded-full" />
@@ -267,9 +269,9 @@ export default function TestimonialsSection() {
             </div>
             <div className="text-center lg:text-right">
               <div className="inline-block bg-charcoal rounded-xl p-8">
-                <p className="text-5xl font-bold text-mint mb-2">3x</p>
-                <p className="text-offwhite">Faster Lead Response Time</p>
-                <p className="text-offwhite-dark text-sm mt-2">From hours to under 2 minutes</p>
+                <p className="text-5xl font-bold text-mint mb-2">99%</p>
+                <p className="text-offwhite">UV Blocked</p>
+                <p className="text-offwhite-dark text-sm mt-2">Living room comfortable all afternoon</p>
               </div>
             </div>
           </div>

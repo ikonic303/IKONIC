@@ -30,7 +30,9 @@ export default function BlogPost() {
     if (!slug) return;
     fetch(`/api/blog-post?slug=${encodeURIComponent(slug)}&_t=${Date.now()}`, { cache: 'no-store' })
       .then(r => {
-        if (r.status === 404) { setNotFound(true); return null; }
+        // 404 = never existed, 410 = retired topic (digital marketing, etc.),
+        // any other non-2xx = treat as gone.
+        if (!r.ok) { setNotFound(true); return null; }
         return r.json();
       })
       .then(data => { if (data) setPost(data); })
@@ -46,7 +48,8 @@ export default function BlogPost() {
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
         title={post ? `${post.title} | ikonic303 Blog` : 'Blog | ikonic303'}
-        description={post ? post.description : 'Digital marketing tips and strategies for Denver businesses from the ikonic303 team.'}
+        description={post ? post.description : 'Residential window tinting guides for Denver homeowners from the ikonic303 team.'}
+        noIndex={!post}
         canonical={post ? `/post/${post.urlSlug}` : undefined}
         ogType="article"
         ogImage={post?.image || undefined}

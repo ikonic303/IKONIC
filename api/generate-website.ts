@@ -5,7 +5,7 @@ import { blocked, readToken, consumeToken, claimToken, releaseClaim } from './_l
 
 export const maxDuration = 45;
 
-const LEAD_EMAIL = 'info@ikonicmarketing303.com';
+const LEAD_EMAIL = 'info@ikonic303.com';
 
 type FormPayload = {
   businessName?: string;

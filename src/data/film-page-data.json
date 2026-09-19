@@ -1,0 +1,3465 @@
+{
+ "_what": "PUBLIC-SAFE film + price + glass-compatibility data for the ikonic303.com film page",
+ "_authority": "Rulings transcribed from Edge Film Technologies 'Architectural Film to Glass Chart'. The PDF wins on conflict. Prices from rail R-2026-08-28-TINT.",
+ "_generated": "2026-09-03",
+ "_rule": "RULING IS PER EXACT FILM (VLT). Price is per group. Never collapse a group into one ruling.",
+ "legend": {
+  "G": "Safe",
+  "A": "Use Caution",
+  "R": "Not Safe"
+ },
+ "glass_columns": [
+  "Single Pane",
+  "Tinted Single Pane",
+  "Clear Dual Pane",
+  "Low-E #2 Surface Dual Pane",
+  "Low-E #3 Surface Dual Pane",
+  "Low-E Surface #2 and #3 Double Pane",
+  "Clear Triple Pane",
+  "Low-E #2 Surface Triple Pane",
+  "Low-E #2 and #5 Surface Triple Pane"
+ ],
+ "substrates": [
+  "Annealed",
+  "Laminated",
+  "Tempered"
+ ],
+ "restrictions": [
+  {
+   "id": 1,
+   "edge_words": "Single pane glass should be less than 100 square feet",
+   "applies": "single",
+   "max_sqft_per_pane": 100
+  },
+  {
+   "id": 2,
+   "edge_words": "Dual pane glass should be less than 40 square feet",
+   "applies": "dual",
+   "max_sqft_per_pane": 40
+  },
+  {
+   "id": 3,
+   "edge_words": "Clear glass should be less than 3/8 inch thick",
+   "applies": "clear glass",
+   "max_thickness_in": 0.375
+  },
+  {
+   "id": 4,
+   "edge_words": "Architecturally odd shaped windows more than 25 square feet void the warranty",
+   "applies": "odd shape",
+   "max_sqft": 25
+  },
+  {
+   "id": 5,
+   "edge_words": "Uneven shading from the exterior will void warranty",
+   "applies": "any"
+  }
+ ],
+ "unknown_glass": [
+  "Restriction 2 is written for DUAL pane. ikonic applies the same 40 sq ft cap to TRIPLE pane as a conservative house rule — this is OURS, not Edge's wording.",
+  "Wired glass has no column on this chart -> UNKNOWN -> no online price, on-site assessment.",
+  "Tinted DUAL/TRIPLE pane has no column on this chart -> UNKNOWN -> no online price, on-site assessment.",
+  "Existing crack / chip / fogging / failed IGU seal / glass already filmed -> NO-GO regardless of dot.",
+  "'X Series 7mil Clear' does NOT appear on this chart. No ruling exists. Never quote it."
+ ],
+ "job_minimum": 400,
+ "minimum_before_travel": true,
+ "excluded_from_page": [
+  "X Series 7mil Clear — no film-to-glass ruling exists. Never quote, never list."
+ ],
+ "films": [
+  {
+   "film": "Ultra View 5",
+   "price_group": "Ultra View 5/15/25/35",
+   "category": "solar",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ultra View 15",
+   "price_group": "Ultra View 5/15/25/35",
+   "category": "solar",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ultra View 25",
+   "price_group": "Ultra View 5/15/25/35",
+   "category": "solar",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 16,
+    "use_caution": 2,
+    "not_safe": 9
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ultra View 35",
+   "price_group": "Ultra View 5/15/25/35",
+   "category": "solar",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 16,
+    "use_caution": 2,
+    "not_safe": 9
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Nature 10",
+   "price_group": "Nature 10/20/30",
+   "category": "solar",
+   "price_per_sqft": 14,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 7,
+    "use_caution": 6,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Annealed",
+    "Tinted Single Pane / Annealed",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated"
+   ],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "A",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "A",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "A",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "A",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Nature 20",
+   "price_group": "Nature 10/20/30",
+   "category": "solar",
+   "price_per_sqft": 14,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Nature 30",
+   "price_group": "Nature 10/20/30",
+   "category": "solar",
+   "price_per_sqft": 14,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Cool Alloy 20",
+   "price_group": "Cool Alloy 20/35/60",
+   "category": "solar",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Cool Alloy 35",
+   "price_group": "Cool Alloy 20/35/60",
+   "category": "solar",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Cool Alloy 60",
+   "price_group": "Cool Alloy 20/35/60",
+   "category": "solar",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 18,
+    "use_caution": 0,
+    "not_safe": 9
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Bronze 20",
+   "price_group": "Bronze 20/35",
+   "category": "solar",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 14,
+    "use_caution": 0,
+    "not_safe": 13
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Bronze 35",
+   "price_group": "Bronze 20/35",
+   "category": "solar",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 14,
+    "use_caution": 0,
+    "not_safe": 13
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Silver 20",
+   "price_group": "Silver 20/30/40",
+   "category": "solar",
+   "price_per_sqft": 10,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Silver 30",
+   "price_group": "Silver 20/30/40",
+   "category": "solar",
+   "price_per_sqft": 10,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Silver 40",
+   "price_group": "Silver 20/30/40",
+   "category": "solar",
+   "price_per_sqft": 10,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Pristine 30",
+   "price_group": "Pristine Ceramic 30/40/50",
+   "category": "solar",
+   "price_per_sqft": 15,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Pristine 40",
+   "price_group": "Pristine Ceramic 30/40/50",
+   "category": "solar",
+   "price_per_sqft": 15,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 13,
+    "use_caution": 0,
+    "not_safe": 14
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Pristine 50",
+   "price_group": "Pristine Ceramic 30/40/50",
+   "category": "solar",
+   "price_per_sqft": 15,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Pristine 70",
+   "price_group": "Pristine Ceramic 70/80",
+   "category": "solar",
+   "price_per_sqft": 16,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Pristine 80",
+   "price_group": "Pristine Ceramic 70/80",
+   "category": "solar",
+   "price_per_sqft": 16,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Silver 15",
+   "price_group": "X Series Silver 15/35",
+   "category": "solar",
+   "price_per_sqft": 14,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 2,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated"
+   ],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "A",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Silver 35",
+   "price_group": "X Series Silver 15/35",
+   "category": "solar",
+   "price_per_sqft": 14,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Cool Alloy 20",
+   "price_group": "X Series Cool Alloy 20/40",
+   "category": "solar",
+   "price_per_sqft": 15,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Cool Alloy 40",
+   "price_group": "X Series Cool Alloy 20/40",
+   "category": "solar",
+   "price_per_sqft": 15,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Pristine 70",
+   "price_group": "Ext Pristine 70/80",
+   "category": "solar",
+   "price_per_sqft": 18,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": "Exterior film, safer for turf. 9% exterior reflectance.",
+   "safety_block": null,
+   "counts": {
+    "safe": 19,
+    "use_caution": 0,
+    "not_safe": 8
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Ext Pristine 80",
+   "price_group": "Ext Pristine 70/80",
+   "category": "solar",
+   "price_per_sqft": 18,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": "Exterior film, safer for turf. 9% exterior reflectance.",
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Guardian 4mil",
+   "price_group": "Guardian 4mil Clear",
+   "category": "security",
+   "price_per_sqft": 20,
+   "sealant_per_lineal_ft": 4.0,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Guardian 8mil",
+   "price_group": "Guardian 8mil Clear",
+   "category": "security",
+   "price_per_sqft": 20,
+   "sealant_per_lineal_ft": 4.0,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Guardian 8mil Silver 20",
+   "price_group": "Guardian 8mil Silver",
+   "category": "security",
+   "price_per_sqft": 20,
+   "sealant_per_lineal_ft": 4.0,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Guardian 12mil",
+   "price_group": "Guardian 12mil",
+   "category": "security",
+   "price_per_sqft": 20,
+   "sealant_per_lineal_ft": 4.0,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Clear Defense 4mil",
+   "price_group": "Clear Defense 4mil",
+   "category": "antigraffiti",
+   "price_per_sqft": 12,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Clear Defense 6mil",
+   "price_group": "Clear Defense 6mil",
+   "category": "antigraffiti",
+   "price_per_sqft": 13,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Frost",
+   "price_group": "Frost",
+   "category": "decorative",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": "design/cut vinyl quoted separately",
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Whiteout",
+   "price_group": "Whiteout",
+   "category": "decorative",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": "design/cut vinyl quoted separately",
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  },
+  {
+   "film": "Blackout",
+   "price_group": "Blackout",
+   "category": "decorative",
+   "price_per_sqft": 11,
+   "sealant_per_lineal_ft": null,
+   "exterior": false,
+   "note": null,
+   "safety_block": "TEMPERED SINGLE PANE ONLY — confirm glass before quoting",
+   "counts": {
+    "safe": 2,
+    "use_caution": 0,
+    "not_safe": 25
+   },
+   "safe": [
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Laminated",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "R"
+    }
+   }
+  },
+  {
+   "film": "Zen SSX 55",
+   "price_group": "Zen SSX 55 (exterior)",
+   "category": "solar",
+   "price_per_sqft": 18,
+   "sealant_per_lineal_ft": 2.0,
+   "exterior": true,
+   "note": "Exterior film, safer for turf. 10% exterior reflectance.",
+   "safety_block": null,
+   "counts": {
+    "safe": 21,
+    "use_caution": 0,
+    "not_safe": 6
+   },
+   "safe": [
+    "Single Pane / Annealed",
+    "Single Pane / Laminated",
+    "Single Pane / Tempered",
+    "Tinted Single Pane / Annealed",
+    "Tinted Single Pane / Laminated",
+    "Tinted Single Pane / Tempered",
+    "Clear Dual Pane / Annealed",
+    "Clear Dual Pane / Laminated",
+    "Clear Dual Pane / Tempered",
+    "Low-E #2 Surface Dual Pane / Annealed",
+    "Low-E #2 Surface Dual Pane / Laminated",
+    "Low-E #2 Surface Dual Pane / Tempered",
+    "Low-E #3 Surface Dual Pane / Annealed",
+    "Low-E #3 Surface Dual Pane / Tempered",
+    "Low-E Surface #2 and #3 Double Pane / Annealed",
+    "Low-E Surface #2 and #3 Double Pane / Tempered",
+    "Clear Triple Pane / Annealed",
+    "Clear Triple Pane / Tempered",
+    "Low-E #2 Surface Triple Pane / Annealed",
+    "Low-E #2 Surface Triple Pane / Tempered",
+    "Low-E #2 and #5 Surface Triple Pane / Tempered"
+   ],
+   "use_caution": [],
+   "not_safe": [
+    "Low-E #3 Surface Dual Pane / Laminated",
+    "Low-E Surface #2 and #3 Double Pane / Laminated",
+    "Clear Triple Pane / Laminated",
+    "Low-E #2 Surface Triple Pane / Laminated",
+    "Low-E #2 and #5 Surface Triple Pane / Annealed",
+    "Low-E #2 and #5 Surface Triple Pane / Laminated"
+   ],
+   "rulings": {
+    "Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Tinted Single Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Clear Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "G",
+     "Tempered": "G"
+    },
+    "Low-E #3 Surface Dual Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E Surface #2 and #3 Double Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Clear Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 Surface Triple Pane": {
+     "Annealed": "G",
+     "Laminated": "R",
+     "Tempered": "G"
+    },
+    "Low-E #2 and #5 Surface Triple Pane": {
+     "Annealed": "R",
+     "Laminated": "R",
+     "Tempered": "G"
+    }
+   }
+  }
+ ]
+}

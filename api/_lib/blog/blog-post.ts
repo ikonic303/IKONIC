@@ -1,5 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { sanitizeHtml } from '../sanitize-html.js';
+import { isOffTopicPost } from './off-topic.js';
+
+// 410 Gone body for a post that was intentionally retired (digital marketing,
+// vehicle, etc.). BlogPost.tsx treats any non-200 as "not found".
+const RETIRED = { error: 'This post has been retired', retired: true };
 
 const GHL_BASE_URL    = 'https://go.ikonicmarketing303.com';
 const GHL_PREVIEW_LOC = 'ZFg6wMxjGeRh7lGwtZDW';
@@ -158,9 +163,15 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
   const { slug, _debug } = req.query;
   if (!slug || typeof slug !== 'string') return res.status(400).json({ error: 'slug required' });
 
+  // Retired topics (digital marketing, vehicle, …) — gone regardless of source.
+  if (isOffTopicPost({ slug })) return res.status(410).json(RETIRED);
+
   // Check Redis-published posts first
   const redisPost = await getRedisPost(slug);
   if (redisPost) {
+    if (isOffTopicPost({ slug, title: redisPost.title, category: redisPost.category })) {
+      return res.status(410).json(RETIRED);
+    }
     res.setHeader('Cache-Control', 'no-store');
     return res.status(200).json(redisPost);
   }
@@ -184,6 +195,11 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
       requestedSlug: slug,
       availableSlugs: rawPosts.map((p: any) => p.urlSlug),
     });
+
+    const gCat = post.categories?.[0]?.label?.replace(/-/g, ' ') ?? 'Marketing';
+    if (isOffTopicPost({ slug, title: post.title, category: gCat })) {
+      return res.status(410).json(RETIRED);
+    }
 
     const { content, debug } = await fetchFromPreview(slug);
 

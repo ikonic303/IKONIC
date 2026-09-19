@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Users, Clock, TrendingUp, Headphones, Target, Zap, Shield, Heart } from 'lucide-react';
+import { Home, Sun, MapPin, ShieldCheck, Target, Zap, Shield, Heart } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixBackground from '../components/MatrixBackground';
 import Footer from '../components/Footer';
@@ -10,17 +10,17 @@ import PageSEO from '../components/PageSEO';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { icon: Users, label: 'Leads Captured', value: '10K+' },
-  { icon: Clock, label: 'Hours Saved', value: '5K+' },
-  { icon: TrendingUp, label: 'Avg. ROI Increase', value: '340%' },
-  { icon: Headphones, label: 'Support', value: '24/7' }
+  { icon: Home, label: 'Denver-Area Homes Tinted', value: '1,000s' },
+  { icon: Sun, label: 'UV Blocked by Quality Film', value: '99%' },
+  { icon: MapPin, label: 'Denver-Metro Service Radius', value: '30 mi' },
+  { icon: ShieldCheck, label: 'Manufacturer Film Warranty', value: 'Lifetime' }
 ];
 
 const values = [
-  { icon: Target, title: 'Results-Driven', desc: 'We measure success by your growth, not vanity metrics.' },
-  { icon: Zap, title: 'Fast Execution', desc: 'We move quickly to get your systems up and running.' },
-  { icon: Shield, title: 'Transparent', desc: 'No hidden fees, no surprises. Just honest work.' },
-  { icon: Heart, title: 'Client-First', desc: 'Your success is our success. We treat your business like our own.' }
+  { icon: Target, title: 'Right Film, Right Window', desc: 'We recommend a film per window and check your glass against the manufacturer chart before we quote.' },
+  { icon: Zap, title: 'Clean, One-Day Installs', desc: 'Dust-controlled prep, floors and furniture protected, and finished edges on every pane.' },
+  { icon: Shield, title: 'One Honest Number', desc: 'No hidden fees and no surprise add-ons at the end of the job.' },
+  { icon: Heart, title: 'No Pressure', desc: 'A free in-home estimate and a clear quote — decide on your timeline, not ours.' }
 ];
 
 export default function About() {
@@ -39,25 +39,25 @@ export default function About() {
   return (
     <div className="relative bg-charcoal min-h-screen">
       <PageSEO
-        title="About ikonic303 | Denver Digital Marketing Agency"
-        description="Meet the ikonic303 team. Denver-based digital marketing agency specializing in GoHighLevel automation, CRM setup, and lead generation for Colorado businesses."
+        title="About ikonic303 | Denver Residential Window Tinting"
+        description="ikonic is a Wheat Ridge, CO window film company specializing in residential window tinting for the Denver metro — heat, glare, UV, privacy, and energy savings. Commercial storefront tint and graphics also available."
         canonical="/about"
       />
       <MatrixBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-[6vw] relative z-10">
         <div ref={heroRef} className="max-w-4xl mx-auto text-center">
           <p className="text-micro text-mint mb-4">ABOUT IKONIC</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite mb-6 leading-tight">
-            The Digital Agency That<br />
-            <span className="text-mint">Works While You Sleep</span>
+            Denver&rsquo;s Residential<br />
+            <span className="text-mint">Window Tinting Specialists</span>
           </h1>
           <p className="text-lg text-offwhite-dark max-w-2xl mx-auto">
-            We're a Colorado-based digital marketing agency specializing in automation, 
-            CRM systems, and lead generation for local businesses. Our mission is to help 
-            businesses grow smarter, not harder.
+            ikonic is a Wheat Ridge, Colorado window film company. Home window tinting is what we do
+            most — heat, glare, UV, privacy, and energy savings for houses across the Denver metro.
+            Commercial storefront tint and graphics are a supporting service.
           </p>
         </div>
       </section>
@@ -70,22 +70,20 @@ export default function About() {
           </h2>
           <div className="space-y-6 text-offwhite-dark">
             <p>
-              ikonic was founded with a simple belief: local businesses deserve 
-              access to the same powerful marketing tools and automation that big corporations use. 
-              We saw too many small businesses struggling to keep up with the digital world, 
-              juggling dozens of tools and still falling behind.
+              ikonic started with an obsession for making surfaces look flawless. Today that focus
+              lives in residential window film: getting the right product on the right glass, and
+              installing it so cleanly you forget it&rsquo;s there.
             </p>
             <p>
-              That's why we built Ikonic—to be the partner that helps businesses scale with 
-              smart automation, powerful CRM systems, and done-for-you marketing. We don't just 
-              build websites and set up software. We build complete revenue systems that work 
-              24/7, so you can focus on what you do best: running your business.
+              A Denver home has west-facing rooms that overheat, floors fading in the sun, and
+              windows that face a neighbor a little too closely. We&rsquo;ve solved those same
+              problems in hundreds of houses — and we recommend a film per window rather than one
+              film for the whole place.
             </p>
             <p>
-              Based in Colorado, we understand the unique challenges local businesses face. 
-              From Denver to Boulder, Fort Collins to Colorado Springs, we've helped businesses 
-              across the Front Range grow their customer base and increase revenue through 
-              strategic digital marketing and automation.
+              We serve the Denver metro: Wheat Ridge, Arvada, Lakewood, Golden, and greater Denver.
+              Most homes are installed in a single visit. We also tint and brand commercial
+              storefronts as a secondary service.
             </p>
           </div>
         </div>
@@ -97,17 +95,18 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display text-3xl font-bold text-offwhite mb-6">
-                Our <span className="text-mint">Mission</span>
+                Our <span className="text-mint">Standard</span>
               </h2>
               <p className="text-offwhite-dark mb-6">
-                We're here to skip the fluff and equip you with tools that actually drive impact. 
-                No heavy platforms. No copy-paste setups. Just tailored systems built to capture 
-                leads, nurture relationships, and scale your business.
+                We only install film a manufacturer's compatibility chart says is safe for your
+                glass. Single-pane, dual-pane, low-E, tempered, and laminated glass each behave
+                differently, and the wrong film can crack a pane or void its seal warranty — so we
+                check first, at the free in-home estimate.
               </p>
               <p className="text-offwhite-dark">
-                Whether you're a local service business, a fast-moving startup, or a growing 
-                online brand, our team builds everything inside GoHighLevel—clean, organized, 
-                and designed to run effortlessly on autopilot.
+                Then a clean, dust-controlled install with your floors and furniture protected,
+                finished edges on every pane, and a manufacturer warranty plus our workmanship
+                guarantee behind it.
               </p>
             </div>
             <div className="bg-gradient-to-br from-mint/20 to-mint/5 border border-mint/30 rounded-2xl p-8">
@@ -116,11 +115,11 @@ export default function About() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'We build AND manage your systems',
-                  'No long-term contracts required',
-                  'Transparent pricing with no hidden fees',
-                  'Dedicated support from our Colorado team',
-                  'Proven results with measurable ROI'
+                  'Residential window tinting is our specialty',
+                  'A film recommended per window, not one for the whole house',
+                  'Glass checked against the film chart before quoting',
+                  'Free in-home estimate — one written quote, no add-ons',
+                  'Clean, one-day install with your home protected'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2 text-offwhite">
                     <div className="w-1.5 h-1.5 bg-mint rounded-full" />
@@ -140,7 +139,7 @@ export default function About() {
             Our <span className="text-mint">Values</span>
           </h2>
           <p className="text-offwhite-dark text-center mb-12 max-w-2xl mx-auto">
-            These principles guide everything we do.
+            The rules we don't bend, on every job.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -161,10 +160,10 @@ export default function About() {
       <section className="py-20 px-[6vw] relative z-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-bold text-offwhite mb-4 text-center">
-            Results That <span className="text-mint">Speak</span>
+            By the <span className="text-mint">Numbers</span>
           </h2>
           <p className="text-offwhite-dark text-center mb-12 max-w-2xl mx-auto">
-            Numbers don't lie. Here's what we've achieved for our clients.
+            What the work adds up to.
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -185,13 +184,13 @@ export default function About() {
       <section className="py-20 px-[6vw] bg-charcoal-light/80 backdrop-blur-sm relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-3xl font-bold text-offwhite mb-6">
-            Ready to Work With Us?
+            Ready for a Free Estimate?
           </h2>
           <p className="text-offwhite-dark mb-8">
-            Let's build something great together. Book your free consultation today.
+            We visit your home, look at the actual windows, and send one clear written quote.
           </p>
           <a href="/contact" className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4">
-            Get Started
+            Get a Free Home Tint Estimate
           </a>
         </div>
       </section>

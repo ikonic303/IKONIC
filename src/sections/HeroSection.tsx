@@ -1,174 +1,113 @@
-import { useRef, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sun, Home } from 'lucide-react';
 
-const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
-
+// Residential-first hero. Static — no GSAP / scroll-pin (kept fast to paint).
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const subheadRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-  const robotRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    if (isMobile) return; // Skip all GSAP work on mobile
-
-    const section = sectionRef.current;
-    if (!section) return;
-
-    // Dynamically import GSAP only on desktop
-    Promise.all([import('gsap'), import('gsap/ScrollTrigger')]).then(([{ gsap }, { ScrollTrigger }]) => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const ctx = gsap.context(() => {
-        const loadTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-        loadTl
-          .fromTo(headlineRef.current?.querySelectorAll('.headline-line') || [],
-            { y: 60, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 },
-            0.2
-          )
-          .fromTo(subheadRef.current,
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6 },
-            0.5
-          )
-          .fromTo(ctaRef.current,
-            { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 },
-            0.7
-          )
-          .fromTo(robotRef.current,
-            { x: 100, opacity: 0, scale: 0.8 },
-            { x: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.2)' },
-            0.4
-          );
-
-        const scrollTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: '+=130%',
-            pin: true,
-            scrub: 0.6,
-            onLeaveBack: () => {
-              gsap.set([headlineRef.current, subheadRef.current, ctaRef.current, robotRef.current], {
-                opacity: 1, x: 0, y: 0
-              });
-            }
-          }
-        });
-
-        scrollTl
-          .fromTo(headlineRef.current,
-            { y: 0, opacity: 1 },
-            { y: '-30vh', opacity: 0.2, ease: 'power2.in' },
-            0.70
-          )
-          .to(headlineRef.current, { opacity: 0, ease: 'power2.in' }, 0.95)
-          .fromTo(subheadRef.current,
-            { y: 0, opacity: 1 },
-            { y: '-20vh', opacity: 0, ease: 'power2.in' },
-            0.72
-          )
-          .fromTo(ctaRef.current,
-            { y: 0, opacity: 1 },
-            { y: '-15vh', opacity: 0, ease: 'power2.in' },
-            0.74
-          )
-          .fromTo(robotRef.current,
-            { x: 0, opacity: 1 },
-            { x: '30vw', opacity: 0.2, ease: 'power2.in' },
-            0.70
-          )
-          .to(robotRef.current, { opacity: 0, ease: 'power2.in' }, 0.95);
-      }, section);
-
-      return () => ctx.revert();
-    });
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       id="home"
-      className="section-pinned bg-charcoal/80 backdrop-blur-sm z-10"
+      className="relative z-10 flex items-center min-h-[92svh] bg-charcoal/80 backdrop-blur-sm py-24 lg:py-16"
     >
-      {/* Content */}
-      <div className="relative z-20 flex items-center min-h-[100svh] lg:h-full">
-        <div className="w-full px-[6vw] py-24 lg:py-0 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left - Text content */}
-          <div className="max-w-2xl">
-            <h1 ref={headlineRef} className="space-y-1 mb-6">
-              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
-                DIGITAL MARKETING
-              </div>
-              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
-                <span className="text-offwhite">AUTOMATION: YOUR</span>{' '}
-                <span className="text-mint drop-shadow-[0_0_15px_rgba(0,255,157,0.8)]">24/7</span>
-              </div>
-              <div className="headline-line text-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite leading-tight">
-                LEAD CAPTURE SYSTEM
-              </div>
-            </h1>
+      <div className="relative z-20 w-full px-[6vw] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        {/* Left — copy */}
+        <div className="min-w-0 max-w-2xl">
+          <p className="text-micro text-mint mb-4">RESIDENTIAL WINDOW TINTING · DENVER, CO</p>
 
-            <p
-              ref={subheadRef}
-              className="text-base md:text-xl text-offwhite-dark leading-relaxed mb-8 max-w-xl"
-            >
-              We help Denver-area businesses build complete automated sales systems — from
-              high-converting websites and sales funnels to CRM, automation, and lead flow —
-              all inside one powerful, custom platform.
-            </p>
+          <h1 className="font-display font-bold text-offwhite leading-[1.08] text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl mb-5 text-balance">
+            Professional Residential Window Tinting in{' '}
+            <span className="text-mint">Denver</span>
+          </h1>
 
-            <div ref={ctaRef} className="flex flex-wrap gap-3">
-              <Link 
-                to="/contact"
-                className="btn-primary flex items-center gap-2"
-              >
-                Start Now
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link 
-                to="/learn-more"
-                className="btn-outline"
-              >
-                Learn More
-              </Link>
-            </div>
+          <p className="text-lg md:text-xl text-offwhite-dark leading-relaxed mb-8 max-w-xl">
+            Improve your home&rsquo;s comfort, privacy, and energy efficiency with professionally
+            installed window film.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mb-10">
+            <Link to="/contact" className="btn-primary flex items-center gap-2">
+              Get a Free Home Tint Estimate
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a href="#commercial" className="btn-outline">
+              Explore Commercial Solutions
+            </a>
           </div>
 
-          {/* Right - Robot mascot */}
-          <div 
-            ref={robotRef}
-            className="hidden lg:flex justify-center items-center"
-          >
-            <div className="relative">
-              <div className="w-80 h-80 relative">
-                {/* Robot body */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-48 h-56 bg-gradient-to-b from-mint/80 to-mint-dark/80 rounded-3xl relative shadow-2xl">
-                    {/* Head */}
-                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-36 h-32 bg-gradient-to-b from-white to-mint/20 rounded-2xl shadow-lg">
-                      {/* Eyes */}
-                      <div className="absolute top-10 left-1/2 -translate-x-1/2 flex gap-3">
-                        <div className="w-8 h-8 bg-mint rounded-full animate-pulse shadow-[0_0_20px_rgba(0,255,157,1)]" />
-                        <div className="w-8 h-8 bg-mint rounded-full animate-pulse shadow-[0_0_20px_rgba(0,255,157,1)]" />
-                      </div>
-                    </div>
-                    {/* Body details */}
-                    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-20 h-20 bg-mint/30 rounded-full animate-glow" />
-                    {/* Arms */}
-                    <div className="absolute top-16 -left-8 w-8 h-24 bg-gradient-to-b from-mint/60 to-mint-dark/60 rounded-full rotate-12" />
-                    <div className="absolute top-16 -right-8 w-8 h-24 bg-gradient-to-b from-mint/60 to-mint-dark/60 rounded-full -rotate-12" />
-                  </div>
-                </div>
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-mint/20 blur-3xl rounded-full animate-glow" />
-              </div>
-            </div>
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-offwhite-dark">
+            <li className="flex items-center gap-2">
+              <Sun className="w-4 h-4 text-mint" /> Heat &amp; glare control
+            </li>
+            <li className="flex items-center gap-2">
+              <Home className="w-4 h-4 text-mint" /> 99% UV protection
+            </li>
+            <li className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-mint" /> Lifetime film warranty
+            </li>
+          </ul>
+        </div>
+
+        {/* Right — home window with solar film illustration */}
+        <div className="hidden lg:flex min-w-0 justify-center items-center">
+          <div className="relative w-full max-w-[22rem] xl:max-w-[26rem] aspect-square">
+            <div className="absolute inset-8 bg-mint/12 blur-3xl rounded-full" />
+            <svg
+              viewBox="0 0 400 400"
+              className="relative w-full h-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
+              role="img"
+              aria-label="Living-room window with solar control film reducing afternoon sun"
+            >
+              <defs>
+                <linearGradient id="roomWarm" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#fff3dd" stopOpacity="0.20" />
+                  <stop offset="1" stopColor="#fff3dd" stopOpacity="0.05" />
+                </linearGradient>
+                <linearGradient id="filmTint" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#00FF9D" stopOpacity="0.18" />
+                  <stop offset="0.55" stopColor="#0b6e4c" stopOpacity="0.36" />
+                  <stop offset="1" stopColor="#0A1428" stopOpacity="0.66" />
+                </linearGradient>
+                <radialGradient id="afternoonSun" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stopColor="#ffffff" />
+                  <stop offset="0.45" stopColor="#ffedcf" />
+                  <stop offset="1" stopColor="#ffedcf" stopOpacity="0" />
+                </radialGradient>
+                <clipPath id="lower">
+                  <polygon points="0,170 400,80 400,400 0,400" />
+                </clipPath>
+              </defs>
+
+              {/* low afternoon sun outside the glass */}
+              <circle cx="96" cy="86" r="72" fill="url(#afternoonSun)" opacity="0.9" />
+
+              {/* window frame */}
+              <rect x="52" y="40" width="296" height="320" rx="16" fill="#0A1428"
+                stroke="#00FF9D" strokeOpacity="0.5" strokeWidth="3" />
+              <rect x="66" y="54" width="268" height="292" rx="10" fill="#122038"
+                stroke="#ffffff" strokeOpacity="0.06" strokeWidth="2" />
+
+              {/* two tall sashes */}
+              {[0, 1].map((col) => {
+                const x = 78 + col * 132;
+                return (
+                  <g key={col}>
+                    <rect x={x} y="66" width="122" height="268" rx="4" fill="url(#roomWarm)" />
+                    <rect x={x} y="66" width="122" height="268" rx="4" fill="url(#filmTint)"
+                      clipPath="url(#lower)" />
+                    <rect x={x} y="66" width="122" height="268" rx="4" fill="none"
+                      stroke="#00FF9D" strokeOpacity="0.24" strokeWidth="1.5" />
+                    <line x1={x} y1="200" x2={x + 122} y2="200" stroke="#0A1428" strokeOpacity="0.35" strokeWidth="6" />
+                  </g>
+                );
+              })}
+
+              {/* interior sill + a plant, hinting "home" */}
+              <rect x="52" y="356" width="296" height="14" rx="4" fill="#1C3055" />
+              <path d="M196 356c0-16 6-26 14-30-2 12 0 22 6 30z" fill="#00FF9D" opacity="0.5" />
+              <path d="M204 356c0-14 8-22 18-24-4 10-4 18 0 24z" fill="#00D484" opacity="0.5" />
+
+              {/* the film line where solar tint begins */}
+              <line x1="66" y1="170" x2="334" y2="80" stroke="#00FF9D" strokeOpacity="0.85" strokeWidth="2.5" />
+            </svg>
           </div>
         </div>
       </div>
